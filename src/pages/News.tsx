@@ -49,7 +49,7 @@ export default function News() {
       category: t('news.items.item5Category'),
       date: t('news.items.item5Date'),
       author: t('news.items.item5Author'),
-      img: 'https://images.unsplash.com/photo-1586191552066-e52fdc0f9d98?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       excerpt: t('news.items.item5Excerpt')
     },
     {
@@ -66,9 +66,9 @@ export default function News() {
   return (
     <div className="w-full pt-24">
       {/* Hero Section */}
-      <section className="relative py-24 bg-dark-grey text-white overflow-hidden">
+      <section className="relative py-24 bg-secondary text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary/50 z-10"></div>
         
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -90,7 +90,7 @@ export default function News() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t('news.latestUpdates')}</h2>
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-black mb-6">{t('news.corporateNews')}</h3>
+            <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6">{t('news.corporateNews')}</h3>
             <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
           </div>
 
@@ -119,7 +119,7 @@ export default function News() {
                     <span className="flex items-center gap-1"><Calendar size={14} /> {item.date}</span>
                     <span className="flex items-center gap-1"><User size={14} /> {item.author}</span>
                   </div>
-                  <h4 className="text-xl font-heading font-bold text-black mb-3 group-hover:text-primary transition-colors leading-tight">{item.title}</h4>
+                  <h4 className="text-xl font-heading font-bold text-secondary mb-3 group-hover:text-primary transition-colors leading-tight">{item.title}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{item.excerpt}</p>
                   <Link to="#" className="text-primary font-semibold flex items-center gap-2 hover:text-primary-hover transition-colors mt-auto uppercase text-sm tracking-wider">
                     {t('news.readArticle')} <ArrowRight size={16} />
@@ -134,7 +134,7 @@ export default function News() {
       {/* Newsletter Signup */}
       <section className="py-24 bg-grey">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-heading font-bold text-black mb-4">{t('news.subscribeTitle')}</h2>
+          <h2 className="text-3xl font-heading font-bold text-secondary mb-4">{t('news.subscribeTitle')}</h2>
           <p className="text-gray-600 mb-8 text-lg">{t('news.subscribeDesc')}</p>
           <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
             <input 
@@ -143,7 +143,7 @@ export default function News() {
               className="flex-1 px-6 py-4 rounded-sm border border-gray-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-lg"
               required
             />
-            <button type="submit" className="bg-dark-grey hover:bg-black text-white px-8 py-4 rounded-sm font-bold transition-colors text-lg whitespace-nowrap">
+            <button type="submit" className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-sm font-bold transition-colors text-lg whitespace-nowrap">
               {t('news.subscribeBtn')}
             </button>
           </form>

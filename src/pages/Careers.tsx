@@ -44,9 +44,9 @@ export default function Careers() {
   return (
     <div className="w-full pt-24">
       {/* Hero Section */}
-      <section className="relative py-24 bg-dark-grey text-white overflow-hidden">
+      <section className="relative py-24 bg-secondary text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary/50 z-10"></div>
         
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -68,7 +68,7 @@ export default function Careers() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t('careers.lifeAtBen')}</h2>
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-black mb-6">{t('careers.whyJoin')}</h3>
+            <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6">{t('careers.whyJoin')}</h3>
             <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
             <p className="text-gray-600 text-lg leading-relaxed">
               {t('careers.whyJoinDesc')}
@@ -93,7 +93,7 @@ export default function Careers() {
                 <div className="text-primary mb-6 bg-orange-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
                   {benefit.icon}
                 </div>
-                <h4 className="text-xl font-heading font-bold text-black mb-3">{benefit.title}</h4>
+                <h4 className="text-xl font-heading font-bold text-secondary mb-3">{benefit.title}</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">{benefit.desc}</p>
               </motion.div>
             ))}
@@ -107,7 +107,7 @@ export default function Careers() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div className="max-w-2xl">
               <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t('careers.currentOpenings')}</h2>
-              <h3 className="text-3xl md:text-4xl font-heading font-bold text-black mb-4">{t('careers.joinGrowingTeam')}</h3>
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-4">{t('careers.joinGrowingTeam')}</h3>
               <p className="text-gray-600">{t('careers.exploreOpportunities')}</p>
             </div>
           </div>
@@ -134,10 +134,10 @@ export default function Careers() {
                       <Clock size={14} /> {job.type}
                     </span>
                   </div>
-                  <h4 className="text-2xl font-heading font-bold text-black mb-3 group-hover:text-primary transition-colors">{job.title}</h4>
+                  <h4 className="text-2xl font-heading font-bold text-secondary mb-3 group-hover:text-primary transition-colors">{job.title}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed max-w-3xl">{job.desc}</p>
                 </div>
-                <button className="bg-dark-grey hover:bg-black text-white px-6 py-3 rounded-sm font-semibold transition-colors flex items-center gap-2 flex-shrink-0 whitespace-nowrap mt-4 md:mt-0">
+                <button className="bg-secondary hover:bg-secondary/90 text-white px-6 py-3 rounded-sm font-semibold transition-colors flex items-center gap-2 flex-shrink-0 whitespace-nowrap mt-4 md:mt-0">
                   {t('careers.applyNow')} <ArrowRight size={18} />
                 </button>
               </motion.div>

@@ -8,9 +8,9 @@ export default function Contact() {
   return (
     <div className="w-full pt-24">
       {/* Hero Section */}
-      <section className="relative py-24 bg-dark-grey text-white overflow-hidden">
+      <section className="relative py-24 bg-secondary text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-black/50 z-10"></div>
         
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -40,7 +40,7 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t('contact.getInTouch')}</h2>
-              <h3 className="text-3xl md:text-4xl font-heading font-bold text-black mb-6 leading-tight">
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6 leading-tight">
                 {t('contact.headOffice')}
               </h3>
               <div className="w-20 h-1 bg-primary mb-8"></div>
@@ -55,7 +55,7 @@ export default function Contact() {
                     <MapPin className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-heading font-bold text-black mb-2">{t('contact.address')}</h4>
+                    <h4 className="text-xl font-heading font-bold text-secondary mb-2">{t('contact.address')}</h4>
                     <p className="text-gray-600 leading-relaxed whitespace-pre-line">
                       {t('contact.addressDetails')}
                     </p>
@@ -67,7 +67,7 @@ export default function Contact() {
                     <Phone className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-heading font-bold text-black mb-2">{t('contact.phone')}</h4>
+                    <h4 className="text-xl font-heading font-bold text-secondary mb-2">{t('contact.phone')}</h4>
                     <p className="text-gray-600 leading-relaxed">
                       {t('contact.phoneMain')}<br />
                       {t('contact.phoneSales')}<br />
@@ -81,7 +81,7 @@ export default function Contact() {
                     <Mail className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-heading font-bold text-black mb-2">{t('contact.email')}</h4>
+                    <h4 className="text-xl font-heading font-bold text-secondary mb-2">{t('contact.email')}</h4>
                     <p className="text-gray-600 leading-relaxed">
                       {t('contact.emailGeneral')}<br />
                       {t('contact.emailSales')}<br />
@@ -95,7 +95,7 @@ export default function Contact() {
                     <Clock className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h4 className="text-xl font-heading font-bold text-black mb-2">{t('contact.businessHours')}</h4>
+                    <h4 className="text-xl font-heading font-bold text-secondary mb-2">{t('contact.businessHours')}</h4>
                     <p className="text-gray-600 leading-relaxed">
                       {t('contact.hoursWeekdays')}<br />
                       {t('contact.hoursWeekends')}
@@ -113,7 +113,7 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               className="bg-grey p-8 md:p-12 rounded-sm shadow-sm border-t-4 border-primary"
             >
-              <h3 className="text-2xl font-heading font-bold text-black mb-6">{t('contact.sendMessage')}</h3>
+              <h3 className="text-2xl font-heading font-bold text-secondary mb-6">{t('contact.sendMessage')}</h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>

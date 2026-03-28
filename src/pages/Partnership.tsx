@@ -9,9 +9,9 @@ export default function Partnership() {
   return (
     <div className="w-full pt-24">
       {/* Hero Section */}
-      <section className="relative py-24 bg-dark-grey text-white overflow-hidden">
+      <section className="relative py-24 bg-secondary text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-black/50 z-10"></div>
         
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -33,7 +33,7 @@ export default function Partnership() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t('partnership.opportunitiesSubtitle')}</h2>
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-black mb-6">{t('partnership.opportunitiesTitle')}</h3>
+            <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6">{t('partnership.opportunitiesTitle')}</h3>
             <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
             <p className="text-gray-600 text-lg leading-relaxed">
               {t('partnership.opportunitiesDesc')}
@@ -59,7 +59,7 @@ export default function Partnership() {
                 <div className="text-primary mb-6 bg-orange-50 w-16 h-16 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   {partner.icon}
                 </div>
-                <h4 className="text-xl font-heading font-bold text-black mb-3">{partner.title}</h4>
+                <h4 className="text-xl font-heading font-bold text-secondary mb-3">{partner.title}</h4>
                 <p className="text-gray-600 text-sm leading-relaxed">{partner.desc}</p>
               </motion.div>
             ))}
@@ -78,7 +78,7 @@ export default function Partnership() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t('partnership.benefitsSubtitle')}</h2>
-              <h3 className="text-3xl md:text-4xl font-heading font-bold text-black mb-6 leading-tight">
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6 leading-tight">
                 {t('partnership.benefitsTitle')}
               </h3>
               <div className="w-20 h-1 bg-primary mb-8"></div>
@@ -96,7 +96,7 @@ export default function Partnership() {
                       <div className="w-2 h-2 rounded-full bg-primary"></div>
                     </div>
                     <div>
-                      <h4 className="text-lg font-heading font-bold text-black mb-1">{benefit.title}</h4>
+                      <h4 className="text-lg font-heading font-bold text-secondary mb-1">{benefit.title}</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">{benefit.desc}</p>
                     </div>
                   </li>
@@ -128,15 +128,23 @@ export default function Partnership() {
       </section>
 
       {/* Application Form CTA */}
-      <section className="py-24 bg-dark-grey text-white text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">{t('partnership.readyToStart')}</h2>
-          <p className="text-gray-400 mb-10 text-lg leading-relaxed">
-            {t('partnership.readyToStartDesc')}
-          </p>
-          <Link to="/contact" className="bg-primary hover:bg-primary-hover text-white px-10 py-4 rounded-sm font-bold transition-colors text-lg inline-flex items-center gap-2">
-            {t('partnership.applyNow')} <ArrowRight size={20} />
-          </Link>
+      <section className="py-24 bg-secondary text-white relative flex justify-center overflow-hidden">
+        {/* Ambient Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#0a2e80]/40 backdrop-blur-xl border border-white/10 rounded-3xl p-12 md:p-16 text-center shadow-2xl relative overflow-hidden">
+            {/* Inner accent top line */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50"></div>
+            
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 tracking-tight">{t('partnership.readyToStart')}</h2>
+            <p className="text-gray-300 mb-10 text-lg leading-relaxed max-w-2xl mx-auto">
+              {t('partnership.readyToStartDesc')}
+            </p>
+            <Link to="/contact" className="bg-primary hover:bg-orange-500 text-white px-10 py-4 rounded-full font-bold transition-all text-lg inline-flex items-center gap-3 hover:scale-105 shadow-[0_0_30px_rgba(242,101,34,0.4)]">
+              {t('partnership.applyNow')} <ArrowRight size={20} />
+            </Link>
+          </div>
         </div>
       </section>
     </div>

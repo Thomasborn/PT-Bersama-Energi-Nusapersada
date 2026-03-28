@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
+import { X, Send, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { GoogleGenAI } from '@google/genai';
 import Markdown from 'react-markdown';
 import { useLanguage } from '../context/LanguageContext';
+import { BenIcon } from './Logo';
 
 interface Message {
   role: 'user' | 'model';
@@ -74,7 +75,7 @@ export default function AIChat() {
         className={`fixed bottom-6 right-6 p-4 bg-primary text-white rounded-full shadow-lg hover:bg-primary-hover hover:scale-110 transition-all z-50 ${isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}`}
         aria-label={t('chat.open')}
       >
-        <MessageCircle size={28} />
+        <BenIcon className="w-8 h-8" color="white" />
       </button>
 
       {/* Chat Window */}
@@ -88,10 +89,10 @@ export default function AIChat() {
             className="fixed bottom-6 right-6 w-full max-w-[380px] h-[550px] max-h-[80vh] bg-white rounded-xl shadow-2xl flex flex-col z-50 overflow-hidden border border-gray-200"
           >
             {/* Header */}
-            <div className="bg-dark-grey text-white p-4 flex justify-between items-center">
+            <div className="bg-secondary text-white p-4 flex justify-between items-center">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                  <Bot size={20} />
+                <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center border-2 border-white/20">
+                  <BenIcon className="w-5 h-5 ml-0.5" color="white" />
                 </div>
                 <div>
                   <h3 className="font-heading font-bold">{t('chat.title')}</h3>
@@ -114,8 +115,8 @@ export default function AIChat() {
                   key={idx} 
                   className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'self-end flex-row-reverse' : 'self-start'}`}
                 >
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'user' ? 'bg-gray-200 text-gray-700' : 'bg-primary text-white'}`}>
-                    {msg.role === 'user' ? <User size={16} /> : <Bot size={16} />}
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'user' ? 'bg-gray-200 text-gray-700' : 'bg-primary text-white border border-primary-hover'}`}>
+                    {msg.role === 'user' ? <User size={16} /> : <BenIcon className="w-4 h-4 ml-px" color="white" />}
                   </div>
                   <div 
                     className={`p-3 rounded-2xl text-sm ${
@@ -137,8 +138,8 @@ export default function AIChat() {
               
               {isLoading && (
                 <div className="flex gap-3 max-w-[85%] self-start">
-                  <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0">
-                    <Bot size={16} />
+                  <div className="w-8 h-8 rounded-full bg-primary text-white border border-primary-hover flex items-center justify-center flex-shrink-0">
+                    <BenIcon className="w-4 h-4 ml-px" color="white" />
                   </div>
                   <div className="p-4 bg-white rounded-2xl rounded-tl-sm shadow-sm border border-gray-100 flex items-center gap-1">
                     <div className="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>

@@ -1,8 +1,9 @@
-import { ShieldCheck, Target, Eye, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Target, Eye, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { BenLogo } from '../components/Logo';
+import TrustSection from '../components/TrustSection';
 
 export default function About() {
   const { t } = useLanguage();
@@ -10,9 +11,9 @@ export default function About() {
   return (
     <div className="w-full pt-24">
       {/* Hero Section */}
-      <section className="relative py-24 bg-dark-grey text-white overflow-hidden">
+      <section className="relative py-24 bg-secondary text-white overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary/50 z-10"></div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -44,7 +45,7 @@ export default function About() {
 
               <div className="relative z-10">
                 <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t('about.whoWeAre')}</h2>
-                <h3 className="text-3xl md:text-4xl font-heading font-bold text-black mb-6 leading-tight">
+                <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6 leading-tight">
                   {t('about.title')}
                 </h3>
                 <div className="w-20 h-1 bg-primary mb-8"></div>
@@ -92,6 +93,9 @@ export default function About() {
         </div>
       </section>
 
+      {/* Integrated Premium Profile & Trust Section */}
+      <TrustSection />
+
       {/* Mission & Vision */}
       <section className="py-24 bg-grey">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,7 +108,7 @@ export default function About() {
               className="bg-white p-10 rounded-sm shadow-sm border-t-4 border-primary"
             >
               <Target className="text-primary mb-6" size={48} />
-              <h3 className="text-2xl font-heading font-bold text-black mb-4">{t('about.mission')}</h3>
+              <h3 className="text-2xl font-heading font-bold text-secondary mb-4">{t('about.mission')}</h3>
               <p className="text-gray-600 leading-relaxed text-lg">
                 {t('about.missionDesc')}
               </p>
@@ -118,7 +122,7 @@ export default function About() {
               className="bg-white p-10 rounded-sm shadow-sm border-t-4 border-dark-grey"
             >
               <Eye className="text-dark-grey mb-6" size={48} />
-              <h3 className="text-2xl font-heading font-bold text-black mb-4">{t('about.vision')}</h3>
+              <h3 className="text-2xl font-heading font-bold text-secondary mb-4">{t('about.vision')}</h3>
               <p className="text-gray-600 leading-relaxed text-lg">
                 {t('about.visionDesc')}
               </p>
@@ -132,7 +136,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t('about.principles')}</h2>
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-black mb-6">{t('about.values')}</h3>
+            <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6">{t('about.values')}</h3>
             <div className="w-20 h-1 bg-primary mx-auto"></div>
           </div>
 
@@ -155,7 +159,7 @@ export default function About() {
               >
                 <CheckCircle2 className="text-primary flex-shrink-0 mt-1" size={24} />
                 <div>
-                  <h4 className="text-xl font-heading font-bold text-black mb-2">{value.title}</h4>
+                  <h4 className="text-xl font-heading font-bold text-secondary mb-2">{value.title}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">{value.desc}</p>
                 </div>
               </motion.div>
@@ -164,21 +168,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-dark-grey text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-heading font-bold mb-6">{t('about.ctaTitle')}</h2>
-          <p className="text-gray-400 mb-8 text-lg">{t('about.ctaDesc')}</p>
-          <div className="flex justify-center gap-4">
-            <Link to="/products" className="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-sm font-semibold transition-colors">
-              {t('about.viewProducts')}
-            </Link>
-            <Link to="/contact" className="bg-transparent border border-white hover:bg-white/10 text-white px-8 py-3 rounded-sm font-semibold transition-colors">
-              {t('nav.contact')}
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

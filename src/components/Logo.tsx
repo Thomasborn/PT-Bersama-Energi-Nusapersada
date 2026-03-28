@@ -23,3 +23,20 @@ export function BenLogo({ className = "h-10", light = false }: { className?: str
     </svg>
   );
 }
+
+export function BenIcon({ className = "w-6 h-6", color = "currentColor" }: { className?: string, color?: string }) {
+  return (
+    <svg viewBox="0 0 160 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <mask id="ben-icon-mask">
+          <rect x="0" y="0" width="160" height="100" fill="white" />
+          <rect x="0" y="38" width="160" height="4" fill="black" />
+          <rect x="0" y="58" width="160" height="4" fill="black" />
+        </mask>
+      </defs>
+      <text x="0" y="80" fill={color} fontStyle="italic" fontWeight="900" fontFamily="Arial, sans-serif" fontSize="80" mask="url(#ben-icon-mask)">
+        BEN
+      </text>
+    </svg>
+  );
+}

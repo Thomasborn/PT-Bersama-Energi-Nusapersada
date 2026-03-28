@@ -1,0 +1,76 @@
+import React from 'react';
+import { PhoneCall, Mail, MessageSquare, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+interface DistributorCTAProps {
+  theme?: 'light' | 'dark' | 'primary';
+}
+
+export default function DistributorCTA({ theme = 'primary' }: DistributorCTAProps) {
+  const bgClass = theme === 'primary' 
+    ? 'bg-primary text-white' 
+    : theme === 'dark' 
+      ? 'bg-secondary text-white' 
+      : 'bg-grey text-secondary border-t-4 border-primary';
+
+  const titleClass = theme === 'light' ? 'text-secondary' : 'text-white';
+  const textClass = theme === 'light' ? 'text-gray-600' : 'text-white/80';
+  const buttonClass = theme === 'primary'
+    ? 'bg-white text-primary hover:bg-gray-100'
+    : theme === 'dark'
+      ? 'bg-primary text-white hover:bg-primary-hover'
+      : 'bg-primary text-white hover:bg-primary-hover';
+
+  return (
+    <div className={`${bgClass} rounded-3xl shadow-2xl overflow-hidden relative border border-white/5 max-w-6xl mx-auto mb-16`}>
+      {theme === 'primary' && (
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+      )}
+      
+      <div className="relative z-10 p-10 md:p-14 lg:p-16">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-12 lg:gap-8">
+          
+          <div className="max-w-2xl">
+            <h3 className={`text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold mb-6 tracking-tight leading-[1.15] ${titleClass}`}>
+              Jadikan BEN Sebagai Mitra Distribusi Utama Anda
+            </h3>
+            <p className={`text-lg md:text-xl font-medium leading-relaxed mb-8 max-w-xl ${textClass}`}>
+              Dapatkan suplai pelumas Gulf Oil asli dan dukungan teknis terdepan untuk memastikan alat berat dan operasional industri Anda berjalan dengan efisiensi puncak.
+            </p>
+            
+            <div className={`flex flex-wrap gap-4 ${textClass}`}>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-sm transition-transform hover:-translate-y-1 cursor-default">
+                <PhoneCall size={18} className={theme === 'light' ? 'text-primary' : 'text-white'} />
+                <span className="font-bold tracking-wide">+62 21 1234 5678</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-sm transition-transform hover:-translate-y-1 cursor-default">
+                <Mail size={18} className={theme === 'light' ? 'text-primary' : 'text-white'} />
+                <span className="font-bold tracking-wide">sales@ben-energy.co.id</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-auto flex flex-col sm:flex-row lg:flex-col gap-4 min-w-[240px]">
+            <Link 
+              to="/contact" 
+              className={`flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold transition-all text-center w-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:-translate-y-1 ${buttonClass}`}
+            >
+              Konsultasi Produk
+              <ArrowRight size={20} />
+            </Link>
+            <a 
+              href="https://wa.me/6281234567890" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold transition-all text-center w-full border-2 hover:-translate-y-1 ${theme === 'light' ? 'border-primary text-primary hover:bg-primary/5' : 'border-white/40 text-white hover:bg-white/10 hover:border-white'}`}
+            >
+              <MessageSquare size={20} />
+              Hubungi via WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+}
