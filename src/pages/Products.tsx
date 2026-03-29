@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { gulfCategories, gulfProducts } from '../data/gulfProducts';
 import DistributorCTA from '../components/DistributorCTA';
 import { ChevronDown, ChevronUp, DownloadCloud, Search, ExternalLink, ArrowRight } from 'lucide-react';
@@ -16,15 +16,15 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -12 }}
       transition={{ duration: 0.35, delay: index * 0.04 }}
-      className="border-b border-gray-100 group"
+      className="border-b border-gray-100 group bg-white"
     >
       {/* Main row — clickable header */}
       <div
         onClick={() => setOpen(!open)}
-        className="grid grid-cols-[1fr_auto] lg:grid-cols-[60px_1fr_220px_120px_80px] items-center gap-4 px-4 lg:px-6 py-5 cursor-pointer hover:bg-gray-50 transition-colors"
+        className="grid grid-cols-[1fr_auto] lg:grid-cols-[60px_1fr_220px_120px_80px] items-center gap-4 px-4 lg:px-8 py-6 cursor-pointer hover:bg-[#f8f9fa] transition-colors border-l-4 border-transparent hover:border-[#ff6600]"
       >
         {/* Row number */}
-        <span className="hidden lg:block font-heading font-black text-2xl text-gray-100 group-hover:text-primary/20 transition-colors tracking-tighter select-none">
+        <span className="hidden lg:block font-heading font-black text-2xl text-gray-200 group-hover:text-[#ff6600]/40 transition-colors tracking-tighter select-none">
           {String(index + 1).padStart(2, '0')}
         </span>
 
@@ -34,23 +34,23 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-14 h-14 object-cover flex-shrink-0 hidden sm:block"
+              className="w-16 h-16 object-cover flex-shrink-0 hidden sm:block border border-gray-100 shadow-sm"
             />
           )}
           <div className="min-w-0">
-            <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
               <img
                 src={product.partnerBrand === 'Gulf' ? '/gulf.png' : '/shantui-logo.jpeg'}
                 alt={product.partnerBrand}
                 className="h-5 object-contain"
               />
               {product.subcategoryId && (
-                <span className="text-[9px] font-black tracking-[0.15em] uppercase text-primary border border-primary/30 px-2 py-0.5">
+                <span className="text-[10px] font-bold tracking-widest uppercase text-[#ff6600] border border-[#ff6600]/20 px-2 py-0.5 rounded-sm bg-[#ff6600]/5">
                   {product.subcategoryId.replace(/-/g, ' ')}
                 </span>
               )}
             </div>
-            <h3 className="font-heading font-bold text-secondary text-lg tracking-tight leading-tight truncate group-hover:text-primary transition-colors">
+            <h3 className="font-heading font-bold text-[#002b5b] text-xl tracking-tight leading-tight truncate group-hover:text-[#ff6600] transition-colors">
               {product.name}
             </h3>
           </div>
@@ -59,12 +59,12 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
         {/* Viscosity grades */}
         <div className="hidden lg:flex flex-wrap gap-1.5">
           {product.viscosityGrades?.slice(0, 3).map((g: string) => (
-            <span key={g} className="text-xs font-bold border border-gray-200 px-2 py-1 text-gray-600">
+            <span key={g} className="text-xs font-bold border border-gray-200 px-2 py-1 text-gray-600 bg-white">
               {g}
             </span>
           ))}
           {(product.viscosityGrades?.length ?? 0) > 3 && (
-            <span className="text-xs font-bold border border-gray-200 px-2 py-1 text-gray-400">
+            <span className="text-xs font-bold border border-gray-200 px-2 py-1 text-gray-400 bg-gray-50">
               +{product.viscosityGrades.length - 3}
             </span>
           )}
@@ -83,15 +83,15 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="text-gray-400 hover:text-primary transition-colors p-1"
+              className="text-gray-400 hover:text-[#ff6600] transition-colors p-1"
               title="Product Data Sheet"
             >
-              <DownloadCloud size={16} />
+              <DownloadCloud size={18} />
             </a>
           )}
           {open
-            ? <ChevronUp size={18} className="text-gray-400 flex-shrink-0" />
-            : <ChevronDown size={18} className="text-gray-400 flex-shrink-0" />
+            ? <ChevronUp size={20} className="text-[#ff6600] flex-shrink-0" />
+            : <ChevronDown size={20} className="text-gray-400 flex-shrink-0 group-hover:text-[#ff6600]" />
           }
         </div>
       </div>
@@ -106,22 +106,22 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="bg-gray-50 border-t border-gray-100 px-6 lg:px-10 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-[#f8f9fa] border-t border-gray-100 px-6 lg:px-10 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
 
               {/* Summary + image */}
               <div className="md:col-span-2">
                 {product.image && (
-                  <img src={product.image} alt={product.name} className="w-full h-52 object-cover mb-6" />
+                  <img src={product.image} alt={product.name} className="w-full h-64 object-cover mb-6 border border-gray-200 shadow-sm" />
                 )}
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">{product.summary}</p>
+                <p className="text-gray-600 text-[15px] leading-relaxed mb-8">{product.summary}</p>
 
                 {/* Applications */}
                 {product.applications?.length > 0 && (
                   <div className="mb-4">
-                    <div className="text-xs font-black tracking-[0.15em] uppercase text-secondary mb-3">Aplikasi</div>
+                    <div className="text-xs font-bold tracking-widest uppercase text-[#002b5b] mb-3 border-b border-gray-200 pb-2">Aplikasi Terdaftar</div>
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((a: string, i: number) => (
-                        <span key={i} className="text-xs border border-gray-200 px-3 py-1.5 text-gray-600 font-medium">{a}</span>
+                        <span key={i} className="text-[13px] border border-gray-200 bg-white px-3 py-1.5 text-gray-600 font-medium">{a}</span>
                       ))}
                     </div>
                   </div>
@@ -129,15 +129,15 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
               </div>
 
               {/* Right: specs + benefits */}
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {/* Specs */}
                 {product.specifications?.length > 0 && (
                   <div>
-                    <div className="text-xs font-black tracking-[0.15em] uppercase text-secondary mb-3">Spesifikasi</div>
-                    <ul className="space-y-1.5">
+                    <div className="text-xs font-bold tracking-widest uppercase text-[#002b5b] mb-3 border-b border-gray-200 pb-2">Spesifikasi OEM</div>
+                    <ul className="space-y-2">
                       {product.specifications.map((s: string, i: number) => (
-                        <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                          <div className="h-px w-4 bg-primary flex-shrink-0" /> {s}
+                        <li key={i} className="flex items-start gap-2 text-[13px] text-gray-600">
+                          <div className="h-1.5 w-1.5 rounded-full bg-[#ff6600] flex-shrink-0 mt-1.5" /> {s}
                         </li>
                       ))}
                     </ul>
@@ -147,11 +147,11 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
                 {/* Key benefits */}
                 {product.keyBenefits?.length > 0 && (
                   <div>
-                    <div className="text-xs font-black tracking-[0.15em] uppercase text-secondary mb-3">Keunggulan</div>
-                    <ul className="space-y-1.5">
+                    <div className="text-xs font-bold tracking-widest uppercase text-[#002b5b] mb-3 border-b border-gray-200 pb-2">Keunggulan Utama</div>
+                    <ul className="space-y-2">
                       {product.keyBenefits.map((b: string, i: number) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                          <div className="h-px w-4 bg-primary flex-shrink-0 mt-2.5" /> {b}
+                        <li key={i} className="flex items-start gap-2 text-[13px] text-gray-600">
+                          <div className="h-1.5 w-1.5 rounded-full bg-[#002b5b] flex-shrink-0 mt-1.5" /> {b}
                         </li>
                       ))}
                     </ul>
@@ -164,9 +164,9 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
                     href={product.pdsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border border-secondary text-secondary px-4 py-2.5 font-bold text-xs tracking-widest uppercase hover:bg-secondary hover:text-white transition-colors"
+                    className="inline-flex items-center justify-center w-full gap-2 bg-white border-2 border-[#002b5b] text-[#002b5b] px-4 py-3 font-bold text-xs tracking-widest uppercase hover:bg-[#002b5b] hover:text-white transition-colors"
                   >
-                    <DownloadCloud size={14} /> Unduh PDS
+                    <DownloadCloud size={16} /> Unduh Dokumen PDS
                   </a>
                 )}
               </div>
@@ -208,70 +208,71 @@ export default function Products() {
   }, [activeCategory, activeSubcat, query]);
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden bg-[#f8f9fa] mt-[112px]">
 
-      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[60vh] flex flex-col justify-end bg-secondary overflow-hidden">
+      {/* ── HERO BANNER (Official Layout) ────────────────────────────────────── */}
+      <section className="relative h-[50vh] w-full overflow-hidden bg-[#002b5b] flex items-center">
+        {/* Background Image */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center"
           style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
         >
-          <div className="absolute inset-0 bg-secondary/80" />
+          <div className="absolute inset-0 bg-[#002b5b]/70 mix-blend-multiply" />
         </div>
 
-        <div className="relative z-20 w-full pb-0 pt-40">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
-            <div className="flex items-center gap-4">
-              <div className="h-px w-16 bg-primary" />
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
-                Katalog Produk Gulf Oil & Shantui
-              </span>
-            </div>
-          </div>
+        {/* Diagonal Graphic Overlays */}
+        <div 
+          className="absolute top-0 right-0 h-[100%] w-[50%] md:w-[35%] bg-[#ff6600] z-10 opacity-90"
+          style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 0)' }}
+        ></div>
+        <div 
+          className="absolute bottom-0 right-0 h-[70%] w-[60%] md:w-[45%] bg-[#81d4fa]/30 z-[11] mix-blend-screen"
+          style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
+        ></div>
 
-          <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <h1 className="font-heading font-black text-white leading-[0.9] tracking-tighter text-[clamp(3rem,7vw,6rem)] mb-0">
-              Produk &<br />
-              <span className="text-primary">Solusi Teknis</span>
-            </h1>
-          </div>
-
-          <div className="border-t border-white/10 mt-12">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
-              <p className="text-gray-300 text-sm leading-relaxed max-w-xl">
-                Rangkaian produk Gulf Oil mencakup pelumas otomotif, komersial, industri, dan alat berat — semuanya tersedia melalui PT. Bersama Energi Nusapersada.
+        <div className="relative z-20 w-full">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="h-px w-12 bg-[#ff6600]" />
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff6600]">
+                  Katalog Resmi
+                </span>
+              </div>
+              <h1 className="font-heading font-black text-white leading-[0.9] tracking-tighter text-[clamp(3rem,6vw,5.5rem)] mb-6">
+                Pelumas & Solusi<br />
+                <span className="text-[#ff6600]">Kinerja Tinggi</span>
+              </h1>
+              <p className="text-gray-300 text-lg max-w-2xl leading-relaxed hidden md:block">
+                Menyediakan rangkaian pelumas kelas dunia untuk memenuhi standar spesifikasi OEM operasional mesin modern dan alat berat industri secara presisi.
               </p>
-              <a
-                href="https://indonesia.gulfoilltd.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-primary text-primary px-5 py-2.5 text-xs font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-colors flex-shrink-0"
-              >
-                <ExternalLink size={12} /> Gulf Oil Indonesia
-              </a>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* ── FILTER + SEARCH BAR ──────────────────────────────────────────────── */}
-      <div className="bg-white border-b border-gray-100 sticky top-[64px] z-30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="bg-white border-b border-gray-200 sticky top-[112px] z-40 shadow-sm">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-0 divide-y lg:divide-y-0 lg:divide-x divide-gray-100">
 
             {/* Category tabs */}
-            <div className="flex flex-wrap gap-0 py-2 lg:py-0">
+            <div className="flex flex-wrap gap-0 py-1 lg:py-0 w-full lg:w-auto">
               <button
                 onClick={() => { setActiveCategory('all'); setActiveSubcat('all'); }}
-                className={`px-5 py-4 text-xs font-bold tracking-widest uppercase transition-colors border-b-2 ${activeCategory === 'all' ? 'text-primary border-primary' : 'text-gray-400 border-transparent hover:text-secondary'}`}
+                className={`px-6 py-5 text-[13px] font-bold tracking-widest uppercase transition-colors border-b-4 ${activeCategory === 'all' ? 'text-[#ff6600] border-[#ff6600] bg-orange-50/50' : 'text-[#002b5b] border-transparent hover:text-[#ff6600] hover:bg-gray-50'}`}
               >
-                Semua
+                Semua Filter
               </button>
               {gulfCategories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => { setActiveCategory(cat.id); setActiveSubcat('all'); }}
-                  className={`px-5 py-4 text-xs font-bold tracking-widest uppercase transition-colors border-b-2 ${activeCategory === cat.id ? 'text-primary border-primary' : 'text-gray-400 border-transparent hover:text-secondary'}`}
+                  className={`px-6 py-5 text-[13px] font-bold tracking-widest uppercase transition-colors border-b-4 ${activeCategory === cat.id ? 'text-[#ff6600] border-[#ff6600] bg-orange-50/50' : 'text-[#002b5b] border-transparent hover:text-[#ff6600] hover:bg-gray-50'}`}
                 >
                   {cat.name}
                 </button>
@@ -279,38 +280,38 @@ export default function Products() {
             </div>
 
             {/* Search */}
-            <div className="flex-1 flex items-center gap-3 py-3 lg:py-0 lg:px-6">
-              <Search size={15} className="text-gray-400 flex-shrink-0" />
+            <div className="flex-1 flex items-center gap-3 py-4 lg:py-0 lg:px-8 bg-gray-50/50 mx-4 lg:mx-0 my-2 lg:my-0 rounded-md border lg:border-none border-gray-200 lg:bg-transparent">
+              <Search size={18} className="text-[#002b5b] flex-shrink-0" />
               <input
                 type="text"
-                placeholder="Cari produk, viskositas, aplikasi..."
+                placeholder="Cari kode produk, viskositas, fungsi..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="bg-transparent text-sm text-gray-700 placeholder-gray-400 outline-none w-full"
+                className="bg-transparent text-[15px] font-medium text-[#002b5b] placeholder-gray-400 outline-none w-full"
               />
               {query && (
-                <button onClick={() => setQuery('')} className="text-gray-400 hover:text-gray-600 text-xs font-bold">✕</button>
+                <button onClick={() => setQuery('')} className="text-[#ff6600] hover:text-[#e65a00] p-1 font-bold">✕</button>
               )}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Sub-category pills (only when a category with subcategories is selected) */}
+      {/* Sub-category pills */}
       {activeCategory_ && activeCategory_?.subcategories && activeCategory_?.subcategories?.length > 0 && (
-        <div className="bg-gray-50 border-b border-gray-100">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-wrap gap-2">
+        <div className="bg-[#f8f9fa] border-b border-gray-200">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-5 flex flex-wrap gap-3">
             <button
               onClick={() => setActiveSubcat('all')}
-              className={`text-xs font-bold tracking-widest uppercase px-4 py-2 border transition-colors ${activeSubcat === 'all' ? 'bg-secondary text-white border-secondary' : 'border-gray-200 text-gray-500 hover:border-secondary hover:text-secondary'}`}
+              className={`text-[11px] font-bold tracking-widest uppercase px-5 py-2.5 rounded-full border transition-all ${activeSubcat === 'all' ? 'bg-[#ff6600] text-white border-[#ff6600] shadow-md' : 'border-gray-300 text-gray-600 bg-white hover:border-[#002b5b] hover:text-[#002b5b]'}`}
             >
-              Semua
+              Semua Tipe
             </button>
             {activeCategory_.subcategories.map((sub) => (
               <button
                 key={sub.id}
                 onClick={() => setActiveSubcat(sub.id)}
-                className={`text-xs font-bold tracking-widest uppercase px-4 py-2 border transition-colors ${activeSubcat === sub.id ? 'bg-secondary text-white border-secondary' : 'border-gray-200 text-gray-500 hover:border-secondary hover:text-secondary'}`}
+                className={`text-[11px] font-bold tracking-widest uppercase px-5 py-2.5 rounded-full border transition-all ${activeSubcat === sub.id ? 'bg-[#ff6600] text-white border-[#ff6600] shadow-md' : 'border-gray-300 text-gray-600 bg-white hover:border-[#002b5b] hover:text-[#002b5b]'}`}
               >
                 {sub.name}
               </button>
@@ -320,88 +321,101 @@ export default function Products() {
       )}
 
       {/* ── PRODUCT LISTING ──────────────────────────────────────────────────── */}
-      <section className="bg-white py-0">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="bg-white py-12 min-h-[50vh]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
           {/* Category header */}
-          <div className="py-10 border-b border-gray-100 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="py-6 mb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <h2 className="font-heading font-black text-secondary text-3xl md:text-4xl tracking-tighter">
-                {activeCategory === 'all' ? 'Semua Produk' : activeCategory_?.name}
+              <h2 className="font-heading font-black text-[#002b5b] text-3xl md:text-5xl tracking-tight mb-2">
+                {activeCategory === 'all' ? 'Seluruh Produk' : activeCategory_?.name}
               </h2>
               {activeCategory_ && (
-                <p className="text-gray-400 text-sm mt-2 max-w-xl">{activeCategory_?.description}</p>
+                <p className="text-gray-500 text-[15px] mt-2 max-w-2xl">{activeCategory_?.description}</p>
               )}
             </div>
-            <span className="text-xs font-bold tracking-widest uppercase text-gray-400">
-              {displayed.length} produk
-            </span>
+            <div className="flex items-center gap-4">
+              <span className="text-[11px] font-bold tracking-widest uppercase text-white bg-[#002b5b] px-4 py-2 rounded-full shadow-sm">
+                {displayed.length} Tersedia
+              </span>
+            </div>
           </div>
 
           {/* Table header row */}
-          <div className="hidden lg:grid grid-cols-[60px_1fr_220px_120px_80px] gap-4 px-6 py-3 border-b border-gray-100">
-            <div className="text-[10px] font-black tracking-[0.2em] uppercase text-gray-300">#</div>
-            <div className="text-[10px] font-black tracking-[0.2em] uppercase text-gray-300">Produk</div>
-            <div className="text-[10px] font-black tracking-[0.2em] uppercase text-gray-300">Viskositas</div>
-            <div className="text-[10px] font-black tracking-[0.2em] uppercase text-gray-300">Kemasan</div>
-            <div />
+          <div className="hidden lg:grid grid-cols-[60px_1fr_220px_120px_80px] gap-4 px-8 py-4 bg-[#f8f9fa] border-y border-gray-200">
+            <div className="text-[11px] font-bold tracking-widest uppercase text-[#002b5b]">No</div>
+            <div className="text-[11px] font-bold tracking-widest uppercase text-[#002b5b]">Informasi Produk</div>
+            <div className="text-[11px] font-bold tracking-widest uppercase text-[#002b5b]">Viskositas SAE</div>
+            <div className="text-[11px] font-bold tracking-widest uppercase text-[#002b5b]">Kemasan</div>
+            <div className="text-right text-[11px] font-bold tracking-widest uppercase text-[#002b5b]">Aksi</div>
           </div>
 
           {/* Product rows */}
-          <AnimatePresence mode="popLayout">
-            {displayed.length > 0 ? (
-              displayed.map((p, i) => <ProductRow key={p.id} product={p} index={i} />)
-            ) : (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="py-24 text-center"
-              >
-                <p className="font-heading font-black text-5xl text-gray-100 tracking-tighter mb-4">0</p>
-                <p className="text-gray-400 text-sm">Tidak ada produk yang cocok dengan filter.</p>
-                <button
-                  onClick={() => { setActiveCategory('all'); setActiveSubcat('all'); setQuery(''); }}
-                  className="mt-6 text-xs font-bold tracking-widest uppercase border border-gray-200 px-5 py-2.5 text-gray-500 hover:border-primary hover:text-primary transition-colors"
+          <div className="bg-white border-b border-gray-100">
+            <AnimatePresence mode="popLayout">
+              {displayed.length > 0 ? (
+                displayed.map((p, i) => <ProductRow key={p.id} product={p} index={i} />)
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="py-32 text-center bg-[#f8f9fa] my-8 border border-dashed border-gray-300"
                 >
-                  Reset Filter
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                  <p className="font-heading font-black text-6xl text-gray-200 tracking-tighter mb-4">0</p>
+                  <p className="text-[#002b5b] font-medium text-lg">Tidak ada spesifikasi yang cocok dengan filter.</p>
+                  <button
+                    onClick={() => { setActiveCategory('all'); setActiveSubcat('all'); setQuery(''); }}
+                    className="mt-6 text-[13px] font-bold tracking-widest uppercase border-2 border-[#002b5b] px-8 py-3 text-[#002b5b] hover:bg-[#002b5b] hover:text-white transition-colors"
+                  >
+                    Reset Filter Pencarian
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </section>
 
       {/* ── CATEGORY OVERVIEW GRID ───────────────────────────────────────────── */}
       {activeCategory === 'all' && !query && (
-        <section className="bg-gray-50 border-y border-gray-100 py-24">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <section className="bg-[#f8f9fa] py-24 border-t border-gray-200">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
             <div className="flex items-center gap-4 mb-6">
-              <div className="h-px w-12 bg-primary" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Kategori Utama</span>
+              <div className="h-px w-12 bg-[#ff6600]" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff6600]">Kategori Utama</span>
             </div>
-            <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] tracking-tighter mb-16">
-              Rangkaian Produk Gulf
+            <h2 className="font-heading font-black text-[#002b5b] text-[clamp(2.5rem,4.5vw,4rem)] leading-[1] tracking-tighter mb-16">
+              Sektor Industri & Konsumer
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {gulfCategories.map((cat, idx) => (
                 <motion.button
                   key={cat.id}
-                  initial={{ opacity: 0, y: 16 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: idx * 0.08 }}
-                  onClick={() => { setActiveCategory(cat.id); setActiveSubcat('all'); window.scrollTo({ top: 400, behavior: 'smooth' }); }}
-                  className="relative group text-left overflow-hidden border-b border-r border-gray-200 last:border-b-0 [&:nth-last-child(2)]:border-b-0"
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  onClick={() => { setActiveCategory(cat.id); setActiveSubcat('all'); window.scrollTo({ top: 300, behavior: 'smooth' }); }}
+                  className="group block bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden text-left"
                 >
-                  <img src={cat.imageUrl} alt={cat.name} className="w-full h-56 object-cover opacity-60 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500" />
-                  <div className="absolute inset-0 bg-secondary/60 group-hover:bg-secondary/80 transition-colors" />
-                  <div className="absolute inset-0 flex flex-col items-start justify-end p-8">
-                    <div className="h-px w-8 bg-primary mb-3 group-hover:w-16 transition-all duration-300" />
-                    <h3 className="font-heading font-black text-white text-2xl md:text-3xl tracking-tight mb-2">{cat.name}</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed line-clamp-2 mb-4 max-w-sm">{cat.description}</p>
-                    <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary">
-                      Lihat Produk <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform" />
+                  <div className="h-64 sm:h-72 w-full overflow-hidden relative">
+                    <img 
+                      src={cat.imageUrl} 
+                      alt={cat.name} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-[#002b5b]/30 group-hover:bg-[#002b5b]/10 transition-colors" />
+                  </div>
+                  <div className="p-8">
+                    <h3 className="font-heading font-black text-3xl text-[#002b5b] group-hover:text-[#ff6600] transition-colors mb-3">
+                      {cat.name}
+                    </h3>
+                    <p className="text-gray-500 text-[15px] leading-relaxed mb-6 line-clamp-2">
+                      {cat.description}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#ff6600] border-b-2 border-transparent group-hover:border-[#ff6600] pb-1 transition-all">
+                      Jelajahi Seri Ini <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
                     </span>
                   </div>
                 </motion.button>
@@ -412,8 +426,8 @@ export default function Products() {
       )}
 
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
-      <div className="bg-white py-24 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
+      <div className="bg-white py-24 border-t border-gray-100">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <DistributorCTA theme="primary" />
         </div>
       </div>

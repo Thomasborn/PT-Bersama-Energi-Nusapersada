@@ -18,84 +18,63 @@ export default function About() {
   ];
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden bg-white mt-[112px]">
 
-      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[75vh] flex flex-col justify-end bg-secondary overflow-hidden">
-        {/* Background */}
+      {/* ── HERO BANNER (Official Layout) ────────────────────────────────────── */}
+      <section className="relative h-[60vh] md:h-[50vh] w-full overflow-hidden bg-[#002b5b]">
+        {/* Background Overlay */}
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
-        >
-          <div className="absolute inset-0 bg-secondary/80" />
-        </div>
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay"
+          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
+        ></div>
 
-        {/* Content anchored to bottom */}
-        <div className="relative z-20 w-full pb-0 pt-40">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-10">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-4"
-            >
-              <div className="h-px w-16 bg-primary" />
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+        {/* Diagonal Graphic Overlays */}
+        <div 
+          className="absolute top-0 right-0 h-[100%] w-[60%] md:w-[40%] bg-[#ff6600] z-10 opacity-90"
+          style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 0)' }}
+        ></div>
+        <div 
+          className="absolute bottom-0 right-0 h-[80%] w-[50%] md:w-[30%] bg-[#81d4fa]/30 z-[11] mix-blend-screen"
+          style={{ clipPath: 'polygon(100% 0, 100% 100%, 0 100%)' }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-20 h-full max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-px w-12 bg-[#ff6600]" />
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-[#ff6600]">
                 {t('about.whoWeAre')}
               </span>
-            </motion.div>
-          </div>
-
-          <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="font-heading font-black text-white leading-[0.9] tracking-tighter text-[clamp(3rem,7vw,6.5rem)] mb-0"
-            >
-              {t('about.heroTitle')}{' '}
-              <span className="text-primary">BEN</span>
-            </motion.h1>
-          </div>
-
-          {/* Bottom strip */}
-          <div className="border-t border-white/10 mt-12">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.35 }}
-                className="text-gray-300 text-base leading-relaxed max-w-2xl"
-              >
-                {t('about.heroDesc')}
-              </motion.p>
             </div>
-          </div>
+            <h1 className="font-heading font-black text-white leading-tight tracking-tight text-[clamp(2.5rem,5vw,4.5rem)]">
+              {t('about.heroTitle')}
+            </h1>
+          </motion.div>
         </div>
       </section>
 
-      {/* ── COMPANY OVERVIEW — Asymmetric split ─────────────────────────────── */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
+      {/* ── COMPANY OVERVIEW ─────────────────────────────────────────────────── */}
+      <section className="py-24 bg-white relative">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            
             {/* Left: Text */}
             <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="py-24 pr-0 lg:pr-20 border-b lg:border-b-0 lg:border-r border-gray-100"
             >
-              <div className="flex items-center gap-4 mb-10">
-                <div className="h-px w-12 bg-primary" />
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('about.subtitle')}</span>
-              </div>
-
-              <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-10">
+              <h2 className="font-heading font-black text-[#002b5b] text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight mb-8">
                 {t('about.title')}
               </h2>
 
-              <div className="space-y-5 text-gray-500 leading-relaxed text-lg mb-12">
+              <div className="space-y-6 text-gray-600 leading-relaxed text-lg mb-12">
                 <p>{t('about.desc1')}</p>
                 <p>{t('about.desc2')}</p>
                 <p>{t('about.desc3')}</p>
@@ -112,90 +91,106 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* Right: Staggered images */}
+            {/* Right: Images */}
             <motion.div
-              initial={{ opacity: 0, x: 24 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="grid grid-cols-2 gap-px bg-gray-100"
+              className="relative"
             >
-              <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial" className="w-full h-72 object-cover" />
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lubricants" className="w-full h-72 object-cover mt-16" />
-              <img src="https://images.unsplash.com/photo-1611270418597-a6c77f4b7271?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Machinery" className="w-full h-72 object-cover col-span-2" />
+               {/* Decorative Orange Block */}
+               <div className="absolute -top-6 -right-6 w-3/4 h-3/4 bg-[#eceff1] z-0"></div>
+               <img 
+                 src="https://images.unsplash.com/photo-1611270418597-a6c77f4b7271?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Machinery" 
+                 className="relative z-10 w-full object-cover shadow-2xl h-[500px]" 
+               />
+               {/* Bottom Left Overlapping Image */}
+               <img 
+                 src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                 alt="Industrial" 
+                 className="absolute -bottom-16 -left-12 z-20 w-3/5 object-cover shadow-xl border-4 border-white h-[300px] hidden md:block bg-white" 
+               />
             </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* ── MISSION & VISION — Side-by-side flat blocks ─────────────────────── */}
-      <section className="bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+      {/* ── MISSION & VISION ─────────────────────────────────────────────────── */}
+      <section className="py-24 bg-[#f8f9fa] relative overflow-hidden">
+        
+        {/* Left diagonal wedge */}
+        <div 
+          className="absolute top-0 left-0 h-full w-[20%] bg-[#ff6600] z-0 opacity-10"
+          style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }}
+        ></div>
 
-            {/* Mission */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="py-16 pr-0 md:pr-16 group"
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="h-px w-12 bg-primary" />
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('about.mission')}</span>
-              </div>
-              <Target className="text-primary mb-8" size={40} strokeWidth={1.5} />
-              <p className="text-gray-600 leading-relaxed text-lg">{t('about.missionDesc')}</p>
-            </motion.div>
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+          
+          {/* Mission */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white p-12 shadow-sm border border-gray-100 hover:shadow-xl transition-shadow"
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-px w-12 bg-[#ff6600]" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff6600]">{t('about.mission')}</span>
+            </div>
+            <Target className="text-[#002b5b] mb-8" size={48} strokeWidth={1.5} />
+            <p className="text-gray-600 leading-relaxed text-lg">{t('about.missionDesc')}</p>
+          </motion.div>
 
-            {/* Vision */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="py-16 pl-0 md:pl-16 group"
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <div className="h-px w-12 bg-secondary" />
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-secondary/60">{t('about.vision')}</span>
-              </div>
-              <Eye className="text-secondary mb-8" size={40} strokeWidth={1.5} />
-              <p className="text-gray-600 leading-relaxed text-lg">{t('about.visionDesc')}</p>
-            </motion.div>
-          </div>
+          {/* Vision */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="bg-[#002b5b] p-12 shadow-xl hover:-translate-y-2 transition-transform"
+          >
+            <div className="flex items-center gap-4 mb-8">
+              <div className="h-px w-12 bg-[#ff6600]" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#ff6600]">{t('about.vision')}</span>
+            </div>
+            <Eye className="text-white mb-8" size={48} strokeWidth={1.5} />
+            <p className="text-gray-200 leading-relaxed text-lg">{t('about.visionDesc')}</p>
+          </motion.div>
         </div>
       </section>
 
-      {/* ── CORE VALUES — Numbered flat list ─────────────────────────────────── */}
-      <section className="bg-secondary py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-primary" />
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('about.principles')}</span>
+      {/* ── CORE VALUES ──────────────────────────────────────────────────────── */}
+      <section className="bg-white py-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          
+          <div className="text-center mb-16">
+            <h2 className="font-heading font-black text-[#002b5b] text-[clamp(2rem,4vw,3.5rem)] leading-tight tracking-tight mb-4">
+              {t('about.values')}
+            </h2>
+            <div className="h-1 w-24 bg-[#ff6600] mx-auto" />
           </div>
-          <h2 className="font-heading font-black text-white text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-16">
-            {t('about.values')}
-          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {values.map((v, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="border-b border-r border-white/10 p-10 group hover:bg-primary/10 transition-colors duration-300"
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="bg-[#f8f9fa] p-10 border-l-4 border-[#002b5b] hover:border-[#ff6600] transition-colors duration-300"
               >
-                <div className="text-xs font-black tracking-[0.2em] text-primary/50 mb-6">
+                <div className="text-4xl font-heading font-black text-gray-200 mb-6">
                   {String(i + 1).padStart(2, '0')}
                 </div>
-                <h4 className="font-heading font-bold text-white text-xl tracking-tight mb-4">
+                <h4 className="font-heading font-bold text-[#002b5b] text-xl tracking-tight mb-4">
                   {v.title}
                 </h4>
-                <p className="text-gray-400 text-sm leading-relaxed">{v.desc}</p>
+                <p className="text-gray-500 leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -206,8 +201,8 @@ export default function About() {
       <TrustSection />
 
       {/* ── CTA ──────────────────────────────────────────────────────────────── */}
-      <div className="bg-white py-24 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
+      <div className="bg-[#f8f9fa] py-24">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <DistributorCTA theme="primary" />
         </div>
       </div>
