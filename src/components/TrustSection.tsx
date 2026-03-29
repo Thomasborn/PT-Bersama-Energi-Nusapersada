@@ -1,100 +1,108 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { gulfTrustData } from '../data/gulfTrust';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageSquare, PhoneCall, FileText } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
 
 export default function TrustSection() {
-  const { t } = useLanguage();
-  
   return (
     <div className="w-full">
-      {/* Tentang Gulf Section */}
-      <section className="py-24 bg-secondary text-white border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      {/* ── GULF IDENTITY — Dark asymmetric split ────────────────────────────── */}
+      <section className="bg-secondary text-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+
+            {/* Left: Text */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.7 }}
+              className="py-24 pr-0 lg:pr-20 border-b lg:border-b-0 lg:border-r border-white/10"
             >
-              <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">
-                Identitas Global
-              </h2>
-              <h3 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+              <div className="flex items-center gap-4 mb-10">
+                <div className="h-px w-12 bg-primary" />
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Identitas Global</span>
+              </div>
+              <h2 className="font-heading font-black text-white text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-10">
                 {gulfTrustData.about.title}
-              </h3>
-              <div className="w-20 h-1 bg-primary mb-8"></div>
-              <p className="text-xl text-gray-300 leading-relaxed font-light">
+              </h2>
+              <p className="text-gray-300 text-lg leading-relaxed font-light max-w-lg">
                 {gulfTrustData.about.content}
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="relative aspect-video rounded-sm overflow-hidden shadow-2xl"
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                alt="Gulf Oil Global Heritage" 
-                className="w-full h-full object-cover" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-grey via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 flex items-center gap-4">
-                <img src="/gulf.png" alt="Gulf Logo" className="h-12 bg-white rounded-full p-1" />
+
+              {/* Gulf logo strip */}
+              <div className="mt-12 pt-10 border-t border-white/10 flex items-center gap-6">
+                <img src="/gulf.png" alt="Gulf Oil" className="h-14 bg-white rounded-full p-1" />
+                <div>
+                  <div className="text-xs font-bold tracking-widest uppercase text-primary mb-1">Official Brand Partner</div>
+                  <div className="text-white font-bold text-lg">Gulf Oil International</div>
+                </div>
               </div>
+            </motion.div>
+
+            {/* Right: Full-bleed image */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9 }}
+              className="relative min-h-[400px] lg:min-h-0 overflow-hidden"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Gulf Oil Global Heritage"
+                className="w-full h-full object-cover opacity-50"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/60 to-transparent" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Motorsport Trust Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">
-              Warisan Motorsport Global
-            </h2>
-            <h3 className="text-3xl md:text-5xl font-heading font-bold text-secondary mb-6">
-              {gulfTrustData.motorsportSectionTitle}
-            </h3>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          </div>
+      {/* ── MOTORSPORT TRUST — Flat image strips ─────────────────────────────── */}
+      <section className="bg-white py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch mb-20">
+          {/* Header */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px w-12 bg-primary" />
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Warisan Motorsport Global</span>
+          </div>
+          <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-16">
+            {gulfTrustData.motorsportSectionTitle}
+          </h2>
+
+          {/* Motorsport items: full-width rows, not cards */}
+          <div className="divide-y divide-gray-100 mb-20">
             {gulfTrustData.motorsport.map((item, index) => (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-grey rounded-sm overflow-hidden flex flex-col hover:shadow-2xl transition-all duration-300 group"
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-0 group"
               >
-                <div className="h-64 relative bg-secondary flex items-center justify-center overflow-hidden">
-                  <div className="absolute inset-0 z-0">
-                    <img src={item.imageUrl} alt={item.title} className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" />
+                {/* Image — full height */}
+                <div className={`relative h-72 lg:h-80 overflow-hidden bg-secondary ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                  <img
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 flex flex-col items-start justify-end p-10">
+                    <div className="h-px w-8 bg-primary mb-3 group-hover:w-16 transition-all duration-300" />
+                    <div className="text-xs font-bold tracking-widest uppercase text-primary mb-2">{item.subtitle}</div>
+                    <h3 className="font-heading font-black text-white text-3xl tracking-tight leading-none">{item.title}</h3>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent z-10"></div>
-                  
-                  <h4 className="relative z-20 text-3xl md:text-4xl font-heading font-bold text-white text-center mt-auto p-8 pb-6">
-                    {item.title}
-                  </h4>
                 </div>
 
-                <div className="p-10 flex-grow flex flex-col bg-white border-x border-b border-gray-100">
-                  <div className="text-primary font-bold uppercase tracking-wider text-sm mb-4">
-                    {item.subtitle}
-                  </div>
+                {/* Text */}
+                <div className={`py-12 lg:py-0 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1 lg:pr-16 lg:pl-0' : 'lg:pl-16'}`}>
                   <div className="space-y-4">
-                    {item.content.map((paragraph, i) => (
-                      <p key={i} className="text-gray-700 leading-relaxed">
-                        {paragraph}
-                      </p>
+                    {item.content.map((p, i) => (
+                      <p key={i} className="text-gray-600 leading-relaxed text-lg">{p}</p>
                     ))}
                   </div>
                 </div>
@@ -102,33 +110,50 @@ export default function TrustSection() {
             ))}
           </div>
 
-          {/* Dedicated Call to Action for Gulf Distributor */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-secondary rounded-sm p-8 md:p-12 text-center text-white shadow-2xl relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-bl-full -mr-10 -mt-10"></div>
-            <div className="relative z-10">
-              <h4 className="text-2xl md:text-3xl font-heading font-bold mb-4">Dapatkan Pelumas Gulf Asli Melalui BEN</h4>
-              <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                Sebagai distributor resmi, PT. Bersama Energi Nusapersada siap membantu memenuhi kebutuhan pelumasan industri dan komersial Anda dengan jaminan kualitas dari Gulf.
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/contact" className="bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-sm font-bold transition-colors flex items-center gap-2">
-                  <MessageSquare size={18} /> Konsultasi Produk Gulf
+          {/* ── Bottom CTA — horizontal split action bar ──────────────────────── */}
+          <div className="border border-gray-200">
+            <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
+              {/* Headline */}
+              <div className="p-10 col-span-1 flex flex-col justify-center">
+                <div className="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">Distributor Resmi</div>
+                <h4 className="font-heading font-black text-secondary text-2xl tracking-tight leading-[1.1]">
+                  Dapatkan Pelumas Gulf Asli Melalui BEN
+                </h4>
+              </div>
+
+              {/* Description */}
+              <div className="p-10 flex items-center col-span-1">
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  Sebagai distributor resmi, PT. Bersama Energi Nusapersada siap membantu memenuhi kebutuhan pelumasan industri Anda dengan jaminan kualitas Gulf.
+                </p>
+              </div>
+
+              {/* Action buttons */}
+              <div className="p-10 flex flex-col gap-3 justify-center">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-3 bg-primary text-white px-6 py-3.5 font-bold tracking-wide hover:bg-primary-hover transition-colors group"
+                >
+                  <MessageSquare size={16} /> Konsultasi Gulf
+                  <ArrowRight size={14} className="ml-auto group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/contact" className="bg-white/10 border border-white/20 hover:bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-sm font-bold transition-colors flex items-center gap-2">
-                  <PhoneCall size={18} /> Hubungi Tim BEN
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-3 border border-gray-300 text-secondary px-6 py-3.5 font-bold tracking-wide hover:border-secondary transition-colors group"
+                >
+                  <PhoneCall size={16} /> Hubungi Tim BEN
+                  <ArrowRight size={14} className="ml-auto group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/contact" className="bg-white text-dark-grey hover:bg-gray-100 px-8 py-4 rounded-sm font-bold transition-colors flex items-center gap-2">
-                  <FileText size={18} /> Minta Penawaran
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-3 border border-gray-300 text-secondary px-6 py-3.5 font-bold tracking-wide hover:border-secondary transition-colors group"
+                >
+                  <FileText size={16} /> Minta Penawaran
+                  <ArrowRight size={14} className="ml-auto group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </section>

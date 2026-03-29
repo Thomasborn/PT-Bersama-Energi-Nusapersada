@@ -16,7 +16,7 @@ export default function GulfProductCard({ category, index }: GulfProductCardProp
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group bg-white rounded-sm shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col h-full border border-gray-100"
+      className="group bg-white hover:bg-secondary transition-colors duration-300 overflow-hidden flex flex-col h-full border-r border-b border-gray-100"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
         <img
@@ -42,10 +42,10 @@ export default function GulfProductCard({ category, index }: GulfProductCardProp
       </div>
       
       <div className="p-8 flex flex-col flex-grow">
-        <h4 className="text-2xl font-heading font-bold text-secondary mb-3 group-hover:text-primary transition-colors">
+        <h4 className="text-xl font-heading font-bold text-secondary mb-3 group-hover:text-primary transition-colors group-hover:text-white">
           {category.name}
         </h4>
-        <p className="text-gray-600 leading-relaxed mb-6 flex-grow">
+        <p className="text-gray-500 leading-relaxed mb-6 flex-grow text-sm group-hover:text-gray-300 transition-colors">
           {category.description}
         </p>
         

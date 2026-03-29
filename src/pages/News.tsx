@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { Calendar, User, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function News() {
@@ -64,66 +63,118 @@ export default function News() {
   ];
 
   return (
-    <div className="w-full pt-24">
-      {/* Hero Section */}
-      <section className="relative py-24 bg-secondary text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary/50 z-10"></div>
-        
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">{t('news.heroTitle')} <span className="text-primary">{t('news.heroTitleHighlight')}</span></h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              {t('news.heroDesc')}
-            </p>
-          </motion.div>
+    <div className="w-full overflow-x-hidden">
+
+      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
+      <section className="relative min-h-[70vh] flex flex-col justify-end bg-secondary overflow-hidden">
+        {/* Background */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
+        >
+          <div className="absolute inset-0 bg-secondary/80" />
+        </div>
+
+        {/* Content anchored to bottom */}
+        <div className="relative z-20 w-full pb-0 pt-40">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-10">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex items-center gap-4"
+            >
+              <div className="h-px w-16 bg-primary" />
+              <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+                Berita & Pembaruan
+              </span>
+            </motion.div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <motion.h1
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.15 }}
+              className="font-heading font-black text-white leading-[0.9] tracking-tighter text-[clamp(2.5rem,6vw,6rem)] mb-0"
+            >
+              {t('news.heroTitle')}{' '}
+              <span className="text-primary">{t('news.heroTitleHighlight')}</span>
+            </motion.h1>
+          </div>
+
+          {/* Bottom strip */}
+          <div className="border-t border-white/10 mt-12">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.35 }}
+                className="text-gray-300 text-base leading-relaxed max-w-2xl"
+              >
+                {t('news.heroDesc')}
+              </motion.p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Featured News */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t('news.latestUpdates')}</h2>
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-secondary mb-6">{t('news.corporateNews')}</h3>
-            <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
+      {/* ── FEATURED NEWS — Flat architectural grid ───────────────────────────── */}
+      <section className="bg-gray-50 border-b border-gray-100 py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px w-12 bg-primary" />
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">
+              {t('news.latestUpdates')}
+            </span>
           </div>
+          <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-16">
+            {t('news.corporateNews')}
+          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-gray-200">
             {newsItems.map((item, index) => (
-              <motion.div 
+              <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full border border-gray-100"
+                className="group bg-white flex flex-col h-full border-b border-r border-gray-200 last:border-b-0 [&:nth-last-child(2)]:border-b-0 hover:bg-secondary transition-colors duration-500 overflow-hidden"
               >
-                <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
-                  <img 
-                    src={item.img} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                {/* Image block */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                   />
-                  <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-wider shadow-md">
+                  {/* Category Pill */}
+                  <div className="absolute top-0 right-0 bg-primary text-white px-4 py-2 text-[10px] font-black tracking-widest uppercase">
                     {item.category}
                   </div>
                 </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-4 text-xs text-gray-500 mb-4 font-medium uppercase tracking-wider">
-                    <span className="flex items-center gap-1"><Calendar size={14} /> {item.date}</span>
-                    <span className="flex items-center gap-1"><User size={14} /> {item.author}</span>
+
+                {/* Content Block */}
+                <div className="p-8 lg:p-10 flex flex-col flex-grow">
+                  {/* Meta strip */}
+                  <div className="flex items-center gap-4 text-[10px] font-bold text-gray-400 mb-6 uppercase tracking-[0.15em] border-b border-gray-100 pb-4 group-hover:border-white/10 group-hover:text-gray-400 transition-colors">
+                    <span className="flex items-center gap-1.5 whitespace-nowrap"><Calendar size={12} className="text-primary" /> {item.date}</span>
+                    <div className="w-px h-3 bg-gray-200 group-hover:bg-white/10" />
+                    <span className="flex items-center gap-1.5 whitespace-nowrap"><User size={12} className="text-secondary group-hover:text-gray-300" /> {item.author}</span>
                   </div>
-                  <h4 className="text-xl font-heading font-bold text-secondary mb-3 group-hover:text-primary transition-colors leading-tight">{item.title}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{item.excerpt}</p>
-                  <Link to="#" className="text-primary font-semibold flex items-center gap-2 hover:text-primary-hover transition-colors mt-auto uppercase text-sm tracking-wider">
-                    {t('news.readArticle')} <ArrowRight size={16} />
-                  </Link>
+
+                  <h4 className="text-2xl font-heading font-bold text-secondary mb-4 group-hover:text-white transition-colors leading-[1.2] tracking-tight">
+                    {item.title}
+                  </h4>
+                  <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow group-hover:text-gray-300 transition-colors">
+                    {item.excerpt}
+                  </p>
+                  
+                  <div className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary group-hover:text-primary transition-colors mt-auto">
+                    {t('news.readArticle')} <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -131,25 +182,39 @@ export default function News() {
         </div>
       </section>
 
-      {/* Newsletter Signup */}
-      <section className="py-24 bg-grey">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-heading font-bold text-secondary mb-4">{t('news.subscribeTitle')}</h2>
-          <p className="text-gray-600 mb-8 text-lg">{t('news.subscribeDesc')}</p>
-          <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-2xl mx-auto">
-            <input 
-              type="email" 
-              placeholder={t('news.emailPlaceholder')} 
-              className="flex-1 px-6 py-4 rounded-sm border border-gray-300 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors text-lg"
-              required
-            />
-            <button type="submit" className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 rounded-sm font-bold transition-colors text-lg whitespace-nowrap">
-              {t('news.subscribeBtn')}
-            </button>
-          </form>
-          <p className="text-xs text-gray-500 mt-4">{t('news.subscribeDisclaimer')}</p>
+      {/* ── NEWSLETTER SIGNUP — Flat Geometric ───────────────────────────────── */}
+      <section className="bg-secondary text-white py-0 border-t border-white/10 flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-7xl mx-auto divide-y md:divide-y-0 md:divide-x divide-white/10">
+          
+          <div className="p-16 lg:p-24 flex flex-col justify-center">
+            <h2 className="text-3xl font-heading font-black mb-4 tracking-tight leading-[1.1]">
+              {t('news.subscribeTitle')}
+            </h2>
+            <p className="text-gray-400 leading-relaxed max-w-sm">
+              {t('news.subscribeDesc')}
+            </p>
+          </div>
+
+          <div className="p-16 lg:p-24 flex flex-col justify-center">
+            <form className="flex flex-col gap-4">
+              <input
+                type="email"
+                placeholder={t('news.emailPlaceholder')}
+                className="w-full bg-transparent border-b border-gray-500 px-0 py-4 text-white focus:outline-none focus:border-primary transition-colors text-lg placeholder-gray-500"
+                required
+              />
+              <button type="submit" className="inline-flex items-center justify-between w-full lg:w-max gap-8 bg-primary text-white px-8 py-4 font-bold tracking-wide hover:bg-primary-hover transition-colors mt-4 group">
+                {t('news.subscribeBtn')} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+            </form>
+            <p className="text-xs text-gray-500 mt-6 mt-auto">
+              {t('news.subscribeDisclaimer')}
+            </p>
+          </div>
+          
         </div>
       </section>
+
     </div>
   );
 }
