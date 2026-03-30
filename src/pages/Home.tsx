@@ -8,6 +8,8 @@ import { gulfCategories } from '../data/gulfProducts';
 import TrustSection from '../components/TrustSection';
 import TechnicalValue from '../components/TechnicalValue';
 import DistributorCTA from '../components/DistributorCTA';
+import GulfHeritage from '../components/GulfHeritage';
+import ProudPartnerships from '../components/ProudPartnerships';
 
 // ─── Stats bar data ───────────────────────────────────────────────────────────
 const STATS = [
@@ -274,6 +276,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── GULF HERITAGE TIMELINE ───────────────────────────────────────────── */}
+      <GulfHeritage />
+
+      {/* ── PROUD PARTNERSHIPS ───────────────────────────────────────────────── */}
+      <ProudPartnerships />
 
       {/* ── WHY BEN — Flat monolith cards ────────────────────────────────────── */}
       <section className="bg-gray-50 py-24 border-y border-gray-100">

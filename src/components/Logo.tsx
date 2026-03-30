@@ -1,26 +1,22 @@
 export function BenLogo({ className = "h-10", light = false }: { className?: string, light?: boolean }) {
   return (
-    <svg viewBox="0 0 360 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <mask id="ben-mask">
-          <rect x="0" y="0" width="180" height="100" fill="white" />
-          <rect x="0" y="38" width="180" height="4" fill="black" />
-          <rect x="0" y="58" width="180" height="4" fill="black" />
-        </mask>
-      </defs>
-      
-      {/* BEN text */}
-      <text x="10" y="80" fill="#F26522" fontStyle="italic" fontWeight="900" fontFamily="Arial, sans-serif" fontSize="80" mask="url(#ben-mask)">
-        BEN
-      </text>
-      
-      {/* BERSAMA ENERGI NUSAPERSADA */}
-      <g fill={light ? "#FFFFFF" : "#333333"} fontFamily="Arial, sans-serif" fontSize="18" fontWeight="bold" className="transition-colors duration-300">
-        <text x="185" y="38">BERSAMA</text>
-        <text x="185" y="60">ENERGI</text>
-        <text x="185" y="82">NUSAPERSADA</text>
-      </g>
-    </svg>
+    <div className={`flex items-center gap-0.5 ${className}`}>
+      <div className="h-full flex items-center overflow-visible">
+        <img 
+          src="/ben_exact.png" 
+          alt="PT. Bersama Energi Nusapersada" 
+          className="h-full w-auto object-contain scale-[1.5] transition-transform origin-center"
+        />
+      </div>
+      <div 
+        className={`flex flex-col justify-center leading-[1.0] font-bold text-[10px] md:text-[12px] tracking-tight transition-colors duration-300 ${light ? 'text-white' : 'text-[#333333]'}`}
+        style={{ fontFamily: 'Arial, sans-serif' }}
+      >
+        <span>BERSAMA</span>
+        <span>ENERGI</span>
+        <span>NUSAPERSADA</span>
+      </div>
+    </div>
   );
 }
 
