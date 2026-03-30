@@ -36,7 +36,7 @@ export default function Contact() {
               <div className="flex items-center gap-4 mb-4">
                 <div className="h-px w-12 bg-[#ff6600]" />
                 <span className="text-sm font-bold tracking-[0.2em] uppercase text-[#ff6600]">
-                  Layanan Bantuan BEN
+                  {t('contact.getInTouch')}
                 </span>
               </div>
               <h1 className="font-heading font-black text-white leading-[0.9] tracking-tighter text-[clamp(3rem,6.5vw,5.5rem)] mb-6">

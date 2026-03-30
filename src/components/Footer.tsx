@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { BenLogo } from './Logo';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -20,17 +20,11 @@ export default function Footer() {
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               {t('footer.desc')}
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
-                <Facebook size={16} />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
-                <Twitter size={16} />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+            <div className="flex space-x-3 mt-2">
+              <a href="https://www.linkedin.com/company/gulfoilindonesia/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff6600] transition-colors" aria-label="LinkedIn">
                 <Linkedin size={16} />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.instagram.com/gulfoil.id" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#ff6600] transition-colors" aria-label="Instagram">
                 <Instagram size={16} />
               </a>
             </div>
