@@ -21,62 +21,58 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
       {/* Main row — clickable header */}
       <div
         onClick={() => setOpen(!open)}
-        className="grid grid-cols-[1fr_auto] lg:grid-cols-[80px_1fr_250px_150px_80px] items-center gap-6 px-4 lg:px-8 py-7 cursor-pointer hover:bg-gray-50 transition-colors"
+        className="flex items-center gap-4 lg:gap-6 px-4 lg:px-8 py-5 cursor-pointer hover:bg-gray-50 transition-colors"
       >
         {/* Row number */}
-        <span className="hidden lg:block font-heading font-black text-3xl text-gray-100 group-hover:text-[#002b5b]/20 transition-colors tracking-tighter select-none">
+        <span className="hidden lg:block font-heading font-black text-2xl text-gray-200 group-hover:text-[#002b5b]/20 transition-colors tracking-tighter select-none w-10 flex-shrink-0 text-center">
           {String(index + 1).padStart(2, '0')}
         </span>
 
-        {/* Name + brand */}
-        <div className="flex items-center gap-5 min-w-0">
-          {product.image && (
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-16 h-16 rounded-md object-contain bg-gray-50 p-1 flex-shrink-0 hidden sm:block shadow-sm"
-            />
-          )}
-          <div className="min-w-0">
-            <div className="flex items-center gap-3 mb-1.5 flex-wrap">
-              <img
-                src={product.partnerBrand === 'Gulf' ? '/gulf.png' : '/shantui-logo.jpeg'}
-                alt={product.partnerBrand}
-                className="h-6 object-contain"
-              />
-              {product.subcategoryId && (
-                <span className="text-[10px] font-black tracking-[0.15em] uppercase text-[#ff6600] border border-[#ff6600]/30 px-2.5 py-0.5 rounded-sm bg-[#ff6600]/5">
-                  {product.subcategoryId.replace(/-/g, ' ')}
-                </span>
-              )}
-            </div>
-            <h3 className="font-heading font-bold text-[#002b5b] text-lg md:text-xl tracking-tight leading-tight truncate group-hover:text-[#ff6600] transition-colors">
+        {/* Thumbnail */}
+        {product.image && (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-12 h-12 rounded-lg object-contain bg-gray-50 p-1 flex-shrink-0 hidden sm:block"
+          />
+        )}
+
+        {/* Name + subcategory — takes remaining space */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-0.5">
+            <h3 className="font-heading font-bold text-[#002b5b] text-base md:text-lg tracking-tight leading-snug group-hover:text-[#ff6600] transition-colors whitespace-nowrap">
               {product.name}
             </h3>
+            {product.subcategoryId && (
+              <span className="text-[9px] font-bold tracking-[0.1em] uppercase text-[#ff6600]/70 border border-[#ff6600]/20 px-2 py-0.5 rounded bg-[#ff6600]/5 flex-shrink-0 hidden md:inline-block">
+                {product.subcategoryId.replace(/-/g, ' ')}
+              </span>
+            )}
           </div>
+          <p className="text-xs text-gray-400 leading-snug line-clamp-1 hidden md:block max-w-md">{product.summary}</p>
         </div>
 
         {/* Viscosity grades */}
-        <div className="hidden lg:flex flex-wrap gap-1.5">
+        <div className="hidden lg:flex flex-wrap gap-1 flex-shrink-0 max-w-[200px] justify-end">
           {product.viscosityGrades?.slice(0, 3).map((g: string) => (
-            <span key={g} className="text-xs font-bold border border-gray-200 px-2 py-1 text-gray-600">
+            <span key={g} className="text-[11px] font-semibold border border-gray-200 px-2 py-0.5 text-gray-500 rounded">
               {g}
             </span>
           ))}
           {(product.viscosityGrades?.length ?? 0) > 3 && (
-            <span className="text-xs font-bold border border-gray-200 px-2 py-1 text-gray-400">
+            <span className="text-[11px] font-semibold border border-gray-200 px-2 py-0.5 text-gray-300 rounded">
               +{product.viscosityGrades.length - 3}
             </span>
           )}
         </div>
 
         {/* Packs */}
-        <div className="hidden lg:block text-xs text-gray-400 font-medium">
+        <div className="hidden lg:block text-[11px] text-gray-400 font-medium flex-shrink-0 w-[100px] text-right">
           {product.availablePacks?.join(' · ') || '—'}
         </div>
 
         {/* Expand / PDS */}
-        <div className="flex items-center gap-2 justify-end">
+        <div className="flex items-center gap-2 justify-end flex-shrink-0">
           {product.pdsUrl && (
             <a
               href={product.pdsUrl}
@@ -563,12 +559,13 @@ export default function Products() {
             {/* LIST VIEW */}
             {viewMode === 'list' && (
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <div className="hidden lg:grid grid-cols-[80px_1fr_250px_150px_80px] gap-6 px-8 py-4 border-b border-gray-100 bg-gray-50/50">
-                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400">#</div>
-                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400">Produk</div>
-                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400">Viskositas</div>
-                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400">Kemasan</div>
-                  <div />
+                <div className="hidden lg:flex items-center gap-6 px-8 py-3 border-b border-gray-100 bg-gray-50/50">
+                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 w-10 flex-shrink-0 text-center">#</div>
+                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 w-12 flex-shrink-0"></div>
+                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 flex-1">Produk</div>
+                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 max-w-[200px] w-[200px] text-right">Viskositas</div>
+                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 w-[100px] text-right">Kemasan</div>
+                  <div className="w-[52px] flex-shrink-0" />
                 </div>
 
                 <AnimatePresence mode="popLayout">

@@ -21,7 +21,7 @@ const PARTNERSHIPS = [
     subtitle: 'MotoGP Partnership',
     description:
       'Gulf dengan bangga bermitra dengan Trackhouse Racing dalam perjalanan mereka ke dunia MotoGP. Berlandaskan ambisi dan inovasi, Trackhouse sedang mendefinisikan ulang dunia balap modern dengan pendekatan yang berani dan kreatif.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+    image: 'https://assets.gulfoilltd.com/indonesia/files/2025-03/trackhouse_homepage_-_834x880.jpg?VersionId=YADtGuXs7NyFWPaQRJv5ROcnwK7aCJQU',
     logo: '/gulf.png',
     url: 'https://indonesia.gulfoilltd.com/partnerships/motogp',
     category: 'MotoGP',
@@ -107,8 +107,8 @@ export default function ProudPartnerships() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Side: Featured Detail (Framer Motion Staggered) */}
-          <div className="lg:col-span-12 xl:col-span-7">
-            <div className="relative rounded-3xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,43,91,0.15)] aspect-[16/10] group">
+          <div className="lg:col-span-12 xl:col-span-8">
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,43,91,0.2)] aspect-[16/11] group bg-secondary">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={active.id}
@@ -123,14 +123,14 @@ export default function ProudPartnerships() {
                     alt={active.name}
                     className="w-full h-full object-cover transition-transform duration-[10s] group-hover:scale-110"
                   />
-                  {/* Improved Overlay: Darker and more coverage */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#002b5b] via-[#002b5b]/60 to-transparent opacity-90" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#002b5b]/50 to-transparent" />
+                  {/* Improved Overlay: Softer to show more of the larger image */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#002b5b] via-[#002b5b]/40 to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#002b5b]/40 via-transparent to-transparent opacity-60" />
                 </motion.div>
               </AnimatePresence>
 
-              {/* Float Overlay Info - Using glassmorphism for better readability */}
-              <div className="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 md:right-10 overflow-hidden rounded-2xl">
+              {/* Float Overlay Info - More compact and cleaner */}
+              <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:max-w-xl overflow-hidden rounded-2xl">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={active.id + '-content'}
@@ -138,25 +138,25 @@ export default function ProudPartnerships() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="bg-[#002b5b]/20 backdrop-blur-xl border border-white/10 p-6 md:p-10"
+                    className="bg-white/10 backdrop-blur-md border border-white/20 p-6 md:p-8"
                   >
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="h-8 px-3 bg-white/20 rounded flex items-center border border-white/10">
+                      <div className="h-7 px-3 bg-[#ff6600] rounded-sm flex items-center shadow-lg">
                          <span className="text-white text-[9px] font-black uppercase tracking-widest">{active.category}</span>
                       </div>
-                      <img src={active.logo} alt="Gulf" className="h-6 brightness-0 invert opacity-80" />
+                      <img src={active.logo} alt="Gulf" className="h-5 brightness-0 invert opacity-90" />
                     </div>
-                    <h3 className="text-2xl md:text-4xl font-heading font-black text-white tracking-tight mb-3 drop-shadow-md">
+                    <h3 className="text-2xl md:text-3xl font-heading font-black text-white tracking-tight mb-3">
                       {active.name}
                     </h3>
-                    <p className="text-white/90 text-sm md:text-base max-w-xl mb-6 leading-relaxed font-medium drop-shadow-sm">
+                    <p className="text-white/80 text-xs md:text-sm max-w-lg mb-6 leading-relaxed font-medium">
                       {active.description}
                     </p>
                     <a
                       href={active.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-4 bg-[#ff6600] text-white px-6 py-3 rounded-lg font-black text-[10px] uppercase tracking-[0.2em] hover:bg-orange-600 transition-all shadow-lg active:scale-95 group"
+                      className="inline-flex items-center gap-3 bg-white text-[#002b5b] px-5 py-2.5 rounded-sm font-black text-[9px] uppercase tracking-[0.2em] hover:bg-[#ff6600] hover:text-white transition-all shadow-xl active:scale-95 group"
                     >
                       Pelajari Kolaborasi Ini 
                       <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -168,7 +168,7 @@ export default function ProudPartnerships() {
           </div>
 
           {/* Right Side: Tab Selection (Liquid Sidebar) */}
-          <div className="lg:col-span-12 xl:col-span-5 space-y-4">
+          <div className="lg:col-span-12 xl:col-span-4 space-y-3">
             {PARTNERSHIPS.map((partner, idx) => (
               <button
                 key={partner.id}

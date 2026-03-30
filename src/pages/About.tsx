@@ -68,6 +68,9 @@ export default function About() {
                 className="text-gray-300 text-base leading-relaxed max-w-2xl"
               >
                 {t('about.heroDesc')}
+                <span className="block mt-6 text-xs font-bold tracking-[0.3em] uppercase text-primary">
+                  towards a cleaner future
+                </span>
               </motion.p>
             </div>
           </div>

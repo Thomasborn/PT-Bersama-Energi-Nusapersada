@@ -79,6 +79,9 @@ export default function Home() {
                 className="text-gray-300 text-base leading-relaxed col-span-1 lg:col-span-2 max-w-2xl"
               >
                 PT. Bersama Energi Nusapersada (BEN) menghadirkan pelumas Gulf Oil dan solusi alat berat Shantui untuk kebutuhan industrial, komersial, dan operasional di seluruh Indonesia.
+                <span className="block mt-4 text-xs font-bold tracking-[0.3em] uppercase text-primary/80">
+                  towards a cleaner future
+                </span>
               </motion.p>
 
               <motion.div
