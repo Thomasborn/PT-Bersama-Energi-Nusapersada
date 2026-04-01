@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import { GoogleGenAI } from '@google/genai';
 import Markdown from 'react-markdown';
 import { useLanguage } from '../context/LanguageContext';
-import { BenIcon } from './Logo';
 
 interface Message {
   role: 'user' | 'model';
@@ -75,7 +74,9 @@ export default function AIChat() {
         className={`fixed bottom-6 right-6 p-4 bg-primary text-white rounded-full shadow-lg hover:bg-primary-hover hover:scale-110 transition-all z-50 ${isOpen ? 'scale-0 opacity-0' : 'scale-100 opacity-100'}`}
         aria-label={t('chat.open')}
       >
-        <BenIcon className="w-8 h-8" color="white" />
+        <div className="w-8 h-8 flex items-center justify-center">
+          <img src="/ben_exact.png" alt="BEN" className="w-full h-full object-contain scale-150 brightness-0 invert" />
+        </div>
       </button>
 
       {/* Chat Window */}
@@ -91,8 +92,8 @@ export default function AIChat() {
             {/* Header */}
             <div className="bg-secondary text-white p-4 flex justify-between items-center">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center border-2 border-white/20">
-                  <BenIcon className="w-5 h-5 ml-0.5" color="white" />
+                <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center border-2 border-white/20 overflow-hidden p-1">
+                  <img src="/ben_exact.png" alt="BEN" className="w-full h-full object-contain scale-125" />
                 </div>
                 <div>
                   <h3 className="font-heading font-bold">{t('chat.title')}</h3>
@@ -115,8 +116,8 @@ export default function AIChat() {
                   key={idx} 
                   className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'self-end flex-row-reverse' : 'self-start'}`}
                 >
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'user' ? 'bg-gray-200 text-gray-700' : 'bg-primary text-white border border-primary-hover'}`}>
-                    {msg.role === 'user' ? <User size={16} /> : <BenIcon className="w-4 h-4 ml-px" color="white" />}
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${msg.role === 'user' ? 'bg-gray-200 text-gray-700' : 'bg-white border border-gray-200 overflow-hidden p-0.5'}`}>
+                    {msg.role === 'user' ? <User size={16} /> : <img src="/ben_exact.png" alt="BEN" className="w-full h-full object-contain scale-125" />}
                   </div>
                   <div 
                     className={`p-3 rounded-2xl text-sm ${
@@ -138,8 +139,8 @@ export default function AIChat() {
               
               {isLoading && (
                 <div className="flex gap-3 max-w-[85%] self-start">
-                  <div className="w-8 h-8 rounded-full bg-primary text-white border border-primary-hover flex items-center justify-center flex-shrink-0">
-                    <BenIcon className="w-4 h-4 ml-px" color="white" />
+                  <div className="w-8 h-8 rounded-full bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 overflow-hidden p-0.5">
+                    <img src="/ben_exact.png" alt="BEN" className="w-full h-full object-contain scale-125" />
                   </div>
                   <div className="p-4 bg-white rounded-2xl rounded-tl-sm shadow-sm border border-gray-100 flex items-center gap-1">
                     <div className="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
