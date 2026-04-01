@@ -31,7 +31,7 @@ export const gulfCategories: ProductCategory[] = [
     id: 'motor',
     name: 'Motor',
     description: 'Oli mesin andalan untuk performa tinggi kendaraan roda dua Anda, teruji dalam kondisi lintasan maupun tantangan berkendara sehari-hari.',
-    imageUrl: 'https://indonesia.gulfoilltd.com/wp-content/uploads/2021/04/Banner-A.jpg',
+    imageUrl: 'https://cdn.motor1.com/images/mgl/G3e37A/s1/gulf-oil-trackhouse-aprilia-motogp-livery---thailand---2025.webp',
     brand: 'Gulf',
     slug: 'motor',
     subcategories: [
@@ -42,7 +42,7 @@ export const gulfCategories: ProductCategory[] = [
     id: 'kendaraan-komersial',
     name: 'Kendaraan Komersial',
     description: 'Pelumas tangguh yang dirancang khusus untuk memaksimalkan efisiensi armada, mengurangi waktu henti, dan menjaga keandalan kendaraan komersial.',
-    imageUrl: 'https://indonesia.gulfoilltd.com/wp-content/uploads/2021/04/Banner-E.jpg',
+    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdv2vEBM7tGKFFnXhZmULxm1YvA1PwCBigbQ&s',
     brand: 'Gulf',
     slug: 'kendaraan-komersial',
     subcategories: [
@@ -111,7 +111,7 @@ export const gulfProducts: ProductSpec[] = [
     id: 'gulf-formula',
     name: 'Gulf Formula',
     slug: 'gulf-formula',
-    image: 'https://assets.gulfoilltd.com/indonesia/files/4.%20CAR_EO_1030x785.webp',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdv2vEBM7tGKFFnXhZmULxm1YvA1PwCBigbQ&s',
     categoryId: 'mobil',
     subcategoryId: 'oli-mesin',
     summary: 'Advanced Full Synthetic Engine Oil dirancang untuk memberikan performa maksimal pada mesin mobil bensin dan diesel berkinerja tinggi.',

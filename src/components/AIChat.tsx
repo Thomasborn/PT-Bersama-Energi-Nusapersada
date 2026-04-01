@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
-import { X, Send, User } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { X, Send, User, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { GoogleGenAI } from '@google/genai';
 import Markdown from 'react-markdown';
 import { useLanguage } from '../context/LanguageContext';
+import { generateResponse } from '../data/aiKnowledgeBase';
 
 interface Message {
   role: 'user' | 'model';
@@ -16,29 +17,17 @@ export default function AIChat() {
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const chatRef = useRef<any>(null);
-  const { t } = useLanguage();
+  const navigate = useNavigate();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
-    if (isOpen && !chatRef.current) {
-      try {
-        const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-        chatRef.current = ai.chats.create({
-          model: 'gemini-3-flash-preview',
-          config: {
-            systemInstruction: "You are a helpful customer support assistant for PT Bersama Energi Nusapersada (BEN). You answer questions about BEN's products (Gulf Oil lubricants, Shantui heavy equipment), services, and company information. Keep answers concise, professional, and helpful. If you don't know something, suggest they contact support via the Contact page.",
-          }
-        });
-        
-        // Add initial greeting
-        setMessages([
-          { role: 'model', text: t('chat.greeting') }
-        ]);
-      } catch (error) {
-        console.error("Failed to initialize AI chat:", error);
-      }
+    if (isOpen) {
+      // Add initial greeting
+      setMessages([
+        { role: 'model', text: t('chat.greeting') }
+      ]);
     }
-  }, [isOpen, t]);
+  }, [isOpen, t, language]);
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -48,7 +37,7 @@ export default function AIChat() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || isLoading || !chatRef.current) return;
+    if (!input.trim() || isLoading) return;
 
     const userMsg = input.trim();
     setInput('');
@@ -56,8 +45,13 @@ export default function AIChat() {
     setIsLoading(true);
 
     try {
-      const response = await chatRef.current.sendMessage({ message: userMsg });
-      setMessages(prev => [...prev, { role: 'model', text: response.text }]);
+      // Simulate a small delay for natural UI feel
+      await new Promise(resolve => setTimeout(resolve, 300));
+      
+      // Get response from local knowledge base
+      const aiResponse = generateResponse(userMsg, language);
+      
+      setMessages(prev => [...prev, { role: 'model', text: aiResponse }]);
     } catch (error) {
       console.error("Chat error:", error);
       setMessages(prev => [...prev, { role: 'model', text: t('chat.error') }]);
@@ -129,8 +123,47 @@ export default function AIChat() {
                     {msg.role === 'user' ? (
                       <p className="whitespace-pre-wrap">{msg.text}</p>
                     ) : (
-                      <div className="markdown-body">
-                        <Markdown>{msg.text}</Markdown>
+                      <div className="markdown-body text-sm">
+                        <Markdown
+                          components={{
+                            a: ({ node, ...props }) => {
+                              const href = props.href as string;
+                              const isInternalLink = href?.startsWith('/');
+                              
+                              if (isInternalLink) {
+                                return (
+                                  <button
+                                    onClick={() => {
+                                      navigate(href);
+                                      setIsOpen(false);
+                                    }}
+                                    className="inline-flex items-center gap-1 text-primary hover:text-primary-hover underline cursor-pointer font-medium"
+                                  >
+                                    {props.children}
+                                    <ExternalLink size={12} className="inline" />
+                                  </button>
+                                );
+                              }
+                              
+                              return (
+                                <a
+                                  {...props}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1 text-primary hover:text-primary-hover underline"
+                                />
+                              );
+                            },
+                            p: ({ node, ...props }) => <p className="mb-2" {...props} />,
+                            ul: ({ node, ...props }) => <ul className="list-disc list-inside mb-2" {...props} />,
+                            ol: ({ node, ...props }) => <ol className="list-decimal list-inside mb-2" {...props} />,
+                            li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+                            strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
+                            em: ({ node, ...props }) => <em className="italic" {...props} />,
+                          }}
+                        >
+                          {msg.text}
+                        </Markdown>
                       </div>
                     )}
                   </div>
