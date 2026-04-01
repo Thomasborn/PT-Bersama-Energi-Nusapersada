@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 // ─── Flat product row / expandable ───────────────────────────────────────────
 const ProductRow = ({ product, index }: { product: any; index: number }) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   return (
     <motion.div
@@ -178,7 +178,7 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
 
 // ─── Card-style product display (dev-branch layout) ──────────────────────────
 const OfficialProductCard = ({ product, index }: { product: any; index: number }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   return (
     <motion.div
@@ -340,7 +340,7 @@ export default function Products() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [activeSubcat, setActiveSubcat] = useState<string>('all');
   const [query, setQuery] = useState('');
-  const [viewMode, setViewMode] = useState<'list' | 'grid'>('list');
+  const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
 
   const activeCategory_ = gulfCategories.find((c) => c.id === activeCategory);
 
