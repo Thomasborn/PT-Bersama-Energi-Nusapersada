@@ -254,7 +254,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-white/10">
             {[
-              { name: t('home.mining'), img: 'https://images.unsplash.com/photo-1578319439584-104c94d37305?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+              { name: t('home.mining'), img: 'https://protect.cermati.com/wp-content/uploads/2024/01/Shutterstock_2139159003-634x540.jpg' },
               { name: t('home.construction'), img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
               { name: t('home.transportation'), img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
               { name: t('home.manufacturing'), img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },

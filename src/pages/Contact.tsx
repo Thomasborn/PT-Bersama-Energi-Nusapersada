@@ -13,7 +13,7 @@ export default function Contact() {
         {/* Background */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
+          style={{ backgroundImage: 'url("https://coworker.imgix.net/photos/indonesia/tangerang/epica-lifestyle-offices/4.jpg?w=800&h=0&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle")' }}
         >
           <div className="absolute inset-0 bg-secondary/80" />
         </div>
