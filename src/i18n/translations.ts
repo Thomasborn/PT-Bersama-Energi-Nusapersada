@@ -47,7 +47,7 @@ export const translations = {
     about: {
       subtitle: 'Tentang Kami',
       title: 'Tentang PT Bersama Energi Nusapersada',
-      desc1: 'PT Bersama Energi Nusapersada (BEN) adalah perusahaan yang bergerak di bidang perdagangan dan distribusi, dengan kantor pusat di Kota Tangerang, Banten. Seiring berjalannya waktu, perusahaan terus berkembang dan memperluas jangkauan layanannya untuk memenuhi kebutuhan pelanggan di berbagai daerah Indonesia.',
+      desc1: 'PT Bersama Energi Nusapersada (BEN) (berdiri sejak tahun 2014) adalah perusahaan yang bergerak di bidang perdagangan dan distribusi, dengan kantor pusat di Kota Tangerang, Banten. Seiring berjalannya waktu, perusahaan terus berkembang dan memperluas jangkauan layanannya untuk memenuhi kebutuhan pelanggan di berbagai daerah Indonesia.',
       desc2: 'Berawal dari bisnis distribusi, perusahaan terus berkembang dengan membuka warehouse di Kalimantan Selatan dan berfokus pada penyediaan oli serta grease berkualitas untuk berbagai kebutuhan industri.',
       desc3: 'Didukung tim yang kompeten dan jaringan distribusi yang terus berkembang, PT Bersama Energi Nusapersada berfokus menyediakan solusi yang efisien, ramah lingkungan, dan berkelanjutan dalam bidang energi dan sumber daya, sekaligus menjaga standar keselamatan dan kepatuhan regulasi nasional.',
       readFullStory: 'Baca Selengkapnya',
