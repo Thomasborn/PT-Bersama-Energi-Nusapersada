@@ -337,15 +337,26 @@ const OfficialProductCard = ({ product, index }: { product: any; index: number }
 
 // ─── Main Products Page ───────────────────────────────────────────────────────
 export default function Products() {
+  const [selectedBrand, setSelectedBrand] = useState<'Gulf' | 'Shantui' | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [activeSubcat, setActiveSubcat] = useState<string>('all');
   const [query, setQuery] = useState('');
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
 
+  // Filter categories based on selected brand
+  const brandCategories = useMemo(() => {
+    if (!selectedBrand) return [];
+    const filtered = gulfCategories.filter(c => c.brand === selectedBrand);
+    return filtered;
+  }, [selectedBrand]);
+
   const activeCategory_ = gulfCategories.find((c) => c.id === activeCategory);
 
   const displayed = useMemo(() => {
     let list = gulfProducts;
+    if (selectedBrand) {
+      list = list.filter(p => p.partnerBrand === selectedBrand);
+    }
     if (activeCategory !== 'all') {
       list = list.filter((p) => p.categoryId === activeCategory);
     }
@@ -363,282 +374,326 @@ export default function Products() {
       );
     }
     return list;
-  }, [activeCategory, activeSubcat, query]);
+  }, [selectedBrand, activeCategory, activeSubcat, query]);
+
+  // Brand Chooser Component
+  const BrandSelection = () => (
+    <div className="min-h-[90vh] bg-white flex flex-col items-center justify-center px-6 lg:px-12 py-24">
+      <div className="max-w-4xl w-full text-center mb-24">
+        <div className="flex items-center justify-center gap-6 mb-12">
+          <div className="h-px w-12 bg-gray-100" />
+          <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">Pilih Principal</span>
+          <div className="h-px w-12 bg-gray-100" />
+        </div>
+        <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] tracking-tighter">
+          Solusi Terkurasi dari <br />Mitra Strategis Kami.
+        </h2>
+      </div>
+
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+        {/* Brand: Gulf */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          onClick={() => {
+            setSelectedBrand('Gulf');
+            setActiveCategory('all');
+          }}
+          className="group cursor-pointer"
+        >
+          <div className="relative aspect-[16/10] overflow-hidden mb-10 grayscale hover:grayscale-0 transition-all duration-1000 border border-gray-100 bg-gray-50">
+            <img 
+              src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
+            <div className="absolute inset-0 flex items-center justify-center p-12">
+              <img src="/gulf.png" alt="Gulf" className="max-h-24 object-contain shadow-2xl transition-transform duration-700 group-hover:scale-110" />
+            </div>
+          </div>
+          <div className="flex items-center gap-4 mb-4">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Pelumas Premium</span>
+            <div className="h-px w-8 bg-gray-100" />
+          </div>
+          <h3 className="font-heading font-medium text-secondary text-3xl mb-4 flex items-center justify-between">
+            Gulf Oil
+            <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform text-gray-200" />
+          </h3>
+          <p className="text-gray-400 text-sm leading-relaxed max-w-sm">Jelajahi rangkaian pelumas otomotif, industri, dan maritim kelas dunia.</p>
+        </motion.div>
+
+        {/* Brand: Shantui */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          onClick={() => {
+            setSelectedBrand('Shantui');
+            setActiveCategory('shantui');
+          }}
+          className="group cursor-pointer"
+        >
+          <div className="relative aspect-[16/10] overflow-hidden mb-10 grayscale hover:grayscale-0 transition-all duration-1000 border border-gray-100 bg-gray-50">
+            <img 
+              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
+            <div className="absolute inset-0 flex items-center justify-center p-12">
+              <img src="/shantui-logo.jpeg" alt="Shantui" className="max-h-16 object-contain bg-white/90 p-4 shadow-2xl transition-transform duration-700 group-hover:scale-110" />
+            </div>
+          </div>
+          <div className="flex items-center gap-4 mb-4">
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Heavy Equipment</span>
+            <div className="h-px w-8 bg-gray-100" />
+          </div>
+          <h3 className="font-heading font-medium text-secondary text-3xl mb-4 flex items-center justify-between">
+            Shantui Machinery
+            <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform text-gray-200" />
+          </h3>
+          <p className="text-gray-400 text-sm leading-relaxed max-w-sm">Unit alat berat berkualitas global untuk pertambangan, konstruksi, dan infrastruktur.</p>
+        </motion.div>
+      </div>
+    </div>
+  );
+
+  if (!selectedBrand) {
+    return <BrandSelection />;
+  }
 
   return (
     <div className="w-full overflow-x-hidden">
-
-      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[60vh] flex flex-col justify-end bg-secondary overflow-hidden">
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={selectedBrand}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <div className="absolute inset-0 bg-secondary/80" />
-        </div>
-
-        <div className="relative z-20 w-full pb-0 pt-40">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
-            <div className="flex items-center gap-4">
-              <div className="h-px w-16 bg-primary" />
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
-                Katalog Produk Gulf Oil & Shantui
-              </span>
+          {/* ── HERO ─────────────────────────────────────────────────────────────── */}
+          <section className="relative min-h-[50vh] flex flex-col justify-end bg-secondary overflow-hidden">
+            <div
+              className="absolute inset-0 z-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${selectedBrand === 'Gulf' ? 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' : 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})` }}
+            >
+              <div className="absolute inset-0 bg-secondary/85 backdrop-blur-[2px]" />
             </div>
-          </div>
 
-          <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <h1 className="font-heading font-black text-white leading-[0.9] tracking-tighter text-[clamp(3rem,7vw,6rem)] mb-0">
-              Produk &<br />
-              <span className="text-primary">Solusi Teknis</span>
-            </h1>
-          </div>
+            <div className="relative z-20 w-full pb-0 pt-40">
+              <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="h-px w-16 bg-primary" />
+                    <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
+                      Katalog {selectedBrand}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => setSelectedBrand(null)}
+                    className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50 hover:text-primary transition-colors flex items-center gap-3"
+                  >
+                    <span>/ Ganti Brand</span>
+                    <ArrowRight size={12} className="rotate-180" />
+                  </button>
+                </div>
+              </div>
 
-          <div className="border-t border-white/10 mt-12">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
-              <p className="text-gray-300 text-sm leading-relaxed max-w-xl">
-                Rangkaian produk Gulf Oil mencakup pelumas otomotif, komersial, industri, dan alat berat — semuanya tersedia melalui PT. Bersama Energi Nusapersada.
-              </p>
-              <a
-                href="https://indonesia.gulfoilltd.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-primary text-primary px-5 py-2.5 text-xs font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-colors flex-shrink-0"
-              >
-                <ExternalLink size={12} /> Gulf Oil Indonesia
-              </a>
+              <div className="max-w-7xl mx-auto px-6 lg:px-12">
+                <h1 className="font-heading font-medium text-white leading-[1] tracking-tighter text-[clamp(2.5rem,6vw,5rem)] mb-0">
+                  {selectedBrand === 'Gulf' ? 'Pelumas Global' : 'Alat Berat'}
+                  <br />
+                  <span className="text-primary italic font-serif">Tech Solutions</span>
+                </h1>
+              </div>
+
+              <div className="border-t border-white/10 mt-12 bg-black/20">
+                <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
+                  <p className="text-gray-300 text-sm leading-relaxed max-w-xl">
+                    {selectedBrand === 'Gulf' 
+                      ? 'Rangkaian lengkap produk pelumas Gulf Oil untuk performa maksimal operasional bisnis Anda.' 
+                      : 'Unit alat berat Shantui dengan teknologi terkini untuk menunjang produktivitas di berbagai sektor industri.'}
+                  </p>
+                  <a
+                    href={selectedBrand === 'Gulf' ? 'https://indonesia.gulfoilltd.com/' : 'https://www.shantui-global.com/'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 border border-primary/30 text-primary px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all flex-shrink-0"
+                  >
+                    <ExternalLink size={12} /> Official Site
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Official Principal Highlight Strip */}
-      <div className="bg-[#002b5b] py-3 text-center border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <span className="text-white text-sm font-medium tracking-wide">Jelajahi portofolio global dan teknologi pelumas terkini dari Principal Kami:</span>
-          <a 
-            href="https://indonesia.gulfoilltd.com/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center gap-2 bg-[#ff6600] hover:bg-orange-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-sm shadow-sm transition-colors"
-          >
-            Situs Web Resmi Gulf <ExternalLink size={14} />
-          </a>
-        </div>
-      </div>
-      
-      {/* Corporate Tab Navigation */}
-      <div className="sticky top-[56px] md:top-[64px] z-40 bg-white shadow-sm ring-1 ring-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="flex overflow-x-auto no-scrollbar gap-8 lg:gap-12">
-             {gulfCategories.map(cat => (
-               <button
-                 key={cat.id}
-                 onClick={() => {
-                   setActiveCategory(cat.id);
-                   setActiveSubcat('all');
-                   setQuery('');
-                 }}
-                 className={`py-5 text-sm tracking-widest uppercase whitespace-nowrap border-b-[3px] transition-all duration-200 relative ${
-                   activeCategory === cat.id
-                     ? 'text-[#002b5b] font-black border-[#ff6600]'
-                     : 'text-[#002b5b] font-semibold border-transparent hover:border-[#002b5b] hover:text-[#002b5b] hover:font-black'
-                 }`}
-               >
-                 {cat.name}
-               </button>
-             ))}
-           </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start relative pb-10">
-          
-          {/* Subcategory Sidebar Filters - Crisp Corporate Style */}
-          <div className="w-full lg:w-1/4 lg:sticky lg:top-40 overflow-hidden">
-            <h3 className="text-xl font-bold text-[#002b5b] mb-6 flex items-center gap-2">
-              <Package2 size={24} className="text-[#ff6600]" /> 
-              Saring Kategori
-            </h3>
-
-            {activeCategory_?.subcategories && activeCategory_.subcategories.length > 0 ? (
-              <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 no-scrollbar">
+          {/* Tab Navigation - Brand Specific */}
+          <div className="sticky top-[56px] md:top-[64px] z-40 bg-white border-b border-gray-100">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex overflow-x-auto no-scrollbar gap-8 lg:gap-12">
                 <button
-                  onClick={() => setActiveSubcat('all')}
-                  className={`flex-shrink-0 text-left px-5 py-3 rounded-md text-[13px] font-bold uppercase tracking-wider transition-all duration-300 border ${
-                    activeSubcat === 'all'
-                      ? 'bg-[#002b5b] text-white border-[#002b5b] shadow-md'
-                      : 'bg-white text-gray-600 border-gray-200 hover:border-[#ff6600] hover:text-[#002b5b]'
+                  onClick={() => {
+                    setActiveCategory('all');
+                    setActiveSubcat('all');
+                  }}
+                  className={`py-5 text-xs tracking-[0.2em] uppercase whitespace-nowrap border-b-2 transition-all ${
+                    activeCategory === 'all'
+                      ? 'text-secondary font-bold border-primary'
+                      : 'text-gray-400 font-medium border-transparent hover:text-secondary'
                   }`}
                 >
-                  Lihat Semua
+                  Semua Kategori
                 </button>
-                {activeCategory_.subcategories.map(sub => (
+                {brandCategories.map(cat => (
                   <button
-                    key={sub.id}
-                    onClick={() => setActiveSubcat(sub.id)}
-                    className={`flex-shrink-0 text-left px-5 py-3 rounded-md text-[13px] font-bold uppercase tracking-wider transition-all duration-300 border ${
-                      activeSubcat === sub.id
-                        ? 'bg-[#002b5b] text-white border-[#002b5b] shadow-md'
-                        : 'bg-white text-gray-600 border-gray-200 hover:border-[#ff6600] hover:text-[#002b5b]'
+                    key={cat.id}
+                    onClick={() => {
+                      setActiveCategory(cat.id);
+                      setActiveSubcat('all');
+                    }}
+                    className={`py-5 text-xs tracking-[0.2em] uppercase whitespace-nowrap border-b-2 transition-all ${
+                      activeCategory === cat.id
+                        ? 'text-secondary font-bold border-primary'
+                        : 'text-gray-400 font-medium border-transparent hover:text-secondary'
                     }`}
                   >
-                    {sub.name}
+                    {cat.name}
                   </button>
                 ))}
               </div>
-            ) : (
-              <p className="text-sm text-gray-500 italic">Sub-kategori tidak tersedia untuk layanan ini.</p>
-            )}
-
-            {/* Information Card */}
-            <div className="hidden lg:block mt-8 bg-blue-50 border border-blue-100 p-6 rounded-xl">
-              <h4 className="font-bold text-[#002b5b] mb-2 flex items-center gap-2">
-                <DownloadCloud size={18} /> Informasi Teknis
-              </h4>
-              <p className="text-sm text-gray-700 leading-relaxed">
-                Detail teknis, PDS, serta rekomendasi level aplikasi ditujukan khusus pada mesin industri berat dan unit alat berat partner Shantui resmi.
-              </p>
             </div>
           </div>
 
-          {/* Product Area */}
-          <div className="w-full lg:w-3/4">
-            
-            {/* Search Bar & Header */}
-            <div className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200 pb-4">
-              <div>
-                <h4 className="text-2xl font-extrabold text-[#002b5b] tracking-tight">{activeCategory_?.name}</h4>
-                <p className="text-sm font-medium text-gray-500 mt-1 uppercase tracking-wider">Menampilkan {displayed.length} Varian Pelumas</p>
-              </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="flex flex-col lg:flex-row gap-12 items-start relative pb-10">
               
-              <div className="flex items-center gap-4">
-                <div className="relative w-full sm:w-72">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Search size={18} className="text-gray-400" />
-                  </div>
-                  <input
-                    type="text"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder="Cari produk atau viskositas..."
-                    className="w-full bg-white border border-gray-300 pl-10 pr-4 py-2.5 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-[#ff6600] focus:border-transparent transition-all shadow-sm block"
-                  />
-                  {query && (
-                    <button 
-                      onClick={() => setQuery('')}
-                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 text-xs font-bold"
+              {/* Sidebar Filters */}
+              <div className="w-full lg:w-1/4 lg:sticky lg:top-40">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="h-px w-8 bg-primary/30" />
+                  <h3 className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">
+                    Filters
+                  </h3>
+                </div>
+
+                {activeCategory_?.subcategories && activeCategory_.subcategories.length > 0 ? (
+                  <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 no-scrollbar">
+                    <button
+                      onClick={() => setActiveSubcat('all')}
+                      className={`flex-shrink-0 text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border ${
+                        activeSubcat === 'all'
+                          ? 'bg-secondary text-white border-secondary'
+                          : 'bg-white text-gray-400 border-gray-100 hover:border-primary/50 hover:text-secondary'
+                      }`}
                     >
-                      ✕
+                      All Types
                     </button>
-                  )}
-                </div>
-
-                {/* View Mode Toggle */}
-                <div className="flex items-center gap-1 border border-gray-200 rounded-md p-1 bg-gray-50">
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`p-2 rounded transition-colors ${viewMode === 'list' ? 'bg-white shadow-sm text-[#002b5b]' : 'text-gray-400 hover:text-gray-600'}`}
-                    title="Tampilan Daftar"
-                  >
-                    <List size={18} />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded transition-colors ${viewMode === 'grid' ? 'bg-white shadow-sm text-[#002b5b]' : 'text-gray-400 hover:text-gray-600'}`}
-                    title="Tampilan Kartu"
-                  >
-                    <LayoutGrid size={18} />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* LIST VIEW */}
-            {viewMode === 'list' && (
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <div className="hidden lg:flex items-center gap-6 px-8 py-3 border-b border-gray-100 bg-gray-50/50">
-                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 w-10 flex-shrink-0 text-center">#</div>
-                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 w-12 flex-shrink-0"></div>
-                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 flex-1">Produk</div>
-                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 max-w-[200px] w-[200px] text-right">Viskositas</div>
-                  <div className="text-[11px] font-black tracking-[0.2em] uppercase text-gray-400 w-[100px] text-right">Kemasan</div>
-                  <div className="w-[52px] flex-shrink-0" />
-                </div>
-
-                <AnimatePresence mode="popLayout">
-                  {displayed.length > 0 ? (
-                    displayed.map((p, i) => <ProductRow key={p.id} product={p} index={i} />)
-                  ) : (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="py-24 text-center"
-                    >
-                      <Package2 size={32} className="text-gray-300 mx-auto mb-4" />
-                      <p className="text-gray-500 text-sm font-medium">Tidak ada produk yang cocok dengan pencarian.</p>
+                    {activeCategory_.subcategories.map(sub => (
                       <button
-                        onClick={() => setQuery('')}
-                        className="mt-6 text-xs font-bold tracking-widest uppercase border border-gray-200 px-5 py-2.5 text-[#002b5b] hover:border-[#ff6600] transition-colors rounded-md"
+                        key={sub.id}
+                        onClick={() => setActiveSubcat(sub.id)}
+                        className={`flex-shrink-0 text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border ${
+                          activeSubcat === sub.id
+                            ? 'bg-secondary text-white border-secondary'
+                            : 'bg-white text-gray-400 border-gray-100 hover:border-primary/50 hover:text-secondary'
+                        }`}
                       >
-                        Reset Pencarian
+                        {sub.name}
                       </button>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            )}
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-[10px] text-gray-300 uppercase tracking-widest font-bold">Standard Models Apply</p>
+                )}
 
-            {/* GRID VIEW */}
-            {viewMode === 'grid' && (
-              <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <AnimatePresence mode="popLayout">
-                  {displayed.length > 0 ? (
-                    displayed.map((product, index) => (
+                <div className="hidden lg:block mt-24 border-l border-gray-100 pl-8 py-4">
+                  <h4 className="text-[10px] font-black text-secondary tracking-[0.2em] uppercase mb-4">Technical Care</h4>
+                  <p className="text-xs text-gray-400 leading-relaxed italic">
+                    Tim teknis kami siap memberikan konsultasi mendalam untuk pemilihan unit atau pelumas yang tepat sesuai kebutuhan operasional Anda.
+                  </p>
+                </div>
+              </div>
+
+              {/* Product Area */}
+              <div className="w-full lg:w-3/4">
+                <div className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-8">
+                  <div>
+                    <h4 className="text-4xl font-medium text-secondary tracking-tighter mb-2">
+                      {activeCategory === 'all' ? `Katalog ${selectedBrand}` : activeCategory_?.name}
+                    </h4>
+                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em]">
+                      {displayed.length} Produk Ditemukan
+                    </span>
+                  </div>
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="relative">
+                      <Search size={14} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <input
+                        type="text"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        placeholder="Search models..."
+                        className="bg-gray-50 border-none pl-11 pr-8 py-3 text-xs focus:ring-1 focus:ring-primary w-full sm:w-64 transition-all"
+                      />
+                    </div>
+                    
+                    <div className="flex items-center border border-gray-100 p-1">
+                      <button
+                        onClick={() => setViewMode('grid')}
+                        className={`p-2 transition-colors ${viewMode === 'grid' ? 'text-secondary bg-gray-50' : 'text-gray-300'}`}
+                      >
+                        <LayoutGrid size={16} />
+                      </button>
+                      <button
+                        onClick={() => setViewMode('list')}
+                        className={`p-2 transition-colors ${viewMode === 'list' ? 'text-secondary bg-gray-50' : 'text-gray-300'}`}
+                      >
+                        <List size={16} />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <motion.div layout className={`grid gap-8 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
+                  <AnimatePresence mode="popLayout">
+                    {displayed.map((product, index) => (
                       <motion.div
                         key={product.id}
                         layout
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.2 } }}
-                        transition={{ duration: 0.5 }}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.95 }}
+                        transition={{ duration: 0.4 }}
                       >
-                        <OfficialProductCard product={product} index={index} />
+                        {viewMode === 'grid' ? (
+                          <OfficialProductCard product={product} index={index} />
+                        ) : (
+                          <ProductRow product={product} index={index} />
+                        )}
                       </motion.div>
-                    ))
-                  ) : (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      className="col-span-2 py-24 text-center border-2 border-dashed border-gray-200 rounded-xl"
-                    >
-                      <Package2 size={32} className="text-gray-300 mx-auto mb-4" />
-                      <p className="text-gray-500 text-sm font-medium">Tidak ada produk yang cocok dengan pencarian.</p>
-                      <button
-                        onClick={() => setQuery('')}
-                        className="mt-6 text-xs font-bold tracking-widest uppercase border border-gray-200 px-5 py-2.5 text-[#002b5b] hover:border-[#ff6600] transition-colors rounded-md"
-                      >
-                        Reset Pencarian
-                      </button>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            )}
+                    ))}
+                  </AnimatePresence>
+                </motion.div>
+
+                {displayed.length === 0 && (
+                  <div className="py-32 text-center">
+                    <Package2 size={40} className="mx-auto text-gray-100 mb-6" />
+                    <p className="text-gray-400 text-sm italic">Tidak ada produk ditemukan dalam kategori ini.</p>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
 
-      </div>
-
-      {/* ── CTA ──────────────────────────────────────────────────────────────── */}
-      <div className="bg-white py-24 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <DistributorCTA theme="primary" />
-        </div>
-      </div>
-
+          <div className="bg-white py-32 border-t border-gray-50">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+              <DistributorCTA theme="primary" />
+            </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

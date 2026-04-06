@@ -26,174 +26,117 @@ export default function Home() {
     <div className="w-full overflow-x-hidden">
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-end bg-secondary overflow-hidden">
-        {/* Full-bleed background */}
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+      <section className="relative min-h-[85vh] flex items-center bg-white overflow-hidden border-b border-gray-50">
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.05]"
           style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
-        >
-          <div className="absolute inset-0 bg-secondary/80" />
-        </div>
-
-        {/* Hairline vertical accent */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/5 z-10 hidden lg:block" />
-
-        {/* Content area: pushed to bottom third */}
-        <div className="relative z-20 w-full pb-0 pt-40">
-          {/* Overline */}
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex items-center gap-4"
-            >
-              <div className="h-px w-16 bg-primary" />
-              <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
-                Distributor Resmi Gulf Oil & Shantui — Indonesia
-              </span>
-            </motion.div>
-          </div>
-
-          {/* Monumental headline */}
-          <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="font-heading font-black text-white leading-[0.9] tracking-tighter text-[clamp(3rem,8vw,7.5rem)] mb-12"
-            >
-              Solusi Energi<br />
-              <span className="text-primary">& Industri</span><br />
-              Indonesia.
-            </motion.h1>
-          </div>
-
-          {/* Bottom strip: description + CTAs */}
-          <div className="border-t border-white/10">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.35 }}
-                className="text-gray-300 text-base leading-relaxed col-span-1 lg:col-span-2 max-w-2xl"
-              >
-                PT. Bersama Energi Nusapersada (BEN) menghadirkan pelumas Gulf Oil dan solusi alat berat Shantui untuk kebutuhan industrial, komersial, dan operasional di seluruh Indonesia.
-                <span className="block mt-4 text-xs font-bold tracking-[0.3em] uppercase text-primary/80">
-                  towards a cleaner future
-                </span>
-              </motion.p>
-
+        />
+        
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-12 items-center">
+            {/* Architectural Vertical Line */}
+            <div className="hidden md:block col-span-1 h-32 w-px bg-gray-100 self-center" />
+            
+            <div className="md:col-start-2 md:col-span-11 lg:col-start-3 lg:col-span-9">
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 10 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.7, delay: 0.45 }}
-                className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 justify-start lg:justify-end"
+                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               >
-                <Link
-                  to="/products"
-                  className="inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-white px-7 py-4 font-bold tracking-wide transition-colors group"
-                >
-                  Lihat Produk
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-3 border border-white/30 hover:border-primary text-white px-7 py-4 font-bold tracking-wide transition-colors hover:text-primary"
-                >
-                  Hubungi BEN
-                </Link>
+                {/* Minimalist Overline */}
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">Authorized Distributor</span>
+                  <div className="h-px w-10 bg-gray-100" />
+                </div>
+
+                <h1 className="font-heading font-medium text-secondary text-2xl lg:text-[2.1rem] leading-[1.65] max-w-4xl mb-14 tracking-tight">
+                  PT. Bersama Energi Nusapersada (BEN) menghadirkan pelumas premium dan solusi alat berat dengan standar global untuk menunjang operasional bisnis Anda di seluruh Indonesia.
+                </h1>
+                
+                <div className="flex flex-col sm:flex-row items-center gap-10">
+                  <Link
+                    to="/products"
+                    className="group relative inline-flex items-center justify-center bg-secondary text-white px-12 py-4 font-bold tracking-widest text-xs uppercase transition-all hover:bg-black overflow-hidden"
+                  >
+                    <span className="relative z-10 flex items-center gap-3">
+                      Lihat Produk
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-secondary transition-colors underline underline-offset-8 decoration-gray-200 hover:decoration-secondary"
+                  >
+                    Hubungi BEN
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── STATS BAR ────────────────────────────────────────────────────────── */}
-      <section className="bg-white border-b border-gray-100">
+      {/* ── ABOUT BEN — Aesthetic Precision Narrative ───────────────────────── */}
+      <section className="bg-white py-32 lg:py-48">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-gray-100">
-            {STATS.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="py-10 px-8 flex flex-col gap-1"
-              >
-                <span className="font-heading font-black text-5xl tracking-tighter text-secondary leading-none">{s.value}</span>
-                <span className="text-xs font-bold uppercase tracking-[0.15em] text-gray-400 mt-2">{s.label}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── ABOUT BEN — Asymmetric Split ─────────────────────────────────────── */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Left text block */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+            {/* Narrative Block */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="py-24 pr-0 lg:pr-20 border-b lg:border-b-0 lg:border-r border-gray-100"
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-7"
             >
-              <div className="flex items-center gap-4 mb-10">
-                <div className="h-px w-12 bg-primary" />
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('about.subtitle')}</span>
+              <div className="flex items-center gap-6 mb-12">
+                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">{t('about.subtitle')}</span>
+                <div className="h-px w-12 bg-gray-100" />
               </div>
 
-              <h2 className="font-heading font-black text-secondary text-[clamp(2.2rem,5vw,4rem)] leading-[1] tracking-tighter mb-10">
+              <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5vw,4.2rem)] leading-[1.2] tracking-tighter mb-12">
                 {t('about.title')}
               </h2>
 
-              <p className="text-gray-500 leading-relaxed text-lg mb-6">
-                {t('about.desc1')}
-              </p>
-              <p className="text-gray-500 leading-relaxed mb-10">
-                {t('about.desc2')}
-              </p>
+              <div className="max-w-2xl">
+                <p className="text-gray-500 leading-relaxed text-xl mb-10 font-medium border-l-2 border-primary/20 pl-8">
+                  {t('about.desc1')}
+                </p>
+                <p className="text-gray-400 leading-relaxed mb-16 pl-8">
+                  {t('about.desc2')}
+                </p>
+              </div>
 
-              {/* Sector pills */}
-              <div className="flex flex-wrap gap-2 mb-12">
-                {['Mining', 'Construction', 'Manufacturing', 'Transportation', 'Energy & Power'].map((s) => (
-                  <span key={s} className="text-xs font-bold uppercase tracking-widest border border-gray-200 px-4 py-2 text-gray-600 hover:border-primary hover:text-primary transition-colors cursor-default">
-                    {s}
-                  </span>
+              <div className="grid grid-cols-2 gap-12 mb-16 pl-8">
+                {STATS.slice(1, 3).map((s, i) => (
+                  <div key={i} className="group">
+                    <div className="text-5xl font-heading font-light text-secondary tracking-tighter mb-2 group-hover:text-primary transition-colors duration-500">{s.value}</div>
+                    <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-300">{s.label}</div>
+                  </div>
                 ))}
               </div>
 
               <Link
                 to="/about"
-                className="inline-flex items-center gap-3 text-secondary font-bold tracking-wide group hover:text-primary transition-colors"
+                className="inline-flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.4em] text-secondary group hover:text-primary transition-all ml-8"
               >
                 {t('about.readFullStory')}
-                <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
               </Link>
             </motion.div>
 
-            {/* Right image block */}
+            {/* Visual Anchor Block */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="relative min-h-[400px] lg:min-h-0"
+              transition={{ duration: 1 }}
+              className="lg:col-span-5 relative"
             >
-              <img
-                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                alt="Industrial Operations"
-                className="w-full h-full object-cover"
-              />
-              {/* Float card */}
-              <div className="absolute bottom-0 left-0 bg-primary text-white p-8">
-                <div className="text-5xl font-heading font-black tracking-tighter leading-none mb-1">15+</div>
-                <div className="text-xs font-bold uppercase tracking-[0.2em]">{t('about.yearsExcellence')}</div>
+              <div className="relative z-10 aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="w-full h-full object-cover" />
               </div>
+              {/* Architectural Frame Offset */}
+              <div className="absolute -top-12 -right-12 w-full h-full border border-gray-100 -z-10" />
             </motion.div>
           </div>
         </div>
@@ -211,71 +154,139 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PRODUCTS HUB ─────────────────────────────────────────────────────── */}
-      <section className="bg-white py-24">
+      {/* ── TWO MAIN PILLARS — Architectural Showcase ──────────────────────── */}
+      <section className="bg-white py-32 lg:py-48">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          {/* Section header — left-anchored, not centered */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-            <div>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-px w-12 bg-primary" />
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Pusat Produk Gulf</span>
-              </div>
-              <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter">
-                Solusi Pelumasan<br />Premium
-              </h2>
+          <div className="max-w-3xl mb-24">
+            <div className="flex items-center gap-6 mb-12">
+              <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">Solusi Utama BEN</span>
+              <div className="h-px w-12 bg-gray-100" />
             </div>
-            <Link
-              to="/products"
-              className="inline-flex items-center gap-3 border border-secondary text-secondary px-7 py-4 font-bold tracking-wide hover:bg-secondary hover:text-white transition-colors flex-shrink-0 self-start md:self-end group"
-            >
-              Semua Produk <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,4.5vw,4.2rem)] leading-[1.2] tracking-tighter">
+              Dua Pilar Energi <br />& Infrastruktur.
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4">
-            {gulfCategories.map((category, index) => (
-              <GulfProductCard key={category.id} category={category} index={index} />
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
+            {/* Pillar 1: Gulf Oil */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <Link to="/products" className="group block">
+                <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-gray-50 border border-gray-100">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
+                </div>
+                <div className="flex items-center gap-6 mb-8">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Pelumas Premium</span>
+                  <div className="h-px w-10 bg-gray-100" />
+                </div>
+                <h3 className="font-heading font-medium text-secondary text-3xl lg:text-4xl mb-8 flex items-center justify-between">
+                  Gulf Oil
+                  <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform text-gray-200" />
+                </h3>
+                <p className="text-gray-400 leading-relaxed max-w-md text-base">
+                  Authorized Distributor pelumas Gulf kelas dunia. Menghadirkan efisiensi dan perlindungan mesin jangka panjang sejak 1901.
+                </p>
+              </Link>
+            </motion.div>
+
+            {/* Pillar 2: Shantui Heavy Equipment */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <Link to="/products" className="group block">
+                <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-gray-50 border border-gray-100">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+                  />
+                  <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
+                </div>
+                <div className="flex items-center gap-6 mb-8">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Alat Berat</span>
+                  <div className="h-px w-10 bg-gray-100" />
+                </div>
+                <h3 className="font-heading font-medium text-secondary text-3xl lg:text-4xl mb-8 flex items-center justify-between">
+                  Shantui Machinery
+                  <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform text-gray-200" />
+                </h3>
+                <p className="text-gray-400 leading-relaxed max-w-md text-base">
+                  Unit alat berat berkualitas global untuk pertambangan dan konstruksi. Tangguh, efisien, dan didesain untuk medan operasional ekstrem.
+                </p>
+              </Link>
+            </motion.div>
+          </div>
+          
+          <div className="mt-32 pt-24 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between gap-12">
+            <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-300">Jelajahi Katalog Lengkap</p>
+            <div className="flex flex-wrap justify-center gap-8 lg:gap-14">
+              {['Passenger Car', 'Motorcycle', 'Commercial', 'Industrial', 'Marine'].map((cat, i) => (
+                <Link 
+                  key={i} 
+                  to="/products" 
+                  className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-secondary transition-colors"
+                >
+                  {cat}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── INDUSTRIES — Dark architectural block ────────────────────────────── */}
-      <section className="bg-secondary text-white py-24">
+      {/* ── INDUSTRIES — Aesthetic Grid Layout ─────────────────────────────── */}
+      <section className="bg-white py-32 lg:py-48 overflow-hidden border-y border-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-primary" />
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('home.sectorsSubtitle')}</span>
-          </div>
-          <h2 className="font-heading font-black text-white text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-16">
-            {t('home.sectorsTitle')}
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-white/10">
-            {[
-              { name: t('home.mining'), img: 'https://protect.cermati.com/wp-content/uploads/2024/01/Shutterstock_2139159003-634x540.jpg' },
-              { name: t('home.construction'), img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-              { name: t('home.transportation'), img: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-              { name: t('home.manufacturing'), img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-              { name: t('home.agriculture'), img: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-              { name: t('home.energySector'), img: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-            ].map((industry, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.06 }}
-                className="relative group overflow-hidden aspect-square md:aspect-[4/3] bg-secondary"
-              >
-                <img src={industry.img} alt={industry.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-50 group-hover:opacity-30" />
-                <div className="absolute inset-0 flex flex-col items-start justify-end p-6 md:p-8">
-                  <div className="h-px w-8 bg-primary mb-3 group-hover:w-16 transition-all duration-300" />
-                  <h4 className="font-heading font-black text-white text-xl md:text-2xl tracking-tight">{industry.name}</h4>
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-6 mb-12">
+                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">{t('home.sectorsSubtitle')}</span>
+                <div className="h-px w-12 bg-gray-100" />
+              </div>
+              <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5vw,4rem)] leading-[1.2] tracking-tighter mb-12">
+                Melayani Berbagai <br />Sektor Industri.
+              </h2>
+              <p className="text-gray-500 text-lg leading-relaxed mb-16">
+                Kami menyediakan solusi pelumasan dan alat berat terintegrasi untuk mendukung pertumbuhan sektor-sektor vital di Indonesia.
+              </p>
+              <Link to="/contact" className="text-[10px] font-bold uppercase tracking-[0.4em] text-secondary flex items-center gap-4 group">
+                Konsultasi Sektor <div className="w-12 h-px bg-gray-200 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
+              </Link>
+            </div>
+            
+            <div className="lg:col-span-7">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-50 border border-gray-50">
+                {[
+                  { name: t('home.mining'), desc: 'Optimasi performa alat berat di medan ekstrim.' },
+                  { name: t('home.construction'), desc: 'Dukungan penuh untuk infrastruktur berkelanjutan.' },
+                  { name: t('home.transportation'), desc: 'Efisiensi armada dan logistik terdepan.' },
+                  { name: t('home.manufacturing'), desc: 'Presisi pelumasan untuk mesin industrial.' },
+                ].map((industry, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-white p-14 group hover:bg-secondary transition-all duration-700"
+                  >
+                    <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary mb-10 group-hover:text-white transition-colors">0{index + 1}</div>
+                    <h4 className="font-heading font-medium text-secondary text-2xl tracking-tight mb-6 group-hover:text-white transition-colors">{industry.name}</h4>
+                    <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">{industry.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -286,39 +297,43 @@ export default function Home() {
       {/* ── PROUD PARTNERSHIPS ───────────────────────────────────────────────── */}
       <ProudPartnerships />
 
-      {/* ── WHY BEN — Flat monolith cards ────────────────────────────────────── */}
-      <section className="bg-gray-50 py-24 border-y border-gray-100">
+      {/* ── WHY BEN — Aesthetic Strengths ───────────────────────────────────── */}
+      <section className="bg-white py-32 lg:py-48 border-t border-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-primary" />
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('home.strengthsSubtitle')}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start mb-24">
+            <div className="lg:col-span-8">
+              <div className="flex items-center gap-6 mb-12">
+                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">{t('home.strengthsSubtitle')}</span>
+                <div className="h-px w-12 bg-gray-100" />
+              </div>
+              <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.2] tracking-tighter">
+                {t('home.strengthsTitle')}
+              </h2>
+            </div>
           </div>
-          <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-16">
-            {t('home.strengthsTitle')}
-          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-50 border border-gray-50">
             {[
-              { icon: <Globe size={28} />, title: t('home.strength1Title'), desc: t('home.strength1Desc') },
-              { icon: <ShieldCheck size={28} />, title: t('home.strength2Title'), desc: t('home.strength2Desc') },
-              { icon: <Wrench size={28} />, title: t('home.strength3Title'), desc: t('home.strength3Desc') },
-              { icon: <MapPin size={28} />, title: t('home.strength4Title'), desc: t('home.strength4Desc') },
+              { icon: <Globe size={24} />, title: t('home.strength1Title'), desc: t('home.strength1Desc') },
+              { icon: <ShieldCheck size={24} />, title: t('home.strength2Title'), desc: t('home.strength2Desc') },
+              { icon: <Wrench size={24} />, title: t('home.strength3Title'), desc: t('home.strength3Desc') },
+              { icon: <MapPin size={24} />, title: t('home.strength4Title'), desc: t('home.strength4Desc') },
             ].map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="bg-white border-r border-gray-200 last:border-r-0 p-10 group hover:bg-secondary transition-colors duration-300"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white p-14 group hover:bg-secondary transition-all duration-700"
               >
-                <div className="text-primary mb-8 group-hover:text-primary transition-colors">
+                <div className="text-primary mb-12 group-hover:text-white transition-colors duration-500">
                   {feature.icon}
                 </div>
-                <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-4 group-hover:text-white transition-colors">
+                <h4 className="font-heading font-medium text-secondary text-xl tracking-tight mb-6 group-hover:text-white transition-colors duration-500">
                   {feature.title}
                 </h4>
-                <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">{feature.desc}</p>
+                <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-500">{feature.desc}</p>
               </motion.div>
             ))}
           </div>

@@ -81,6 +81,20 @@ export const gulfCategories: ProductCategory[] = [
       { id: 'eco-friendly', name: 'Eco-Friendly Lubricants', slug: 'eco-friendly' },
     ]
   },
+  {
+    id: 'shantui',
+    name: 'Alat Berat Shantui',
+    description: 'Unit alat berat berkualitas global untuk pertambangan, konstruksi, dan infrastruktur. Tangguh dan efisien di segala medan operasional.',
+    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    brand: 'Shantui',
+    slug: 'shantui',
+    subcategories: [
+      { id: 'bulldozer', name: 'Bulldozer', slug: 'bulldozer' },
+      { id: 'excavator', name: 'Excavator', slug: 'excavator' },
+      { id: 'wheel-loader', name: 'Wheel Loader', slug: 'wheel-loader' },
+      { id: 'motor-grader', name: 'Motor Grader', slug: 'motor-grader' },
+    ]
+  },
 ];
 
 export interface ProductSpec {
@@ -682,4 +696,177 @@ export const gulfProducts: ProductSpec[] = [
     keyBenefits: ['Biodegradable dan non-toxic', 'Memenuhi regulasi lingkungan maritim', 'Performa pelumasan setara oli konvensional'],
     partnerBrand: 'Gulf'
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // KATEGORI SHANTUI — ALAT BERAT (Heavy Equipment)
+  // ═══════════════════════════════════════════════════════════════════════════
+
+  // ── A. Mining Excavators ──────────────────────────────────────────────────
+  {
+    id: 'shantui-se2000',
+    name: 'Shantui SE2000 Mining Excavator',
+    slug: 'shantui-se2000',
+    image: 'https://www.shantui-global.com/upload/images/2025/09/03/6b2e0d2d629e4ddd8f3c522deb584044.png',
+    categoryId: 'shantui',
+    subcategoryId: 'excavator',
+    summary: 'Excavator pertambangan raksasa untuk operasional skala ekstrem dengan produktivitas tiada tanding.',
+    viscosityGrades: ['—'],
+    availablePacks: ['Unit Baru'],
+    specifications: ['Bobot Operasi: 200t', 'Daya Mesin: Eksklusif', 'Kapasitas Bucket: Ekstra Besar'],
+    approvals: ['Mining Grade Certified'],
+    applications: ['Pertambangan Skala Besar', 'Ekskavasi Massal'],
+    keyBenefits: ['Daya gali maksimum', 'Durabilitas struktur ekstrem', 'Efisiensi biaya per tonase'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se1500lcw',
+    name: 'Shantui SE1500LCW',
+    slug: 'shantui-se1500lcw',
+    image: 'https://www.shantui-global.com/upload/images/2023/07/08/a64c8b2e7ee04235bd3ffe0ad7dfa560.png',
+    categoryId: 'shantui',
+    subcategoryId: 'excavator',
+    summary: 'Unit pertambangan super berat dengan stabilitas luar biasa untuk medan galian yang sulit.',
+    viscosityGrades: ['—'],
+    availablePacks: ['Unit Baru'],
+    specifications: ['Mining Duty Performance'],
+    approvals: ['Standard Environmental Compliance'],
+    applications: ['Open Pit Mining', 'Mega Project'],
+    keyBenefits: ['Stabilitas Tinggi', 'Power Superior'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se1250lcw',
+    name: 'Shantui SE1250LCW',
+    slug: 'shantui-se1250lcw',
+    image: 'https://www.shantui-global.com/upload/images/2023/07/08/2b1b044923be4a43bad644541ac4140e.png',
+    categoryId: 'shantui',
+    subcategoryId: 'excavator',
+    summary: 'Solusi ekskavasi mining performa tinggi dengan teknologi kontrol hidrolik tercanggih.',
+    viscosityGrades: ['—'],
+    availablePacks: ['Unit Baru'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se980lcw',
+    name: 'Shantui SE980LCW',
+    slug: 'shantui-se980lcw',
+    image: 'https://www.shantui-global.com/upload/images/2023/07/08/5aca8f266d9f46eb8641d3357dfbf5e2.png',
+    categoryId: 'shantui',
+    subcategoryId: 'excavator',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se800lcw',
+    name: 'Shantui SE800LCW',
+    slug: 'shantui-se800lcw',
+    image: 'https://www.shantui-global.com/upload/images/2023/07/08/3f602dc8bece409fbf3a00dfcd6ea779.png',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se750lcw',
+    name: 'Shantui SE750LCW',
+    slug: 'shantui-se750lcw',
+    image: 'https://www.shantui-global.com/upload/images/2023/08/15/9241240ba9104fd2990d67ffab78d271.png',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+
+  // ── B. Large/Medium Excavators ─────────────────────────────────────────────
+  {
+    id: 'shantui-se500lc-9w',
+    name: 'Shantui SE500LC-9W',
+    slug: 'shantui-se500lc-9w',
+    image: 'https://www.shantui-global.com/upload/images/2023/09/20/8615de9d75994effa3e2958afeb19cd1.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'excavator',
+    summary: 'Excavator kelas berat untuk konstruksi infrastruktur dan pertambangan menengah.',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se245lc-9w',
+    name: 'Shantui SE245LC-9W',
+    slug: 'shantui-se245lc-9w',
+    image: 'https://www.shantui-global.com/upload/images/2023/09/20/8da84054dd164ceba3ffa0f721263a89.jpg',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se215-9w',
+    name: 'Shantui SE215-9W',
+    slug: 'shantui-se215-9w',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/15/7476159f28c44a74926d059b015bca28.jpg',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se210-9w',
+    name: 'Shantui SE210-9W',
+    slug: 'shantui-se210-9w',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/15/2ccc9f33e67a415c8a395dbd574bfc70.jpg',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+
+  // ── C. Small/Mini Excavators ───────────────────────────────────────────────
+  {
+    id: 'shantui-se150-9w',
+    name: 'Shantui SE150-9W',
+    slug: 'shantui-se150-9w',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/26/3d219014fb5a4872a850b5df14473060.png',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se135-9w',
+    name: 'Shantui SE135-9W',
+    slug: 'shantui-se135-9w',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/26/b747ee0eeabb476b9bcc6c7ea8191504.png',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se75-9w',
+    name: 'Shantui SE75-9W',
+    slug: 'shantui-se75-9w',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/27/b8c30dcae32c4475b46d059b015bca28.png',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se60-9',
+    name: 'Shantui SE60-9',
+    slug: 'shantui-se60-9',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/27/cc415ec904ae4a64913fdc01babf2b6d.png',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se35sr',
+    name: 'Shantui SE35SR',
+    slug: 'shantui-se35sr',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/26/5163e1f3c7b344b3b5edf147ae2237b0.png',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se18sr',
+    name: 'Shantui SE18SR',
+    slug: 'shantui-se18sr',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/26/1d2319fd78d747c18ba3c8b823a2423a.png',
+    categoryId: 'shantui',
+    partnerBrand: 'Shantui'
+  },
+
+  // ── D. Wheel Excavators ────────────────────────────────────────────────────
+  {
+    id: 'shantui-se140w',
+    name: 'Shantui SE140W',
+    slug: 'shantui-se140w',
+    image: 'https://www.shantui-global.com/upload/images/2023/08/15/9c6b2c3cd58b4da28ecd8f049d1c238f.png',
+    categoryId: 'shantui',
+    subcategoryId: 'excavator',
+    partnerBrand: 'Shantui'
+  }
+
 ];
