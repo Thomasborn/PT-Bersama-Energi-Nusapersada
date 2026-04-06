@@ -439,10 +439,10 @@ export default function Products() {
                    setActiveSubcat('all');
                    setQuery('');
                  }}
-                 className={`py-5 text-sm font-extrabold tracking-widest uppercase whitespace-nowrap border-b-[3px] transition-colors relative ${
-                   activeCategory === cat.id 
-                     ? 'text-[#002b5b] border-[#ff6600]' 
-                     : 'text-gray-400 border-transparent hover:text-[#002b5b]'
+                 className={`py-5 text-sm tracking-widest uppercase whitespace-nowrap border-b-[3px] transition-all duration-200 relative ${
+                   activeCategory === cat.id
+                     ? 'text-[#002b5b] font-black border-[#ff6600]'
+                     : 'text-[#002b5b] font-semibold border-transparent hover:border-[#002b5b] hover:text-[#002b5b] hover:font-black'
                  }`}
                >
                  {cat.name}
