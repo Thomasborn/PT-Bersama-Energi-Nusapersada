@@ -14,7 +14,6 @@ export default function About() {
     { title: t('about.val3Title'), desc: t('about.val3Desc') },
     { title: t('about.val4Title'), desc: t('about.val4Desc') },
     { title: t('about.val5Title'), desc: t('about.val5Desc') },
-    { title: t('about.val6Title'), desc: t('about.val6Desc') },
   ];
 
   const missionPoints = Array.from({ length: 6 }, (_, i) => 
@@ -49,7 +48,7 @@ export default function About() {
         {/* Background - Clean Modern Industrial */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1516937941344-00b4e0337589?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
+          style={{ backgroundImage: 'url("https://products.unitedtractors.com/wp-content/uploads/2023/09/5.-Banner-Landscape-01-290823-5-Alat-Berat-Konstruksi-yang-Dapat-Meningkatkan-Efisiensi-dan-Produktivitas.jpg")' }}
         >
           <div className="absolute inset-0 bg-secondary/40 backdrop-blur-[1px]" />
           <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent opacity-80" />
@@ -150,7 +149,7 @@ export default function About() {
               className="lg:col-span-5 relative"
             >
               <div className="relative aspect-[4/5] overflow-hidden border border-gray-100 shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1565126305374-27954b9d0e2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Modern Clean Factory" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" />
+                <img src="https://www.garudasystrain.co.id/wp-content/uploads/2024/02/1-11.jpg" />
                 <div className="absolute inset-0 bg-secondary/5" />
               </div>
               <motion.div 
@@ -158,7 +157,7 @@ export default function About() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-10 -left-10 w-48 h-48 border-[12px] border-white shadow-xl overflow-hidden hidden xl:block"
               >
-                <img src="https://images.unsplash.com/photo-1581092120527-6506df9f9953?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tech Precision" className="w-full h-full object-cover" />
+                <img src="https://img.lazcdn.com/g/p/25f44ca57946284eee07605f1ccfcf97.jpg_720x720q80.jpg" alt="Tech Precision" className="w-full h-full object-cover" />
               </motion.div>
             </motion.div>
           </div>
