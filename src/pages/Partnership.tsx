@@ -170,7 +170,7 @@ export default function Partnership() {
               className="relative min-h-[500px] lg:min-h-0 bg-secondary"
             >
               <img
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                src="https://www.shantui-global.com/upload/images/2024/10/09/0bf38e21db3a4f9591d87f9879844dec.png"
                 alt="Business Partnership"
                 className="w-full h-full object-cover opacity-50"
               />

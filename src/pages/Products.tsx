@@ -5,9 +5,32 @@ import DistributorCTA from '../components/DistributorCTA';
 import { ChevronDown, ChevronUp, DownloadCloud, Search, ExternalLink, ArrowRight, LayoutGrid, List, CheckCircle2, Zap, Package2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// ─── Utility: Get fallback image based on category ─────────────────────────────
+const getFallbackImage = (subcategoryId?: string): string => {
+  if (!subcategoryId) return '/shantui/escavator/medium.png';
+  
+  const fallbackMap: { [key: string]: string } = {
+    'mining-excavator': '/shantui/escavator/mining.png',
+    'large-excavator': '/shantui/escavator/large.png',
+    'medium-excavator': '/shantui/escavator/medium.png',
+    'small-excavator': '/shantui/escavator/small.png',
+    'mini-excavator': '/shantui/escavator/small.png',
+    'wheel-excavator': '/shantui/escavator/wheel.png',
+    'small-bulldozer': '/shantui/escavator/medium.png',
+    'medium-bulldozer': '/shantui/escavator/large.png',
+    'large-bulldozer': '/shantui/escavator/large.png',
+    'wheel-loader': '/shantui/escavator/medium.png',
+  };
+  
+  return fallbackMap[subcategoryId] || '/shantui/escavator/medium.png';
+};
+
 // ─── Flat product row / expandable ───────────────────────────────────────────
 const ProductRow = ({ product, index }: { product: any; index: number }) => {
   const [open, setOpen] = useState(true);
+  const [imageError, setImageError] = useState(false);
+  const fallbackImage = getFallbackImage(product.subcategoryId);
+  const displayImage = imageError ? fallbackImage : product.image;
 
   return (
     <motion.div
@@ -29,13 +52,19 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
         </span>
 
         {/* Thumbnail */}
-        {product.image && (
+        {product.image || displayImage ? (
           <img
-            src={product.image}
+            src={displayImage || product.image}
             alt={product.name}
             className="w-12 h-12 rounded-lg object-contain bg-gray-50 p-1 flex-shrink-0 hidden sm:block"
+            onError={(e) => {
+              setImageError(true);
+              if (!imageError) {
+                (e.target as HTMLImageElement).src = fallbackImage;
+              }
+            }}
           />
-        )}
+        ) : null}
 
         {/* Name + subcategory — takes remaining space */}
         <div className="flex-1 min-w-0">
@@ -106,11 +135,21 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
 
               {/* Summary + image */}
               <div className="md:col-span-2">
-                {product.image && (
+                {product.image || displayImage ? (
                   <div className="w-full h-52 bg-white rounded-lg border border-gray-100 flex items-center justify-center p-4 mb-6 overflow-hidden">
-                    <img src={product.image} alt={product.name} className="max-w-full max-h-full object-contain" />
+                    <img 
+                      src={displayImage || product.image} 
+                      alt={product.name} 
+                      className="max-w-full max-h-full object-contain"
+                      onError={(e) => {
+                        setImageError(true);
+                        if (!imageError) {
+                          (e.target as HTMLImageElement).src = fallbackImage;
+                        }
+                      }}
+                    />
                   </div>
-                )}
+                ) : null}
                 <p className="text-gray-600 text-sm leading-relaxed mb-6">{product.summary}</p>
 
                 {/* Applications */}
@@ -179,6 +218,9 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
 // ─── Card-style product display (dev-branch layout) ──────────────────────────
 const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; index: number; selectedBrand: 'Gulf' | 'Shantui' | null }) => {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [imageError, setImageError] = useState(false);
+  const fallbackImage = getFallbackImage(product.subcategoryId);
+  const displayImage = imageError ? fallbackImage : product.image;
 
   return (
     <motion.div
@@ -195,13 +237,16 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <motion.div className="absolute inset-0 w-full h-full" whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }}>
-          {product.image ? (
+          {product.image || displayImage ? (
             <img 
-              src={product.image} 
+              src={displayImage || product.image} 
               alt={product.name} 
               className="w-full h-full object-contain p-6 opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
               onError={(e) => {
-                (e.target as HTMLImageElement).src = '/placeholder-product.png';
+                setImageError(true);
+                if (!imageError) {
+                  (e.target as HTMLImageElement).src = fallbackImage;
+                }
               }}
             />
           ) : (
