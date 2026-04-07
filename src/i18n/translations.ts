@@ -47,9 +47,9 @@ export const translations = {
     about: {
       subtitle: 'Tentang Kami',
       title: 'Tentang PT Bersama Energi Nusapersada',
-      desc1: 'PT Bersama Energi Nusapersada (BEN) (berdiri sejak tahun 2014) adalah perusahaan yang bergerak di bidang perdagangan dan distribusi, dengan kantor pusat di Kota Tangerang, Banten. Seiring berjalannya waktu, perusahaan terus berkembang dan memperluas jangkauan layanannya untuk memenuhi kebutuhan pelanggan di berbagai daerah Indonesia.',
-      desc2: 'Berawal dari bisnis distribusi, perusahaan terus berkembang dengan membuka warehouse di Kalimantan Selatan dan berfokus pada penyediaan oli serta grease berkualitas untuk berbagai kebutuhan industri.',
-      desc3: 'Didukung tim yang kompeten dan jaringan distribusi yang terus berkembang, PT Bersama Energi Nusapersada berfokus menyediakan solusi yang efisien, ramah lingkungan, dan berkelanjutan dalam bidang energi dan sumber daya, sekaligus menjaga standar keselamatan dan kepatuhan regulasi nasional.',
+      desc1: 'PT Bersama Energi Nusapersada (BEN) (berdiri sejak tahun 2014) berdedikasi menjadi mitra distribusi terkemuka dengan fokus pada standar presisi dan kualitas berkelanjutan.',
+      desc2: 'Melalui inovasi dan integritas, kami berkembang melampaui distribusi konvensional menuju solusi energi dan infrastruktur terintegrasi di seluruh Indonesia.',
+      desc3: 'Komitmen kami tertanam dalam efisiensi operasional dan kepatuhan global, mendukung pertumbuhan industri nasional dengan pendekatan yang lebih bersih dan modern.',
       readFullStory: 'Baca Selengkapnya',
       yearsExcellence: 'Tahun Keunggulan Industri',
       // Company Profile Section
@@ -432,9 +432,9 @@ export const translations = {
     about: {
       subtitle: 'About Us',
       title: 'About PT Bersama Energi Nusapersada',
-      desc1: 'PT Bersama Energi Nusapersada (BEN) is a premier Indonesian distribution company dedicated to providing high-performance lubrication products and robust heavy equipment solutions to various industrial sectors.',
-      desc2: 'Starting from a distribution business, the company continues to grow by opening a warehouse in South Kalimantan and focusing on providing quality oil and grease for various industrial needs.',
-      desc3: 'Our commitment goes beyond just supplying products. We deliver comprehensive solutions backed by strong supply chains, technical expertise, and a deep understanding of the unique challenges faced by industries in Indonesia.',
+      desc1: 'PT Bersama Energi Nusapersada (BEN) (est. 2014) is dedicated to being a premier distribution partner with a focus on precision standards and sustainable quality.',
+      desc2: 'Through innovation and integrity, we expand beyond conventional distribution toward integrated energy and infrastructure solutions across Indonesia.',
+      desc3: 'Our commitment is rooted in operational efficiency and global compliance, supporting national industrial growth with a cleaner and modern approach.',
       readFullStory: 'Read Full Story',
       yearsExcellence: 'Years of Industry Excellence',
       // Company Profile Section
