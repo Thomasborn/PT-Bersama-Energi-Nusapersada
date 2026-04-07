@@ -17,6 +17,26 @@ export default function About() {
     { title: t('about.val6Title'), desc: t('about.val6Desc') },
   ];
 
+  const businessFields = Array.from({ length: 7 }, (_, i) => 
+    t(`about.businessField${i + 1}`)
+  );
+
+  const lubricants = Array.from({ length: 10 }, (_, i) => 
+    t(`about.lubricant${i + 1}`)
+  );
+
+  const equipment = Array.from({ length: 7 }, (_, i) => 
+    t(`about.equipment${i + 1}`)
+  );
+
+  const advantages = Array.from({ length: 9 }, (_, i) => 
+    t(`about.advantage${i + 1}`)
+  );
+
+  const customers = Array.from({ length: 10 }, (_, i) => 
+    t(`about.customer${i + 1}`)
+  );
+
   return (
     <div className="w-full overflow-x-hidden">
 
@@ -199,6 +219,161 @@ export default function About() {
                   {v.title}
                 </h4>
                 <p className="text-gray-400 text-sm leading-relaxed">{v.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── BUSINESS FIELDS ───────────────────────────────────────────────────── */}
+      <section className="bg-white py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="h-px w-12 bg-primary" />
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('about.businessFieldsTitle')}</span>
+          </div>
+          <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-6">
+            {t('about.businessFieldsTitle')}
+          </h2>
+          <p className="text-gray-600 text-lg mb-12 max-w-3xl">{t('about.businessFieldsDesc')}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {businessFields.map((field, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="flex items-start gap-4 p-6 rounded-lg bg-gray-50 hover:bg-primary/5 transition-colors"
+              >
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">
+                  {i + 1}
+                </div>
+                <span className="text-gray-700 font-medium">{field}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRODUCTS AND SERVICES ─────────────────────────────────────────────– */}
+      <section className="bg-gray-50 py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="h-px w-12 bg-primary" />
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('about.productsServicesTitle')}</span>
+          </div>
+          <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-16">
+            {t('about.productsServicesTitle')}
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Lubricants and Grease */}
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div>
+                <h3 className="font-heading font-bold text-secondary text-2xl mb-4">{t('about.lubricantsGreaseTitle')}</h3>
+                <p className="text-gray-600 mb-6">{t('about.lubricantsGreaseDesc')}</p>
+                <ul className="space-y-3">
+                  {lubricants.map((lubricant, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700">
+                      <span className="inline-block w-2 h-2 bg-primary rounded-full" />
+                      {lubricant}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Heavy Equipment */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div>
+                <h3 className="font-heading font-bold text-secondary text-2xl mb-4">{t('about.heavyEquipmentTitle')}</h3>
+                <p className="text-gray-600 mb-6">{t('about.heavyEquipmentDesc')}</p>
+                <ul className="space-y-3">
+                  {equipment.map((equip, i) => (
+                    <li key={i} className="flex items-center gap-3 text-gray-700">
+                      <span className="inline-block w-2 h-2 bg-primary rounded-full" />
+                      {equip}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── COMPANY ADVANTAGES ────────────────────────────────────────────────── */}
+      <section className="bg-white py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="h-px w-12 bg-primary" />
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('about.advantagesTitle')}</span>
+          </div>
+          <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-6">
+            {t('about.advantagesTitle')}
+          </h2>
+          <p className="text-gray-600 text-lg mb-12 max-w-3xl">{t('about.advantagesSubtitle')}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {advantages.map((advantage, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="p-6 rounded-lg border border-gray-200 hover:border-primary/30 hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xs mt-1">
+                    ✓
+                  </div>
+                  <span className="text-gray-700 font-medium">{advantage}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CUSTOMER SECTORS ──────────────────────────────────────────────────── */}
+      <section className="bg-gray-50 py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="h-px w-12 bg-primary" />
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('about.customersTitle')}</span>
+          </div>
+          <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-6">
+            {t('about.customersTitle')}
+          </h2>
+          <p className="text-gray-600 text-lg mb-12 max-w-3xl">{t('about.customersSubtitle')}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {customers.map((customer, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.04 }}
+                className="flex items-center gap-3 p-4 rounded-lg bg-white hover:shadow-md transition-shadow"
+              >
+                <div className="flex-shrink-0 w-3 h-3 rounded-full bg-primary" />
+                <span className="text-gray-700">{customer}</span>
               </motion.div>
             ))}
           </div>
