@@ -42,8 +42,8 @@ export default function Footer() {
             <ul className="space-y-3">
               <li><Link to="/about" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('nav.about')}</Link></li>
               <li><Link to="/partnership" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('nav.partnership')}</Link></li>
-              <li><Link to="/news" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('nav.news')}</Link></li>
-              <li><Link to="/careers" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('nav.careers')}</Link></li>
+              {/* <li><Link to="/news" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('nav.news')}</Link></li>
+              <li><Link to="/careers" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('nav.careers')}</Link></li> */}
               <li><Link to="/contact" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('nav.contact')}</Link></li>
             </ul>
           </div>
@@ -52,11 +52,11 @@ export default function Footer() {
           <div>
             <h3 className="font-heading font-bold text-lg mb-6 uppercase tracking-wider">{t('footer.products')}</h3>
             <ul className="space-y-3">
-              <li><Link to="/products" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('products.automotiveLubes')}</Link></li>
+              {/* <li><Link to="/products" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('products.automotiveLubes')}</Link></li> */}
               <li><Link to="/products" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('products.industrialLubes')}</Link></li>
               <li><Link to="/products" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('products.heavyEquipLubes')}</Link></li>
               <li><Link to="/products" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('products.constructionEquip')}</Link></li>
-              <li><Link to="/products" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('products.filtersParts')}</Link></li>
+              {/* <li><Link to="/products" className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"><ArrowRight size={14} /> {t('products.filtersParts')}</Link></li> */}
             </ul>
           </div>
 
