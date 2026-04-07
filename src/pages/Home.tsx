@@ -26,80 +26,170 @@ export default function Home() {
     <div className="w-full overflow-x-hidden">
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-white via-white to-gray-50 overflow-hidden border-b border-gray-100">
-        {/* Decorative background elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -mr-48 -mt-48 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/3 rounded-full -ml-40 -mb-40 blur-3xl" />
+      <section className="relative min-h-[95vh] flex flex-col justify-center bg-white overflow-hidden pb-20 pt-24 lg:pt-32">
+        {/* Animated Background Mesh */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div 
+            animate={{ 
+              x: [0, 50, 0], 
+              y: [0, 30, 0],
+              scale: [1, 1.1, 1] 
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-[20%] -right-[10%] w-[50%] h-[60%] rounded-full mix-blend-multiply filter blur-[120px] bg-primary/10 opacity-70"
+          />
+          <motion.div 
+            animate={{ 
+              x: [0, -40, 0], 
+              y: [0, -50, 0],
+              scale: [1, 1.2, 1] 
+            }}
+            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute bottom-[0%] -left-[10%] w-[40%] h-[50%] rounded-full mix-blend-multiply filter blur-[100px] bg-secondary/5 opacity-50"
+          />
+        </div>
         
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.03]"
-          style={{ backgroundImage: 'url("https://euassets.gulfoilltd.com/gulfoilltd.com/files/Products%20cutout_0.webp?VersionId=gaKgIiklQIA_P0FUhT0dlQ4u0ZsFtDb_")' }}
-        />
+        {/* Subtle grid pattern overlay */}
+        <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10 py-20">
-          <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-12">
-            {/* Architectural Vertical Line with gradient */}
-            <div className="hidden md:block col-span-1 h-48 w-px bg-gradient-to-b from-primary via-primary to-transparent self-center" />
-
-            <div className="md:col-start-2 md:col-span-11 lg:col-start-3 lg:col-span-9">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            {/* Left Content */}
+            <div className="lg:col-span-12 xl:col-span-7 relative z-20">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, ease: 'easeOut' }}
               >
-                {/* Premium Overline */}
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="flex items-center gap-4 mb-10"
-                >
-                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Distributor Resmi</span>
-                  <div className="h-px w-12 bg-gradient-to-r from-primary to-transparent" />
-                </motion.div>
+                {/* Premium Overline with staggered glow */}
+                <div className="flex items-center gap-4 mb-10 overflow-hidden">
+                   <motion.div 
+                     initial={{ width: 0 }}
+                     animate={{ width: 48 }}
+                     transition={{ duration: 1, delay: 0.5, ease: 'circOut' }}
+                     className="h-px bg-primary" 
+                   />
+                   <motion.span 
+                     initial={{ opacity: 0, y: 10 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ delay: 0.8, duration: 0.6 }}
+                     className="text-[11px] font-bold uppercase tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
+                   >
+                     Distributor Resmi
+                   </motion.span>
+                </div>
 
-                <motion.h1 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
-                  className="font-heading font-bold text-secondary text-[clamp(2.2rem,6vw,3.8rem)] leading-[1.2] max-w-4xl mb-10 tracking-tight"
-                >
-                  Solusi Pelumas & Alat Berat <span className="text-primary">Berkelas Global</span> untuk Indonesia
-                </motion.h1>
+                <h1 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] mb-8 tracking-tighter">
+                  <motion.span 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                    className="block"
+                  >
+                    Solusi Pelumas &
+                  </motion.span>
+                  <motion.span 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                    className="block mt-2"
+                  >
+                    Alat Berat <span className="font-serif italic text-primary pr-2">Premium</span>
+                  </motion.span>
+                  <motion.span 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="block mt-2 text-gray-800"
+                  >
+                    untuk Indonesia.
+                  </motion.span>
+                </h1>
 
                 <motion.p
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.8 }}
-                  className="text-lg text-gray-600 leading-relaxed max-w-2xl mb-12 font-medium"
+                  transition={{ delay: 0.8, duration: 0.8 }}
+                  className="text-lg text-gray-500 leading-relaxed max-w-xl mb-12 font-medium"
                 >
-                  PT BEN sebagai authorized distributor Gulf Oil dan Shantui, menghadirkan produk premium dengan layanan profesional 24/7 untuk mendukung operasional bisnis Anda.
+                  PT BEN menghadirkan teknologi pelumasan <strong className="font-bold text-gray-800">Gulf Oil</strong> dan ekosistem alat berat <strong className="font-bold text-gray-800">Shantui</strong>. Dedikasi tanpa henti untuk menunjang performa industri Anda di seluruh negeri.
                 </motion.p>
 
                 <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1, duration: 0.8 }}
                   className="flex flex-col sm:flex-row items-start sm:items-center gap-8"
                 >
                   <Link
                     to="/products"
-                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-secondary to-secondary/90 text-white px-10 py-4 font-bold tracking-widest text-xs uppercase transition-all hover:shadow-lg hover:shadow-secondary/40 hover:scale-105 duration-300 overflow-hidden rounded-sm"
+                    className="group relative inline-flex items-center justify-center bg-secondary text-white px-10 py-5 font-bold tracking-widest text-[10px] uppercase transition-all hover:bg-black overflow-hidden shadow-2xl shadow-secondary/20"
                   >
-                    <span className="relative z-10 flex items-center gap-3">
-                      Jelajahi Produk
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black" />
+                    <span className="relative z-10 flex items-center gap-4">
+                      Eksplorasi Katalog
+                      <div className="w-6 h-px bg-white/50 group-hover:bg-white group-hover:w-10 transition-all duration-300" />
                     </span>
                   </Link>
+
                   <Link
-                    to="/contact"
-                    className="text-xs font-bold uppercase tracking-[0.3em] text-secondary hover:text-primary transition-all duration-300 border-b-2 border-primary/20 hover:border-primary pb-1"
+                    to="/about"
+                    className="group flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-primary transition-colors"
                   >
-                    → Hubungi Kami
+                    <span className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary/30 transition-colors bg-white shadow-sm">
+                      <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                    </span>
+                    Tentang BEN
                   </Link>
                 </motion.div>
               </motion.div>
             </div>
+
+            {/* Right Content - Visual Presentation */}
+            <div className="lg:col-span-12 xl:col-span-5 relative mt-16 xl:mt-0 xl:min-h-[600px] flex items-center justify-center">
+               <motion.div
+                 initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+                 className="relative z-10 aspect-[4/5] w-full max-w-[450px] bg-gray-100 rounded-sm overflow-hidden shadow-2xl shadow-secondary/10 group cursor-pointer"
+               >
+                 <img 
+                   src="https://kobexindo.com/wp-content/uploads/se75-shantui.jpg" 
+                   alt="Industrial Precision" 
+                   className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+                 
+                 {/* Floating badge */}
+                 {/* <motion.div 
+                   animate={{ y: [-5, 5, -5] }}
+                   transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+                   className="absolute top-8 -left-8 bg-white p-5 shadow-xl items-center gap-4 hidden sm:flex border border-gray-50 z-30"
+                 >
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <ShieldCheck className="text-primary" size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">Jaminan</p>
+                      <p className="text-secondary font-medium text-sm">100% Produk Asli</p>
+                    </div>
+                 </motion.div> */}
+               </motion.div>
+
+               {/* Modern Logo Showcase on the side */}
+               <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.5, duration: 0.8 }}
+                  className="absolute right-0 bottom-10 lg:bottom-20 bg-white/80 backdrop-blur-md p-6 lg:p-8 shadow-2xl border border-white/50 flex flex-col gap-8 z-20 translate-x-4 lg:translate-x-12 cursor-pointer hover:bg-white transition-colors duration-500"
+               >
+                 <img src="/gulf.png" alt="Gulf Oil" className="w-16 lg:w-20 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+                 <img src="/shantui-logo.jpeg" alt="Shantui" className="w-20 lg:w-24 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+               </motion.div>
+            </div>
+
           </div>
         </div>
       </section>

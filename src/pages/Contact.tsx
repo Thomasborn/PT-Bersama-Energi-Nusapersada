@@ -13,7 +13,7 @@ export default function Contact() {
         {/* Background */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("https://coworker.imgix.net/photos/indonesia/tangerang/epica-lifestyle-offices/4.jpg?w=800&h=0&q=90&auto=format,compress&fit=crop&mark=/template/img/wm_icon.png&markscale=5&markalign=center,middle")' }}
+          style={{ backgroundImage: 'url("https://kobexindo.com/wp-content/uploads/Shantui-SG14.webp")' }}
         >
           <div className="absolute inset-0 bg-secondary/80" />
         </div>
