@@ -177,7 +177,7 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
 };
 
 // ─── Card-style product display (dev-branch layout) ──────────────────────────
-const OfficialProductCard = ({ product, index }: { product: any; index: number }) => {
+const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; index: number; selectedBrand: 'Gulf' | 'Shantui' | null }) => {
   const [isExpanded, setIsExpanded] = useState(true);
 
   return (
@@ -191,20 +191,29 @@ const OfficialProductCard = ({ product, index }: { product: any; index: number }
     >
       {/* Product Image Area */}
       <div
-        className="relative h-64 bg-gray-50 flex items-center justify-center p-6 cursor-pointer border-b border-gray-100 overflow-hidden"
+        className="relative h-64 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6 cursor-pointer border-b border-gray-100 overflow-hidden"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <motion.div className="absolute inset-0 w-full h-full" whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }}>
           {product.image ? (
-            <img src={product.image} alt={product.name} className="w-full h-full object-contain p-6 opacity-90 group-hover:opacity-100 transition-opacity" />
+            <img 
+              src={product.image} 
+              alt={product.name} 
+              className="w-full h-full object-contain p-6 opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = '/placeholder-product.png';
+              }}
+            />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 opacity-50"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 opacity-50 flex items-center justify-center">
+              <span className="text-xs text-gray-400 font-bold uppercase">No Image</span>
+            </div>
           )}
         </motion.div>
 
         {/* Brand Logo & Pill */}
         <div className="absolute top-4 left-4 flex gap-2 items-center z-10">
-          <div className="bg-white p-1 rounded-md shadow-sm border border-gray-100 w-10 h-10 flex items-center justify-center">
+          <div className="bg-white p-1.5 rounded-md shadow-md border border-gray-200 w-10 h-10 flex items-center justify-center backdrop-blur-sm">
             <img
               src={product.partnerBrand === 'Gulf' ? '/gulf.png' : '/shantui-logo.jpeg'}
               alt={product.partnerBrand}
@@ -212,25 +221,27 @@ const OfficialProductCard = ({ product, index }: { product: any; index: number }
             />
           </div>
           {product.subcategoryId && (
-            <span className="bg-[#002b5b] text-white text-[10px] font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-sm">
+            <span className="bg-[#002b5b] text-white text-[10px] font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-md">
               {product.subcategoryId.replace(/-/g, ' ')}
             </span>
           )}
         </div>
 
-        {/* Download PDS */}
-        {product.pdsUrl && (
+        {/* Download PDS or PDF Catalog */}
+        {(product.pdsUrl || (selectedBrand === 'Shantui' && product.partnerBrand === 'Shantui')) && (
           <div className="absolute top-4 right-4 z-10">
-            <a
-              href={product.pdsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-10 h-10 bg-white text-[#ff6600] rounded-full shadow-md border border-gray-200 hover:bg-[#ff6600] hover:text-white hover:border-[#ff6600] transition-colors"
-              title="Unduh PDS (Product Data Sheet)"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <DownloadCloud size={18} />
-            </a>
+            {product.pdsUrl && (
+              <a
+                href={product.pdsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 bg-white text-[#ff6600] rounded-full shadow-md border border-gray-200 hover:bg-[#ff6600] hover:text-white hover:border-[#ff6600] transition-colors"
+                title="Unduh PDS (Product Data Sheet)"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <DownloadCloud size={18} />
+              </a>
+            )}
           </div>
         )}
       </div>
@@ -264,25 +275,39 @@ const OfficialProductCard = ({ product, index }: { product: any; index: number }
             className="overflow-hidden bg-[#F8F9FA] border-t border-gray-200"
           >
             <div className="p-6 md:p-8">
-              {/* Quick Specs Strip */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                <div>
-                  <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Viskositas</span>
-                  <span className="text-sm font-bold text-[#002b5b]">{product.viscosityGrades?.join(', ') || 'Beragam'}</span>
+              {/* Quick Specs Strip - Only for Gulf Oil products */}
+              {product.partnerBrand === 'Gulf' && (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                  <div>
+                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Viskositas</span>
+                    <span className="text-sm font-bold text-[#002b5b]">{product.viscosityGrades?.join(', ') || 'Beragam'}</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Standar</span>
+                    <span className="text-sm font-bold text-[#002b5b]">{product.specifications?.[0] || 'Premium'}</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Kemasan</span>
+                    <span className="text-sm font-bold text-[#002b5b]">{product.availablePacks?.join(', ') || 'Drum 200L'}</span>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Standar</span>
-                  <span className="text-sm font-bold text-[#002b5b]">{product.specifications?.[0] || 'Premium'}</span>
+              )}
+
+              {/* Specifications Strip - For all products */}
+              {product.specifications && product.specifications.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                  {product.specifications.map((spec: string, i: number) => (
+                    <div key={i}>
+                      <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Spek {i + 1}</span>
+                      <span className="text-sm font-medium text-[#002b5b]">{spec}</span>
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Kemasan</span>
-                  <span className="text-sm font-bold text-[#002b5b]">{product.availablePacks?.join(', ') || 'Drum 200L'}</span>
-                </div>
-              </div>
+              )}
 
               {/* Deep Details */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-                {product.approvals && product.approvals[0] !== '-' && (
+                {product.partnerBrand === 'Gulf' && product.approvals && product.approvals[0] !== '-' && (
                   <div>
                     <h6 className="text-xs text-[#002b5b] uppercase tracking-widest font-bold mb-4 flex items-center gap-2 border-b border-gray-200 pb-2">
                       <CheckCircle2 size={16} className="text-[#ff6600]" /> OEM Approvals
@@ -315,8 +340,10 @@ const OfficialProductCard = ({ product, index }: { product: any; index: number }
                 )}
 
                 {product.applications && (
-                  <div className="md:col-span-2 mt-2">
-                    <h6 className="text-xs text-gray-500 uppercase tracking-widest font-bold mb-3">Aplikasi Optimal</h6>
+                  <div className={product.partnerBrand === 'Gulf' ? '' : 'md:col-span-2'}>
+                    <h6 className="text-xs text-[#002b5b] uppercase tracking-widest font-bold mb-4 flex items-center gap-2 border-b border-gray-200 pb-2">
+                      <Package2 size={16} className="text-[#ff6600]" /> Aplikasi Optimal
+                    </h6>
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((app: string, i: number) => (
                         <span key={i} className="bg-white border border-gray-200 text-[#002b5b] font-medium text-xs px-3 py-1.5 rounded-sm shadow-sm">
@@ -571,42 +598,44 @@ export default function Products() {
                 <div className="flex items-center gap-4 mb-8">
                   <div className="h-px w-8 bg-primary/30" />
                   <h3 className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">
-                    Filters
+                    Filter Tipe
                   </h3>
                 </div>
 
                 {activeCategory_?.subcategories && activeCategory_.subcategories.length > 0 ? (
-                  <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 no-scrollbar">
+                  <div className="flex flex-col gap-3">
                     <button
                       onClick={() => setActiveSubcat('all')}
-                      className={`flex-shrink-0 text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border ${activeSubcat === 'all'
-                        ? 'bg-secondary text-white border-secondary'
-                        : 'bg-white text-gray-400 border-gray-100 hover:border-primary/50 hover:text-secondary'
+                      className={`w-full text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border rounded-md ${activeSubcat === 'all'
+                        ? 'bg-secondary text-white border-secondary shadow-md'
+                        : 'bg-white text-gray-600 border-gray-200 hover:border-secondary/50 hover:bg-gray-50'
                         }`}
                     >
-                      All Types
+                      ✓ Semua Tipe
                     </button>
                     {activeCategory_.subcategories.map(sub => (
                       <button
                         key={sub.id}
                         onClick={() => setActiveSubcat(sub.id)}
-                        className={`flex-shrink-0 text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border ${activeSubcat === sub.id
-                          ? 'bg-secondary text-white border-secondary'
-                          : 'bg-white text-gray-400 border-gray-100 hover:border-primary/50 hover:text-secondary'
+                        className={`w-full text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border rounded-md ${activeSubcat === sub.id
+                          ? 'bg-secondary text-white border-secondary shadow-md'
+                          : 'bg-white text-gray-600 border-gray-200 hover:border-secondary/50 hover:bg-gray-50'
                           }`}
                       >
-                        {sub.name}
+                        {activeSubcat === sub.id && '✓ '}{sub.name}
                       </button>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-[10px] text-gray-300 uppercase tracking-widest font-bold">Standard Models Apply</p>
+                  <div className="bg-gray-50 border border-gray-200 rounded-md p-4">
+                    <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">Standar Produk</p>
+                  </div>
                 )}
 
                 <div className="hidden lg:block mt-24 border-l border-gray-100 pl-8 py-4">
-                  <h4 className="text-[10px] font-black text-secondary tracking-[0.2em] uppercase mb-4">Technical Care</h4>
-                  <p className="text-xs text-gray-400 leading-relaxed italic">
-                    Tim teknis kami siap memberikan konsultasi mendalam untuk pemilihan unit atau pelumas yang tepat sesuai kebutuhan operasional Anda.
+                  <h4 className="text-[10px] font-black text-secondary tracking-[0.2em] uppercase mb-4">💡 Konsultasi Teknis</h4>
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    Hubungi tim teknis kami untuk rekomendasi produk yang tepat sesuai kebutuhan spesifik Anda.
                   </p>
                 </div>
               </div>
@@ -623,7 +652,17 @@ export default function Products() {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 flex-wrap">
+                    {selectedBrand === 'Shantui' && (
+                      <a
+                        href="/shantui/shantui_excavator_catalog.pdf"
+                        download="Shantui_Excavator_Catalog.pdf"
+                        className="inline-flex items-center gap-2 bg-dark-brown text-white px-6 py-3 text-[11px] font-bold tracking-widest uppercase hover:bg-brown-black transition-all shadow-md hover:shadow-lg"
+                        title="Download Shantui Excavator Catalog PDF"
+                      >
+                        <DownloadCloud size={14} /> Unduh Katalog PDF
+                      </a>
+                    )}
                     <div className="relative">
                       <Search size={14} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
                       <input
@@ -664,7 +703,7 @@ export default function Products() {
                         transition={{ duration: 0.4 }}
                       >
                         {viewMode === 'grid' ? (
-                          <OfficialProductCard product={product} index={index} />
+                          <OfficialProductCard product={product} index={index} selectedBrand={selectedBrand} />
                         ) : (
                           <ProductRow product={product} index={index} />
                         )}
