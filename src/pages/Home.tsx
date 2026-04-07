@@ -27,16 +27,16 @@ export default function Home() {
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] flex items-center bg-white overflow-hidden border-b border-gray-50">
-        <div
+        <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.05]"
           style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
         />
-
+        
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-12 items-center">
             {/* Architectural Vertical Line */}
             <div className="hidden md:block col-span-1 h-32 w-px bg-gray-100 self-center" />
-
+            
             <div className="md:col-start-2 md:col-span-11 lg:col-start-3 lg:col-span-9">
               <motion.div
                 initial={{ opacity: 0, x: 10 }}
@@ -52,7 +52,7 @@ export default function Home() {
                 <h1 className="font-heading font-medium text-secondary text-2xl lg:text-[2.1rem] leading-[1.65] max-w-4xl mb-14 tracking-tight">
                   PT. Bersama Energi Nusapersada (BEN) menghadirkan pelumas premium dan solusi alat berat dengan standar global untuk menunjang operasional bisnis Anda di seluruh Indonesia.
                 </h1>
-
+                
                 <div className="flex flex-col sm:flex-row items-center gap-10">
                   <Link
                     to="/products"
@@ -133,7 +133,7 @@ export default function Home() {
               className="lg:col-span-5 relative"
             >
               <div className="relative z-10 aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
-                <img src="https://cdn-jjmn.jawapos.com/images/5/2025/10/18/IMG-20251018-WA0004-1846112463.jpg" className="w-full h-full object-cover" />
+                <img src="https://image.made-in-china.com/202f0j00WgPbDfLRIUzN/Ultra-Cheap-37-Tons-Shantui-Heavy-Crawler-Excavator-for-Sale.webp" className="w-full h-full object-cover" />
               </div>
               {/* Architectural Frame Offset */}
               <div className="absolute -top-12 -right-12 w-full h-full border border-gray-100 -z-10" />
@@ -177,9 +177,9 @@ export default function Home() {
             >
               <Link to="/products" className="group block">
                 <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-gray-50 border border-gray-100">
-                  <img
-                    src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  <img 
+                    src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
                   />
                   <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
@@ -206,9 +206,9 @@ export default function Home() {
             >
               <Link to="/products" className="group block">
                 <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-gray-50 border border-gray-100">
-                  <img
-                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  <img 
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
                   />
                   <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
@@ -226,14 +226,14 @@ export default function Home() {
               </Link>
             </motion.div>
           </div>
-
+          
           <div className="mt-32 pt-24 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between gap-12">
             <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-300">Jelajahi Katalog Lengkap</p>
             <div className="flex flex-wrap justify-center gap-8 lg:gap-14">
               {['Passenger Car', 'Motorcycle', 'Commercial', 'Industrial', 'Marine'].map((cat, i) => (
-                <Link
-                  key={i}
-                  to="/products"
+                <Link 
+                  key={i} 
+                  to="/products" 
                   className="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-secondary transition-colors"
                 >
                   {cat}
@@ -263,7 +263,7 @@ export default function Home() {
                 Konsultasi Sektor <div className="w-12 h-px bg-gray-200 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
               </Link>
             </div>
-
+            
             <div className="lg:col-span-7">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-50 border border-gray-50">
                 {[
