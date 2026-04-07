@@ -71,15 +71,25 @@ export default function About() {
           </div>
 
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.15 }}
-              className="font-heading font-medium text-white leading-[0.9] tracking-tighter text-[clamp(2.5rem,8vw,7rem)] mb-0"
-            >
-              Architecting <br />
-              <span className="text-primary italic font-serif">Precision</span> Logistics.
-            </motion.h1>
+            <div className="flex items-end gap-8 lg:gap-12">
+              <motion.h1
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.15 }}
+                className="font-heading font-medium text-white leading-[0.9] tracking-tighter text-[clamp(2.5rem,8vw,7rem)] mb-0"
+              >
+                Towards a <br />
+                <span className="text-primary italic font-serif">Cleaner</span> Future.
+              </motion.h1>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="mb-2 lg:mb-4"
+              >
+                <BenLogo className="h-32 lg:h-48" light={true} />
+              </motion.div>
+            </div>
           </div>
 
           {/* Bottom strip */}
