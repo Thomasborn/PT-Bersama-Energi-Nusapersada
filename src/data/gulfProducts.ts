@@ -85,7 +85,7 @@ export const gulfCategories: ProductCategory[] = [
     id: 'shantui',
     name: 'Alat Berat Shantui',
     description: 'Unit alat berat berkualitas global untuk pertambangan, konstruksi, dan infrastruktur. Tangguh dan efisien di segala medan operasional.',
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    imageUrl: 'https://www.shantui-global.com/upload/images/2024/07/05/9733632409d940508dbe56ba4dabfd21.jpg',
     brand: 'Shantui',
     slug: 'shantui',
     subcategories: [

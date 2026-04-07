@@ -14,8 +14,6 @@ export default function Navbar() {
     { name: t('nav.about'), path: '/about' },
     { name: t('nav.products'), path: '/products' },
     { name: t('nav.partnership'), path: '/partnership' },
-    { name: t('nav.news'), path: '/news' },
-    { name: t('nav.careers'), path: '/careers' },
     { name: t('nav.contact'), path: '/contact' },
   ];
 

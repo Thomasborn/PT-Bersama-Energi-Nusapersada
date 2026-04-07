@@ -403,9 +403,9 @@ export default function Products() {
           className="group cursor-pointer"
         >
           <div className="relative aspect-[16/10] overflow-hidden mb-10 grayscale hover:grayscale-0 transition-all duration-1000 border border-gray-100 bg-gray-50">
-            <img 
-              src="https://images.topgear.com.ph/topgear/images/2024/09/13/gulf-powertrac-scooter-oil-10-1726215750.jpg" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+            <img
+              src="https://images.topgear.com.ph/topgear/images/2024/09/13/gulf-powertrac-scooter-oil-10-1726215750.jpg"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
             <div className="absolute inset-0 flex items-center justify-center p-12">
@@ -435,9 +435,9 @@ export default function Products() {
           className="group cursor-pointer"
         >
           <div className="relative aspect-[16/10] overflow-hidden mb-10 grayscale hover:grayscale-0 transition-all duration-1000 border border-gray-100 bg-gray-50">
-            <img 
-              src="https://shantuiaustralia.com.au/wp-content/uploads/2024/01/Excavator-SE17.png" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
+            <img
+              src="https://shantuiaustralia.com.au/wp-content/uploads/2024/01/Excavator-SE17.png"
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
             <div className="absolute inset-0 flex items-center justify-center p-12">
@@ -476,7 +476,7 @@ export default function Products() {
           <section className="relative min-h-[50vh] flex flex-col justify-end bg-secondary overflow-hidden">
             <div
               className="absolute inset-0 z-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${selectedBrand === 'Gulf' ? 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80' : 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'})` }}
+              style={{ backgroundImage: `url(${selectedBrand === 'Gulf' ? 'https://euassets.gulfoilltd.com/gulfoilltd.com/files/Products%20cutout_0.webp?VersionId=gaKgIiklQIA_P0FUhT0dlQ4u0ZsFtDb_' : 'https://www.shantui-global.com/upload/images/2024/07/05/9733632409d940508dbe56ba4dabfd21.jpg'})` }}
             >
               <div className="absolute inset-0 bg-secondary/85 backdrop-blur-[2px]" />
             </div>
@@ -511,8 +511,8 @@ export default function Products() {
               <div className="border-t border-white/10 mt-12 bg-black/20">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
                   <p className="text-gray-300 text-sm leading-relaxed max-w-xl">
-                    {selectedBrand === 'Gulf' 
-                      ? 'Rangkaian lengkap produk pelumas Gulf Oil untuk performa maksimal operasional bisnis Anda.' 
+                    {selectedBrand === 'Gulf'
+                      ? 'Rangkaian lengkap produk pelumas Gulf Oil untuk performa maksimal operasional bisnis Anda.'
                       : 'Unit alat berat Shantui dengan teknologi terkini untuk menunjang produktivitas di berbagai sektor industri.'}
                   </p>
                   <a
@@ -537,11 +537,10 @@ export default function Products() {
                     setActiveCategory('all');
                     setActiveSubcat('all');
                   }}
-                  className={`py-5 text-xs tracking-[0.2em] uppercase whitespace-nowrap border-b-2 transition-all ${
-                    activeCategory === 'all'
-                      ? 'text-secondary font-bold border-primary'
-                      : 'text-gray-400 font-medium border-transparent hover:text-secondary'
-                  }`}
+                  className={`py-5 text-xs tracking-[0.2em] uppercase whitespace-nowrap border-b-2 transition-all ${activeCategory === 'all'
+                    ? 'text-secondary font-bold border-primary'
+                    : 'text-gray-400 font-medium border-transparent hover:text-secondary'
+                    }`}
                 >
                   Semua Kategori
                 </button>
@@ -552,11 +551,10 @@ export default function Products() {
                       setActiveCategory(cat.id);
                       setActiveSubcat('all');
                     }}
-                    className={`py-5 text-xs tracking-[0.2em] uppercase whitespace-nowrap border-b-2 transition-all ${
-                      activeCategory === cat.id
-                        ? 'text-secondary font-bold border-primary'
-                        : 'text-gray-400 font-medium border-transparent hover:text-secondary'
-                    }`}
+                    className={`py-5 text-xs tracking-[0.2em] uppercase whitespace-nowrap border-b-2 transition-all ${activeCategory === cat.id
+                      ? 'text-secondary font-bold border-primary'
+                      : 'text-gray-400 font-medium border-transparent hover:text-secondary'
+                      }`}
                   >
                     {cat.name}
                   </button>
@@ -567,7 +565,7 @@ export default function Products() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="flex flex-col lg:flex-row gap-12 items-start relative pb-10">
-              
+
               {/* Sidebar Filters */}
               <div className="w-full lg:w-1/4 lg:sticky lg:top-40">
                 <div className="flex items-center gap-4 mb-8">
@@ -581,11 +579,10 @@ export default function Products() {
                   <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto pb-4 lg:pb-0 no-scrollbar">
                     <button
                       onClick={() => setActiveSubcat('all')}
-                      className={`flex-shrink-0 text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border ${
-                        activeSubcat === 'all'
-                          ? 'bg-secondary text-white border-secondary'
-                          : 'bg-white text-gray-400 border-gray-100 hover:border-primary/50 hover:text-secondary'
-                      }`}
+                      className={`flex-shrink-0 text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border ${activeSubcat === 'all'
+                        ? 'bg-secondary text-white border-secondary'
+                        : 'bg-white text-gray-400 border-gray-100 hover:border-primary/50 hover:text-secondary'
+                        }`}
                     >
                       All Types
                     </button>
@@ -593,11 +590,10 @@ export default function Products() {
                       <button
                         key={sub.id}
                         onClick={() => setActiveSubcat(sub.id)}
-                        className={`flex-shrink-0 text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border ${
-                          activeSubcat === sub.id
-                            ? 'bg-secondary text-white border-secondary'
-                            : 'bg-white text-gray-400 border-gray-100 hover:border-primary/50 hover:text-secondary'
-                        }`}
+                        className={`flex-shrink-0 text-left px-5 py-3 text-[11px] font-bold uppercase tracking-widest transition-all border ${activeSubcat === sub.id
+                          ? 'bg-secondary text-white border-secondary'
+                          : 'bg-white text-gray-400 border-gray-100 hover:border-primary/50 hover:text-secondary'
+                          }`}
                       >
                         {sub.name}
                       </button>
@@ -626,7 +622,7 @@ export default function Products() {
                       {displayed.length} Produk Ditemukan
                     </span>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <div className="relative">
                       <Search size={14} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -638,7 +634,7 @@ export default function Products() {
                         className="bg-gray-50 border-none pl-11 pr-8 py-3 text-xs focus:ring-1 focus:ring-primary w-full sm:w-64 transition-all"
                       />
                     </div>
-                    
+
                     <div className="flex items-center border border-gray-100 p-1">
                       <button
                         onClick={() => setViewMode('grid')}

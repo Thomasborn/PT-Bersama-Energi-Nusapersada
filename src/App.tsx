@@ -9,8 +9,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
 import Partnership from './pages/Partnership';
-import News from './pages/News';
-import Careers from './pages/Careers';
 import Contact from './pages/Contact';
 import { LanguageProvider } from './context/LanguageContext';
 
@@ -24,8 +22,6 @@ export default function App() {
             <Route path="about" element={<About />} />
             <Route path="products" element={<Products />} />
             <Route path="partnership" element={<Partnership />} />
-            <Route path="news" element={<News />} />
-            <Route path="careers" element={<Careers />} />
             <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
