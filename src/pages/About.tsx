@@ -48,7 +48,7 @@ export default function About() {
         {/* Background - Clean Modern Industrial */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("https://products.unitedtractors.com/wp-content/uploads/2023/09/5.-Banner-Landscape-01-290823-5-Alat-Berat-Konstruksi-yang-Dapat-Meningkatkan-Efisiensi-dan-Produktivitas.jpg")' }}
+          style={{ backgroundImage: 'url("https://www.shantui-global.com/upload/images/2025/04/17/aa91aa0c49964db986e7ef98b6f9ef83.jpg")' }}
         >
           <div className="absolute inset-0 bg-secondary/40 backdrop-blur-[1px]" />
           <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent opacity-80" />

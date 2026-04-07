@@ -413,7 +413,7 @@ export default function Products() {
             </div>
           </div>
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Pelumas Premium</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Pelumas Gulf</span>
             <div className="h-px w-8 bg-gray-100" />
           </div>
           <h3 className="font-heading font-medium text-secondary text-3xl mb-4 flex items-center justify-between">

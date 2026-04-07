@@ -62,7 +62,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, ease: 'easeOut' }}
               >
-                {/* Premium Overline with staggered glow */}
+                {/*  Overline with staggered glow */}
                 <div className="flex items-center gap-4 mb-10 overflow-hidden">
                    <motion.div 
                      initial={{ width: 0 }}
@@ -95,7 +95,7 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="block mt-2"
                   >
-                    Alat Berat <span className="font-serif italic text-primary pr-2">Premium</span>
+                    Alat Berat <span className="font-serif italic text-primary pr-2"></span>
                   </motion.span>
                   <motion.span 
                     initial={{ opacity: 0, y: 30 }}
@@ -331,7 +331,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
                 <div className="flex items-center gap-6 mb-8">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Pelumas Premium</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Pelumas </span>
                   <div className="h-px w-10 bg-primary/40" />
                 </div>
                 <h3 className="font-heading font-medium text-primary text-3xl lg:text-4xl mb-8 flex items-center justify-between">

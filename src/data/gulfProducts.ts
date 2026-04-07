@@ -138,7 +138,7 @@ export const gulfProducts: ProductSpec[] = [
     availablePacks: ['1L', '4L', '200L'],
     specifications: ['API SP', 'ACEA A3/B4'],
     approvals: ['Rekomendasi Utama OEM Eropa'],
-    applications: ['Mobil sport', 'Sedan premium', 'SUV modern berkinerja tinggi'],
+    applications: ['Mobil sport', 'Sedan berkinerja tinggi', 'SUV modern berkinerja tinggi'],
     keyBenefits: ['Perlindungan keausan mesin tiada tanding', 'Menjaga kebersihan mesin dari endapan', 'Stabilitas suhu ekstrem'],
     partnerBrand: 'Gulf'
   },
@@ -165,7 +165,7 @@ export const gulfProducts: ProductSpec[] = [
     image: 'https://assets.gulfoilltd.com/indonesia/files/2.%20CAR_EO_620x400.webp',
     categoryId: 'mobil',
     subcategoryId: 'oli-mesin',
-    summary: 'High Quality Engine Oil kelas premium berbahan dasar oli mineral yang tangguh untuk segala medan dan keawetan mesin.',
+    summary: 'High Quality Engine Oil berbahan dasar oli mineral yang tangguh untuk segala medan dan keawetan mesin',
     viscosityGrades: ['10W-40', '15W-40'],
     availablePacks: ['1L', '4L'],
     specifications: ['API SN/CF'],
@@ -253,12 +253,12 @@ export const gulfProducts: ProductSpec[] = [
     image: 'https://assets.gulfoilltd.com/indonesia/files/2024-03/MCO_Syntrac_4T_10W40_Pack_1L_280x380_0.webp',
     categoryId: 'motor',
     subcategoryId: 'oli-mesin-motor',
-    summary: 'Oli mesin sintetik premium untuk motor 4-tak performa tinggi, memberikan perlindungan maksimal pada mesin, kopling, dan transmisi.',
+    summary: 'Oli mesin sintetik untuk motor 4-tak performa tinggi, memberikan perlindungan maksimal pada mesin, kopling, dan transmisi',
     viscosityGrades: ['10W-40', '10W-50'],
     availablePacks: ['800ml', '1L'],
     specifications: ['API SN', 'JASO MA2'],
     approvals: ['Standar motor sport internasional'],
-    applications: ['Motor sport 4-tak', 'Motor touring premium', 'Naked bike dan supermoto'],
+    applications: ['Motor sport 4-tak', 'Motor touring berkinerja tinggi', 'Naked bike dan supermoto'],
     keyBenefits: ['Formulasi spesifik mesin 4-tak', 'Perlindungan kopling basah superior', 'Stabilitas viskositas pada RPM tinggi'],
     partnerBrand: 'Gulf'
   },
@@ -269,7 +269,7 @@ export const gulfProducts: ProductSpec[] = [
     image: 'https://assets.gulfoilltd.com/indonesia/files/2024-03/Pride_4T_Scooter_Plus_10W30_1L_280x380.webp',
     categoryId: 'motor',
     subcategoryId: 'oli-mesin-motor',
-    summary: 'Pelumas semi-sintetik premium 4-tak yang dikembangkan secara spesifik untuk menjaga mesin bersih dan pergantian gigi mulus.',
+    summary: 'Pelumas semi-sintetik 4-tak yang dikembangkan secara spesifik untuk menjaga mesin bersih dan pergantian gigi mulus',
     viscosityGrades: ['10W-40', '15W-50'],
     availablePacks: ['800ml', '1L'],
     specifications: ['API SL', 'JASO MA2'],
@@ -306,7 +306,7 @@ export const gulfProducts: ProductSpec[] = [
     availablePacks: ['800ml', '1L'],
     specifications: ['API SL', 'JASO MB'],
     approvals: ['-'],
-    applications: ['Skuter matic modern', 'Motor matic harian', 'Motor matic premium'],
+    applications: ['Skuter matic modern', 'Motor matic harian', 'Motor matic berkinerja tinggi'],
     keyBenefits: ['Formulasi khusus transmisi CVT', 'Menjaga kebersihan mesin matic', 'Efisiensi bahan bakar optimal untuk skuter'],
     partnerBrand: 'Gulf'
   },
@@ -328,7 +328,7 @@ export const gulfProducts: ProductSpec[] = [
     availablePacks: ['5L', '20L', '200L'],
     specifications: ['API CK-4', 'ACEA E9/E7/E6'],
     approvals: ['MB 228.31', 'Volvo VDS-4.5', 'MAN M 3575', 'Cummins CES 20086'],
-    applications: ['Truck heavy duty modern', 'Armada logistik jarak jauh', 'Bus antarkota premium'],
+    applications: ['Truck heavy duty modern', 'Armada logistik jarak jauh', 'Bus antarkota'],
     keyBenefits: ['Extended drain interval', 'Perlindungan sistem DPF/SCR', 'Stabilitas oksidasi kelas wahid'],
     partnerBrand: 'Gulf'
   },
@@ -459,7 +459,7 @@ export const gulfProducts: ProductSpec[] = [
     image: BARREL_IMG,
     categoryId: 'industrial',
     subcategoryId: 'hidrolik',
-    summary: 'Pelumas anti-wear hidrolik premium yang diformulasikan dari basis minyak mineral kualitas super untuk aplikasi manufaktur dan industri mobilitas.',
+    summary: 'Pelumas anti-wear hidrolik yang diformulasikan dari basis minyak mineral kualitas super untuk aplikasi manufaktur dan industri mobilitas',
     viscosityGrades: ['ISO VG 32', 'ISO VG 46', 'ISO VG 68', 'ISO VG 100'],
     availablePacks: ['20L', '200L'],
     specifications: ['DIN 51524 Part 2 HLP', 'ISO 11158 HM'],
@@ -587,7 +587,7 @@ export const gulfProducts: ProductSpec[] = [
     image: BARREL_IMG,
     categoryId: 'industrial',
     subcategoryId: 'oli-bantalan',
-    summary: 'Oli sirkulasi dan bantalan premium yang dirancang untuk pelumasan berkelanjutan pada mesin industri presisi dan bearing berkecepatan tinggi.',
+    summary: 'Oli sirkulasi dan bantalan yang dirancang untuk pelumasan berkelanjutan pada mesin industri presisi dan bearing berkecepatan tinggi',
     viscosityGrades: ['ISO VG 32', 'ISO VG 46', 'ISO VG 68', 'ISO VG 100'],
     availablePacks: ['20L', '200L'],
     specifications: ['DIN 51517 Part 2 CL', 'ISO 12925-1 Type CKB'],
@@ -623,7 +623,7 @@ export const gulfProducts: ProductSpec[] = [
     image: BARREL_IMG,
     categoryId: 'industrial',
     subcategoryId: 'grease',
-    summary: 'Pelumas gemuk Lithium Complex serbaguna premium dengan ketahanan suhu tinggi dan kemampuan tahan air yang sangat baik.',
+    summary: 'Pelumas gemuk Lithium Complex serbaguna dengan ketahanan suhu tinggi dan kemampuan tahan air yang sangat baik',
     viscosityGrades: ['NLGI 2'],
     availablePacks: ['18Kg', '180Kg'],
     specifications: ['DIN 51502 KP2N-30'],
@@ -779,102 +779,169 @@ export const gulfProducts: ProductSpec[] = [
     partnerBrand: 'Shantui'
   },
 
-  // ── B. Large/Medium Excavators ─────────────────────────────────────────────
+  // ── B. Mini Excavators (≤ 6 Ton) ──────────────────────────────────────────
   {
-    id: 'shantui-se500lc-9w',
-    name: 'Shantui SE500LC-9W',
-    slug: 'shantui-se500lc-9w',
-    image: 'https://www.shantui-global.com/upload/images/2023/09/20/8615de9d75994effa3e2958afeb19cd1.jpg',
+    id: 'shantui-se17sr',
+    name: 'Shantui SE17SR',
+    slug: 'shantui-se17sr',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220025210658.jpg',
     categoryId: 'shantui',
-    subcategoryId: 'large-excavator',
-    summary: 'Excavator kelas berat untuk konstruksi infrastruktur dan pertambangan menengah.',
+    subcategoryId: 'mini-excavator',
+    summary: 'Mini excavator kompak dengan performa tinggi untuk pekerjaan presisi di area terbatas.',
+    specifications: ['Operating Weight: 1,800 kg', 'Bucket Capacity: 0.04 m³', 'Engine Power: 11.8 kW'],
+    applications: ['Pekerjaan konstruksi dalam ruangan', 'Landscape dan taman', 'Proyek kecil dengan akses terbatas'],
     partnerBrand: 'Shantui'
   },
   {
-    id: 'shantui-se245lc-9w',
-    name: 'Shantui SE245LC-9W',
-    slug: 'shantui-se245lc-9w',
-    image: 'https://www.shantui-global.com/upload/images/2023/09/20/8da84054dd164ceba3ffa0f721263a89.jpg',
+    id: 'shantui-se26sr',
+    name: 'Shantui SE26SR',
+    slug: 'shantui-se26sr',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220025525287.jpg',
     categoryId: 'shantui',
-    subcategoryId: 'medium-excavator',
-    partnerBrand: 'Shantui'
-  },
-  {
-    id: 'shantui-se215-9w',
-    name: 'Shantui SE215-9W',
-    slug: 'shantui-se215-9w',
-    image: 'https://www.shantui-global.com/upload/images/2023/06/15/7476159f28c44a74926d059b015bca28.jpg',
-    categoryId: 'shantui',
-    subcategoryId: 'medium-excavator',
-    partnerBrand: 'Shantui'
-  },
-  {
-    id: 'shantui-se210-9w',
-    name: 'Shantui SE210-9W',
-    slug: 'shantui-se210-9w',
-    image: 'https://www.shantui-global.com/upload/images/2023/06/15/2ccc9f33e67a415c8a395dbd574bfc70.jpg',
-    categoryId: 'shantui',
-    subcategoryId: 'medium-excavator',
-    partnerBrand: 'Shantui'
-  },
-
-  // ── C. Small/Mini Excavators ───────────────────────────────────────────────
-  {
-    id: 'shantui-se150-9w',
-    name: 'Shantui SE150-9W',
-    slug: 'shantui-se150-9w',
-    image: 'https://www.shantui-global.com/upload/images/2023/06/26/3d219014fb5a4872a850b5df14473060.png',
-    categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
-    partnerBrand: 'Shantui'
-  },
-  {
-    id: 'shantui-se135-9w',
-    name: 'Shantui SE135-9W',
-    slug: 'shantui-se135-9w',
-    image: 'https://www.shantui-global.com/upload/images/2023/06/26/b747ee0eeabb476b9bcc6c7ea8191504.png',
-    categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
-    partnerBrand: 'Shantui'
-  },
-  {
-    id: 'shantui-se75-9w',
-    name: 'Shantui SE75-9W',
-    slug: 'shantui-se75-9w',
-    image: 'https://www.shantui-global.com/upload/images/2023/06/27/b8c30dcae32c4475b46d059b015bca28.png',
-    categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
-    partnerBrand: 'Shantui'
-  },
-  {
-    id: 'shantui-se60-9',
-    name: 'Shantui SE60-9',
-    slug: 'shantui-se60-9',
-    image: 'https://www.shantui-global.com/upload/images/2023/06/27/cc415ec904ae4a64913fdc01babf2b6d.png',
-    categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
+    subcategoryId: 'mini-excavator',
+    summary: 'Excavator mini bertenaga dengan kapasitas bucket lebih besar untuk efisiensi operasional.',
+    specifications: ['Operating Weight: 2,600 kg', 'Bucket Capacity: 0.06 m³', 'Engine Power: 18.2 kW'],
+    applications: ['Konstruksi umum', 'Penggalian dan demolisi ringan', 'Pekerjaan utilitas'],
     partnerBrand: 'Shantui'
   },
   {
     id: 'shantui-se35sr',
     name: 'Shantui SE35SR',
     slug: 'shantui-se35sr',
-    image: 'https://www.shantui-global.com/upload/images/2023/06/26/5163e1f3c7b344b3b5edf147ae2237b0.png',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220025819461.jpg',
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
+    summary: 'Mini excavator unggul dengan daya gali yang kuat untuk berbagai kondisi proyek.',
+    specifications: ['Operating Weight: 3,860 kg', 'Bucket Capacity: 0.11 m³', 'Engine Power: 18.2 kW'],
+    applications: ['Konstruksi infrastruktur ringan', 'Pertambanagn skala kecil', 'Pekerjaan persiapan lahan'],
     partnerBrand: 'Shantui'
   },
   {
-    id: 'shantui-se18sr',
-    name: 'Shantui SE18SR',
-    slug: 'shantui-se18sr',
-    image: 'https://www.shantui-global.com/upload/images/2023/06/26/1d2319fd78d747c18ba3c8b823a2423a.png',
+    id: 'shantui-se60-9',
+    name: 'Shantui SE60-9',
+    slug: 'shantui-se60-9',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220030045363.jpg',
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
+    summary: 'Excavator mini performa ekstrem dengan teknologi hidrolik canggih.',
+    specifications: ['Operating Weight: 5,960 kg', 'Bucket Capacity: 0.22 m³', 'Engine Power: 36 kW'],
+    applications: ['Konstruksi menengah', 'Penggalian tanah dalam', 'Proyek pembangunan'],
     partnerBrand: 'Shantui'
   },
 
-  // ── D. Wheel Excavators ────────────────────────────────────────────────────
+  // ── C. Medium Excavators (6 – 25 Ton) ───────────────────────────────────────
+  {
+    id: 'shantui-se75-9',
+    name: 'Shantui SE75-9',
+    slug: 'shantui-se75-9',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220030312654.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'medium-excavator',
+    summary: 'Excavator medium tangguh untuk proyek konstruksi dan pertambangan moderat.',
+    specifications: ['Operating Weight: 7,650 kg', 'Bucket Capacity: 0.32 m³', 'Engine Power: 48 kW'],
+    applications: ['Konstruksi komersial', 'Quarry dan penambangan', 'Infrastruktur'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se135-9',
+    name: 'Shantui SE135-9',
+    slug: 'shantui-se135-9',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220030533979.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'medium-excavator',
+    summary: 'Excavator performa tinggi dengan kapasitas penggalian superior untuk proyek berskala besar.',
+    specifications: ['Operating Weight: 13,500 kg', 'Bucket Capacity: 0.55 m³', 'Engine Power: 86 kW'],
+    applications: ['Proyek infrastruktur', 'Pertambangan batubara dan mineral', 'Konstruksi bangunan besar'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se215-9',
+    name: 'Shantui SE215-9',
+    slug: 'shantui-se215-9',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220030802903.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'medium-excavator',
+    summary: 'Excavator medium besar dengan efisiensi bahan bakar optimal untuk operasi berkelanjutan.',
+    specifications: ['Operating Weight: 21,500 kg', 'Bucket Capacity: 1.0 m³', 'Engine Power: 128.5 kW'],
+    applications: ['Pertambangan skala menengah', 'Proyek infrastruktur besar', 'Demolisi dan reklamasi'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se215lcw',
+    name: 'Shantui SE215LCW',
+    slug: 'shantui-se215lcw',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220031034624.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'medium-excavator',
+    summary: 'Excavator dengan jangkauan panjang dan bucket berkapasitas besar untuk kedalaman maksimal.',
+    specifications: ['Operating Weight: 21,800 kg', 'Bucket Capacity: 1.1 m³', 'Engine Power: 128.5 kW'],
+    applications: ['Penggalian dalam dan digging', 'Pertambangan underground', 'Proyek dengan kedalaman khusus'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se245lc',
+    name: 'Shantui SE245LC',
+    slug: 'shantui-se245lc',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220031300655.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'medium-excavator',
+    summary: 'Excavator medium dengan teknologi tercanggih dan stabilitas operasional superior',
+    specifications: ['Operating Weight: 24,500 kg', 'Bucket Capacity: 1.2 m³', 'Engine Power: 147 kW'],
+    applications: ['Pertambangan skala besar', 'Proyek sipil kompleks', 'Konstruksi infrastruktur'],
+    partnerBrand: 'Shantui'
+  },
+
+  // ── D. Large Excavators (≥ 30 Ton) ──────────────────────────────────────────
+  {
+    id: 'shantui-se300lc',
+    name: 'Shantui SE300LC',
+    slug: 'shantui-se300lc',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220031538217.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'large-excavator',
+    summary: 'Excavator besar dengan performa mining-grade untuk operasi pertambangan profesional.',
+    specifications: ['Operating Weight: 30,500 kg', 'Bucket Capacity: 1.5 m³', 'Engine Power: 180 kW'],
+    applications: ['Pertambangan berskala besar', 'Penggalian infrastruktur masif', 'Proyek konstruksi strategis'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se370lc',
+    name: 'Shantui SE370LC',
+    slug: 'shantui-se370lc',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220031803675.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'large-excavator',
+    summary: 'Excavator jumbo dengan daya gali luar biasa untuk pertambangan dan konstruksi ekstrem.',
+    specifications: ['Operating Weight: 36,800 kg', 'Bucket Capacity: 1.8 m³', 'Engine Power: 212 kW'],
+    applications: ['Pertambangan batubara utama', 'Proyek infrastruktur skala nasional', 'Konstruksi bendungan'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se470lc',
+    name: 'Shantui SE470LC',
+    slug: 'shantui-se470lc',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220032041573.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'large-excavator',
+    summary: 'Excavator mega dengan kapasitas bucket raksasa untuk operasi pertambangan maksimal.',
+    specifications: ['Operating Weight: 47,000 kg', 'Bucket Capacity: 2.2 m³', 'Engine Power: 250 kW'],
+    applications: ['Pertambangan open pit', 'Proyek sipil infrastruktur megah', 'Konstruksi bendungan besar'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-se650lc',
+    name: 'Shantui SE650LC',
+    slug: 'shantui-se650lc',
+    image: 'https://www.shantui-global.com/uploadfile/2021/1220/20211220032315847.jpg',
+    categoryId: 'shantui',
+    subcategoryId: 'large-excavator',
+    summary: 'Excavator terbesar dengan teknologi terdepan untuk pertambangan kelas world-class.',
+    specifications: ['Operating Weight: 65,000 kg', 'Bucket Capacity: 3.5 m³', 'Engine Power: 350 kW'],
+    applications: ['Pertambangan skala internasional', 'Proyek infrastruktur megah', 'Konstruksi bangunan tertinggi'],
+    partnerBrand: 'Shantui'
+  },
+
+  // ── E. Wheel Excavators ────────────────────────────────────────────────────
   {
     id: 'shantui-se140w',
     name: 'Shantui SE140W',

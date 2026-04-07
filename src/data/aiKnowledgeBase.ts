@@ -187,7 +187,7 @@ export const benKnowledgeBase: KnowledgeEntry[] = [
     id: 'gulf-harmony-id',
     category: 'Products',
     title: 'Gulf Harmony AW - Oli Hidrolik Anti-Wear',
-    content: 'Pelumas anti-wear hidrolik premium untuk aplikasi manufaktur dan mobilitas industri. Specs: DIN 51524 Part 2 HLP, ISO 11158 HM. Viscosity: ISO VG 32, 46, 68, 100. Perlindungan ekstra anti-keausan pompa, pemisahan air terbaik, ketahanan oksidasi andal.',
+    content: 'Pelumas anti-wear hidrolik untuk aplikasi manufaktur dan mobilitas industri. Specs: DIN 51524 Part 2 HLP, ISO 11158 HM. Viscosity: ISO VG 32, 46, 68, 100. Perlindungan ekstra anti-keausan pompa, pemisahan air terbaik, ketahanan oksidasi andal',
     keywords: ['gulf harmony', 'hidrolik', 'anti-wear', 'industri'],
     relatedPage: '/products',
     language: 'id'
@@ -196,7 +196,7 @@ export const benKnowledgeBase: KnowledgeEntry[] = [
     id: 'gulf-harmony-en',
     category: 'Products',
     title: 'Gulf Harmony AW - Anti-Wear Hydraulic Oil',
-    content: 'Premium anti-wear hydraulic lubricant for manufacturing and industrial mobility applications. Specs: DIN 51524 Part 2 HLP, ISO 11158 HM. Viscosity: ISO VG 32, 46, 68, 100. Extra pump anti-wear protection with superior demulsibility.',
+    content: 'Anti-wear hydraulic lubricant for manufacturing and industrial mobility applications. Specs: DIN 51524 Part 2 HLP, ISO 11158 HM. Viscosity: ISO VG 32, 46, 68, 100. Extra pump anti-wear protection with superior demulsibility',
     keywords: ['gulf harmony', 'hydraulic', 'anti-wear', 'industrial'],
     relatedPage: '/products',
     language: 'en'
@@ -243,7 +243,7 @@ export const benKnowledgeBase: KnowledgeEntry[] = [
     id: 'partnership-benefits-id',
     category: 'Partnership',
     title: 'Keuntungan Bermitra dengan BEN',
-    content: 'Akses ke merek-merek global premium. Harga kompetitif dengan struktur margin menarik. Dukungan pemasaran melalui materi dan kampanye promosi. Pelatihan teknis yang komprehensif. Rantai pasokan yang andal dengan ketersediaan produk konsisten melalui jaringan distribusi nasional kami.',
+    content: 'Akses ke merek-merek global terkemuka. Harga kompetitif dengan struktur margin menarik. Dukungan pemasaran melalui materi dan kampanye promosi. Pelatihan teknis yang komprehensif. Rantai pasokan yang andal dengan ketersediaan produk konsisten melalui jaringan distribusi nasional kami',
     keywords: ['keuntungan', 'manfaat', 'benefit', 'kemitraan'],
     relatedPage: '/partnership',
     language: 'id'
@@ -252,7 +252,7 @@ export const benKnowledgeBase: KnowledgeEntry[] = [
     id: 'partnership-benefits-en',
     category: 'Partnership',
     title: 'Benefits of Partnership with BEN',
-    content: 'Access to premium global brands. Competitive pricing with attractive margins. Marketing support through materials and promotions. Comprehensive technical training. Reliable supply chain with consistent product availability through our national distribution network.',
+    content: 'Access to leading global brands. Competitive pricing with attractive margins. Marketing support through materials and promotions. Comprehensive technical training. Reliable supply chain with consistent product availability through our national distribution network',
     keywords: ['benefits', 'advantage', 'partnership'],
     relatedPage: '/partnership',
     language: 'en'
