@@ -404,7 +404,7 @@ export default function Products() {
         >
           <div className="relative aspect-[16/10] overflow-hidden mb-10 grayscale hover:grayscale-0 transition-all duration-1000 border border-gray-100 bg-gray-50">
             <img 
-              src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+              src="https://images.topgear.com.ph/topgear/images/2024/09/13/gulf-powertrac-scooter-oil-10-1726215750.jpg" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
             />
             <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
@@ -436,7 +436,7 @@ export default function Products() {
         >
           <div className="relative aspect-[16/10] overflow-hidden mb-10 grayscale hover:grayscale-0 transition-all duration-1000 border border-gray-100 bg-gray-50">
             <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src="https://shantuiaustralia.com.au/wp-content/uploads/2024/01/Excavator-SE17.png" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
             />
             <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
