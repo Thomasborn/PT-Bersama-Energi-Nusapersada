@@ -14,7 +14,7 @@ export default function Partnership() {
         {/* Background */}
         <div
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")' }}
+          style={{ backgroundImage: 'url("https://www.shantui-global.com/upload/images/2023/06/15/11b95e6840244b219a30b6201e5c1ded.jpg")' }}
         >
           <div className="absolute inset-0 bg-secondary/80" />
         </div>
@@ -186,8 +186,142 @@ export default function Partnership() {
         </div>
       </section>
 
-      {/* ── APPLICATION FORM CTA — Flat Structural ───────────────────────────── */}
-      <section className="bg-secondary py-0 border-t border-white/10">
+      {/* ── APPLICATION FORM CTA — Flat Structural ───────────────────────────── */}      <section className="bg-white py-32 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <div className="flex items-center gap-4 mb-10">
+              <div className="h-px w-12 bg-primary" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Mitra Kami</span>
+            </div>
+            <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-12">
+              Perusahaan yang Bekerja Sama dengan BEN
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mb-16">
+              PT Bersama Energi Nusapersada bermitra strategis dengan perusahaan-perusahaan terkemuka di industri energi dan alat berat untuk memberikan solusi terbaik kepada pelanggan.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group hover:bg-gradient-to-br hover:from-primary hover:to-primary/90 transition-all duration-500 hover:shadow-lg"
+            >
+              <img src="/gulf.png" alt="Gulf Oil" className="h-16 object-contain mx-auto mb-6 group-hover:brightness-0 group-hover:invert" />
+              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">Gulf Oil</h4>
+              <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
+                Distributor resmi pelumas Gulf berkelas dunia dengan standar internasional sejak 1901.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group hover:bg-gradient-to-br hover:from-primary hover:to-primary/90 transition-all duration-500 hover:shadow-lg"
+            >
+              <img src="/shantui-logo.jpeg" alt="Shantui" className="h-14 object-contain mx-auto mb-6 group-hover:brightness-0 group-hover:invert" />
+              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">Shantui Machinery</h4>
+              <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
+                Distributor resmi alat berat Shantui untuk pertambangan, konstruksi, dan infrastruktur.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group hover:bg-gradient-to-br hover:from-primary hover:to-primary/90 transition-all duration-500 hover:shadow-lg"
+            >
+              <img src="/ben_exact.png" alt="PT Bersama Energi Nusapersada" className="h-16 object-contain mx-auto mb-6 group-hover:brightness-0 group-hover:invert" />
+              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">PT BEN</h4>
+              <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
+                PT Bersama Energi Nusapersada - Distributor Resmi dan Komitmen Lokal untuk Pertumbuhan Industri.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CUSTOMERS / SECTORS SERVED ─────────────────────────────────────────── */}
+      <section className="bg-gray-50 py-32 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-20"
+          >
+            <div className="flex items-center gap-4 mb-10">
+              <div className="h-px w-12 bg-primary" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Pelanggan Kami</span>
+            </div>
+            <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-8">
+              Sektor Usaha yang Dilayani
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
+              Perusahaan kami melayani berbagai sektor industri dengan menyediakan produk pelumas Gulf berkualitas tinggi dan solusi alat berat yang terpercaya.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              'Perusahaan Transportasi',
+              'Perusahaan Logistik',
+              'Kontraktor',
+              'Pertambangan',
+              'Pabrik / Manufaktur',
+              'Perkebunan',
+              'Rental Alat Berat',
+              'Workshop / Bengkel',
+              'Fleet Trucking',
+              'Proyek Konstruksi'
+            ].map((sector, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="bg-white border border-gray-200 rounded-lg p-6 group hover:bg-gradient-to-br hover:from-secondary hover:to-secondary/95 transition-all duration-500 hover:shadow-lg hover:border-secondary"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="text-primary group-hover:text-white transition-colors mt-1">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <p className="text-gray-700 text-sm font-medium group-hover:text-white transition-colors">{sector}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-20 p-8 bg-white border border-gray-200 rounded-lg"
+          >
+            <p className="text-gray-700 text-center font-medium">
+              Dengan pengalaman lebih dari 15 tahun dan jaringan distribusi yang luas, BEN siap melayani kebutuhan pelumas dan alat berat untuk berbagai sektor industri di Indonesia. 
+              <Link to="/contact" className="text-primary hover:text-primary/80 font-bold ml-1">Hubungi kami untuk konsultasi produk yang tepat.</Link>
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── APPLICATION FORM CTA — Flat Structural ───────────────────────────── */}      <section className="bg-secondary py-0 border-t border-white/10">
         <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
           
           <div className="p-16 lg:p-24 flex flex-col justify-center">

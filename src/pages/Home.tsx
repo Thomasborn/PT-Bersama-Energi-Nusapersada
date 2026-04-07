@@ -26,7 +26,7 @@ export default function Home() {
     <div className="w-full overflow-x-hidden">
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[95vh] flex flex-col justify-center bg-white overflow-hidden pb-20 pt-24 lg:pt-32">
+      <section className="relative min-h-[95vh] flex flex-col justify-center bg-gradient-to-b from-white via-white to-dark-brown/5 overflow-hidden pb-20 pt-24 lg:pt-32">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div 
@@ -124,7 +124,7 @@ export default function Home() {
                 >
                   <Link
                     to="/products"
-                    className="group relative inline-flex items-center justify-center bg-secondary text-white px-10 py-5 font-bold tracking-widest text-[10px] uppercase transition-all hover:bg-black overflow-hidden shadow-2xl shadow-secondary/20"
+                    className="group relative inline-flex items-center justify-center bg-dark-brown text-white px-10 py-5 font-bold tracking-widest text-[10px] uppercase transition-all hover:bg-brown-black overflow-hidden shadow-2xl shadow-dark-brown/30"
                   >
                     <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black" />
                     <span className="relative z-10 flex items-center gap-4">
@@ -195,7 +195,7 @@ export default function Home() {
       </section>
 
       {/* ── ABOUT BEN — Aesthetic Precision Narrative ───────────────────────── */}
-      <section className="bg-gradient-to-b from-white to-gray-50/50 py-32 lg:py-48 border-b border-gray-100">
+      <section className="bg-gradient-to-b from-white via-white to-dark-brown/3 py-32 lg:py-48 border-b border-dark-brown/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-28 items-center">
             {/* Narrative Block */}
@@ -215,7 +215,7 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
-                className="font-heading font-bold text-secondary text-[clamp(2.2rem,5vw,4rem)] leading-[1.15] tracking-tight mb-10"
+                className="font-heading font-bold text-dark-brown text-[clamp(2.2rem,5vw,4rem)] leading-[1.15] tracking-tight mb-10"
               >
                 Kualitas & <span className="text-primary">Kepercayaan</span> Sejak Awal
               </motion.h2>
@@ -243,12 +243,12 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="grid grid-cols-2 gap-10 mt-14 pt-8 border-t border-gray-200"
+                className="grid grid-cols-2 gap-10 mt-14 pt-8 border-t border-dark-brown/20"
               >
                 {STATS.slice(1, 3).map((s, i) => (
                   <div key={i} className="group">
-                    <div className="text-4xl md:text-5xl font-heading font-black text-primary tracking-tight mb-2 group-hover:scale-110 transition-transform duration-300">{s.value}</div>
-                    <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-500 group-hover:text-primary transition-colors">{s.label}</div>
+                    <div className="text-4xl md:text-5xl font-heading font-black text-dark-brown tracking-tight mb-2 group-hover:scale-110 transition-transform duration-300">{s.value}</div>
+                    <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-dark-brown/60 group-hover:text-primary transition-colors">{s.label}</div>
                   </div>
                 ))}
               </motion.div>
@@ -261,7 +261,7 @@ export default function Home() {
               >
                 <Link
                   to="/about"
-                  className="inline-flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em] text-secondary hover:text-primary group transition-all duration-300 border-b-2 border-primary/20 hover:border-primary pb-2"
+                  className="inline-flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em] text-dark-brown hover:text-primary group transition-all duration-300 border-b-2 border-dark-brown/20 hover:border-primary pb-2"
                 >
                   {t('about.readFullStory')}
                   <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
@@ -279,21 +279,21 @@ export default function Home() {
             >
               <div className="relative z-10 aspect-[3/4] overflow-hidden rounded-lg shadow-2xl">
                 <img src="https://image.made-in-china.com/202f0j00WgPbDfLRIUzN/Ultra-Cheap-37-Tons-Shantui-Heavy-Crawler-Excavator-for-Sale.webp" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-brown/30 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
               </div>
               {/* Architectural Frame Offset with gradient */}
-              <div className="absolute -top-6 -right-6 w-full h-full border-2 border-primary/20 -z-10" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/5 rounded-full -z-10" />
+              <div className="absolute -top-6 -right-6 w-full h-full border-2 border-dark-brown/20 -z-10" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-dark-brown/5 rounded-full -z-10" />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* ── PARTNER BRANDS ───────────────────────────────────────────────────── */}
-      <section className="bg-gray-50 border-y border-gray-100 py-14">
+      <section className="bg-gradient-to-r from-secondary via-dark-brown/10 to-dark-brown/5 border-y border-dark-brown/20 py-14">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="text-xs font-bold tracking-[0.25em] uppercase text-gray-400 mb-10">Merek Andalan Kami</p>
-          <div className="flex flex-wrap items-center gap-12 md:gap-20 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+          <p className="text-xs font-bold tracking-[0.25em] uppercase text-white/80 mb-10">Merek Andalan Kami</p>
+          <div className="flex flex-wrap items-center gap-12 md:gap-20 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 filter hover:drop-shadow-lg">
             <BenLogo className="h-12 md:h-14" light={false} />
             <img src="/gulf.png" alt="Gulf Oil" className="h-16 md:h-20 object-contain" />
             <img src="/shantui-logo.jpeg" alt="Shantui" className="h-10 md:h-12 object-contain" />
@@ -302,7 +302,7 @@ export default function Home() {
       </section>
 
       {/* ── TWO MAIN PILLARS — Architectural Showcase ──────────────────────── */}
-      <section className="bg-white py-32 lg:py-48">
+      <section className="bg-gradient-to-b from-white to-dark-brown/2 py-32 lg:py-48">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-24">
             <div className="flex items-center gap-6 mb-12">
@@ -323,22 +323,22 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <Link to="/products" className="group block">
-                <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-gray-50 border border-gray-100">
+                <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-primary/5 border-2 border-primary/30 group-hover:border-primary/60">
                   <img
                     src="https://euassets.gulfoilltd.com/gulfoilltd.com/files/Products%20cutout_0.webp?VersionId=gaKgIiklQIA_P0FUhT0dlQ4u0ZsFtDb_"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
+                  <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
                 <div className="flex items-center gap-6 mb-8">
                   <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Pelumas Premium</span>
-                  <div className="h-px w-10 bg-gray-100" />
+                  <div className="h-px w-10 bg-primary/40" />
                 </div>
-                <h3 className="font-heading font-medium text-secondary text-3xl lg:text-4xl mb-8 flex items-center justify-between">
+                <h3 className="font-heading font-medium text-primary text-3xl lg:text-4xl mb-8 flex items-center justify-between">
                   Gulf Oil
-                  <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform text-gray-200" />
+                  <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform text-primary/40" />
                 </h3>
-                <p className="text-gray-400 leading-relaxed max-w-md text-base">
+                <p className="text-gray-600 leading-relaxed max-w-md text-base">
                   Authorized Distributor pelumas Gulf kelas dunia. Menghadirkan efisiensi dan perlindungan mesin jangka panjang sejak 1901.
                 </p>
               </Link>
@@ -352,22 +352,22 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <Link to="/products" className="group block">
-                <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-gray-50 border border-gray-100">
+                <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-dark-brown/5 border-2 border-dark-brown/30 group-hover:border-dark-brown/60">
                   <img
                     src="https://www.shantui-global.com/upload/images/2024/07/05/9733632409d940508dbe56ba4dabfd21.jpg"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-700" />
+                  <div className="absolute inset-0 bg-dark-brown/10 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
                 <div className="flex items-center gap-6 mb-8">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Alat Berat</span>
-                  <div className="h-px w-10 bg-gray-100" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-dark-brown">Alat Berat</span>
+                  <div className="h-px w-10 bg-dark-brown/40" />
                 </div>
-                <h3 className="font-heading font-medium text-secondary text-3xl lg:text-4xl mb-8 flex items-center justify-between">
+                <h3 className="font-heading font-medium text-dark-brown text-3xl lg:text-4xl mb-8 flex items-center justify-between">
                   Shantui Machinery
-                  <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform text-gray-200" />
+                  <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform text-dark-brown/40" />
                 </h3>
-                <p className="text-gray-400 leading-relaxed max-w-md text-base">
+                <p className="text-gray-600 leading-relaxed max-w-md text-base">
                   Unit alat berat berkualitas global untuk pertambangan dan konstruksi. Tangguh, efisien, dan didesain untuk medan operasional ekstrem.
                 </p>
               </Link>
@@ -398,40 +398,48 @@ export default function Home() {
             <div className="lg:col-span-5">
               <div className="flex items-center gap-6 mb-12">
                 <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">{t('home.sectorsSubtitle')}</span>
-                <div className="h-px w-12 bg-gray-100" />
+                <div className="h-px w-12 bg-primary" />
               </div>
-              <h2 className="font-heading font-bold text-secondary text-[clamp(2.2rem,5vw,4rem)] leading-[1.15] tracking-tight mb-10">
+              <h2 className="font-heading font-bold text-dark-brown text-[clamp(2.2rem,5vw,4rem)] leading-[1.15] tracking-tight mb-10">
                 Layanan Untuk <span className="text-primary">Berbagai Industri</span>
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-14 font-medium">
                 Kami menyediakan solusi pelumasan dan alat berat terintegrasi untuk mendukung pertumbuhan sektor-sektor vital di Indonesia.
               </p>
-              <Link to="/contact" className="text-[10px] font-bold uppercase tracking-[0.4em] text-secondary flex items-center gap-4 group">
-                Konsultasi Sektor <div className="w-12 h-px bg-gray-200 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
+              <Link to="/contact" className="text-[10px] font-bold uppercase tracking-[0.4em] text-dark-brown flex items-center gap-4 group">
+                Konsultasi Sektor <div className="w-12 h-px bg-dark-brown/40 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
               </Link>
             </div>
 
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gray-50 border border-gray-50">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-dark-brown/10 border border-dark-brown/20">
                 {[
                   { name: t('home.mining'), desc: 'Optimasi performa alat berat di medan ekstrim.' },
                   { name: t('home.construction'), desc: 'Dukungan penuh untuk infrastruktur berkelanjutan.' },
                   { name: t('home.transportation'), desc: 'Efisiensi armada dan logistik terdepan.' },
                   { name: t('home.manufacturing'), desc: 'Presisi pelumasan untuk mesin industrial.' },
-                ].map((industry, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white p-14 group hover:bg-secondary transition-all duration-700"
-                  >
-                    <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary mb-10 group-hover:text-white transition-colors">0{index + 1}</div>
-                    <h4 className="font-heading font-medium text-secondary text-2xl tracking-tight mb-6 group-hover:text-white transition-colors">{industry.name}</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">{industry.desc}</p>
-                  </motion.div>
-                ))}
+                ].map((industry, index) => {
+                  const colors = [
+                    'hover:bg-secondary hover:from-secondary hover:to-secondary/80',
+                    'hover:bg-primary hover:from-primary hover:to-primary/80',
+                    'hover:bg-dark-brown hover:from-dark-brown hover:to-dark-brown/80',
+                    'hover:bg-brown-black hover:from-brown-black hover:to-dark-brown',
+                  ];
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className={`bg-white p-14 group hover:bg-gradient-to-br transition-all duration-700 ${colors[index]}`}
+                    >
+                      <div className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary mb-10 group-hover:text-white transition-colors">0{index + 1}</div>
+                      <h4 className="font-heading font-medium text-dark-brown text-2xl tracking-tight mb-6 group-hover:text-white transition-colors">{industry.name}</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-200 transition-colors">{industry.desc}</p>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -445,26 +453,26 @@ export default function Home() {
       <ProudPartnerships />
 
       {/* ── WHY BEN — Aesthetic Strengths ───────────────────────────────────── */}
-      <section className="bg-white py-32 lg:py-48 border-t border-gray-50">
+      <section className="bg-gradient-to-b from-white via-white to-dark-brown/5 py-32 lg:py-48 border-t border-dark-brown/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start mb-24">
             <div className="lg:col-span-8">
               <div className="flex items-center gap-6 mb-12">
                 <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">{t('home.strengthsSubtitle')}</span>
-                <div className="h-px w-12 bg-gray-100" />
+                <div className="h-px w-12 bg-primary" />
               </div>
-              <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.2] tracking-tighter">
+              <h2 className="font-heading font-medium text-dark-brown text-[clamp(2.5rem,4.5vw,4.5rem)] leading-[1.2] tracking-tighter">
                 {t('home.strengthsTitle')}
               </h2>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gray-50 border border-gray-50">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-gradient-to-b from-primary/5 to-dark-brown/10 border border-dark-brown/20">
             {[
-              { icon: <Globe size={24} />, title: t('home.strength1Title'), desc: t('home.strength1Desc') },
-              { icon: <ShieldCheck size={24} />, title: t('home.strength2Title'), desc: t('home.strength2Desc') },
-              { icon: <Wrench size={24} />, title: t('home.strength3Title'), desc: t('home.strength3Desc') },
-              { icon: <MapPin size={24} />, title: t('home.strength4Title'), desc: t('home.strength4Desc') },
+              { icon: <Globe size={24} />, title: t('home.strength1Title'), desc: t('home.strength1Desc'), hoverBg: 'hover:bg-secondary' },
+              { icon: <ShieldCheck size={24} />, title: t('home.strength2Title'), desc: t('home.strength2Desc'), hoverBg: 'hover:bg-primary' },
+              { icon: <Wrench size={24} />, title: t('home.strength3Title'), desc: t('home.strength3Desc'), hoverBg: 'hover:bg-dark-brown' },
+              { icon: <MapPin size={24} />, title: t('home.strength4Title'), desc: t('home.strength4Desc'), hoverBg: 'hover:bg-brown-black' },
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -472,15 +480,25 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white p-14 group hover:bg-secondary transition-all duration-700"
+                className={`bg-white p-14 group ${feature.hoverBg} transition-all duration-700`}
               >
-                <div className="text-primary mb-12 group-hover:text-white transition-colors duration-500">
+                <div className={`mb-12 group-hover:text-white transition-colors duration-500 ${
+                  index === 0 ? 'text-secondary' : 
+                  index === 1 ? 'text-primary' : 
+                  index === 2 ? 'text-dark-brown' : 
+                  'text-brown-black'
+                }`}>
                   {feature.icon}
                 </div>
-                <h4 className="font-heading font-medium text-secondary text-xl tracking-tight mb-6 group-hover:text-white transition-colors duration-500">
+                <h4 className={`font-heading font-medium text-xl tracking-tight mb-6 group-hover:text-white transition-colors duration-500 ${
+                  index === 0 ? 'text-secondary' : 
+                  index === 1 ? 'text-primary' : 
+                  index === 2 ? 'text-dark-brown' : 
+                  'text-brown-black'
+                }`}>
                   {feature.title}
                 </h4>
-                <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors duration-500">{feature.desc}</p>
+                <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-500">{feature.desc}</p>
               </motion.div>
             ))}
           </div>

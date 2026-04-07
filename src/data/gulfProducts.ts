@@ -89,8 +89,13 @@ export const gulfCategories: ProductCategory[] = [
     brand: 'Shantui',
     slug: 'shantui',
     subcategories: [
+      { id: 'mining-excavator', name: 'Mining Excavator', slug: 'mining-excavator' },
+      { id: 'large-excavator', name: 'Large Excavator', slug: 'large-excavator' },
+      { id: 'medium-excavator', name: 'Medium Excavator', slug: 'medium-excavator' },
+      { id: 'small-excavator', name: 'Small Excavator', slug: 'small-excavator' },
+      { id: 'mini-excavator', name: 'Mini Excavator', slug: 'mini-excavator' },
+      { id: 'wheel-excavator', name: 'Wheel Excavator', slug: 'wheel-excavator' },
       { id: 'bulldozer', name: 'Bulldozer', slug: 'bulldozer' },
-      { id: 'excavator', name: 'Excavator', slug: 'excavator' },
       { id: 'wheel-loader', name: 'Wheel Loader', slug: 'wheel-loader' },
       { id: 'motor-grader', name: 'Motor Grader', slug: 'motor-grader' },
     ]
@@ -104,7 +109,7 @@ export interface ProductSpec {
   slug: string;
   categoryId: string;
   subcategoryId?: string;
-  summary: string;
+  summary?: string;
   viscosityGrades?: string[];
   availablePacks?: string[];
   specifications?: string[];
@@ -708,7 +713,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se2000',
     image: 'https://www.shantui-global.com/upload/images/2025/09/03/6b2e0d2d629e4ddd8f3c522deb584044.png',
     categoryId: 'shantui',
-    subcategoryId: 'excavator',
+    subcategoryId: 'mining-excavator',
     summary: 'Excavator pertambangan raksasa untuk operasional skala ekstrem dengan produktivitas tiada tanding.',
     viscosityGrades: ['—'],
     availablePacks: ['Unit Baru'],
@@ -724,7 +729,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se1500lcw',
     image: 'https://www.shantui-global.com/upload/images/2023/07/08/a64c8b2e7ee04235bd3ffe0ad7dfa560.png',
     categoryId: 'shantui',
-    subcategoryId: 'excavator',
+    subcategoryId: 'mining-excavator',
     summary: 'Unit pertambangan super berat dengan stabilitas luar biasa untuk medan galian yang sulit.',
     viscosityGrades: ['—'],
     availablePacks: ['Unit Baru'],
@@ -740,7 +745,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se1250lcw',
     image: 'https://www.shantui-global.com/upload/images/2023/07/08/2b1b044923be4a43bad644541ac4140e.png',
     categoryId: 'shantui',
-    subcategoryId: 'excavator',
+    subcategoryId: 'mining-excavator',
     summary: 'Solusi ekskavasi mining performa tinggi dengan teknologi kontrol hidrolik tercanggih.',
     viscosityGrades: ['—'],
     availablePacks: ['Unit Baru'],
@@ -752,7 +757,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se980lcw',
     image: 'https://www.shantui-global.com/upload/images/2023/07/08/5aca8f266d9f46eb8641d3357dfbf5e2.png',
     categoryId: 'shantui',
-    subcategoryId: 'excavator',
+    subcategoryId: 'mining-excavator',
     partnerBrand: 'Shantui'
   },
   {
@@ -761,6 +766,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se800lcw',
     image: 'https://www.shantui-global.com/upload/images/2023/07/08/3f602dc8bece409fbf3a00dfcd6ea779.png',
     categoryId: 'shantui',
+    subcategoryId: 'mining-excavator',
     partnerBrand: 'Shantui'
   },
   {
@@ -769,6 +775,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se750lcw',
     image: 'https://www.shantui-global.com/upload/images/2023/08/15/9241240ba9104fd2990d67ffab78d271.png',
     categoryId: 'shantui',
+    subcategoryId: 'mining-excavator',
     partnerBrand: 'Shantui'
   },
 
@@ -779,7 +786,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se500lc-9w',
     image: 'https://www.shantui-global.com/upload/images/2023/09/20/8615de9d75994effa3e2958afeb19cd1.jpg',
     categoryId: 'shantui',
-    subcategoryId: 'excavator',
+    subcategoryId: 'large-excavator',
     summary: 'Excavator kelas berat untuk konstruksi infrastruktur dan pertambangan menengah.',
     partnerBrand: 'Shantui'
   },
@@ -789,6 +796,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se245lc-9w',
     image: 'https://www.shantui-global.com/upload/images/2023/09/20/8da84054dd164ceba3ffa0f721263a89.jpg',
     categoryId: 'shantui',
+    subcategoryId: 'medium-excavator',
     partnerBrand: 'Shantui'
   },
   {
@@ -797,6 +805,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se215-9w',
     image: 'https://www.shantui-global.com/upload/images/2023/06/15/7476159f28c44a74926d059b015bca28.jpg',
     categoryId: 'shantui',
+    subcategoryId: 'medium-excavator',
     partnerBrand: 'Shantui'
   },
   {
@@ -805,6 +814,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se210-9w',
     image: 'https://www.shantui-global.com/upload/images/2023/06/15/2ccc9f33e67a415c8a395dbd574bfc70.jpg',
     categoryId: 'shantui',
+    subcategoryId: 'medium-excavator',
     partnerBrand: 'Shantui'
   },
 
@@ -815,6 +825,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se150-9w',
     image: 'https://www.shantui-global.com/upload/images/2023/06/26/3d219014fb5a4872a850b5df14473060.png',
     categoryId: 'shantui',
+    subcategoryId: 'small-excavator',
     partnerBrand: 'Shantui'
   },
   {
@@ -823,6 +834,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se135-9w',
     image: 'https://www.shantui-global.com/upload/images/2023/06/26/b747ee0eeabb476b9bcc6c7ea8191504.png',
     categoryId: 'shantui',
+    subcategoryId: 'small-excavator',
     partnerBrand: 'Shantui'
   },
   {
@@ -831,6 +843,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se75-9w',
     image: 'https://www.shantui-global.com/upload/images/2023/06/27/b8c30dcae32c4475b46d059b015bca28.png',
     categoryId: 'shantui',
+    subcategoryId: 'small-excavator',
     partnerBrand: 'Shantui'
   },
   {
@@ -839,6 +852,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se60-9',
     image: 'https://www.shantui-global.com/upload/images/2023/06/27/cc415ec904ae4a64913fdc01babf2b6d.png',
     categoryId: 'shantui',
+    subcategoryId: 'small-excavator',
     partnerBrand: 'Shantui'
   },
   {
@@ -847,6 +861,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se35sr',
     image: 'https://www.shantui-global.com/upload/images/2023/06/26/5163e1f3c7b344b3b5edf147ae2237b0.png',
     categoryId: 'shantui',
+    subcategoryId: 'mini-excavator',
     partnerBrand: 'Shantui'
   },
   {
@@ -855,6 +870,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se18sr',
     image: 'https://www.shantui-global.com/upload/images/2023/06/26/1d2319fd78d747c18ba3c8b823a2423a.png',
     categoryId: 'shantui',
+    subcategoryId: 'mini-excavator',
     partnerBrand: 'Shantui'
   },
 
@@ -865,7 +881,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se140w',
     image: 'https://www.shantui-global.com/upload/images/2023/08/15/9c6b2c3cd58b4da28ecd8f049d1c238f.png',
     categoryId: 'shantui',
-    subcategoryId: 'excavator',
+    subcategoryId: 'wheel-excavator',
     partnerBrand: 'Shantui'
   }
 
