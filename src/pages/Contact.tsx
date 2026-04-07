@@ -99,6 +99,21 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-6 group">
+                <MapPin className="text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
+                <div>
+                  <h4 className="font-heading font-bold text-secondary text-lg mb-2">Gudang BEN</h4>
+                  <p className="text-gray-500 leading-relaxed whitespace-pre-line text-sm">
+                    Desa Seradang<br />
+                    Kecamatan Haruai<br />
+                    RT 1, Kabupaten Tabalong<br />
+                    Kalimantan Selatan<br />
+                    Kode Pos 71572<br />
+                    <span className="text-gray-400 italic">(Samping PT Mantimin Coal)</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-6 group">
                 <Phone className="text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
                 <div>
                   <h4 className="font-heading font-bold text-secondary text-lg mb-2">{t('contact.phone')}</h4>

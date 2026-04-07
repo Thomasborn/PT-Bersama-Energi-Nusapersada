@@ -26,50 +26,78 @@ export default function Home() {
     <div className="w-full overflow-x-hidden">
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
-      <section className="relative min-h-[85vh] flex items-center bg-white overflow-hidden border-b border-gray-50">
+      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-white via-white to-gray-50 overflow-hidden border-b border-gray-100">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full -mr-48 -mt-48 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/3 rounded-full -ml-40 -mb-40 blur-3xl" />
+        
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.05]"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-[0.03]"
           style={{ backgroundImage: 'url("https://euassets.gulfoilltd.com/gulfoilltd.com/files/Products%20cutout_0.webp?VersionId=gaKgIiklQIA_P0FUhT0dlQ4u0ZsFtDb_")' }}
         />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-12 items-center">
-            {/* Architectural Vertical Line */}
-            <div className="hidden md:block col-span-1 h-32 w-px bg-gray-100 self-center" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-12">
+            {/* Architectural Vertical Line with gradient */}
+            <div className="hidden md:block col-span-1 h-48 w-px bg-gradient-to-b from-primary via-primary to-transparent self-center" />
 
             <div className="md:col-start-2 md:col-span-11 lg:col-start-3 lg:col-span-9">
               <motion.div
-                initial={{ opacity: 0, x: 10 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               >
-                {/* Minimalist Overline */}
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">Authorized Distributor</span>
-                  <div className="h-px w-10 bg-gray-100" />
-                </div>
+                {/* Premium Overline */}
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex items-center gap-4 mb-10"
+                >
+                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Distributor Resmi</span>
+                  <div className="h-px w-12 bg-gradient-to-r from-primary to-transparent" />
+                </motion.div>
 
-                <h1 className="font-heading font-medium text-secondary text-2xl lg:text-[2.1rem] leading-[1.65] max-w-4xl mb-14 tracking-tight">
-                  PT. Bersama Energi Nusapersada (BEN) menghadirkan pelumas premium dan solusi alat berat dengan standar global untuk menunjang operasional bisnis Anda di seluruh Indonesia.
-                </h1>
+                <motion.h1 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                  className="font-heading font-bold text-secondary text-[clamp(2.2rem,6vw,3.8rem)] leading-[1.2] max-w-4xl mb-10 tracking-tight"
+                >
+                  Solusi Pelumas & Alat Berat <span className="text-primary">Berkelas Global</span> untuk Indonesia
+                </motion.h1>
 
-                <div className="flex flex-col sm:flex-row items-center gap-10">
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                  className="text-lg text-gray-600 leading-relaxed max-w-2xl mb-12 font-medium"
+                >
+                  PT BEN sebagai authorized distributor Gulf Oil dan Shantui, menghadirkan produk premium dengan layanan profesional 24/7 untuk mendukung operasional bisnis Anda.
+                </motion.p>
+
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="flex flex-col sm:flex-row items-start sm:items-center gap-8"
+                >
                   <Link
                     to="/products"
-                    className="group relative inline-flex items-center justify-center bg-secondary text-white px-12 py-4 font-bold tracking-widest text-xs uppercase transition-all hover:bg-black overflow-hidden"
+                    className="group relative inline-flex items-center justify-center bg-gradient-to-r from-secondary to-secondary/90 text-white px-10 py-4 font-bold tracking-widest text-xs uppercase transition-all hover:shadow-lg hover:shadow-secondary/40 hover:scale-105 duration-300 overflow-hidden rounded-sm"
                   >
                     <span className="relative z-10 flex items-center gap-3">
-                      Lihat Produk
+                      Jelajahi Produk
                       <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </span>
                   </Link>
                   <Link
                     to="/contact"
-                    className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 hover:text-secondary transition-colors underline underline-offset-8 decoration-gray-200 hover:decoration-secondary"
+                    className="text-xs font-bold uppercase tracking-[0.3em] text-secondary hover:text-primary transition-all duration-300 border-b-2 border-primary/20 hover:border-primary pb-1"
                   >
-                    Hubungi BEN
+                    → Hubungi Kami
                   </Link>
-                </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -77,66 +105,95 @@ export default function Home() {
       </section>
 
       {/* ── ABOUT BEN — Aesthetic Precision Narrative ───────────────────────── */}
-      <section className="bg-white py-32 lg:py-48">
+      <section className="bg-gradient-to-b from-white to-gray-50/50 py-32 lg:py-48 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-28 items-center">
             {/* Narrative Block */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-7"
+              className="lg:col-span-6"
             >
-              <div className="flex items-center gap-6 mb-12">
-                <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">{t('about.subtitle')}</span>
-                <div className="h-px w-12 bg-gray-100" />
-              </div>
+              <motion.div className="flex items-center gap-6 mb-12">
+                <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">{t('about.subtitle')}</span>
+                <div className="h-px w-12 bg-gradient-to-r from-primary to-transparent" />
+              </motion.div>
 
-              <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5vw,4.2rem)] leading-[1.2] tracking-tighter mb-12">
-                {t('about.title')}
-              </h2>
+              <motion.h2 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.1 }}
+                className="font-heading font-bold text-secondary text-[clamp(2.2rem,5vw,4rem)] leading-[1.15] tracking-tight mb-10"
+              >
+                Kualitas & <span className="text-primary">Kepercayaan</span> Sejak Awal
+              </motion.h2>
 
-              <div className="max-w-2xl">
-                <p className="text-gray-500 leading-relaxed text-xl mb-10 font-medium border-l-2 border-primary/20 pl-8">
+              <div className="max-w-2xl space-y-8">
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-gray-700 leading-relaxed text-lg font-medium border-l-4 border-primary/40 pl-6 hover:border-primary/80 transition-colors duration-300"
+                >
                   {t('about.desc1')}
-                </p>
-                <p className="text-gray-400 leading-relaxed mb-16 pl-8">
+                </motion.p>
+                <motion.p 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-gray-600 leading-relaxed text-base pl-6"
+                >
                   {t('about.desc2')}
-                </p>
+                </motion.p>
               </div>
 
-              <div className="grid grid-cols-2 gap-12 mb-16 pl-8">
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="grid grid-cols-2 gap-10 mt-14 pt-8 border-t border-gray-200"
+              >
                 {STATS.slice(1, 3).map((s, i) => (
                   <div key={i} className="group">
-                    <div className="text-5xl font-heading font-light text-secondary tracking-tighter mb-2 group-hover:text-primary transition-colors duration-500">{s.value}</div>
-                    <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-300">{s.label}</div>
+                    <div className="text-4xl md:text-5xl font-heading font-black text-primary tracking-tight mb-2 group-hover:scale-110 transition-transform duration-300">{s.value}</div>
+                    <div className="text-[9px] font-bold uppercase tracking-[0.3em] text-gray-500 group-hover:text-primary transition-colors">{s.label}</div>
                   </div>
                 ))}
-              </div>
+              </motion.div>
 
-              <Link
-                to="/about"
-                className="inline-flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.4em] text-secondary group hover:text-primary transition-all ml-8"
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="mt-12"
               >
-                {t('about.readFullStory')}
-                <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
-              </Link>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-4 text-[10px] font-bold uppercase tracking-[0.3em] text-secondary hover:text-primary group transition-all duration-300 border-b-2 border-primary/20 hover:border-primary pb-2"
+                >
+                  {t('about.readFullStory')}
+                  <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
+                </Link>
+              </motion.div>
             </motion.div>
 
             {/* Visual Anchor Block */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="lg:col-span-5 relative"
+              className="lg:col-span-6 relative"
             >
-              <div className="relative z-10 aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
-                <img src="https://image.made-in-china.com/202f0j00WgPbDfLRIUzN/Ultra-Cheap-37-Tons-Shantui-Heavy-Crawler-Excavator-for-Sale.webp" className="w-full h-full object-cover" />
+              <div className="relative z-10 aspect-[3/4] overflow-hidden rounded-lg shadow-2xl">
+                <img src="https://image.made-in-china.com/202f0j00WgPbDfLRIUzN/Ultra-Cheap-37-Tons-Shantui-Heavy-Crawler-Excavator-for-Sale.webp" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
               </div>
-              {/* Architectural Frame Offset */}
-              <div className="absolute -top-12 -right-12 w-full h-full border border-gray-100 -z-10" />
+              {/* Architectural Frame Offset with gradient */}
+              <div className="absolute -top-6 -right-6 w-full h-full border-2 border-primary/20 -z-10" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/5 rounded-full -z-10" />
             </motion.div>
           </div>
         </div>
@@ -253,10 +310,10 @@ export default function Home() {
                 <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">{t('home.sectorsSubtitle')}</span>
                 <div className="h-px w-12 bg-gray-100" />
               </div>
-              <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5vw,4rem)] leading-[1.2] tracking-tighter mb-12">
-                Melayani Berbagai <br />Sektor Industri.
+              <h2 className="font-heading font-bold text-secondary text-[clamp(2.2rem,5vw,4rem)] leading-[1.15] tracking-tight mb-10">
+                Layanan Untuk <span className="text-primary">Berbagai Industri</span>
               </h2>
-              <p className="text-gray-500 text-lg leading-relaxed mb-16">
+              <p className="text-gray-700 text-lg leading-relaxed mb-14 font-medium">
                 Kami menyediakan solusi pelumasan dan alat berat terintegrasi untuk mendukung pertumbuhan sektor-sektor vital di Indonesia.
               </p>
               <Link to="/contact" className="text-[10px] font-bold uppercase tracking-[0.4em] text-secondary flex items-center gap-4 group">
