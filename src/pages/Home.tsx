@@ -95,15 +95,7 @@ export default function Home() {
                     transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="block mt-2"
                   >
-                    {t('home.heroTitle').split('&')[1]?.split('untuk')[0]} <span className="font-serif italic text-primary pr-2"></span>
-                  </motion.span>
-                  <motion.span
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="block mt-2 text-gray-800"
-                  >
-                    untuk {t('home.heroTitle').split('untuk')[1]}
+                    {t('home.heroTitle').split('&')[1]}
                   </motion.span>
                 </h1>
 
@@ -325,7 +317,7 @@ export default function Home() {
               <Link to="/products" className="group block">
                 <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-primary/5 border-2 border-primary/30 group-hover:border-primary/60">
                   <img
-                    src="https://euassets.gulfoilltd.com/gulfoilltd.com/files/Products%20cutout_0.webp?VersionId=gaKgIiklQIA_P0FUhT0dlQ4u0ZsFtDb_"
+                    src="https://www.nu-tierbrands.com/wp-content/uploads/2020/01/Gulf-Tote-300x300.jpg"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-700" />

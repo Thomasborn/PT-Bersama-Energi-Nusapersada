@@ -334,6 +334,10 @@ export default function About() {
                  <span className="w-12 h-px bg-primary/30" />
                  {t('about.lubricantsGreaseTitle')}
               </h3>
+              <div className="mb-8 aspect-video overflow-hidden rounded-md border border-gray-100 relative group">
+                <img src="/gulf_lubricants_aesthetic.png" alt="Gulf Lubricants" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-500" />
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12">
                 {lubricants.map((lubricant, i) => (
                   <div key={i} className="flex items-center gap-4 text-gray-500 hover:text-secondary group transition-colors">
@@ -355,6 +359,10 @@ export default function About() {
                  <span className="w-12 h-px bg-secondary/20" />
                  {t('about.heavyEquipmentTitle')}
               </h3>
+              <div className="mb-8 aspect-video overflow-hidden rounded-md border border-gray-100 relative group">
+                <img src="/shantui_heavy_equipment_aesthetic.png" alt="Shantui Heavy Equipment" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-500" />
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-12">
                 {equipment.map((equip, i) => (
                   <div key={i} className="flex items-center gap-4 text-gray-500 hover:text-secondary group transition-colors">
