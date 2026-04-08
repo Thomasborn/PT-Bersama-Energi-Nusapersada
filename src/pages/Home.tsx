@@ -147,7 +147,7 @@ export default function Home() {
                 className="relative z-10 aspect-[4/5] w-full max-w-[450px] bg-gray-100 rounded-sm overflow-hidden shadow-2xl shadow-secondary/10 group cursor-pointer"
               >
                 <img
-                  src="public/gulf/background.png"
+                  src="/gulf/background.png"
                   alt="Industrial Precision"
                   className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
                 />
