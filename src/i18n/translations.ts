@@ -217,7 +217,7 @@ export const translations = {
       technicalConsultation: 'Konsultasi Teknis',
       technicalConsultationDesc: 'Hubungi tim teknis kami untuk rekomendasi produk yang tepat sesuai kebutuhan spesifik Anda.',
       choosePrincipal: 'Pilih Principal',
-      curatedSolutions: 'Solusi Terkurasi dari Mitra Strategis Kami.',
+      curatedSolutions: 'Solusi Bisnis dari Mitra Strategis Kami.',
       gulfLubes: 'Pelumas Gulf',
       gulfDesc: 'Jelajahi rangkaian pelumas otomotif, industri, dan maritim kelas dunia.',
       shantuiDesc: 'Unit alat berat berkualitas global untuk pertambangan, konstruksi, dan infrastruktur.',
