@@ -85,7 +85,7 @@ export const gulfCategories: ProductCategory[] = [
     id: 'shantui',
     name: 'Alat Berat Shantui',
     description: 'Unit alat berat berkualitas global untuk pertambangan, konstruksi, dan infrastruktur. Tangguh dan efisien di segala medan operasional.',
-    image: '/shantui/escavator/mining.png',
+    imageUrl: '/shantui/escavator/mining.png',
     brand: 'Shantui',
     slug: 'shantui',
     subcategories: [
@@ -99,6 +99,7 @@ export const gulfCategories: ProductCategory[] = [
       { id: 'medium-bulldozer', name: 'Medium Bulldozer', slug: 'medium-bulldozer' },
       { id: 'large-bulldozer', name: 'Large Bulldozer', slug: 'large-bulldozer' },
       { id: 'wheel-loader', name: 'Wheel Loader', slug: 'wheel-loader' },
+      { id: 'mining-truck', name: 'Mining Truck', slug: 'mining-truck' },
       // { id: 'motor-grader', name: 'Motor Grader', slug: 'motor-grader' },
     ]
   },
@@ -759,6 +760,7 @@ export const gulfProducts: ProductSpec[] = [
     specifications: ['Bobot Operasi: 98t', 'Daya Mesin: 500 kW', 'Kapasitas Bucket: 3.0 m³'],
     applications: ['Pertambangan Skala Menengah', 'Konstruksi Besar'],
     keyBenefits: ['Fleksibilitas Tinggi', 'Operasional Handal', 'Maintenance Mudah'],
+    partnerBrand: 'Shantui'
   },
   {
     id: 'shantui-se800lcw',
@@ -771,6 +773,7 @@ export const gulfProducts: ProductSpec[] = [
     specifications: ['Bobot Operasi: 80t', 'Daya Mesin: 420 kW', 'Kapasitas Bucket: 2.5 m³'],
     applications: ['Pertambangan Medium', 'Konstruksi Jalan'],
     keyBenefits: ['Produktivitas Tinggi', 'Konsumsi Bahan Bakar Efisien', 'Durabilitas Terjamin'],
+    partnerBrand: 'Shantui'
   },
   {
     id: 'shantui-se750lcw',
@@ -783,6 +786,7 @@ export const gulfProducts: ProductSpec[] = [
     specifications: ['Bobot Operasi: 75t', 'Daya Mesin: 400 kW', 'Kapasitas Bucket: 2.3 m³'],
     applications: ['Pertambangan Batu/Mineral', 'Ekskavasi Lahan'],
     keyBenefits: ['Hemat Bahan Bakar', 'Sistem Keamanan Canggih', 'Komponen Berkualitas'],
+    partnerBrand: 'Shantui'
   },
 
   // ── B. Mini Excavators (≤ 6 Ton) ──────────────────────────────────────────
@@ -846,33 +850,21 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se12sr',
     image: 'https://www.shantui-eu.com/upload/images/2025/03/26/ac80e4b413dd458998b7457063dbf990.png',
     categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
+    subcategoryId: 'mini-excavator',
     summary: 'Mini excavator super kecil untuk pekerjaan presisi di ruang terbatas dan operasi indoor.',
     specifications: ['Operating Weight: 1,200 kg', 'Bucket Capacity: 0.04 m³', 'Engine Power: 9 kW'],
     applications: ['Pekerjaan indoor', 'Landscape presisi', 'Ruang sangat terbatas'],
     keyBenefits: ['Ultra Kompak', 'Presisi Maksimal', 'Efisiensi Energi'],
     partnerBrand: 'Shantui'
   },
-  {
-    id: 'shantui-se17sr',
-    name: 'Shantui SE17SR',
-    slug: 'shantui-se17sr',
-    image: 'https://www.shantui-eu.com/upload/images/2023/06/26/13ce8afb392e4e9e8a1820f130f51682.png',
-    categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
-    summary: 'Excavator kecil andalan dengan kapasitas presisi untuk pekerjaan konstruksi ringan.',
-    specifications: ['Operating Weight: 1,800 kg', 'Bucket Capacity: 0.04 m³', 'Engine Power: 11.8 kW'],
-    applications: ['Konstruksi ringan', 'Landscape profesional', 'Akses terbatas'],
-    keyBenefits: ['Kompak Andal', 'Presisi Tinggi', 'Mobilitas Fleksibel'],
-    partnerBrand: 'Shantui'
-  },
+
   {
     id: 'shantui-se18sr',
     name: 'Shantui SE18SR',
     slug: 'shantui-se18sr',
     image: 'https://www.shantui-eu.com/upload/images/2023/06/26/7b2b88ec13d64e9786e416646911ff66.png',
     categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
+    subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil dengan performa balanced untuk aplikasi konstruksi umum.',
     specifications: ['Operating Weight: 1,850 kg', 'Bucket Capacity: 0.05 m³', 'Engine Power: 13 kW'],
     applications: ['Konstruksi umum', 'Penggalian ringan', 'Proyek persiapan lahan'],
@@ -885,7 +877,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se20ei',
     image: 'https://www.shantui-eu.com/upload/images/2023/12/12/97c00c6557444fceb4e064d84e938b02.png',
     categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
+    subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil listrik ramah lingkungan dengan emisi nol untuk pekerjaan indoor berkelanjutan.',
     specifications: ['Operating Weight: 2,100 kg', 'Bucket Capacity: 0.06 m³', 'Power: 15 kW (Listrik)'],
     applications: ['Konstruksi indoor', 'Area perkotaan', 'Proyek green-aware'],
@@ -898,33 +890,21 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se20',
     image: 'https://www.shantui-eu.com/upload/images/2026/02/10/0bb8d29df23a4e4d917a6ef333b3352a.png',
     categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
+    subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil versatile dengan teknologi terkini untuk berbagai aplikasi konstruksi.',
     specifications: ['Operating Weight: 2,000 kg', 'Bucket Capacity: 0.06 m³', 'Engine Power: 14.8 kW'],
     applications: ['Konstruksi multi-fungsi', 'Penggalian dan penimbunan', 'Proyek infrastruktur ringan'],
     keyBenefits: ['Teknologi Terbaru', 'Versatilitas Tinggi', 'Efisiensi Premium'],
     partnerBrand: 'Shantui'
   },
-  {
-    id: 'shantui-se26sr',
-    name: 'Shantui SE26SR',
-    slug: 'shantui-se26sr',
-    image: 'https://www.shantui-eu.com/upload/images/2023/06/26/85d5fd39c95547a1a2e4a5eda3bcf6ab.png',
-    categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
-    summary: 'Excavator kecil bertenaga dengan kapasitas bucket lebih besar untuk efisiensi operasional.',
-    specifications: ['Operating Weight: 2,600 kg', 'Bucket Capacity: 0.06 m³', 'Engine Power: 18.2 kW'],
-    applications: ['Konstruksi menengah', 'Penggalian dan demolisi', 'Pekerjaan utilitas'],
-    keyBenefits: ['Kapasitas Lebih Besar', 'Efisiensi Operasional', 'Versatilitas Tinggi'],
-    partnerBrand: 'Shantui'
-  },
+
   {
     id: 'shantui-se27sr',
     name: 'Shantui SE27SR',
     slug: 'shantui-se27sr',
     image: 'https://www.shantui-eu.com/upload/images/2023/06/26/177e98a402c846c9b85a22cbd991ffe3.png',
     categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
+    subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil kompak dengan daya andal untuk aplikasi konstruksi beragam.',
     specifications: ['Operating Weight: 2,700 kg', 'Bucket Capacity: 0.07 m³', 'Engine Power: 19 kW'],
     applications: ['Konstruksi beragam', 'Penggalian lahan', 'Proyek persiapan'],
@@ -937,7 +917,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se36sr',
     image: 'https://www.shantui-eu.com/upload/images/2023/06/26/222cf39d8cef4dbebf8e6abf9ffca1ba.png',
     categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
+    subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil unggul dengan daya gali kuat untuk berbagai kondisi proyek.',
     specifications: ['Operating Weight: 3,860 kg', 'Bucket Capacity: 0.11 m³', 'Engine Power: 18.2 kW'],
     applications: ['Konstruksi infrastruktur', 'Pertambangan kecil', 'Persiapan lahan'],
@@ -950,39 +930,14 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se58sr',
     image: 'https://www.shantui-eu.com/upload/images/2025/03/13/ab71dd3e25da4512979fcb750a84b54c.png',
     categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
+    subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil berperforma tinggi dengan teknologi hidrolik canggih untuk operasi produktif.',
     specifications: ['Operating Weight: 5,800 kg', 'Bucket Capacity: 0.21 m³', 'Engine Power: 35 kW'],
     applications: ['Konstruksi menengah', 'Penggalian dalam', 'Proyek produktif'],
     keyBenefits: ['Performa Tinggi', 'Teknologi Canggih', 'Produktivitas Maksimal'],
     partnerBrand: 'Shantui'
   },
-  {
-    id: 'shantui-se135-small',
-    name: 'Shantui SE135',
-    slug: 'shantui-se135-small',
-    image: 'https://www.shantui-eu.com/upload/images/2024/03/26/798a2d0bf4b44f0abb6dda7975efd341.png',
-    categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
-    summary: 'Excavator small dengan kapasitas penggalian tinggi untuk proyek infrastruktur.',
-    specifications: ['Operating Weight: 13,500 kg', 'Bucket Capacity: 0.55 m³', 'Engine Power: 86 kW'],
-    applications: ['Proyek infrastruktur', 'Pertambangan batubara', 'Konstruksi bangunan'],
-    keyBenefits: ['Kapasitas Tinggi', 'Performa Handal', 'Durabilitas Terjamin'],
-    partnerBrand: 'Shantui'
-  },
-  {
-    id: 'shantui-se215-small',
-    name: 'Shantui SE215',
-    slug: 'shantui-se215-small',
-    image: 'https://www.shantui-eu.com/upload/images/2024/03/26/31f3c322bb474607ae723c1f05ab1cd7.png',
-    categoryId: 'shantui',
-    subcategoryId: 'small-excavator',
-    summary: 'Excavator small besar dengan efisiensi bahan bakar optimal untuk operasi berkelanjutan.',
-    specifications: ['Operating Weight: 21,500 kg', 'Bucket Capacity: 1.0 m³', 'Engine Power: 128.5 kW'],
-    applications: ['Pertambangan menengah', 'Infrastruktur besar', 'Demolisi dan reklamasi'],
-    keyBenefits: ['Efisiensi Bahan Bakar', 'Operasi Berkelanjutan', 'Produktivitas Tinggi'],
-    partnerBrand: 'Shantui'
-  },
+
 
   // ── C. Medium Excavators (6 – 25 Ton) ───────────────────────────────────────
   {
@@ -991,7 +946,7 @@ export const gulfProducts: ProductSpec[] = [
     slug: 'shantui-se75-9',
     image: '/shantui/escavator/medium.png',
     categoryId: 'shantui',
-    subcategoryId: 'medium-excavator',
+    subcategoryId: 'small-excavator',
     summary: 'Excavator medium tangguh untuk proyek konstruksi dan pertambangan moderat.',
     specifications: ['Operating Weight: 7,650 kg', 'Bucket Capacity: 0.32 m³', 'Engine Power: 48 kW'],
     applications: ['Konstruksi komersial', 'Quarry dan penambangan', 'Infrastruktur'],
@@ -1418,6 +1373,68 @@ export const gulfProducts: ProductSpec[] = [
     specifications: ['Operating Weight: 26,000 kg', 'Bucket Capacity: 1.8 m³', 'Engine Power: 175 kW'],
     applications: ['Pertambangan skala internasional', 'Proyek infrastruktur megah', 'Pemindahan material ekstrem'],
     keyBenefits: ['Kapasitas Jumbo', 'Performa Ekstrem', 'Teknologi World-Class'],
+    partnerBrand: 'Shantui'
+  },
+  
+  // ── F. Mining Trucks ───────────────────────────────────────────────────────
+  {
+    id: 'shantui-sk95-c2a',
+    name: 'Shantui SK95-C2A Mining Truck',
+    slug: 'shantui-sk95-c2a',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/27/872e926960f54868973addd1808d2467.png',
+    categoryId: 'shantui',
+    subcategoryId: 'mining-truck',
+    summary: 'Mining truck tangguh dengan kapasitas muat 62 ton untuk operasional pertambangan intensif yang efisien.',
+    specifications: [
+      'Machine Weight: 100,000 kg',
+      'Load Capacity: 62,000 kg',
+      'Engine Power: 390 kW / 2100 rpm',
+      'Transmission: FC6A250',
+      'Tire: 16.00-25',
+      'Emissions: Eu Stage IIIA'
+    ],
+    applications: ['Pertambangan Terbuka', 'Pengangkutan Material Berat', 'Quarry'],
+    keyBenefits: ['Daya angkut optimal', 'Durabilitas tinggi di medan ekstrem', 'Efisiensi biaya operasional'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-sk105-c2',
+    name: 'Shantui SK105-C2 Mining Truck',
+    slug: 'shantui-sk105-c2',
+    image: 'https://www.shantui-global.com/upload/images/2023/06/27/9eb6329c4e7846c5a6573eec09bc16de.png',
+    categoryId: 'shantui',
+    subcategoryId: 'mining-truck',
+    summary: 'Mining truck performa tinggi dengan kapasitas muat 70 ton untuk produktivitas maksimal di area tambang.',
+    specifications: [
+      'Machine Weight: 105,000 kg',
+      'Load Capacity: 70,000 kg',
+      'Engine Power: 390 kW / 2100 rpm',
+      'Transmission: 8DS240A',
+      'Fuel Tank: 600 L',
+      'Tire: 16.00-25'
+    ],
+    applications: ['Produksi Tambang Skala Besar', 'Hauling Jarak Menengah', 'Operasi 24/7'],
+    keyBenefits: ['Kapasitas beban superior', 'Stabilitas tinggi saat bermuatan penuh', 'Inter-axle differential lock'],
+    partnerBrand: 'Shantui'
+  },
+  {
+    id: 'shantui-teh160',
+    name: 'Shantui TEH160 Mining Truck (Electric Drive)',
+    slug: 'shantui-teh160',
+    image: 'https://www.shantui.com/upload/images/2024/12/17/2a06979f91d747838ae58c191fb4a735.png',
+    categoryId: 'shantui',
+    subcategoryId: 'mining-truck',
+    summary: 'Mining truck bertenaga listrik (Electric Drive) dengan kapasitas muat raksasa 140 ton, ramah lingkungan dan efisien tinggi.',
+    specifications: [
+      'Machine Weight: 112,000 kg',
+      'Load Capacity: 140,000 kg',
+      'Engine Power: 566 kW (Dual engines total >= 1432 kW)',
+      'Transmission: Electric drive system',
+      'Fuel Tank: 2,000 L',
+      'Tire: 33.00R51'
+    ],
+    applications: ['Mega Mining Projects', 'Green Mining Operations', 'Deep Pit Hauling'],
+    keyBenefits: ['Zero emissions hauling', 'Independently powered rear axle', 'Sistem pengereman regeneratif'],
     partnerBrand: 'Shantui'
   }
 

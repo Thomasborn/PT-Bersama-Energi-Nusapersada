@@ -47,9 +47,9 @@ export const translations = {
     about: {
       subtitle: 'Tentang Kami',
       title: 'Tentang PT Bersama Energi Nusapersada',
-      desc1: 'PT Bersama Energi Nusapersada (BEN) (berdiri sejak tahun 2014) berdedikasi menjadi mitra distribusi terkemuka dengan fokus pada standar presisi dan kualitas berkelanjutan.',
-      desc2: 'Melalui inovasi dan integritas, kami berkembang melampaui distribusi konvensional menuju solusi energi dan infrastruktur terintegrasi di seluruh Indonesia.',
-      desc3: 'Komitmen kami tertanam dalam efisiensi operasional dan kepatuhan global, mendukung pertumbuhan industri nasional dengan pendekatan yang lebih bersih dan modern.',
+      desc1: 'Perusahaan kami adalah perusahaan yang bergerak di bidang distribusi pelumas, grease, serta penjualan alat berat untuk kebutuhan industri, konstruksi, pertambangan, transportasi, dan berbagai sektor usaha lainnya.',
+      desc2: 'Kami menyediakan produk pelumas dan grease berkualitas serta alat berat yang handal untuk mendukung kinerja mesin, meningkatkan efisiensi operasional, dan membantu kelancaran pekerjaan pelanggan. Dengan dukungan tim yang berpengalaman dan pelayanan yang profesional, kami berkomitmen memberikan produk terbaik, pengiriman tepat waktu, serta pelayanan yang cepat dan responsif.',
+      desc3: 'Kami percaya bahwa hubungan jangka panjang dengan pelanggan adalah kunci pertumbuhan perusahaan, sehingga kami selalu mengutamakan kepercayaan, pelayanan, dan kualitas dalam setiap kerjasama yang kami jalankan.',
       readFullStory: 'Baca Selengkapnya',
       yearsExcellence: 'Tahun Keunggulan Industri',
       // Company Profile Section
@@ -430,9 +430,9 @@ export const translations = {
     about: {
       subtitle: 'About Us',
       title: 'About PT Bersama Energi Nusapersada',
-      desc1: 'PT Bersama Energi Nusapersada (BEN) (est. 2014) is dedicated to being a premier distribution partner with a focus on precision standards and sustainable quality.',
-      desc2: 'Through innovation and integrity, we expand beyond conventional distribution toward integrated energy and infrastructure solutions across Indonesia.',
-      desc3: 'Our commitment is rooted in operational efficiency and global compliance, supporting national industrial growth with a cleaner and modern approach.',
+      desc1: 'Our company operates in the distribution of lubricants, grease, and sale of heavy equipment for industrial, construction, mining, transportation, and various other business sectors.',
+      desc2: 'We provide high-quality lubricants and grease products as well as reliable heavy equipment to support machine performance, improve operational efficiency, and facilitate smooth customer operations. With the support of an experienced team and professional services, we are committed to providing the best products, timely delivery, and fast and responsive service.',
+      desc3: 'We believe that long-term relationships with customers are the key to company growth, so we always prioritize trust, service, and quality in every partnership we conduct.',
       readFullStory: 'Read Full Story',
       yearsExcellence: 'Years of Industry Excellence',
       // Company Profile Section
