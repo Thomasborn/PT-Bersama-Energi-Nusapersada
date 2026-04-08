@@ -593,7 +593,7 @@ export default function Products() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 border border-primary/30 text-primary px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all flex-shrink-0"
                   >
-                    <ExternalLink size={12} /> Official Site
+                    <ExternalLink size={12} /> Kunjungi Website Resmi
                   </a>
                 </div>
               </div>
