@@ -212,17 +212,11 @@ export default function Partnership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group transition-all duration-500 hover:shadow-2xl hover:-translate-y-4 hover:bg-white relative overflow-hidden"
+              className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group hover:bg-gradient-to-br hover:from-primary hover:to-primary/90 transition-all duration-500 hover:shadow-lg"
             >
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/[0.02] transition-colors" />
-              <motion.img 
-                whileHover={{ scale: 1.15, rotate: 2 }}
-                src="/gulf.png" 
-                alt="Gulf Oil" 
-                className="h-20 object-contain mx-auto mb-8 relative z-10" 
-              />
-              <h4 className="font-heading font-bold text-secondary text-2xl tracking-tight mb-4 transition-colors">Gulf Oil</h4>
-              <p className="text-gray-600 text-sm leading-relaxed transition-colors">
+              <img src="/gulf.png" alt="Gulf Oil" className="h-16 object-contain mx-auto mb-6 group-hover:brightness-0 group-hover:invert" />
+              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">Gulf Oil</h4>
+              <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
                 Distributor resmi pelumas Gulf berkelas dunia dengan standar internasional sejak 1901.
               </p>
             </motion.div>
@@ -232,17 +226,11 @@ export default function Partnership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group transition-all duration-500 hover:shadow-2xl hover:-translate-y-4 hover:bg-white relative overflow-hidden"
+              className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group hover:bg-gradient-to-br hover:from-primary hover:to-primary/90 transition-all duration-500 hover:shadow-lg"
             >
-              <div className="absolute inset-0 bg-secondary/0 group-hover:bg-secondary/[0.02] transition-colors" />
-              <motion.img 
-                whileHover={{ scale: 1.15, rotate: -2 }}
-                src="/shantui-logo.jpeg" 
-                alt="Shantui" 
-                className="h-16 object-contain mx-auto mb-8 relative z-10" 
-              />
-              <h4 className="font-heading font-bold text-secondary text-2xl tracking-tight mb-4 transition-colors">Shantui Machinery</h4>
-              <p className="text-gray-600 text-sm leading-relaxed transition-colors">
+              <img src="/shantui-logo.jpeg" alt="Shantui" className="h-14 object-contain mx-auto mb-6 group-hover:brightness-0 group-hover:invert" />
+              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">Shantui Machinery</h4>
+              <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
                 Distributor resmi alat berat Shantui untuk pertambangan, konstruksi, dan infrastruktur.
               </p>
             </motion.div>
