@@ -143,10 +143,23 @@ export default function About() {
                 <p className="text-secondary/60 italic font-serif">"{t('about.desc3')}"</p>
               </div>
 
-              {/* Partner logos - Minimalist */}
+              {/* Partner logos - Aesthetic Pop-out */}
               <div className="flex items-center gap-12 pt-12 border-t border-gray-100">
-                <img src="/gulf.png" alt="Gulf Oil" className="h-10 transition-all duration-700 object-contain opacity-50 hover:opacity-100" />
-                <img src="/shantui-logo.jpeg" alt="Shantui" className="h-6 transition-all duration-700 object-contain opacity-50 hover:opacity-100" />
+                <motion.div
+                  whileHover={{ scale: 1.1, y: -5, rotate: 1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="cursor-pointer filter transition-all duration-300 hover:drop-shadow-[0_20px_20px_rgba(245,158,11,0.2)]"
+                >
+                  <img src="/gulf.png" alt="Gulf Oil" className="h-10 object-contain transition-all duration-500" />
+                </motion.div>
+                <div className="h-8 w-px bg-gray-100" />
+                <motion.div
+                  whileHover={{ scale: 1.1, y: -5, rotate: -1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="cursor-pointer filter transition-all duration-300 hover:drop-shadow-[0_20px_20px_rgba(0,0,0,0.1)]"
+                >
+                  <img src="/shantui-logo.jpeg" alt="Shantui" className="h-10 object-contain transition-all duration-500" />
+                </motion.div>
               </div>
             </motion.div>
 
