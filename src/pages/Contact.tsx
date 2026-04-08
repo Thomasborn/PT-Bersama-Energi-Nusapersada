@@ -1,9 +1,56 @@
+import { useState, FormEvent } from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Mail, Clock, Send } from 'lucide-react';
+import { MapPin, Mail, Clock, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Contact() {
   const { t } = useLanguage();
+
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const response = await fetch('http://localhost:3001/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error('Submission failed');
+
+      setStatus('success');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        subject: '',
+        message: ''
+      });
+      
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
+  };
 
   return (
     <div className="w-full overflow-x-hidden">
@@ -150,32 +197,52 @@ export default function Contact() {
               {t('contact.sendMessage')}
             </h3>
 
-            <form className="space-y-6">
+            {status === 'success' && (
+              <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-8 p-4 bg-green-50 border border-green-200 flex items-start gap-3 text-green-800">
+                <CheckCircle2 className="mt-0.5 flex-shrink-0" size={20} />
+                <div>
+                  <h4 className="font-bold text-sm">{t('contact.successTitle')}</h4>
+                  <p className="text-sm mt-1 opacity-90">{t('contact.successDesc')}</p>
+                </div>
+              </motion.div>
+            )}
+
+            {status === 'error' && (
+              <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-8 p-4 bg-red-50 border border-red-200 flex items-start gap-3 text-red-800">
+                <AlertCircle className="mt-0.5 flex-shrink-0" size={20} />
+                <div>
+                  <h4 className="font-bold text-sm">{t('contact.errorTitle')}</h4>
+                  <p className="text-sm mt-1 opacity-90">{t('contact.errorDesc')}</p>
+                </div>
+              </motion.div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="firstName" className="text-xs font-bold tracking-widest uppercase text-gray-500">{t('contact.firstName')}</label>
-                  <input type="text" id="firstName" className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" required />
+                  <input type="text" id="firstName" value={formData.firstName} onChange={handleChange} className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" required />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="lastName" className="text-xs font-bold tracking-widest uppercase text-gray-500">{t('contact.lastName')}</label>
-                  <input type="text" id="lastName" className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" required />
+                  <input type="text" id="lastName" value={formData.lastName} onChange={handleChange} className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" required />
                 </div>
               </div>
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="email" className="text-xs font-bold tracking-widest uppercase text-gray-500">{t('contact.emailAddress')}</label>
-                <input type="email" id="email" className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" required />
+                <input type="email" id="email" value={formData.email} onChange={handleChange} className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" required />
               </div>
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="company" className="text-xs font-bold tracking-widest uppercase text-gray-500">{t('contact.companyName')}</label>
-                <input type="text" id="company" className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" />
+                <input type="text" id="company" value={formData.company} onChange={handleChange} className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" />
               </div>
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="subject" className="text-xs font-bold tracking-widest uppercase text-gray-500">{t('contact.subject')}</label>
                 <div className="relative">
-                  <select id="subject" defaultValue="" className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors appearance-none" required>
+                  <select id="subject" value={formData.subject} onChange={handleChange} className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors appearance-none" required>
                     <option value="" disabled>{t('contact.selectSubject')}</option>
                     <option value="sales">{t('contact.subjectSales')}</option>
                     <option value="partnership">{t('contact.subjectPartnership')}</option>
@@ -191,11 +258,16 @@ export default function Contact() {
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="message" className="text-xs font-bold tracking-widest uppercase text-gray-500">{t('contact.message')}</label>
-                <textarea id="message" rows={5} className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors resize-none" required></textarea>
+                <textarea id="message" value={formData.message} onChange={handleChange} rows={5} className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors resize-none" required></textarea>
               </div>
 
-              <button type="submit" className="w-full bg-primary hover:bg-primary-hover text-white px-8 py-4 font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-3 group mt-4">
-                {t('contact.sendBtn')} <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <button 
+                type="submit" 
+                disabled={status === 'loading'}
+                className="w-full bg-primary hover:bg-primary-hover disabled:bg-primary/50 disabled:cursor-not-allowed text-white px-8 py-4 font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-3 group mt-4"
+              >
+                {status === 'loading' ? t('contact.sending') : t('contact.sendBtn')} 
+                {status !== 'loading' && <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
               </button>
             </form>
           </motion.div>

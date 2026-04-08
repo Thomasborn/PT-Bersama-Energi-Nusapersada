@@ -399,7 +399,12 @@ export const translations = {
       warehouseDetailsHeadline: 'Gudang & Logistik',
       warehouseAdjacent: '',
       mapIntegration: 'Integrasi Peta Interaktif',
-      mapDesc: 'API Google Maps akan disematkan di sini.'
+      mapDesc: 'API Google Maps akan disematkan di sini.',
+      successTitle: 'Pesan Terkirim!',
+      successDesc: 'Terima kasih telah menghubungi kami. Tim kami akan segera merespons Anda.',
+      errorTitle: 'Gagal Mengirim',
+      errorDesc: 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi nanti.',
+      sending: 'Mengirim...'
     },
     footer: {
       desc: 'Distributor resmi Pelumas Gulf Oil dan produk alat berat Shantui di Indonesia. Memberikan solusi industri berkualitas tinggi.',
@@ -837,7 +842,12 @@ export const translations = {
       warehouseDetailsHeadline: 'Warehouse & Logistics',
       warehouseAdjacent: '(Beside PT Mantimin Coal)',
       mapIntegration: 'Interactive Map Integration',
-      mapDesc: 'Google Maps API would be embedded here.'
+      mapDesc: 'Google Maps API would be embedded here.',
+      successTitle: 'Message Sent!',
+      successDesc: 'Thank you for contacting us. Our team will get back to you shortly.',
+      errorTitle: 'Failed to Send',
+      errorDesc: 'An error occurred while sending your message. Please try again later.',
+      sending: 'Sending...'
     },
     footer: {
       desc: 'Official distributor of Gulf Oil Lubricants and Shantui heavy equipment products in Indonesia. Delivering high-quality industrial solutions.',

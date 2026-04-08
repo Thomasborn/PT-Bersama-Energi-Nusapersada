@@ -31,12 +31,17 @@ export default function TrustSection() {
                 {gulfTrustData.about.content}
               </p>
 
-              {/* Gulf logo strip */}
-              <div className="mt-12 pt-10 border-t border-white/10 flex items-center gap-6">
-                <img src="/gulf.png" alt="Gulf Oil" className="h-14 bg-white rounded-full p-1" />
+              {/* Gulf logo strip - Aesthetic Interaction */}
+              <div className="mt-12 pt-10 border-t border-white/10 flex items-center gap-6 group/logo">
+                <motion.div
+                  whileHover={{ scale: 1.15, rotate: 5, y: -5 }}
+                  className="bg-white rounded-full p-2 shadow-xl cursor-pointer"
+                >
+                  <img src="/gulf.png" alt="Gulf Oil" className="h-14 object-contain" />
+                </motion.div>
                 <div>
-                  <div className="text-xs font-bold tracking-widest uppercase text-primary mb-1">Official Brand Partner</div>
-                  <div className="text-white font-bold text-lg">Gulf Oil International</div>
+                  <div className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary mb-1">Official Brand Partner</div>
+                  <div className="text-white font-bold text-lg tracking-tight">Gulf Oil International</div>
                 </div>
               </div>
             </motion.div>
