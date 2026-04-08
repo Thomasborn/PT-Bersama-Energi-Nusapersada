@@ -4,6 +4,7 @@ import { gulfCategories, gulfProducts } from '../data/gulfProducts';
 import DistributorCTA from '../components/DistributorCTA';
 import { ChevronDown, ChevronUp, DownloadCloud, Search, ExternalLink, ArrowRight, LayoutGrid, List, CheckCircle2, Zap, Package2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 // ─── Utility: Get fallback image based on category ─────────────────────────────
 const getFallbackImage = (subcategoryId?: string): string => {
@@ -409,6 +410,7 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
 
 // ─── Main Products Page ───────────────────────────────────────────────────────
 export default function Products() {
+  const { t } = useLanguage();
   const [selectedBrand, setSelectedBrand] = useState<'Gulf' | 'Shantui' | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [activeSubcat, setActiveSubcat] = useState<string>('all');
@@ -454,11 +456,11 @@ export default function Products() {
       <div className="max-w-4xl w-full text-center mb-24">
         <div className="flex items-center justify-center gap-6 mb-12">
           <div className="h-px w-12 bg-gray-100" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">Pilih Principal</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">{t('products.choosePrincipal')}</span>
           <div className="h-px w-12 bg-gray-100" />
         </div>
         <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.1] tracking-tighter">
-          Solusi Terkurasi dari <br />Mitra Strategis Kami.
+          {t('products.curatedSolutions')}
         </h2>
       </div>
 
@@ -485,14 +487,14 @@ export default function Products() {
             </div>
           </div>
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Pelumas Gulf</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">{t('products.gulfLubes')}</span>
             <div className="h-px w-8 bg-gray-100" />
           </div>
           <h3 className="font-heading font-medium text-secondary text-3xl mb-4 flex items-center justify-between">
             Gulf Oil
             <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform text-gray-200" />
           </h3>
-          <p className="text-gray-400 text-sm leading-relaxed max-w-sm">Jelajahi rangkaian pelumas otomotif, industri, dan maritim kelas dunia.</p>
+          <p className="text-gray-400 text-sm leading-relaxed max-w-sm">{t('products.gulfDesc')}</p>
         </motion.div>
 
         {/* Brand: Shantui */}
@@ -517,14 +519,14 @@ export default function Products() {
             </div>
           </div>
           <div className="flex items-center gap-4 mb-4">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Heavy Equipment</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-primary">{t('products.heavyEquipment')}</span>
             <div className="h-px w-8 bg-gray-100" />
           </div>
           <h3 className="font-heading font-medium text-secondary text-3xl mb-4 flex items-center justify-between">
             Shantui Machinery
             <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform text-gray-200" />
           </h3>
-          <p className="text-gray-400 text-sm leading-relaxed max-w-sm">Unit alat berat berkualitas global untuk pertambangan, konstruksi, dan infrastruktur.</p>
+          <p className="text-gray-400 text-sm leading-relaxed max-w-sm">{t('products.shantuiDesc')}</p>
         </motion.div>
       </div>
     </div>
@@ -566,7 +568,7 @@ export default function Products() {
                     onClick={() => setSelectedBrand(null)}
                     className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50 hover:text-primary transition-colors flex items-center gap-3"
                   >
-                    <span>/ Ganti Brand</span>
+                    <span>/ {t('products.changeBrand')}</span>
                     <ArrowRight size={12} className="rotate-180" />
                   </button>
                 </div>
@@ -574,7 +576,7 @@ export default function Products() {
 
               <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <h1 className="font-heading font-medium text-white leading-[1] tracking-tighter text-[clamp(2.5rem,6vw,5rem)] mb-0">
-                  {selectedBrand === 'Gulf' ? 'Pelumas Global' : 'Alat Berat'}
+                  {selectedBrand === 'Gulf' ? t('products.globalLubes') : t('products.heavyEquipment')}
                   <br />
                   <span className="text-primary italic font-serif">Tech Solutions</span>
                 </h1>
@@ -584,8 +586,8 @@ export default function Products() {
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between">
                   <p className="text-gray-300 text-sm leading-relaxed max-w-xl">
                     {selectedBrand === 'Gulf'
-                      ? 'Rangkaian lengkap produk pelumas Gulf Oil untuk performa maksimal operasional bisnis Anda.'
-                      : 'Unit alat berat Shantui dengan teknologi terkini untuk menunjang produktivitas di berbagai sektor industri.'}
+                      ? t('products.gulfHeroSubtitle')
+                      : t('products.shantuiHeroSubtitle')}
                   </p>
                   <a
                     href={selectedBrand === 'Gulf' ? 'https://indonesia.gulfoilltd.com/' : 'https://www.shantui-global.com/'}
@@ -594,7 +596,7 @@ export default function Products() {
                     //buat bacgkround tombol putih
                     className="inline-flex items-center gap-2 bg-white border border-primary/30 text-primary px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all flex-shrink-0"
                   >
-                    <ExternalLink size={12} /> Kunjungi Website Resmi{selectedBrand}
+                    <ExternalLink size={12} /> {t('products.visitOfficialWebsite')} {selectedBrand}
                   </a>
                 </div>
               </div>
@@ -615,7 +617,7 @@ export default function Products() {
                     : 'text-gray-400 font-medium border-transparent hover:text-secondary'
                     }`}
                 >
-                  Semua Kategori
+                  {t('products.allCategories')}
                 </button>
                 {brandCategories.map(cat => (
                   <button
@@ -644,7 +646,7 @@ export default function Products() {
                 <div className="flex items-center gap-4 mb-8">
                   <div className="h-px w-8 bg-primary/30" />
                   <h3 className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">
-                    Filter Tipe
+                    {t('products.filterByType')}
                   </h3>
                 </div>
 
@@ -657,7 +659,7 @@ export default function Products() {
                         : 'bg-white text-gray-600 border-gray-200 hover:border-secondary/50 hover:bg-gray-50'
                         }`}
                     >
-                      ✓ Semua Tipe
+                      ✓ {t('products.allTypes')}
                     </button>
                     {activeCategory_.subcategories.map(sub => (
                       <button
@@ -674,14 +676,14 @@ export default function Products() {
                   </div>
                 ) : (
                   <div className="bg-gray-50 border border-gray-200 rounded-md p-4">
-                    <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">Standar Produk</p>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest font-bold">{t('products.standardProducts')}</p>
                   </div>
                 )}
 
                 <div className="hidden lg:block mt-24 border-l border-gray-100 pl-8 py-4">
-                  <h4 className="text-[10px] font-black text-secondary tracking-[0.2em] uppercase mb-4">💡 Konsultasi Teknis</h4>
+                  <h4 className="text-[10px] font-black text-secondary tracking-[0.2em] uppercase mb-4">💡 {t('products.technicalConsultation')}</h4>
                   <p className="text-xs text-gray-500 leading-relaxed">
-                    Hubungi tim teknis kami untuk rekomendasi produk yang tepat sesuai kebutuhan spesifik Anda.
+                    {t('products.technicalConsultationDesc')}
                   </p>
                 </div>
               </div>
@@ -693,9 +695,7 @@ export default function Products() {
                     <h4 className="text-4xl font-medium text-secondary tracking-tighter mb-2">
                       {activeCategory === 'all' ? `Katalog ${selectedBrand}` : activeCategory_?.name}
                     </h4>
-                    <span className="text-[10px] font-bold text-primary uppercase tracking-[0.3em]">
-                      {displayed.length} Produk Ditemukan
-                    </span>
+                    {displayed.length} {t('products.foundCount')}
                   </div>
 
                   <div className="flex items-center gap-4 flex-wrap">
@@ -706,7 +706,7 @@ export default function Products() {
                         className="inline-flex items-center gap-2 bg-dark-brown text-white px-6 py-3 text-[11px] font-bold tracking-widest uppercase hover:bg-brown-black transition-all shadow-md hover:shadow-lg"
                         title="Download Shantui Excavator Catalog PDF"
                       >
-                        <DownloadCloud size={14} /> Unduh Katalog PDF
+                        <DownloadCloud size={14} /> {t('products.downloadCatalog')}
                       </a>
                     )}
                     <div className="relative">
@@ -715,7 +715,7 @@ export default function Products() {
                         type="text"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
-                        placeholder="Search models..."
+                        placeholder={t('products.searchPlaceholder')}
                         className="bg-gray-50 border-none pl-11 pr-8 py-3 text-xs focus:ring-1 focus:ring-primary w-full sm:w-64 transition-all"
                       />
                     </div>
@@ -761,7 +761,7 @@ export default function Products() {
                 {displayed.length === 0 && (
                   <div className="py-32 text-center">
                     <Package2 size={40} className="mx-auto text-gray-100 mb-6" />
-                    <p className="text-gray-400 text-sm italic">Tidak ada produk ditemukan dalam kategori ini.</p>
+                    <p className="text-gray-400 text-sm italic">{t('products.noProductsFound')}</p>
                   </div>
                 )}
               </div>

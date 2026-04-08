@@ -78,8 +78,8 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.15 }}
                 className="font-heading font-medium text-white leading-[0.9] tracking-tighter text-[clamp(2.5rem,8vw,7rem)] mb-0"
               >
-                Towards a <br />
-                <span className="text-primary italic font-serif">Cleaner</span> Future.
+                {t('about.heroSubtitle').split(' ').slice(0, -1).join(' ')} <br />
+                <span className="text-primary italic font-serif">{t('about.heroSubtitle').split(' ').slice(-1)}</span>.
               </motion.h1>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -107,7 +107,7 @@ export default function About() {
                 <div className="flex items-center gap-6">
                    <div className="h-px w-8 bg-primary/30" />
                    <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-primary/80">
-                      Vision 2030: Sustainability First
+                    {t('about.heroVision')}
                    </span>
                 </div>
               </motion.div>
@@ -134,7 +134,7 @@ export default function About() {
               </div>
 
               <h2 className="font-heading font-medium text-secondary text-[clamp(2rem,5vw,4.5rem)] leading-[1.1] tracking-tighter mb-10">
-                Pilar Keunggulan <br />Industri & Distribusi.
+                {t('about.overviewTitle')}
               </h2>
 
               <div className="space-y-6 text-gray-400 leading-relaxed text-lg mb-16 max-w-2xl">
@@ -281,7 +281,7 @@ export default function About() {
                     <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">{t('about.businessFieldsTitle')}</span>
                   </div>
                   <h2 className="font-heading font-medium text-secondary text-4xl leading-[1.1] tracking-tighter mb-8">
-                    Spektrum Layanan <br />Kreatif & Teknis.
+                    {t('about.businessFieldsTitleLarge')}
                   </h2>
                   <p className="text-gray-400 leading-relaxed">{t('about.businessFieldsDesc')}</p>
                 </div>
@@ -316,7 +316,7 @@ export default function About() {
                 <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">{t('about.productsServicesTitle')}</span>
               </div>
               <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5vw,4rem)] leading-[0.9] tracking-tighter">
-                Unified Solutions.
+                {t('about.unifiedSolutionsTitle')}
               </h2>
             </div>
             <p className="text-gray-400 max-w-xs">{t('about.heavyEquipmentDesc')}</p>
@@ -378,7 +378,7 @@ export default function About() {
                 <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">{t('about.advantagesTitle')}</span>
               </div>
               <h2 className="font-heading font-medium text-secondary text-4xl tracking-tighter mb-16">
-                Superior Advantage.
+                {t('about.advantagesTitleLarge')}
               </h2>
             </div>
           </div>
@@ -407,7 +407,7 @@ export default function About() {
           <div className="flex items-center gap-4 mb-20 border-b border-white/5 pb-10">
             <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-primary/60">{t('about.customersTitle')}</span>
             <div className="flex-1 h-px bg-white/5" />
-            <span className="text-gray-500 text-[10px] tracking-widest">MARKET REACH</span>
+            <span className="text-gray-500 text-[10px] tracking-widest">{t('about.customersMarketReach')}</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px bg-white/5">

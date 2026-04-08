@@ -76,34 +76,34 @@ export default function Home() {
                      transition={{ delay: 0.8, duration: 0.6 }}
                      className="text-[11px] font-bold uppercase tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
                    >
-                     Distributor Resmi
+                     {t('home.officialDistributor')}
                    </motion.span>
                 </div>
 
                 <h1 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] mb-8 tracking-tighter">
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                     className="block"
                   >
-                    Solusi Pelumas &
+                    {t('home.heroTitle').split('&')[0]} &
                   </motion.span>
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="block mt-2"
                   >
-                    Alat Berat <span className="font-serif italic text-primary pr-2"></span>
+                    {t('home.heroTitle').split('&')[1]?.split('untuk')[0]} <span className="font-serif italic text-primary pr-2"></span>
                   </motion.span>
-                  <motion.span 
+                  <motion.span
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     className="block mt-2 text-gray-800"
                   >
-                    untuk Indonesia.
+                    untuk {t('home.heroTitle').split('untuk')[1]}
                   </motion.span>
                 </h1>
 
@@ -128,7 +128,7 @@ export default function Home() {
                   >
                     <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black" />
                     <span className="relative z-10 flex items-center gap-4">
-                      Eksplorasi Katalog
+                      {t('home.exploreCatalog')}
                       <div className="w-6 h-px bg-white/50 group-hover:bg-white group-hover:w-10 transition-all duration-300" />
                     </span>
                   </Link>
@@ -140,7 +140,7 @@ export default function Home() {
                     <span className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary/30 transition-colors bg-white shadow-sm">
                       <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                     </span>
-                    Tentang BEN
+                    {t('home.aboutBen')}
                   </Link>
                 </motion.div>
               </motion.div>
@@ -292,7 +292,7 @@ export default function Home() {
       {/* ── PARTNER BRANDS ───────────────────────────────────────────────────── */}
       <section className="bg-gradient-to-r from-secondary via-dark-brown/10 to-dark-brown/5 border-y border-dark-brown/20 py-14">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="text-xs font-bold tracking-[0.25em] uppercase text-white/80 mb-10">Merek Andalan Kami</p>
+          <p className="text-xs font-bold tracking-[0.25em] uppercase text-white/80 mb-10">{t('home.partnerBrandsTitle')}</p>
           <div className="flex flex-wrap items-center gap-12 md:gap-20 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 filter hover:drop-shadow-lg">
             <BenLogo className="h-12 md:h-14" light={false} />
             <img src="/gulf.png" alt="Gulf Oil" className="h-16 md:h-20 object-contain" />
@@ -306,11 +306,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="max-w-3xl mb-24">
             <div className="flex items-center gap-6 mb-12">
-              <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">Solusi Utama BEN</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-primary">{t('home.mainSolutionsSubtitle')}</span>
               <div className="h-px w-12 bg-gray-100" />
             </div>
             <h2 className="font-heading font-medium text-secondary text-[clamp(2.5rem,4.5vw,4.2rem)] leading-[1.2] tracking-tighter">
-              Dua Pilar Energi <br />& Infrastruktur.
+              {t('home.mainSolutionsTitle')}
             </h2>
           </div>
 
@@ -375,7 +375,7 @@ export default function Home() {
           </div>
 
           <div className="mt-32 pt-24 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between gap-12">
-            <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-300">Jelajahi Katalog Lengkap</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-gray-300">{t('home.exploreFullCatalog')}</p>
             <div className="flex flex-wrap justify-center gap-8 lg:gap-14">
               {['Passenger Car', 'Motorcycle', 'Commercial', 'Industrial', 'Marine'].map((cat, i) => (
                 <Link
@@ -401,13 +401,13 @@ export default function Home() {
                 <div className="h-px w-12 bg-primary" />
               </div>
               <h2 className="font-heading font-bold text-dark-brown text-[clamp(2.2rem,5vw,4rem)] leading-[1.15] tracking-tight mb-10">
-                Layanan Untuk <span className="text-primary">Berbagai Industri</span>
+                {t('home.industriesTitle').split(' ').slice(0, 2).join(' ')} <span className="text-primary">{t('home.industriesTitle').split(' ').slice(2).join(' ')}</span>
               </h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-14 font-medium">
-                Kami menyediakan solusi pelumasan dan alat berat terintegrasi untuk mendukung pertumbuhan sektor-sektor vital di Indonesia.
+                {t('home.industriesDesc')}
               </p>
               <Link to="/contact" className="text-[10px] font-bold uppercase tracking-[0.4em] text-dark-brown flex items-center gap-4 group">
-                Konsultasi Sektor <div className="w-12 h-px bg-dark-brown/40 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
+                  {t('home.consultationSectors')} <div className="w-12 h-px bg-dark-brown/40 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
               </Link>
             </div>
 

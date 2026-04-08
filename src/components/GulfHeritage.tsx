@@ -2,6 +2,7 @@ import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import { Clock, Anchor, Fuel, CircleDot, Briefcase, ArrowRight, History } from 'lucide-react';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const HERITAGE_MILESTONES = [
   {
@@ -42,6 +43,7 @@ const HERITAGE_MILESTONES = [
 ];
 
 export default function GulfHeritage() {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -96,7 +98,7 @@ export default function GulfHeritage() {
           >
             <div className="h-[2px] w-8 bg-[#ff6600]" />
             <span className="text-xs font-black tracking-[0.4em] uppercase text-[#ff6600]">
-              Legacy of Speed & Quality
+              {t('heritage.subtitle')}
             </span>
             <div className="h-[2px] w-8 bg-[#ff6600]" />
           </motion.div>
@@ -108,8 +110,8 @@ export default function GulfHeritage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-heading font-black text-white text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.9] tracking-tighter mb-8"
           >
-            Jejak Sejarah<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff6600] via-orange-400 to-amber-500">Gulf Oil</span>
+            {t('heritage.title1')}<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff6600] via-orange-400 to-amber-500">{t('heritage.title2')}</span>
           </motion.h2>
           
           <motion.p
@@ -119,7 +121,7 @@ export default function GulfHeritage() {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium"
           >
-            Sejak pengeboran pertama hingga menjadi ikon motorsport dunia. Setiap produk kami membawa DNA warisan kegigihan dan inovasi global.
+            {t('heritage.desc')}
           </motion.p>
         </div>
 
@@ -197,7 +199,7 @@ export default function GulfHeritage() {
               className="relative flex items-center gap-4 bg-black border border-white/20 px-10 py-5 rounded-lg text-white font-black tracking-widest uppercase text-sm hover:border-[#ff6600] transition-all"
             >
               <History size={20} className="text-[#ff6600]" />
-              Jelajahi Garis Waktu Lengkap
+              {t('heritage.viewHistory')}
               <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
             </a>
           </div>
@@ -205,7 +207,7 @@ export default function GulfHeritage() {
           <div className="mt-20 flex flex-col md:flex-row items-center justify-center gap-10 opacity-40">
             <img src="/gulf.png" alt="Gulf Oil" className="h-14 grayscale brightness-200" />
             <div className="w-12 h-[1px] bg-white/20" />
-            <span className="text-white font-bold tracking-[0.2em] text-xs uppercase">Est. 1901 — Texas, USA</span>
+            <span className="text-white font-bold tracking-[0.2em] text-xs uppercase">{t('heritage.established')}</span>
           </div>
         </motion.div>
       </div>

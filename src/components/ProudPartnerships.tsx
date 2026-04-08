@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, ArrowRight, Trophy } from 'lucide-react';
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const PARTNERSHIPS = [
   {
@@ -66,6 +67,7 @@ const PARTNERSHIPS = [
 ];
 
 export default function ProudPartnerships() {
+  const { t } = useLanguage();
   const [activeIdx, setActiveIdx] = useState(0);
   const active = PARTNERSHIPS[activeIdx];
 
@@ -83,22 +85,22 @@ export default function ProudPartnerships() {
           <div className="flex items-center gap-3 mb-6">
             <div className="h-[2px] w-12 bg-[#ff6600]" />
             <span className="text-xs font-black tracking-[0.3em] uppercase text-[#ff6600]">
-              Exclusive Alliance
+              {t('partnerships.subtitle')}
             </span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
             <div className="max-w-3xl">
               <h2 className="font-heading font-black text-[#002b5b] text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.9] tracking-tighter mb-6">
-                Bangga<br />
-                <span className="text-[#ff6600]">Kemitraan Kami</span>
+                {t('partnerships.title1')}<br />
+                <span className="text-[#ff6600]">{t('partnerships.title2')}</span>
               </h2>
               <p className="text-gray-500 text-lg md:text-xl leading-relaxed font-medium">
-                Melampaui batas performa bersama partner legendaris dunia. Kami menghadirkan standar global ke setiap tetes pelumas BEN.
+                {t('partnerships.desc')}
               </p>
             </div>
             <div className="flex items-center gap-4 bg-gray-50 px-6 py-3 rounded-full border border-gray-100 shadow-sm">
               <Trophy size={20} className="text-[#ff6600]" />
-              <span className="text-[11px] font-black text-[#002b5b] uppercase tracking-[0.2em]">World-Class Excellence</span>
+              <span className="text-[11px] font-black text-[#002b5b] uppercase tracking-[0.2em]">{t('partnerships.excellenceBadge')}</span>
             </div>
           </div>
         </motion.div>
@@ -158,7 +160,7 @@ export default function ProudPartnerships() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-3 bg-white text-[#002b5b] px-5 py-2.5 rounded-sm font-black text-[9px] uppercase tracking-[0.2em] hover:bg-[#ff6600] hover:text-white transition-all shadow-xl active:scale-95 group"
                     >
-                      Pelajari Kolaborasi Ini 
+                      {t('partnerships.learnMore')} 
                       <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                   </motion.div>
