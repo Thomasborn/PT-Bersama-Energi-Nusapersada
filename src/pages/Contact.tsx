@@ -65,7 +65,7 @@ export default function Contact() {
       {/* ── CONTACT ASYMMETRIC SPLIT ─────────────────────────────────────────── */}
       <section className="bg-white border-y border-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-          
+
           {/* Left: Contact Details (White background) */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
@@ -78,7 +78,7 @@ export default function Contact() {
               <div className="h-px w-12 bg-primary" />
               <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('contact.getInTouch')}</span>
             </div>
-            
+
             <h2 className="font-heading font-black text-secondary text-[clamp(2.5rem,4vw,3.5rem)] leading-[1] tracking-tighter mb-8">
               {t('contact.headOffice')}
             </h2>
@@ -161,7 +161,7 @@ export default function Contact() {
                   <input type="text" id="lastName" className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" required />
                 </div>
               </div>
-              
+
               <div className="flex flex-col gap-2">
                 <label htmlFor="email" className="text-xs font-bold tracking-widest uppercase text-gray-500">{t('contact.emailAddress')}</label>
                 <input type="email" id="email" className="w-full bg-white border border-gray-200 px-4 py-3 text-secondary focus:outline-none focus:border-primary transition-colors" required />
@@ -184,7 +184,7 @@ export default function Contact() {
                   </select>
                   {/* Custom arrow for select */}
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
                   </div>
                 </div>
               </div>
@@ -208,7 +208,7 @@ export default function Contact() {
         {/* Very muted, abstracted map background approach */}
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1596443686812-2f45229eebc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center grayscale mix-blend-luminosity transition-transform duration-1000 group-hover:scale-105"></div>
         <div className="absolute inset-0 bg-secondary/80"></div>
-        
+
         <div className="relative z-10 flex flex-col items-center text-center px-6">
           <div className="w-16 h-16 border border-white/20 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
             <MapPin size={24} className="text-white" strokeWidth={1.5} />
@@ -217,7 +217,7 @@ export default function Contact() {
             PT. Bersama Energi Nusapersada
           </h3>
           <p className="text-gray-400 font-medium tracking-wide">
-            DKI Jakarta, Indonesia
+            Tangerang, Indonesia
           </p>
         </div>
       </section>

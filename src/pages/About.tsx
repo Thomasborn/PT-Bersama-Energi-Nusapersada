@@ -101,9 +101,9 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.35 }}
                 className="flex flex-col md:flex-row items-start md:items-center justify-between gap-10"
               >
-                <p className="text-gray-300 text-base leading-relaxed max-w-xl">
+                {/* <p className="text-gray-300 text-base leading-relaxed max-w-xl">
                   {t('about.heroDesc')}
-                </p>
+                </p> */}
                 <div className="flex items-center gap-6">
                    <div className="h-px w-8 bg-primary/30" />
                    <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-primary/80">
@@ -162,12 +162,20 @@ export default function About() {
                 <img src="https://image.made-in-china.com/155f0j00jilpatLRqVko/Shantui-220HP-New-Crawler-Bulldozer-SD22-with-Ripper-Sale-in-Tanzania.jpg" />
                 <div className="absolute inset-0 bg-secondary/5" />
               </div>
+              {/* Aesthetic Side-by-Side Floating Images */}
               <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-10 -left-10 w-48 h-48 border-[12px] border-white shadow-xl overflow-hidden hidden xl:block"
+                animate={{ y: [0, -15, 0], rotate: [0, -2, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-12 -left-20 w-48 h-48 border-[12px] border-white shadow-2xl overflow-hidden hidden xl:block z-20"
               >
-                <img src="https://assets.gulfoilltd.com/gulfindia/files/styles/client_400x400/public/2023-05/drum.webp?VersionId=7HOEeC7Cmg94ZP_PHjh.FZZzUNGvYba4&itok=L7rkWIWT" alt="Tech Precision" className="w-full h-full object-cover" />
+                <img src="https://assets.gulfoilltd.com/gulfindia/files/styles/client_400x400/public/2023-05/drum.webp?VersionId=7HOEeC7Cmg94ZP_PHjh.FZZzUNGvYba4&itok=L7rkWIWT" alt="Gulf Drum" className="w-full h-full object-cover" />
+              </motion.div>
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, 2, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute -bottom-6 left-24 w-44 h-44 border-[12px] border-white shadow-2xl overflow-hidden hidden xl:block z-10"
+              >
+                <img src="https://www.nu-tierbrands.com/wp-content/uploads/2020/01/Gulf-Tote-300x300.jpg" alt="Gulf Tote" className="w-full h-full object-cover" />
               </motion.div>
             </motion.div>
           </div>

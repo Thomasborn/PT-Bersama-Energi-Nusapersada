@@ -362,7 +362,7 @@ export const translations = {
       heroDesc: 'Hubungi tim kami untuk pertanyaan produk, peluang kemitraan, atau dukungan teknis.',
       getInTouch: 'Hubungi Kami',
       headOffice: 'Kantor Pusat Kami',
-      headOfficeDesc: 'PT Bersama Energi Nusapersada berkantor pusat di Jakarta, dengan pusat distribusi dan kantor cabang yang berlokasi strategis di seluruh Indonesia untuk melayani klien kami secara efisien.',
+      headOfficeDesc: 'PT Bersama Energi Nusapersada berkantor pusat di Tangerang, dengan pusat distribusi dan kantor cabang yang berlokasi strategis di seluruh Indonesia untuk melayani klien kami secara efisien.',
       address: 'Alamat',
       addressDetails: 'Epica Tangerang  Great Western,\nJl. M.H. Thamrin Blk. AA2 No.29,\nRT.007/RW.001, Panunggangan Utara,\nKec. Pinang, Kota Tangerang,\nBanten 15143, Indonesia',
       phone: 'Telepon',

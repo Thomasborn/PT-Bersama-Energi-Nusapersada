@@ -550,7 +550,7 @@ export default function Products() {
           <section className="relative min-h-[50vh] flex flex-col justify-end bg-secondary overflow-hidden">
             <div
               className="absolute inset-0 z-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${selectedBrand === 'Gulf' ? 'public/gulf/background.png' : 'https://www.shantui-global.com/upload/images/2024/07/05/9733632409d940508dbe56ba4dabfd21.jpg'})` }}
+              style={{ backgroundImage: `url(${selectedBrand === 'Gulf' ? '/gulf/background.png' : 'https://www.shantui-global.com/upload/images/2024/07/05/9733632409d940508dbe56ba4dabfd21.jpg'})` }}
             >
               <div className="absolute inset-0 bg-secondary/85 backdrop-blur-[2px]" />
             </div>
