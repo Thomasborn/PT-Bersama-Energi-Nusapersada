@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 // ─── Utility: Get fallback image based on category ─────────────────────────────
 const getFallbackImage = (subcategoryId?: string): string => {
   if (!subcategoryId) return '/shantui/escavator/medium.png';
-  
+
   const fallbackMap: { [key: string]: string } = {
     'mining-excavator': '/shantui/escavator/mining.png',
     'large-excavator': '/shantui/escavator/large.png',
@@ -21,7 +21,7 @@ const getFallbackImage = (subcategoryId?: string): string => {
     'large-bulldozer': '/shantui/escavator/large.png',
     'wheel-loader': '/shantui/escavator/medium.png',
   };
-  
+
   return fallbackMap[subcategoryId] || '/shantui/escavator/medium.png';
 };
 
@@ -137,9 +137,9 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
               <div className="md:col-span-2">
                 {product.image || displayImage ? (
                   <div className="w-full h-52 bg-white rounded-lg border border-gray-100 flex items-center justify-center p-4 mb-6 overflow-hidden">
-                    <img 
-                      src={displayImage || product.image} 
-                      alt={product.name} 
+                    <img
+                      src={displayImage || product.image}
+                      alt={product.name}
                       className="max-w-full max-h-full object-contain"
                       onError={(e) => {
                         setImageError(true);
@@ -238,10 +238,10 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
       >
         <motion.div className="absolute inset-0 w-full h-full" whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }}>
           {product.image || displayImage ? (
-            <img 
-              src={displayImage || product.image} 
-              alt={product.name} 
-              className="w-full h-full object-contain p-6 opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
+            <img
+              src={displayImage || product.image}
+              alt={product.name}
+              className="w-full h-full object-contain p-6 opacity-90 group-hover:opacity-100 transition-opacity duration-300"
               onError={(e) => {
                 setImageError(true);
                 if (!imageError) {
@@ -591,9 +591,10 @@ export default function Products() {
                     href={selectedBrand === 'Gulf' ? 'https://indonesia.gulfoilltd.com/' : 'https://www.shantui-global.com/'}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border border-primary/30 text-primary px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all flex-shrink-0"
+                    //buat bacgkround tombol putih
+                    className="inline-flex items-center gap-2 bg-white border border-primary/30 text-primary px-5 py-2.5 text-[10px] font-bold tracking-widest uppercase hover:bg-primary hover:text-white transition-all flex-shrink-0"
                   >
-                    <ExternalLink size={12} /> Kunjungi Website Resmi
+                    <ExternalLink size={12} /> Kunjungi Website {selectedBrand}
                   </a>
                 </div>
               </div>
