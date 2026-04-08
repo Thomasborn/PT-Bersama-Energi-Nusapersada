@@ -408,6 +408,45 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
   );
 };
 
+// ─── OEM Approvals Section ─────────────────────────────────────
+const OEMSection = ({ t }: { t: any }) => {
+  return (
+    <section className="bg-white py-32 border-t border-gray-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-10 mb-20">
+          <div>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-10 bg-primary/40" />
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-primary">{t('products.oemApprovalsTitle')}</span>
+            </div>
+            <h2 className="font-heading font-medium text-secondary text-[clamp(2rem,4vw,3rem)] leading-[1.1] tracking-tighter">
+               {t('products.oemApprovalsSubtitle')}
+            </h2>
+          </div>
+          <div className="flex items-center gap-6">
+             <div className="h-px w-24 bg-gray-100" />
+             <span className="text-[10px] font-black tracking-widest text-gray-300 uppercase">Trusted Partners</span>
+          </div>
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center items-center"
+        >
+          <img 
+            src="/gulf/oem.png" 
+            alt="OEM Approvals" 
+            className="max-w-full h-auto opacity-90 hover:opacity-100 transition-opacity duration-700"
+          />
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 // ─── Main Products Page ───────────────────────────────────────────────────────
 export default function Products() {
   const { t } = useLanguage();
@@ -767,6 +806,8 @@ export default function Products() {
               </div>
             </div>
           </div>
+
+          {selectedBrand === 'Gulf' && <OEMSection t={t} />}
 
           <div className="bg-white py-32 border-t border-gray-50">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">

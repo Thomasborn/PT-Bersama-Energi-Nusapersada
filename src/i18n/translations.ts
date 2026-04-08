@@ -229,6 +229,8 @@ export const translations = {
       visitOfficialWebsite: 'Kunjungi Website Resmi',
       downloadCatalog: 'Unduh Katalog PDF',
       noProductsFound: 'Tidak ada produk ditemukan dalam kategori ini.',
+      oemApprovalsTitle: 'Persetujuan OEM Global',
+      oemApprovalsSubtitle: 'Teknologi yang Teruji dan Diakui',
     },
     partnership: {
       heroTitle: 'Menjadi',
@@ -662,6 +664,8 @@ export const translations = {
       visitOfficialWebsite: 'Visit Official Website',
       downloadCatalog: 'Download Catalog PDF',
       noProductsFound: 'No products found in this category.',
+      oemApprovalsTitle: 'Global OEM Approvals',
+      oemApprovalsSubtitle: 'Tested and Recognized Technology',
     },
     partnership: {
       heroTitle: 'Become Our',
