@@ -231,6 +231,9 @@ export const translations = {
       noProductsFound: 'Tidak ada produk ditemukan dalam kategori ini.',
       oemApprovalsTitle: 'Persetujuan OEM Global',
       oemApprovalsSubtitle: 'Teknologi yang Teruji dan Diakui',
+      prev: 'Sebelumnya',
+      next: 'Berikutnya',
+      page: 'Halaman',
     },
     partnership: {
       heroTitle: 'Menjadi',
@@ -666,6 +669,9 @@ export const translations = {
       noProductsFound: 'No products found in this category.',
       oemApprovalsTitle: 'Global OEM Approvals',
       oemApprovalsSubtitle: 'Tested and Recognized Technology',
+      prev: 'Previous',
+      next: 'Next',
+      page: 'Page',
     },
     partnership: {
       heroTitle: 'Become Our',

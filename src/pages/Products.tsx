@@ -1,8 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { gulfCategories, gulfProducts } from '../data/gulfProducts';
 import DistributorCTA from '../components/DistributorCTA';
-import { ChevronDown, ChevronUp, DownloadCloud, Search, ExternalLink, ArrowRight, LayoutGrid, List, CheckCircle2, Zap, Package2 } from 'lucide-react';
+import { ChevronDown, ChevronUp, DownloadCloud, Search, ExternalLink, ArrowRight, LayoutGrid, List, CheckCircle2, Zap, Package2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -455,6 +455,10 @@ export default function Products() {
   const [activeSubcat, setActiveSubcat] = useState<string>('all');
   const [query, setQuery] = useState('');
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
+  
+  // Pagination State
+  const ITEMS_PER_PAGE = 6;
+  const [currentPage, setCurrentPage] = useState(1);
 
   // Filter categories based on selected brand
   const brandCategories = useMemo(() => {
@@ -488,6 +492,22 @@ export default function Products() {
     }
     return list;
   }, [selectedBrand, activeCategory, activeSubcat, query]);
+
+  // Reset page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+    // Scroll to top of product list when page resets (optional but good UX)
+    const productGrid = document.getElementById('product-grid-start');
+    if (productGrid) {
+      productGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [selectedBrand, activeCategory, activeSubcat, query]);
+
+  const totalPages = Math.ceil(displayed.length / ITEMS_PER_PAGE);
+  const paginatedProducts = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return displayed.slice(start, start + ITEMS_PER_PAGE);
+  }, [displayed, currentPage]);
 
   // Brand Chooser Component
   const BrandSelection = () => (
@@ -728,7 +748,7 @@ export default function Products() {
               </div>
 
               {/* Product Area */}
-              <div className="w-full lg:w-3/4">
+              <div className="w-full lg:w-3/4" id="product-grid-start">
                 <div className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-8">
                   <div>
                     <h4 className="text-4xl font-medium text-secondary tracking-tighter mb-2">
@@ -778,7 +798,7 @@ export default function Products() {
 
                 <motion.div layout className={`grid gap-8 ${viewMode === 'grid' ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1'}`}>
                   <AnimatePresence mode="popLayout">
-                    {displayed.map((product, index) => (
+                    {paginatedProducts.map((product, index) => (
                       <motion.div
                         key={product.id}
                         layout
@@ -796,6 +816,45 @@ export default function Products() {
                     ))}
                   </AnimatePresence>
                 </motion.div>
+
+                {/* Pagination UI */}
+                {totalPages > 1 && (
+                  <div className="mt-20 flex items-center justify-center gap-2 border-t border-gray-50 pt-12">
+                    <button
+                      onClick={() => {
+                        setCurrentPage(p => Math.max(1, p - 1));
+                      }}
+                      disabled={currentPage === 1}
+                      className={`p-3 rounded-full border transition-all ${currentPage === 1 ? 'text-gray-200 border-gray-100 cursor-not-allowed' : 'text-secondary border-gray-200 hover:border-primary hover:text-primary shadow-sm hover:shadow-md'}`}
+                      title={t('products.prev')}
+                    >
+                      <ChevronLeft size={18} />
+                    </button>
+                    
+                    <div className="flex items-center gap-1 mx-4">
+                      {Array.from({ length: totalPages }).map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setCurrentPage(i + 1)}
+                          className={`w-10 h-10 rounded-full text-[11px] font-bold transition-all ${currentPage === i + 1 ? 'bg-secondary text-white shadow-lg scale-110' : 'text-gray-400 hover:bg-gray-50'}`}
+                        >
+                          {i + 1}
+                        </button>
+                      ))}
+                    </div>
+
+                    <button
+                      onClick={() => {
+                        setCurrentPage(p => Math.min(totalPages, p + 1));
+                      }}
+                      disabled={currentPage === totalPages}
+                      className={`p-3 rounded-full border transition-all ${currentPage === totalPages ? 'text-gray-200 border-gray-100 cursor-not-allowed' : 'text-secondary border-gray-200 hover:border-primary hover:text-primary shadow-sm hover:shadow-md'}`}
+                      title={t('products.next')}
+                    >
+                      <ChevronRight size={18} />
+                    </button>
+                  </div>
+                )}
 
                 {displayed.length === 0 && (
                   <div className="py-32 text-center">
