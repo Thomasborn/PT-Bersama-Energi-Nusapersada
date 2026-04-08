@@ -159,7 +159,7 @@ export default function About() {
               className="lg:col-span-5 relative"
             >
               <div className="relative aspect-[4/5] overflow-hidden border border-gray-100 shadow-2xl">
-                <img src="https://www.garudasystrain.co.id/wp-content/uploads/2024/02/1-11.jpg" />
+                <img src="https://image.made-in-china.com/155f0j00jilpatLRqVko/Shantui-220HP-New-Crawler-Bulldozer-SD22-with-Ripper-Sale-in-Tanzania.jpg" />
                 <div className="absolute inset-0 bg-secondary/5" />
               </div>
               <motion.div 
@@ -167,7 +167,7 @@ export default function About() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-10 -left-10 w-48 h-48 border-[12px] border-white shadow-xl overflow-hidden hidden xl:block"
               >
-                <img src="https://img.lazcdn.com/g/p/25f44ca57946284eee07605f1ccfcf97.jpg_720x720q80.jpg" alt="Tech Precision" className="w-full h-full object-cover" />
+                <img src="https://assets.gulfoilltd.com/gulfindia/files/styles/client_400x400/public/2023-05/drum.webp?VersionId=7HOEeC7Cmg94ZP_PHjh.FZZzUNGvYba4&itok=L7rkWIWT" alt="Tech Precision" className="w-full h-full object-cover" />
               </motion.div>
             </motion.div>
           </div>

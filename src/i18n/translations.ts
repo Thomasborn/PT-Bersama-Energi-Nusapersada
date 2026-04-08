@@ -156,7 +156,7 @@ export const translations = {
       // UI Text
       heroTitle: 'Tentang',
       viewProducts: 'Lihat Produk',
-      heroSubtitle: 'Menuju Masa Depan yang Lebih Bersih',
+      heroSubtitle: 'Towards a Cleaner Future.',
       heroVision: 'Visi 2030: Prioritas Keberlanjutan',
       overviewTitle: 'Pilar Keunggulan Industri & Distribusi.',
       businessFieldsTitleLarge: 'Rangkaian Layanan Teknis & Distribusi.',
@@ -184,7 +184,7 @@ export const translations = {
       subtitle: 'Jaringan Global',
       title: 'Mitra Strategis Kami',
       desc: 'BEN berkolaborasi dengan pemimpin global dalam teknologi pelumasan dan manufaktur alat berat untuk memberikan solusi yang andal dan efisien untuk operasi industri.',
-    },    products: {
+    }, products: {
       subtitle: 'Portofolio Kami',
       title: 'Produk Premium',
       desc: 'Solusi komprehensif untuk kebutuhan industri dan otomotif Anda.',
