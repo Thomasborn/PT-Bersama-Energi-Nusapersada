@@ -136,7 +136,7 @@ export default function BenPartnerships() {
               <ArrowRight size={18} />
             </a>
             <a
-              href="mailto:partnership@ben-energy.co.id"
+              href="mailto:info@bersamaenergi.co.id"
               className="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary/5 px-10 py-4 rounded-lg font-bold tracking-wide transition-all duration-300"
             >
               Hubungi Tim Partnership

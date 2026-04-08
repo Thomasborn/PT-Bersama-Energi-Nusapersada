@@ -95,11 +95,11 @@ export default function Careers() {
             <h3 className="text-2xl font-bold text-secondary mb-4">Email HR kami</h3>
             
             <a 
-              href="mailto:hr@ben-energy.co.id"
+              href="mailto:info@bersamaenergi.co.id"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-bold tracking-wide transition-colors text-lg"
             >
               <Mail size={20} />
-              hr@ben-energy.co.id
+              info@bersamaenergi.co.id
             </a>
 
             <p className="text-gray-500 mt-8 text-sm">

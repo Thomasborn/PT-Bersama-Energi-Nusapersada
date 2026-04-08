@@ -91,7 +91,7 @@ export const benKnowledgeBase: KnowledgeEntry[] = [
     id: 'contact-id',
     category: 'Contact',
     title: 'Informasi Kontak BEN',
-    content: 'Kantor Pusat: Epica Great Western, Blok AA-2 No. 28-29, Jl MH Thamrin KM 2.7, Kota Tangerang, Banten 15134. Telepon: Penjualan +62 21 1234 5679, Dukungan +62 21 1234 5680. Email: info@ben-energy.co.id, sales@ben-energy.co.id, partner@ben-energy.co.id. Jam Kerja: Senin - Jumat 08:00 - 17:00 WIB.',
+    content: 'Kantor Pusat: Epica Great Western, Blok AA-2 No. 28-29, Jl MH Thamrin KM 2.7, Kota Tangerang, Banten 15134. Telepon: Penjualan +62 21 1234 5679, Dukungan +62 21 1234 5680. Email: info@bersamaenergi.co.id. Jam Kerja: Senin - Jumat 08:00 - 17:00 WIB.',
     keywords: ['kontak', 'hubungi', 'telepon', 'alamat', 'email', 'jam kerja'],
     relatedPage: '/contact',
     language: 'id'
@@ -100,7 +100,7 @@ export const benKnowledgeBase: KnowledgeEntry[] = [
     id: 'contact-en',
     category: 'Contact',
     title: 'Contact Information',
-    content: 'Headquarters: Epica Tangerang Great Western, Blok AA-2 No. 28-29, Jl MH Thamrin KM 2.7, Kota Tangerang, Banten 15134, Indonesia. Phone: Sales +62 21 1234 5679, Support +62 21 1234 5680. Email: info@ben-energy.co.id, sales@ben-energy.co.id, partner@ben-energy.co.id. Hours: Monday-Friday 08:00-17:00 WIB.',
+    content: 'Headquarters: Epica Tangerang Great Western, Blok AA-2 No. 28-29, Jl MH Thamrin KM 2.7, Kota Tangerang, Banten 15134, Indonesia. Phone: Sales +62 21 1234 5679, Support +62 21 1234 5680. Email: info@bersamaenergi.co.id. Hours: Monday-Friday 08:00-17:00 WIB.',
     keywords: ['contact', 'call', 'phone', 'address', 'email', 'hours'],
     relatedPage: '/contact',
     language: 'en'

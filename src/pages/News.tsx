@@ -86,8 +86,8 @@ export default function News() {
               <div className="space-y-6">
                 <div>
                   <p className="text-gray-600 font-bold mb-2">Email:</p>
-                  <a href="mailto:info@ben-energy.co.id" className="text-primary text-lg font-bold hover:underline">
-                    info@ben-energy.co.id
+                  <a href="mailto:info@bersamaenergi.co.id" className="text-primary text-lg font-bold hover:underline">
+                    info@bersamaenergi.co.id
                   </a>
                 </div>
                 <div>
