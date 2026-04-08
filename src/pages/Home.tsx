@@ -29,32 +29,32 @@ export default function Home() {
       <section className="relative min-h-[95vh] flex flex-col justify-center bg-gradient-to-b from-white via-white to-dark-brown/5 overflow-hidden pb-20 pt-24 lg:pt-32">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div 
-            animate={{ 
-              x: [0, 50, 0], 
+          <motion.div
+            animate={{
+              x: [0, 50, 0],
               y: [0, 30, 0],
-              scale: [1, 1.1, 1] 
+              scale: [1, 1.1, 1]
             }}
             transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
             className="absolute -top-[20%] -right-[10%] w-[50%] h-[60%] rounded-full mix-blend-multiply filter blur-[120px] bg-primary/10 opacity-70"
           />
-          <motion.div 
-            animate={{ 
-              x: [0, -40, 0], 
+          <motion.div
+            animate={{
+              x: [0, -40, 0],
               y: [0, -50, 0],
-              scale: [1, 1.2, 1] 
+              scale: [1, 1.2, 1]
             }}
             transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
             className="absolute bottom-[0%] -left-[10%] w-[40%] h-[50%] rounded-full mix-blend-multiply filter blur-[100px] bg-secondary/5 opacity-50"
           />
         </div>
-        
+
         {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
+
             {/* Left Content */}
             <div className="lg:col-span-12 xl:col-span-7 relative z-20">
               <motion.div
@@ -64,20 +64,20 @@ export default function Home() {
               >
                 {/*  Overline with staggered glow */}
                 <div className="flex items-center gap-4 mb-10 overflow-hidden">
-                   <motion.div 
-                     initial={{ width: 0 }}
-                     animate={{ width: 48 }}
-                     transition={{ duration: 1, delay: 0.5, ease: 'circOut' }}
-                     className="h-px bg-primary" 
-                   />
-                   <motion.span 
-                     initial={{ opacity: 0, y: 10 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     transition={{ delay: 0.8, duration: 0.6 }}
-                     className="text-[11px] font-bold uppercase tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
-                   >
-                     {t('home.officialDistributor')}
-                   </motion.span>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: 48 }}
+                    transition={{ duration: 1, delay: 0.5, ease: 'circOut' }}
+                    className="h-px bg-primary"
+                  />
+                  <motion.span
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                    className="text-[11px] font-bold uppercase tracking-[0.4em] text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
+                  >
+                    {t('home.officialDistributor')}
+                  </motion.span>
                 </div>
 
                 <h1 className="font-heading font-medium text-secondary text-[clamp(2.5rem,5.5vw,4.5rem)] leading-[1.05] mb-8 tracking-tighter">
@@ -108,7 +108,7 @@ export default function Home() {
                   PT BEN menghadirkan teknologi pelumasan <strong className="font-bold text-gray-800">Gulf Oil</strong> dan ekosistem alat berat <strong className="font-bold text-gray-800">Shantui</strong>. Dedikasi tanpa henti untuk menunjang performa industri Anda di seluruh negeri.
                 </motion.p>
 
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1, duration: 0.8 }}
@@ -140,21 +140,21 @@ export default function Home() {
 
             {/* Right Content - Visual Presentation */}
             <div className="lg:col-span-12 xl:col-span-5 relative mt-16 xl:mt-0 xl:min-h-[600px] flex items-center justify-center">
-               <motion.div
-                 initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-                 className="relative z-10 aspect-[4/5] w-full max-w-[450px] bg-gray-100 rounded-sm overflow-hidden shadow-2xl shadow-secondary/10 group cursor-pointer"
-               >
-                 <img 
-                   src="https://kobexindo.com/wp-content/uploads/se75-shantui.jpg" 
-                   alt="Industrial Precision" 
-                   className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
-                 />
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
-                 
-                 {/* Floating badge */}
-                 {/* <motion.div 
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+                className="relative z-10 aspect-[4/5] w-full max-w-[450px] bg-gray-100 rounded-sm overflow-hidden shadow-2xl shadow-secondary/10 group cursor-pointer"
+              >
+                <img
+                  src="public/gulf/background.png"
+                  alt="Industrial Precision"
+                  className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
+
+                {/* Floating badge */}
+                {/* <motion.div 
                    animate={{ y: [-5, 5, -5] }}
                    transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
                    className="absolute top-8 -left-8 bg-white p-5 shadow-xl items-center gap-4 hidden sm:flex border border-gray-50 z-30"
@@ -167,19 +167,19 @@ export default function Home() {
                       <p className="text-secondary font-medium text-sm">100% Produk Asli</p>
                     </div>
                  </motion.div> */}
-               </motion.div>
+              </motion.div>
 
-               {/* Modern Logo Showcase on the side */}
-               <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.5, duration: 0.8 }}
-                  className="absolute right-0 bottom-10 lg:bottom-20 bg-white/80 backdrop-blur-md p-6 lg:p-8 shadow-2xl border border-white/50 flex flex-col gap-8 z-20 translate-x-4 lg:translate-x-12 cursor-pointer hover:bg-white transition-colors duration-500"
-               >
-                 <img src="/gulf.png" alt="Gulf Oil" className="w-16 lg:w-20 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
-                 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-                 <img src="/shantui-logo.jpeg" alt="Shantui" className="w-20 lg:w-24 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
-               </motion.div>
+              {/* Modern Logo Showcase on the side */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.5, duration: 0.8 }}
+                className="absolute right-0 bottom-10 lg:bottom-20 bg-white/80 backdrop-blur-md p-6 lg:p-8 shadow-2xl border border-white/50 flex flex-col gap-8 z-20 translate-x-4 lg:translate-x-12 cursor-pointer hover:bg-white transition-colors duration-500"
+              >
+                <img src="/gulf.png" alt="Gulf Oil" className="w-16 lg:w-20 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+                <img src="/shantui-logo.jpeg" alt="Shantui" className="w-20 lg:w-24 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+              </motion.div>
             </div>
 
           </div>
@@ -203,7 +203,7 @@ export default function Home() {
                 <div className="h-px w-12 bg-gradient-to-r from-primary to-transparent" />
               </motion.div>
 
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
@@ -213,7 +213,7 @@ export default function Home() {
               </motion.h2>
 
               <div className="max-w-2xl space-y-8">
-                <motion.p 
+                <motion.p
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
@@ -221,7 +221,7 @@ export default function Home() {
                 >
                   {t('about.desc1')}
                 </motion.p>
-                <motion.p 
+                <motion.p
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
@@ -231,7 +231,7 @@ export default function Home() {
                 </motion.p>
               </div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
@@ -245,7 +245,7 @@ export default function Home() {
                 ))}
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
@@ -399,7 +399,7 @@ export default function Home() {
                 {t('home.industriesDesc')}
               </p>
               <Link to="/contact" className="text-[10px] font-bold uppercase tracking-[0.4em] text-dark-brown flex items-center gap-4 group">
-                  {t('home.consultationSectors')} <div className="w-12 h-px bg-dark-brown/40 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
+                {t('home.consultationSectors')} <div className="w-12 h-px bg-dark-brown/40 group-hover:w-20 group-hover:bg-primary transition-all duration-500" />
               </Link>
             </div>
 
@@ -474,20 +474,18 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={`bg-white p-14 group ${feature.hoverBg} transition-all duration-700`}
               >
-                <div className={`mb-12 group-hover:text-white transition-colors duration-500 ${
-                  index === 0 ? 'text-secondary' : 
-                  index === 1 ? 'text-primary' : 
-                  index === 2 ? 'text-dark-brown' : 
-                  'text-brown-black'
-                }`}>
+                <div className={`mb-12 group-hover:text-white transition-colors duration-500 ${index === 0 ? 'text-secondary' :
+                  index === 1 ? 'text-primary' :
+                    index === 2 ? 'text-dark-brown' :
+                      'text-brown-black'
+                  }`}>
                   {feature.icon}
                 </div>
-                <h4 className={`font-heading font-medium text-xl tracking-tight mb-6 group-hover:text-white transition-colors duration-500 ${
-                  index === 0 ? 'text-secondary' : 
-                  index === 1 ? 'text-primary' : 
-                  index === 2 ? 'text-dark-brown' : 
-                  'text-brown-black'
-                }`}>
+                <h4 className={`font-heading font-medium text-xl tracking-tight mb-6 group-hover:text-white transition-colors duration-500 ${index === 0 ? 'text-secondary' :
+                  index === 1 ? 'text-primary' :
+                    index === 2 ? 'text-dark-brown' :
+                      'text-brown-black'
+                  }`}>
                   {feature.title}
                 </h4>
                 <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-500">{feature.desc}</p>
