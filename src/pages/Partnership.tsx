@@ -9,7 +9,7 @@ export default function Partnership() {
   return (
     <div className="w-full overflow-x-hidden">
 
-      {/* ── HERO ─────────────────────────────────────────────────────────────── */}
+      {/* ── HERO ─────────ss────────────────────────────────────────────────────── */}
       <section className="relative min-h-[75vh] flex flex-col justify-end bg-secondary overflow-hidden">
         {/* Background */}
         <div
