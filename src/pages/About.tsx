@@ -145,8 +145,8 @@ export default function About() {
 
               {/* Partner logos - Minimalist */}
               <div className="flex items-center gap-12 pt-12 border-t border-gray-100">
-                <img src="/gulf.png" alt="Gulf Oil" className="h-10 grayscale hover:grayscale-0 transition-all duration-700 object-contain opacity-50 hover:opacity-100" />
-                <img src="/shantui-logo.jpeg" alt="Shantui" className="h-6 grayscale hover:grayscale-0 transition-all duration-700 object-contain opacity-50 hover:opacity-100" />
+                <img src="/gulf.png" alt="Gulf Oil" className="h-10 transition-all duration-700 object-contain opacity-50 hover:opacity-100" />
+                <img src="/shantui-logo.jpeg" alt="Shantui" className="h-6 transition-all duration-700 object-contain opacity-50 hover:opacity-100" />
               </div>
             </motion.div>
 

@@ -146,10 +146,12 @@ export default function Home() {
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
                 className="relative z-10 aspect-[4/5] w-full max-w-[450px] bg-gray-100 rounded-sm overflow-hidden shadow-2xl shadow-secondary/10 group cursor-pointer"
               >
-                <img
+                <motion.img
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                   src="/gulf/background.png"
                   alt="Industrial Precision"
-                  className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
 
@@ -176,9 +178,9 @@ export default function Home() {
                 transition={{ delay: 1.5, duration: 0.8 }}
                 className="absolute right-0 bottom-10 lg:bottom-20 bg-white/80 backdrop-blur-md p-6 lg:p-8 shadow-2xl border border-white/50 flex flex-col gap-8 z-20 translate-x-4 lg:translate-x-12 cursor-pointer hover:bg-white transition-colors duration-500"
               >
-                <img src="/gulf.png" alt="Gulf Oil" className="w-16 lg:w-20 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                <img src="/gulf.png" alt="Gulf Oil" className="w-16 lg:w-20 object-contain opacity-60 hover:opacity-100 transition-opacity" />
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-                <img src="/shantui-logo.jpeg" alt="Shantui" className="w-20 lg:w-24 object-contain opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" />
+                <img src="/shantui-logo.jpeg" alt="Shantui" className="w-20 lg:w-24 object-contain opacity-60 hover:opacity-100 transition-opacity" />
               </motion.div>
             </div>
 
@@ -285,7 +287,7 @@ export default function Home() {
       <section className="bg-gradient-to-r from-secondary via-dark-brown/10 to-dark-brown/5 border-y border-dark-brown/20 py-14">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="text-xs font-bold tracking-[0.25em] uppercase text-white/80 mb-10">{t('home.partnerBrandsTitle')}</p>
-          <div className="flex flex-wrap items-center gap-12 md:gap-20 opacity-80 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 filter hover:drop-shadow-lg">
+          <div className="flex flex-wrap items-center gap-12 md:gap-20 opacity-80 hover:opacity-100 transition-all duration-500 filter hover:drop-shadow-lg">
             <BenLogo className="h-12 md:h-14" light={false} />
             <img src="/gulf.png" alt="Gulf Oil" className="h-16 md:h-20 object-contain" />
             <img src="/shantui-logo.jpeg" alt="Shantui" className="h-10 md:h-12 object-contain" />
@@ -315,7 +317,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <Link to="/products" className="group block">
-                <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-primary/5 border-2 border-primary/30 group-hover:border-primary/60">
+                <div className="relative aspect-[16/10] overflow-hidden mb-12 transition-all duration-1000 bg-primary/5 border-2 border-primary/30 group-hover:border-primary/60">
                   <img
                     src="https://www.nu-tierbrands.com/wp-content/uploads/2020/01/Gulf-Tote-300x300.jpg"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -344,7 +346,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <Link to="/products" className="group block">
-                <div className="relative aspect-[16/10] overflow-hidden mb-12 grayscale hover:grayscale-0 transition-all duration-1000 bg-dark-brown/5 border-2 border-dark-brown/30 group-hover:border-dark-brown/60">
+                <div className="relative aspect-[16/10] overflow-hidden mb-12 transition-all duration-1000 bg-dark-brown/5 border-2 border-dark-brown/30 group-hover:border-dark-brown/60">
                   <img
                     src="https://www.shantui-global.com/upload/images/2024/07/05/9733632409d940508dbe56ba4dabfd21.jpg"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"

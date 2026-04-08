@@ -206,7 +206,7 @@ export default function Contact() {
       {/* ── MINIMAL MAP BANNER ───────────────────────────────────────────────── */}
       <section className="h-[50vh] w-full bg-secondary relative overflow-hidden flex items-center justify-center group">
         {/* Very muted, abstracted map background approach */}
-        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1596443686812-2f45229eebc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center grayscale mix-blend-luminosity transition-transform duration-1000 group-hover:scale-105"></div>
+        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1596443686812-2f45229eebc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center mix-blend-luminosity transition-transform duration-1000 group-hover:scale-105"></div>
         <div className="absolute inset-0 bg-secondary/80"></div>
 
         <div className="relative z-10 flex flex-col items-center text-center px-6">

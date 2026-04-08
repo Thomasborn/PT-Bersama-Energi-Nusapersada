@@ -54,10 +54,10 @@ export default function Navbar() {
               </button>
             </div>
 
-            <a href="tel:+622112345678" className="flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-sm font-semibold whitespace-nowrap transition-colors text-[13px]">
+            <Link to="/contact" className="flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-sm font-semibold whitespace-nowrap transition-colors text-[13px]">
               <Phone size={16} />
               <span>{t('nav.callUs')}</span>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -105,22 +105,30 @@ export default function Navbar() {
       <div className="hidden md:flex w-full bg-gray-50 border-t border-gray-100 py-1.5 absolute bottom-0 translate-y-full shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center text-[11px] font-medium tracking-wide text-gray-500 uppercase">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 hover:text-primary transition-colors cursor-default">
-              Gulf Oil International Licensee
-            </span>
+        
             <span className="w-1 h-1 rounded-full bg-gray-300"></span>
             <span className="flex items-center gap-1.5 hover:text-primary transition-colors cursor-default">
               Official Distributor PT. BEN
             </span>
           </div>
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5">
-              <span className="text-secondary font-bold">100+</span> Tahun Warisan Global
-            </span>
+            <a 
+              href="https://www.gulfoilltd.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              Gulf Oil International
+            </a>
             <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-            <span className="flex items-center gap-1.5">
-              Dukungan Teknis 24/7
-            </span>
+            <a 
+              href="https://www.shantui-global.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              Shantui International
+            </a>
           </div>
         </div>
       </div>

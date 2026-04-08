@@ -205,7 +205,7 @@ export default function GulfHeritage() {
           </div>
           
           <div className="mt-20 flex flex-col md:flex-row items-center justify-center gap-10 opacity-40">
-            <img src="/gulf.png" alt="Gulf Oil" className="h-14 grayscale brightness-200" />
+            <img src="/gulf.png" alt="Gulf Oil" className="h-14 brightness-200" />
             <div className="w-12 h-[1px] bg-white/20" />
             <span className="text-white font-bold tracking-[0.2em] text-xs uppercase">{t('heritage.established')}</span>
           </div>

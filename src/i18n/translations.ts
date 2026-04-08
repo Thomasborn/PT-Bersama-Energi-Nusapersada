@@ -397,7 +397,7 @@ export const translations = {
       heroSubtitle: 'Hubungi BEN',
       warehouseTitle: 'Gudang BEN',
       warehouseDetailsHeadline: 'Gudang & Logistik',
-      warehouseAdjacent: '(Samping PT Mantimin Coal)',
+      warehouseAdjacent: '',
       mapIntegration: 'Integrasi Peta Interaktif',
       mapDesc: 'API Google Maps akan disematkan di sini.'
     },
