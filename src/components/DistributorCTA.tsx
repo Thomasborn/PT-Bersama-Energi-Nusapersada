@@ -40,10 +40,6 @@ export default function DistributorCTA({ theme = 'primary' }: DistributorCTAProp
             
             <div className={`flex flex-wrap gap-4 ${textClass}`}>
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-sm transition-transform hover:-translate-y-1 cursor-default">
-                <PhoneCall size={18} className={theme === 'light' ? 'text-primary' : 'text-white'} />
-                <span className="font-bold tracking-wide">+62 21 1234 5678</span>
-              </div>
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full border border-white/20 shadow-sm transition-transform hover:-translate-y-1 cursor-default">
                 <Mail size={18} className={theme === 'light' ? 'text-primary' : 'text-white'} />
                 <span className="font-bold tracking-wide">sales@ben-energy.co.id</span>
               </div>

@@ -71,10 +71,6 @@ export default function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="text-primary flex-shrink-0" size={20} />
-                <span className="text-gray-400 text-sm">+62 21 1234 5678</span>
-              </li>
-              <li className="flex items-center gap-3">
                 <Mail className="text-primary flex-shrink-0" size={20} />
                 <span className="text-gray-400 text-sm">info@ben-energy.co.id</span>
               </li>

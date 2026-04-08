@@ -90,12 +90,11 @@ export default function News() {
                     info@ben-energy.co.id
                   </a>
                 </div>
-
                 <div>
-                  <p className="text-gray-600 font-bold mb-2">Telepon:</p>
-                  <a href="tel:+622112345678" className="text-primary text-lg font-bold hover:underline">
-                    +62 21 1234 5678
-                  </a>
+                  <p className="text-gray-600 font-bold mb-2">Kontak Kami:</p>
+                  <p className="text-primary text-lg font-bold">
+                    Hubungi Admin via WhatsApp
+                  </p>
                 </div>
               </div>
 
