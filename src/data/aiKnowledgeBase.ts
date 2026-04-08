@@ -279,6 +279,7 @@ export const benKnowledgeBase: KnowledgeEntry[] = [
   },
 
   // NEWS & UPDATES
+  /*
   {
     id: 'news-id',
     category: 'News',
@@ -297,6 +298,7 @@ export const benKnowledgeBase: KnowledgeEntry[] = [
     relatedPage: '/news',
     language: 'en'
   },
+  */
 
   // MOTORSPORT
   {
