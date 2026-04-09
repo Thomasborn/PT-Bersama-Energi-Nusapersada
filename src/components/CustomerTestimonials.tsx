@@ -94,12 +94,6 @@ export default function CustomerTestimonials() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              href="tel:+622112345678"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-10 py-4 rounded-lg font-bold tracking-wide transition-all duration-300 hover:shadow-lg"
-            >
-              ☎️ Hubungi Sales Kami
-            </a>
-            <a
               href="mailto:info@bersamaenergi.co.id"
               className="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary/5 px-10 py-4 rounded-lg font-bold tracking-wide transition-all duration-300"
             >

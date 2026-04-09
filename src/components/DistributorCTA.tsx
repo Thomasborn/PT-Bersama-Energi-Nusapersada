@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhoneCall, Mail, MessageSquare, ArrowRight } from 'lucide-react';
+import { Mail, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface DistributorCTAProps {
@@ -54,15 +54,6 @@ export default function DistributorCTA({ theme = 'primary' }: DistributorCTAProp
               Konsultasi Produk
               <ArrowRight size={20} />
             </Link>
-            <a 
-              href="https://wa.me/6281234567890" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold transition-all text-center w-full border-2 hover:-translate-y-1 ${theme === 'light' ? 'border-primary text-primary hover:bg-primary/5' : 'border-white/40 text-white hover:bg-white/10 hover:border-white'}`}
-            >
-              <MessageSquare size={20} />
-              Hubungi via WhatsApp
-            </a>
           </div>
 
         </div>

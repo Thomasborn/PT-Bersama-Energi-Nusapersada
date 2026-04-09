@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Mail, Globe } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { BenLogo } from './Logo';
 import { useLanguage } from '../context/LanguageContext';
@@ -55,7 +55,7 @@ export default function Navbar() {
             </div>
 
             <Link to="/contact" className="flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-sm font-semibold whitespace-nowrap transition-colors text-[13px]">
-              <Phone size={16} />
+              <Mail size={16} />
               <span>{t('nav.callUs')}</span>
             </Link>
           </div>

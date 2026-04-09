@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
+import { MapPin, Mail, Facebook, Twitter, Linkedin, Instagram, ArrowRight } from 'lucide-react';
 import { BenLogo } from './Logo';
 import { useLanguage } from '../context/LanguageContext';
 
