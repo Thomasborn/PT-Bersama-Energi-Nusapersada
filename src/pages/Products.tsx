@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { gulfCategories, gulfProducts } from '../data/gulfProducts';
 import DistributorCTA from '../components/DistributorCTA';
 import { ChevronDown, ChevronUp, DownloadCloud, Search, ExternalLink, ArrowRight, LayoutGrid, List, CheckCircle2, Zap, Package2, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 // ─── Utility: Get fallback image based on category ─────────────────────────────
@@ -450,8 +450,32 @@ const OEMSection = ({ t }: { t: any }) => {
 // ─── Main Products Page ───────────────────────────────────────────────────────
 export default function Products() {
   const { t } = useLanguage();
+  const [searchParams] = useSearchParams();
   const [selectedBrand, setSelectedBrand] = useState<'Gulf' | 'Shantui' | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('all');
+
+  // Handle URL Parameters for Deep Linking
+  useEffect(() => {
+    const brandParam = searchParams.get('brand');
+    const categoryParam = searchParams.get('category');
+
+    if (brandParam === 'Gulf' || brandParam === 'Shantui') {
+      setSelectedBrand(brandParam);
+    }
+
+    if (categoryParam) {
+      setActiveCategory(categoryParam);
+    }
+    
+    // If we have params, scroll to grid
+    if (brandParam || categoryParam) {
+      const productGrid = document.getElementById('product-grid-start');
+      if (productGrid) {
+        productGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [searchParams]);
+
   const [activeSubcat, setActiveSubcat] = useState<string>('all');
   const [query, setQuery] = useState('');
   const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
@@ -532,6 +556,7 @@ export default function Products() {
           onClick={() => {
             setSelectedBrand('Gulf');
             setActiveCategory('all');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           className="group cursor-pointer"
         >
@@ -564,6 +589,7 @@ export default function Products() {
           onClick={() => {
             setSelectedBrand('Shantui');
             setActiveCategory('shantui');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           className="group cursor-pointer"
         >
@@ -624,7 +650,10 @@ export default function Products() {
                     </span>
                   </div>
                   <button
-                    onClick={() => setSelectedBrand(null)}
+                    onClick={() => {
+                      setSelectedBrand(null);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
                     className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50 hover:text-primary transition-colors flex items-center gap-3"
                   >
                     <span>/ {t('products.changeBrand')}</span>

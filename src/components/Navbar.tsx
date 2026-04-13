@@ -34,6 +34,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.path}
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className={`text-[13px] font-bold uppercase tracking-wide whitespace-nowrap transition-colors hover:text-primary ${
                   location.pathname === link.path
                     ? 'text-primary'
@@ -92,7 +93,10 @@ export default function Navbar() {
                     ? 'text-primary bg-orange-50'
                     : 'text-secondary hover:text-primary hover:bg-gray-50'
                 }`}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               >
                 {link.name}
               </Link>
