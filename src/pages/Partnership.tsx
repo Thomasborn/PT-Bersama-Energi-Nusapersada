@@ -275,7 +275,10 @@ export default function Partnership() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {(t('partnership.sectors') as unknown as string[]).map((sector, index) => (
+            {(Array.isArray(t('partnership.sectors', { returnObjects: true })) 
+              ? (t('partnership.sectors', { returnObjects: true }) as any[]) 
+              : []
+            ).map((sector, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 15 }}
