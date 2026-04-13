@@ -4,47 +4,31 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
-const HERITAGE_MILESTONES = [
-  {
-    year: '1901',
-    title: 'Didirikan',
-    description: 'Didirikan di Texas, Amerika Serikat — menjual bahan bakar dalam kontainer. Awal dari perjalanan lebih dari satu abad.',
-    icon: <Clock size={22} />,
-    accent: 'from-amber-500 to-orange-600',
-  },
-  {
-    year: '1910',
-    title: 'Menyelam Lebih Dalam',
-    description: 'Gulf meluncurkan pengeboran dalam laut pertama di dunia, menjadi pionir eksplorasi energi global.',
-    icon: <Anchor size={22} />,
-    accent: 'from-blue-500 to-indigo-600',
-  },
-  {
-    year: '1913',
-    title: 'Rambah Bahan Bakar Ritel',
-    description: 'Gulf memperkenalkan stasiun pengisian bahan bakar lantatur (drive-through) pertama di dunia.',
-    icon: <Fuel size={22} />,
-    accent: 'from-emerald-500 to-teal-600',
-  },
-  {
-    year: '1920',
-    title: 'Halo Gulf!',
-    description: 'Logo diska oranye ikonik Gulf pertama kali muncul — identitas brand yang dikenal di seluruh dunia hingga hari ini.',
-    icon: <CircleDot size={22} />,
-    accent: 'from-orange-500 to-red-500',
-  },
-  {
-    year: '1926',
-    title: 'Ekspansi Bisnis',
-    description: 'Gulf mengambil alih konsesi minyak Barco, memperluas kehadirannya ke pasar internasional.',
-    icon: <Briefcase size={22} />,
-    accent: 'from-violet-500 to-purple-600',
-  },
-];
-
 export default function GulfHeritage() {
   const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
+  
+  const ICONS = [
+    <Clock size={22} />,
+    <Anchor size={22} />,
+    <Fuel size={22} />,
+    <CircleDot size={22} />,
+    <Briefcase size={22} />,
+  ];
+
+  const ACCENTS = [
+    'from-amber-500 to-orange-600',
+    'from-blue-500 to-indigo-600',
+    'from-emerald-500 to-teal-600',
+    'from-orange-500 to-red-500',
+    'from-violet-500 to-purple-600',
+  ];
+
+  const YEARS = ['1901', '1910', '1913', '1920', '1926'];
+
+  const milestones = (t('home.heritage.milestones', { returnObjects: true }) as unknown as any[]);
+  const validMilestones = Array.isArray(milestones) ? milestones : [];
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
@@ -98,7 +82,7 @@ export default function GulfHeritage() {
           >
             <div className="h-[2px] w-8 bg-[#ff6600]" />
             <span className="text-xs font-black tracking-[0.4em] uppercase text-[#ff6600]">
-              {t('heritage.subtitle')}
+              {t('home.heritage.subtitle')}
             </span>
             <div className="h-[2px] w-8 bg-[#ff6600]" />
           </motion.div>
@@ -110,8 +94,8 @@ export default function GulfHeritage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="font-heading font-black text-white text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.9] tracking-tighter mb-8"
           >
-            {t('heritage.title1')}<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff6600] via-orange-400 to-amber-500">{t('heritage.title2')}</span>
+            {t('home.heritage.title1')}<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff6600] via-orange-400 to-amber-500">{t('home.heritage.title2')}</span>
           </motion.h2>
           
           <motion.p
@@ -121,7 +105,7 @@ export default function GulfHeritage() {
             transition={{ duration: 1, delay: 0.4 }}
             className="text-gray-400 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium"
           >
-            {t('heritage.desc')}
+            {t('home.heritage.desc')}
           </motion.p>
         </div>
 
@@ -136,8 +120,8 @@ export default function GulfHeritage() {
           </div>
 
           <div className="space-y-24 md:space-y-40">
-            {HERITAGE_MILESTONES.map((milestone, index) => (
-              <div key={milestone.year} className={`relative flex flex-col items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 md:gap-0`}>
+            {validMilestones.map((milestone, index) => (
+              <div key={YEARS[index]} className={`relative flex flex-col items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 md:gap-0`}>
                 
                 {/* Year Marker */}
                 <div className="absolute left-[-2px] md:left-1/2 md:-translate-x-1/2 top-0 z-20">
@@ -147,7 +131,7 @@ export default function GulfHeritage() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="w-14 h-14 rounded-full bg-[#001a3d] border-4 border-[#ff6600] flex items-center justify-center shadow-[0_0_20px_rgba(255,102,0,0.3)] group-hover:scale-110 transition-transform"
                   >
-                    <span className="text-[#ff6600] font-black text-xs">{milestone.year}</span>
+                    <span className="text-[#ff6600] font-black text-xs">{YEARS[index]}</span>
                   </motion.div>
                 </div>
 
@@ -159,11 +143,11 @@ export default function GulfHeritage() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.7, delay: 0.1 }}
                   >
-                    <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br ${milestone.accent} opacity-20 mb-6`} />
+                    <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-br ${ACCENTS[index]} opacity-20 mb-6`} />
                     <div className="relative">
                       <div className={`flex items-center gap-4 mb-4 ${index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
                         <div className="text-[#ff6600] bg-white/5 p-3 rounded-xl backdrop-blur-sm border border-white/10">
-                          {milestone.icon}
+                          {ICONS[index]}
                         </div>
                         <h3 className="font-heading font-black text-white text-2xl md:text-3xl tracking-tight">
                           {milestone.title}
@@ -199,7 +183,7 @@ export default function GulfHeritage() {
               className="relative flex items-center gap-4 bg-black border border-white/20 px-10 py-5 rounded-lg text-white font-black tracking-widest uppercase text-sm hover:border-[#ff6600] transition-all"
             >
               <History size={20} className="text-[#ff6600]" />
-              {t('heritage.viewHistory')}
+              {t('home.heritage.viewHistory')}
               <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
             </a>
           </div>
@@ -207,7 +191,7 @@ export default function GulfHeritage() {
           <div className="mt-20 flex flex-col md:flex-row items-center justify-center gap-10 opacity-40">
             <img src="/gulf.png" alt="Gulf Oil" className="h-14 brightness-200" />
             <div className="w-12 h-[1px] bg-white/20" />
-            <span className="text-white font-bold tracking-[0.2em] text-xs uppercase">{t('heritage.established')}</span>
+            <span className="text-white font-bold tracking-[0.2em] text-xs uppercase">{t('home.heritage.established')}</span>
           </div>
         </motion.div>
       </div>

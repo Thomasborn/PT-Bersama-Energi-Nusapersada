@@ -1,13 +1,16 @@
 export interface ProductCategory {
   id: string;
   name: string;
+  nameEn?: string;
   description: string;
+  descriptionEn?: string;
   imageUrl: string;
   brand: 'Gulf' | 'Shantui';
   slug: string;
   subcategories?: {
     id: string;
     name: string;
+    nameEn?: string;
     slug: string;
   }[];
 }
@@ -41,65 +44,73 @@ export const gulfCategories: ProductCategory[] = [
   {
     id: 'kendaraan-komersial',
     name: 'Kendaraan Komersial',
+    nameEn: 'Commercial Vehicles',
     description: 'Pelumas tangguh yang dirancang khusus untuk memaksimalkan efisiensi armada, mengurangi waktu henti, dan menjaga keandalan kendaraan komersial.',
+    descriptionEn: 'Heavy-duty lubricants specially designed to maximize fleet efficiency, reduce downtime, and maintain commercial vehicle reliability.',
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdv2vEBM7tGKFFnXhZmULxm1YvA1PwCBigbQ&s',
     brand: 'Gulf',
     slug: 'kendaraan-komersial',
     subcategories: [
-      { id: 'oli-mesin-niaga', name: 'Oli Mesin Kendaraan Niaga', slug: 'oli-mesin-niaga' },
-      { id: 'driveline-fluids-niaga', name: 'Driveline Fluids Kendaraan Niaga', slug: 'driveline-fluids-niaga' },
+      { id: 'oli-mesin-niaga', name: 'Oli Mesin Kendaraan Niaga', nameEn: 'Commercial Engine Oils', slug: 'oli-mesin-niaga' },
+      { id: 'driveline-fluids-niaga', name: 'Driveline Fluids Kendaraan Niaga', nameEn: 'Commercial Driveline Fluids', slug: 'driveline-fluids-niaga' },
     ]
   },
   {
     id: 'industrial',
     name: 'Industrial',
+    nameEn: 'Industrial',
     description: 'Solusi pelumasan industri performa ekstrem untuk berbagai sektor manufaktur, mining, dan konstruksi.',
+    descriptionEn: 'Extreme performance industrial lubrication solutions for various manufacturing, mining, and construction sectors.',
     imageUrl: BARREL_IMG,
     brand: 'Gulf',
     slug: 'industrial',
     subcategories: [
-      { id: 'hidrolik', name: 'Hydraulic Oils', slug: 'hidrolik' },
-      { id: 'oli-gigi-industri', name: 'Industrial Gear Oils', slug: 'oli-gigi-industri' },
-      { id: 'oli-kompresor', name: 'Compressor Oils', slug: 'oli-kompresor' },
-      { id: 'oli-turbin', name: 'Turbine Oils', slug: 'oli-turbin' },
-      { id: 'cairan-termal', name: 'Thermal Fluids', slug: 'cairan-termal' },
-      { id: 'oli-bantalan', name: 'Bearing & Circulating Oils', slug: 'oli-bantalan' },
-      { id: 'grease', name: 'Greases', slug: 'grease' },
+      { id: 'hidrolik', name: 'Hydraulic Oils', nameEn: 'Hydraulic Oils', slug: 'hidrolik' },
+      { id: 'oli-gigi-industri', name: 'Industrial Gear Oils', nameEn: 'Industrial Gear Oils', slug: 'oli-gigi-industri' },
+      { id: 'oli-kompresor', name: 'Compressor Oils', nameEn: 'Compressor Oils', slug: 'oli-kompresor' },
+      { id: 'oli-turbin', name: 'Turbine Oils', nameEn: 'Turbine Oils', slug: 'oli-turbin' },
+      { id: 'cairan-termal', name: 'Thermal Fluids', nameEn: 'Thermal Fluids', slug: 'cairan-termal' },
+      { id: 'oli-bantalan', name: 'Bearing & Circulating Oils', nameEn: 'Bearing & Circulating Oils', slug: 'oli-bantalan' },
+      { id: 'grease', name: 'Greases', nameEn: 'Greases', slug: 'grease' },
     ]
   },
   {
     id: 'marine',
     name: 'Marine',
+    nameEn: 'Marine',
     description: 'Rangkaian lengkap pelumas kelautan untuk mesin utama, peralatan auxiliary, dan aplikasi ramah lingkungan di sektor maritim.',
+    descriptionEn: 'A complete range of marine lubricants for main engines, auxiliary equipment, and eco-friendly applications in the maritime sector.',
     imageUrl: BARREL_IMG,
     brand: 'Gulf',
     slug: 'marine',
     subcategories: [
-      { id: 'main-engine', name: 'Main Engine Oils', slug: 'main-engine' },
-      { id: 'auxiliary', name: 'Auxiliary Oils', slug: 'auxiliary' },
-      { id: 'marine-grease', name: 'Marine Grease', slug: 'marine-grease' },
-      { id: 'eco-friendly', name: 'Eco-Friendly Lubricants', slug: 'eco-friendly' },
+      { id: 'main-engine', name: 'Main Engine Oils', nameEn: 'Main Engine Oils', slug: 'main-engine' },
+      { id: 'auxiliary', name: 'Auxiliary Oils', nameEn: 'Auxiliary Oils', slug: 'auxiliary' },
+      { id: 'marine-grease', name: 'Marine Grease', nameEn: 'Marine Grease', slug: 'marine-grease' },
+      { id: 'eco-friendly', name: 'Eco-Friendly Lubricants', nameEn: 'Eco-Friendly Lubricants', slug: 'eco-friendly' },
     ]
   },
   {
     id: 'shantui',
     name: 'Alat Berat Shantui',
+    nameEn: 'Shantui Heavy Equipment',
     description: 'Unit alat berat berkualitas global untuk pertambangan, konstruksi, dan infrastruktur. Tangguh dan efisien di segala medan operasional.',
+    descriptionEn: 'Global quality heavy machinery for mining, construction, and infrastructure. Rugged and efficient across all operational terrains.',
     imageUrl: '/shantui/escavator/mining.png',
     brand: 'Shantui',
     slug: 'shantui',
     subcategories: [
-      { id: 'mining-excavator', name: 'Mining Excavator', slug: 'mining-excavator' },
-      { id: 'large-excavator', name: 'Large Excavator', slug: 'large-excavator' },
-      { id: 'medium-excavator', name: 'Medium Excavator', slug: 'medium-excavator' },
-      { id: 'small-excavator', name: 'Small Excavator', slug: 'small-excavator' },
-      { id: 'mini-excavator', name: 'Mini Excavator', slug: 'mini-excavator' },
-      { id: 'wheel-excavator', name: 'Wheel Excavator', slug: 'wheel-excavator' },
-      { id: 'small-bulldozer', name: 'Small Bulldozer', slug: 'small-bulldozer' },
-      { id: 'medium-bulldozer', name: 'Medium Bulldozer', slug: 'medium-bulldozer' },
-      { id: 'large-bulldozer', name: 'Large Bulldozer', slug: 'large-bulldozer' },
-      { id: 'wheel-loader', name: 'Wheel Loader', slug: 'wheel-loader' },
-      { id: 'mining-truck', name: 'Mining Truck', slug: 'mining-truck' },
+      { id: 'mining-excavator', name: 'Mining Excavator', nameEn: 'Mining Excavator', slug: 'mining-excavator' },
+      { id: 'large-excavator', name: 'Large Excavator', nameEn: 'Large Excavator', slug: 'large-excavator' },
+      { id: 'medium-excavator', name: 'Medium Excavator', nameEn: 'Medium Excavator', slug: 'medium-excavator' },
+      { id: 'small-excavator', name: 'Small Excavator', nameEn: 'Small Excavator', slug: 'small-excavator' },
+      { id: 'mini-excavator', name: 'Mini Excavator', nameEn: 'Mini Excavator', slug: 'mini-excavator' },
+      { id: 'wheel-excavator', name: 'Wheel Excavator', nameEn: 'Wheel Excavator', slug: 'wheel-excavator' },
+      { id: 'small-bulldozer', name: 'Small Bulldozer', nameEn: 'Small Bulldozer', slug: 'small-bulldozer' },
+      { id: 'medium-bulldozer', name: 'Medium Bulldozer', nameEn: 'Medium Bulldozer', slug: 'medium-bulldozer' },
+      { id: 'large-bulldozer', name: 'Large Bulldozer', nameEn: 'Large Bulldozer', slug: 'large-bulldozer' },
+      { id: 'wheel-loader', name: 'Wheel Loader', nameEn: 'Wheel Loader', slug: 'wheel-loader' },
+      { id: 'mining-truck', name: 'Mining Truck', nameEn: 'Mining Truck', slug: 'mining-truck' },
       // { id: 'motor-grader', name: 'Motor Grader', slug: 'motor-grader' },
     ]
   },
@@ -113,12 +124,17 @@ export interface ProductSpec {
   categoryId: string;
   subcategoryId?: string;
   summary?: string;
+  summaryEn?: string;
   viscosityGrades?: string[];
   availablePacks?: string[];
   specifications?: string[];
+  specificationsEn?: string[];
   approvals?: string[];
+  approvalsEn?: string[];
   applications?: string[];
+  applicationsEn?: string[];
   keyBenefits?: string[];
+  keyBenefitsEn?: string[];
   partnerBrand: 'Gulf' | 'Shantui';
   pdsUrl?: string;
 }
@@ -327,12 +343,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'kendaraan-komersial',
     subcategoryId: 'oli-mesin-niaga',
     summary: 'Oli mesin diesel kinerja tertinggi untuk armada berat modern, memberikan perlindungan superior dan interval pergantian yang diperpanjang.',
+    summaryEn: 'Highest performance diesel engine oil for modern heavy fleets, providing superior protection and extended drain intervals.',
     viscosityGrades: ['10W-40', '15W-40'],
     availablePacks: ['5L', '20L', '200L'],
     specifications: ['API CK-4', 'ACEA E9/E7/E6'],
+    specificationsEn: ['API CK-4', 'ACEA E9/E7/E6'],
     approvals: ['MB 228.31', 'Volvo VDS-4.5', 'MAN M 3575', 'Cummins CES 20086'],
+    approvalsEn: ['MB 228.31', 'Volvo VDS-4.5', 'MAN M 3575', 'Cummins CES 20086'],
     applications: ['Truck heavy duty modern', 'Armada logistik jarak jauh', 'Bus antarkota'],
+    applicationsEn: ['Modern heavy-duty trucks', 'Long-haul logistics fleets', 'Intercity buses'],
     keyBenefits: ['Extended drain interval', 'Perlindungan sistem DPF/SCR', 'Stabilitas oksidasi kelas wahid'],
+    keyBenefitsEn: ['Extended drain intervals', 'DPF/SCR system protection', 'Top-tier oxidation stability'],
     partnerBrand: 'Gulf'
   },
   {
@@ -343,12 +364,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'kendaraan-komersial',
     subcategoryId: 'oli-mesin-niaga',
     summary: 'Oli mesin diesel tugas berat yang tangguh dan ekonomis, dirancang untuk armada komersial konvensional dan mesin diesel turbo.',
+    summaryEn: 'Rugged and economical heavy-duty diesel engine oil, designed for conventional commercial fleets and turbo diesel engines.',
     viscosityGrades: ['15W-40', '20W-50'],
     availablePacks: ['5L', '20L', '200L'],
     specifications: ['API CF-4/CF'],
+    specificationsEn: ['API CF-4/CF'],
     approvals: ['-'],
     applications: ['Truk konvensional', 'Mini bus', 'Kendaraan niaga ringan diesel'],
+    applicationsEn: ['Conventional trucks', 'Mini buses', 'Light commercial diesel vehicles'],
     keyBenefits: ['Harga ekonomis untuk armada besar', 'Kontrol jelaga dan endapan', 'Daya tahan mesin diesel konvensional'],
+    keyBenefitsEn: ['Economical for large fleets', 'Soot and deposit control', 'Conventional diesel engine durability'],
     partnerBrand: 'Gulf'
   },
   {
@@ -359,12 +384,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'kendaraan-komersial',
     subcategoryId: 'oli-mesin-niaga',
     summary: 'Oli mesin diesel kinerja ekstra unggul berbasis teknologi Low Emission (LE) yang dirancang untuk truk modern ramah lingkungan.',
+    summaryEn: 'Extra superior performance diesel engine oil based on Low Emission (LE) technology designed for modern eco-friendly trucks.',
     viscosityGrades: ['10W-30', '15W-40'],
     availablePacks: ['5L', '20L', '200L'],
     specifications: ['API CK-4/CJ-4', 'ACEA E9/E7'],
+    specificationsEn: ['API CK-4/CJ-4', 'ACEA E9/E7'],
     approvals: ['Volvo VDS-4.5', 'Cummins CES 20086', 'MB 228.31'],
+    approvalsEn: ['Volvo VDS-4.5', 'Cummins CES 20086', 'MB 228.31'],
     applications: ['Truck heavy duty bersistem EGR/DPF', 'Armada angkut jarak jauh', 'Bus antarkota modern'],
+    applicationsEn: ['Heavy-duty trucks with EGR/DPF systems', 'Long-haul transport fleets', 'Modern intercity buses'],
     keyBenefits: ['Downtime berkurang', 'Memperpanjang masa pakai sistem emisi DPF', 'Kontrol gesekan luar biasa sehingga memperpanjang umur mesin'],
+    keyBenefitsEn: ['Reduced downtime', 'Extends DPF emission system life', 'Extraordinary friction control to extend engine life'],
     partnerBrand: 'Gulf'
   },
   {
@@ -375,12 +405,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'kendaraan-komersial',
     subcategoryId: 'oli-mesin-niaga',
     summary: 'Pelumas armada beban berat tugas ekstrem yang memastikan interval pergantian super panjang namun tetap tahan oksidasi.',
+    summaryEn: 'Extreme-duty heavy fleet lubricant ensuring super long drain intervals while remaining oxidation resistant.',
     viscosityGrades: ['15W-40', '20W-50'],
     availablePacks: ['20L', '200L'],
     specifications: ['API CI-4/CH-4', 'ACEA E7'],
+    specificationsEn: ['API CI-4/CH-4', 'ACEA E7'],
     approvals: ['Global DHD-1', 'Volvo VDS-3'],
+    approvalsEn: ['Global DHD-1', 'Volvo VDS-3'],
     applications: ['Kendaraan operasional pertambangan', 'Ekskavator', 'Alat berat logistik lama maupun baru'],
+    applicationsEn: ['Mining operational vehicles', 'Excavators', 'Old and new logistical heavy equipment'],
     keyBenefits: ['Cadangan TBN (Total Base Number) yang stabil', 'Mencegah penebalan akibat penumpukan jelaga', 'Membersihkan silinder dan piston ring'],
+    keyBenefitsEn: ['Stable TBN (Total Base Number) reserve', 'Prevents thickening due to soot buildup', 'Cleans cylinder and piston rings'],
     partnerBrand: 'Gulf'
   },
 
@@ -393,12 +428,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'kendaraan-komersial',
     subcategoryId: 'driveline-fluids-niaga',
     summary: 'Oli transmisi dan gardan multi-purpose untuk kendaraan niaga, memberikan perlindungan roda gigi yang andal pada berbagai kondisi operasional berat.',
+    summaryEn: 'Multi-purpose transmission and axle oil for commercial vehicles, providing reliable gear protection under various heavy operational conditions.',
     viscosityGrades: ['80W-90', '85W-140'],
     availablePacks: ['4L', '20L', '200L'],
     specifications: ['API GL-5'],
+    specificationsEn: ['API GL-5'],
     approvals: ['-'],
     applications: ['Gardan truk dan bus', 'Transmisi manual kendaraan niaga', 'Transfer case kendaraan off-road'],
+    applicationsEn: ['Truck and bus axles', 'Commercial vehicle manual transmissions', 'Off-road vehicle transfer cases'],
     keyBenefits: ['Perlindungan EP untuk beban berat', 'Tahan panas operasional tinggi', 'Mencegah keausan roda gigi hypoid'],
+    keyBenefitsEn: ['EP protection for heavy loads', 'High operational heat resistance', 'Prevents hypoid gear wear'],
     partnerBrand: 'Gulf'
   },
   {
@@ -409,12 +448,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'kendaraan-komersial',
     subcategoryId: 'driveline-fluids-niaga',
     summary: 'Oli roda gigi transmisi Extreme Pressure performa tinggi untuk perlindungan maksimal pada gardan dan transmisi kendaraan komersial tugas berat.',
+    summaryEn: 'High-performance Extreme Pressure transmission gear oil for maximum protection on axles and transmissions of heavy-duty commercial vehicles.',
     viscosityGrades: ['80W-90', '85W-140'],
     availablePacks: ['20L', '200L'],
     specifications: ['API GL-5', 'MIL-PRF-2105E'],
+    specificationsEn: ['API GL-5', 'MIL-PRF-2105E'],
     approvals: ['ZF TE-ML 05A/12A', 'MAN 342 Type M2'],
+    approvalsEn: ['ZF TE-ML 05A/12A', 'MAN 342 Type M2'],
     applications: ['Gardan heavy-duty truck', 'Transmisi kendaraan konstruksi', 'Final drive alat berat'],
+    applicationsEn: ['Heavy-duty truck axles', 'Construction vehicle transmissions', 'Heavy equipment final drives'],
     keyBenefits: ['Perlindungan Extreme Pressure tingkat lanjut', 'Ketahanan oksidasi dan termal superior', 'Perpindahan gigi mulus bahkan pada beban tinggi'],
+    keyBenefitsEn: ['Advanced Extreme Pressure protection', 'Superior oxidation and thermal stability', 'Smooth gear shifts even under high loads'],
     partnerBrand: 'Gulf'
   },
   {
@@ -425,12 +469,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'kendaraan-komersial',
     subcategoryId: 'driveline-fluids-niaga',
     summary: 'Cairan transmisi otomatis Dexron III untuk kendaraan niaga dengan transmisi otomatis konvensional dan sistem hidrolik.',
+    summaryEn: 'Dexron III automatic transmission fluid for commercial vehicles with conventional automatic transmissions and hydraulic systems.',
     viscosityGrades: ['ATF Dexron III'],
     availablePacks: ['1L', '4L', '20L', '200L'],
     specifications: ['GM Dexron III H', 'Ford Mercon'],
+    specificationsEn: ['GM Dexron III H', 'Ford Mercon'],
     approvals: ['Allison C4'],
+    approvalsEn: ['Allison C4'],
     applications: ['Transmisi otomatis bus dan truk', 'Sistem power steering kendaraan niaga', 'Torque converter'],
+    applicationsEn: ['Bus and truck automatic transmissions', 'Commercial vehicle power steering systems', 'Torque converters'],
     keyBenefits: ['Perpindahan gigi halus dan responsif', 'Stabilitas oksidasi pada suhu tinggi', 'Kompatibel berbagai merek transmisi otomatis'],
+    keyBenefitsEn: ['Smooth and responsive shifts', 'High-temperature oxidation stability', 'Compatible with various automatic transmission brands'],
     partnerBrand: 'Gulf'
   },
   {
@@ -441,12 +490,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'kendaraan-komersial',
     subcategoryId: 'driveline-fluids-niaga',
     summary: 'Cairan transmisi dan hidrolik serbaguna yang memenuhi spesifikasi Caterpillar TO-4, dirancang untuk aplikasi alat berat dan kendaraan konstruksi.',
+    summaryEn: 'Multi-purpose gear and hydraulic fluid meeting Caterpillar TO-4 specifications, designed for heavy machinery and construction vehicle applications.',
     viscosityGrades: ['SAE 10W', 'SAE 30', 'SAE 50'],
     availablePacks: ['20L', '200L'],
     specifications: ['Caterpillar TO-4', 'Allison C4'],
+    specificationsEn: ['Caterpillar TO-4', 'Allison C4'],
     approvals: ['Caterpillar', 'Komatsu'],
+    approvalsEn: ['Caterpillar', 'Komatsu'],
     applications: ['Transmisi powershift alat berat', 'Sistem hidrolik ekskavator', 'Final drive dozer dan loader'],
+    applicationsEn: ['Heavy equipment powershift transmissions', 'Excavator hydraulic systems', 'Dozer and loader final drives'],
     keyBenefits: ['Cairan serbaguna transmisi-hidrolik', 'Perlindungan kopling basah (wet brake)', 'Kompatibel alat berat Caterpillar, Komatsu, dll.'],
+    keyBenefitsEn: ['Multi-purpose gear-hydraulic fluid', 'Wet brake protection', 'Compatible with Caterpillar, Komatsu, etc.'],
     partnerBrand: 'Gulf'
   },
 
@@ -463,12 +517,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'hidrolik',
     summary: 'Pelumas anti-wear hidrolik yang diformulasikan dari basis minyak mineral kualitas super untuk aplikasi manufaktur dan industri mobilitas',
+    summaryEn: 'Anti-wear hydraulic lubricant formulated from super quality mineral oil base for manufacturing and industrial mobility applications.',
     viscosityGrades: ['ISO VG 32', 'ISO VG 46', 'ISO VG 68', 'ISO VG 100'],
     availablePacks: ['20L', '200L'],
     specifications: ['DIN 51524 Part 2 HLP', 'ISO 11158 HM'],
+    specificationsEn: ['DIN 51524 Part 2 HLP', 'ISO 11158 HM'],
     approvals: ['Denison HF-0', 'Eaton Vickers M-2950-S'],
+    approvalsEn: ['Denison HF-0', 'Eaton Vickers M-2950-S'],
     applications: ['Sistem hidrolik pabrik baja', 'Alat berat konstruksi (excavator, dump truck)', 'Mesin pencetak injeksi presisi'],
+    applicationsEn: ['Steel mill hydraulic systems', 'Heavy construction equipment (excavators, dump trucks)', 'Precision injection molding machines'],
     keyBenefits: ['Perlindungan ekstra anti-keausan pompa', 'Pemisahan air (demulsibilitas) kelas wahid', 'Ketahanan oksidasi andal jangka panjang'],
+    keyBenefitsEn: ['Extra anti-wear pump protection', 'Top-tier water separation (demulsibility)', 'Reliable long-term oxidation resistance'],
     partnerBrand: 'Gulf'
   },
   {
@@ -479,12 +538,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'hidrolik',
     summary: 'Cairan hidrolik indeks viskositas tinggi (HVI) tanpa kandungan abu (ashless zinc-free) yang dirancang untuk performa suhu sangat ekstrem.',
+    summaryEn: 'High Viscosity Index (HVI) ashless zinc-free hydraulic fluid designed for extreme temperature performance.',
     viscosityGrades: ['ISO VG 15', 'ISO VG 32', 'ISO VG 46', 'ISO VG 68'],
     availablePacks: ['200L'],
     specifications: ['DIN 51524 Part 3 HVLP', 'ISO 11158 HV'],
+    specificationsEn: ['DIN 51524 Part 3 HVLP', 'ISO 11158 HV'],
     approvals: ['-'],
     applications: ['Sistem hidrolik outdoor yang terkena perubahan iklim tajam', 'Crane pelabuhan laut', 'Mesin berat khusus yang sensitif lingkungan'],
+    applicationsEn: ['Outdoor hydraulic systems exposed to sharp climatic changes', 'Marine port cranes', 'Specialized environmentally sensitive heavy machinery'],
     keyBenefits: ['Indeks Viskositas ekstra tinggi menstabilkan performa', 'Anti degradasi berlapis', 'Ramah lingkungan karena tidak memakai senyawa zinc (seng)'],
+    keyBenefitsEn: ['Extra high Viscosity Index stabilizes performance', 'Multi-layer anti-degradation', 'Eco-friendly due to zinc-free formulation'],
     partnerBrand: 'Gulf',
     pdsUrl: 'https://pds.gulfoilltd.com/?countrycode=glb'
   },
@@ -498,12 +561,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'oli-gigi-industri',
     summary: 'Oli roda gigi industri kinerja tinggi dengan aditif EP yang dikembangkan untuk melumasi roda gigi baja tugas berat di lingkungan yang keras.',
+    summaryEn: 'High-performance industrial gear oil with EP additives developed to lubricate heavy-duty steel gears in harsh environments.',
     viscosityGrades: ['ISO VG 68', 'ISO VG 150', 'ISO VG 220', 'ISO VG 320', 'ISO VG 460', 'ISO VG 680'],
     availablePacks: ['20L', '200L'],
     specifications: ['DIN 51517 Part 3 CLP', 'ISO 12925-1 Type CKC'],
+    specificationsEn: ['DIN 51517 Part 3 CLP', 'ISO 12925-1 Type CKC'],
     approvals: ['Flender', 'David Brown'],
+    approvalsEn: ['Flender', 'David Brown'],
     applications: ['Roda gigi tertutup skala industri berat', 'Conveyor pertambangan', 'Peralatan pabrik semen dan baja'],
+    applicationsEn: ['Closed heavy-duty industrial gears', 'Mining conveyors', 'Cement and steel mill equipment'],
     keyBenefits: ['Perlindungan ekstrim terhadap tekanan (EP)', 'Ketahanan prima pada keausan dan micro-pitting', 'Mencegah terjadinya buih dan karat'],
+    keyBenefitsEn: ['Extreme Pressure (EP) protection', 'Excellent resistance to wear and micro-pitting', 'Prevents foaming and rust'],
     partnerBrand: 'Gulf',
     pdsUrl: 'https://pds.gulfoilltd.com/?countrycode=glb'
   },
@@ -515,12 +583,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'oli-gigi-industri',
     summary: 'Oli roda gigi industri extreme pressure yang memberikan perlindungan superior pada sistem gear box industri berat.',
+    summaryEn: 'Extreme pressure industrial gear oil providing superior protection to heavy industrial gear systems.',
     viscosityGrades: ['ISO VG 68', 'ISO VG 150', 'ISO VG 220', 'ISO VG 320', 'ISO VG 460', 'ISO VG 680'],
     availablePacks: ['20L', '200L'],
     specifications: ['DIN 51517 Part 3 CLP', 'ISO 12925-1 Type CKC'],
+    specificationsEn: ['DIN 51517 Part 3 CLP', 'ISO 12925-1 Type CKC'],
     approvals: ['Flender', 'David Brown'],
+    approvalsEn: ['Flender', 'David Brown'],
     applications: ['Roda gigi tertutup skala industri berat', 'Conveyor pertambangan', 'Peralatan pabrik semen dan baja'],
+    applicationsEn: ['Closed heavy-duty industrial gears', 'Mining conveyors', 'Cement and steel mill equipment'],
     keyBenefits: ['Perlindungan extreme pressure tinggi', 'Ketahanan prima pada keausan', 'Mencegah buih dan korosi'],
+    keyBenefitsEn: ['High Extreme Pressure protection', 'Excellent resistance to wear', 'Prevents foaming and corrosion'],
     partnerBrand: 'Gulf',
     pdsUrl: 'https://pds.gulfoilltd.com/?countrycode=glb'
   },
@@ -534,12 +607,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'oli-kompresor',
     summary: 'Oli kompresor udara berbasis mineral untuk memberikan perlindungan efisien pada komponen dalam kompresor yang beroperasi konstan.',
+    summaryEn: 'Mineral-based air compressor oil providing efficient protection for compressor internals under constant operation.',
     viscosityGrades: ['ISO VG 32', 'ISO VG 46', 'ISO VG 68', 'ISO VG 150'],
     availablePacks: ['20L', '200L'],
     specifications: ['DIN 51506 VDL'],
+    specificationsEn: ['DIN 51506 VDL'],
     approvals: ['-'],
     applications: ['Kompresor udara tipe rotary screw', 'Kompresor udara tipe reciprocating'],
+    applicationsEn: ['Rotary screw air compressors', 'Reciprocating air compressors'],
     keyBenefits: ['Menjaga kebersihan katup agar tidak ada tumpukan deposit', 'Ketahanan oksidasi luar biasa', 'Mencegah pemisahan air dengan oli'],
+    keyBenefitsEn: ['Keeps valves clean from deposit buildup', 'Exceptional oxidation resistance', 'Prevents water-oil separation'],
     partnerBrand: 'Gulf',
     pdsUrl: 'https://pds.gulfoilltd.com/?countrycode=glb'
   },
@@ -553,12 +630,17 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'oli-turbin',
     summary: 'Oli turbin berkualitas prima yang diformulasikan dari basis minyak sangat murni untuk kinerja tanpa cacat dalam sistem turbin uap, gas, maupun air.',
+    summaryEn: 'Premium turbine oil formulated from highly refined base oils for flawless performance in steam, gas, and water turbine systems.',
     viscosityGrades: ['ISO VG 32', 'ISO VG 46', 'ISO VG 68'],
     availablePacks: ['208L'],
     specifications: ['DIN 51515 Part 1/2', 'ISO 8068'],
+    specificationsEn: ['DIN 51515 Part 1/2', 'ISO 8068'],
     approvals: ['Siemens', 'Alstom', 'GE'],
+    approvalsEn: ['Siemens', 'Alstom', 'GE'],
     applications: ['Pembangkit listrik tenaga uap dan gas', 'Turbin air komersial', 'Peralatan rotasi tinggi berpemanas ekstrim'],
+    applicationsEn: ['Steam and gas power plants', 'Commercial water turbines', 'Extreme heat high-rotation equipment'],
     keyBenefits: ['Masa operasional oli yang sangat sangat panjang', 'Pemisahan udara yang sangat cepat', 'Pelindung karat komponen presisi'],
+    keyBenefitsEn: ['Extremely long oil operational life', 'Very rapid air separation', 'Rust protection for precision components'],
     partnerBrand: 'Gulf',
     pdsUrl: 'https://pds.gulfoilltd.com/?countrycode=glb'
   },
@@ -572,12 +654,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'cairan-termal',
     summary: 'Cairan transfer panas berbasis mineral yang dirancang untuk sistem pemanas industri dengan stabilitas termal tinggi dan umur pakai panjang.',
+    summaryEn: 'Mineral-based heat transfer fluid designed for industrial heating systems with high thermal stability and long service life.',
     viscosityGrades: ['Thermal Fluid Grade'],
     availablePacks: ['200L'],
     specifications: ['DIN 51522'],
+    specificationsEn: ['DIN 51522'],
     approvals: ['-'],
     applications: ['Sistem pemanas industri petrokimia', 'Pemrosesan makanan dan minuman', 'Pabrik tekstil dan kertas'],
+    applicationsEn: ['Petrochemical industrial heating systems', 'Food and beverage processing', 'Textile and paper mills'],
     keyBenefits: ['Stabilitas termal hingga suhu sangat tinggi', 'Koefisien perpindahan panas yang efisien', 'Masa pakai sangat panjang tanpa degradasi signifikan'],
+    keyBenefitsEn: ['Thermal stability at very high temperatures', 'Efficient heat transfer coefficient', 'Very long service life without significant degradation'],
     partnerBrand: 'Gulf',
     pdsUrl: 'https://pds.gulfoilltd.com/?countrycode=glb'
   },
@@ -591,12 +677,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'oli-bantalan',
     summary: 'Oli sirkulasi dan bantalan yang dirancang untuk pelumasan berkelanjutan pada mesin industri presisi dan bearing berkecepatan tinggi',
+    summaryEn: 'Circulating and bearing oil designed for continuous lubrication of precision industrial machinery and high-speed bearings.',
     viscosityGrades: ['ISO VG 32', 'ISO VG 46', 'ISO VG 68', 'ISO VG 100'],
     availablePacks: ['20L', '200L'],
     specifications: ['DIN 51517 Part 2 CL', 'ISO 12925-1 Type CKB'],
+    specificationsEn: ['DIN 51517 Part 2 CL', 'ISO 12925-1 Type CKB'],
     approvals: ['-'],
     applications: ['Bantalan (bearing) mesin industri', 'Sistem sirkulasi oli sentral', 'Mesin kertas dan spinning mill'],
+    applicationsEn: ['Industrial machinery bearings', 'Central oil circulation systems', 'Paper machines and spinning mills'],
     keyBenefits: ['Pemisahan air dan udara sangat cepat', 'Anti-buih dan anti-karat berlapis', 'Stabilitas oksidasi ekstra panjang'],
+    keyBenefitsEn: ['Very rapid water and air separation', 'Multi-layer anti-foam and anti-rust', 'Extra long oxidation stability'],
     partnerBrand: 'Gulf',
     pdsUrl: 'https://pds.gulfoilltd.com/?countrycode=glb'
   },
@@ -610,12 +700,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'grease',
     summary: 'Pelumas gemuk serbaguna tipe Lithium dengan aditif Extreme Pressure tingkat tinggi untuk perlindungan komponen berbeban berat.',
+    summaryEn: 'Multi-purpose Lithium-type grease with high-level Extreme Pressure additives for protection of heavy-duty components.',
     viscosityGrades: ['NLGI 0', 'NLGI 1', 'NLGI 2', 'NLGI 3'],
     availablePacks: ['18Kg', '180Kg'],
     specifications: ['DIN 51502 KP2K-30'],
+    specificationsEn: ['DIN 51502 KP2K-30'],
     approvals: ['-'],
     applications: ['Bantalan roda tugas berat kendaraan komersial', 'Jurnal bearing pada mesin industri konvensional', 'Titik engsel dan bushing konstruksi'],
+    applicationsEn: ['Heavy-duty commercial vehicle wheel bearings', 'Industrial journal bearings', 'Construction hinges and bushings'],
     keyBenefits: ['Anti aus maksimal di bawah beban getaran tinggi', 'Daya rekat kuat mencegah tercuci air', 'Stabilitas mekanis tinggi tidak mudah lumer'],
+    keyBenefitsEn: ['Maximum anti-wear under high vibration loads', 'Strong adhesion prevents water washout', 'High mechanical stability, resists melting'],
     partnerBrand: 'Gulf',
     pdsUrl: 'https://pds.gulfoilltd.com/?countrycode=glb'
   },
@@ -627,12 +721,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'industrial',
     subcategoryId: 'grease',
     summary: 'Pelumas gemuk Lithium Complex serbaguna dengan ketahanan suhu tinggi dan kemampuan tahan air yang sangat baik',
+    summaryEn: 'Multi-purpose Lithium Complex grease with high temperature resistance and excellent water resistance.',
     viscosityGrades: ['NLGI 2'],
     availablePacks: ['18Kg', '180Kg'],
     specifications: ['DIN 51502 KP2N-30'],
+    specificationsEn: ['DIN 51502 KP2N-30'],
     approvals: ['-'],
     applications: ['Bantalan industri suhu tinggi', 'Pompa dan blower industri', 'Peralatan konstruksi dan pertambangan'],
+    applicationsEn: ['High-temperature industrial bearings', 'Industrial pumps and blowers', 'Construction and mining equipment'],
     keyBenefits: ['Ketahanan suhu tinggi (dropping point tinggi)', 'Tahan pencucian air sangat baik', 'Stabilitas geser mekanis superior'],
+    keyBenefitsEn: ['High temperature resistance (high dropping point)', 'Excellent water washout resistance', 'Superior mechanical shear stability'],
     partnerBrand: 'Gulf',
     pdsUrl: 'https://pds.gulfoilltd.com/?countrycode=glb'
   },
@@ -648,12 +746,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'marine',
     subcategoryId: 'main-engine',
     summary: 'Pelumas mesin utama kapal yang diformulasikan untuk mesin diesel kelautan 2-tak dan 4-tak dengan berbagai jenis bahan bakar termasuk HFO dan VLSFO.',
+    summaryEn: 'Main engine lubricant formulated for 2-stroke and 4-stroke marine diesel engines using various fuel types including HFO and VLSFO.',
     viscosityGrades: ['SAE 30', 'SAE 40', 'SAE 50'],
     availablePacks: ['200L', 'Bulk'],
     specifications: ['TBN 30-100 sesuai tipe bahan bakar'],
+    specificationsEn: ['TBN 30-100 depending on fuel type'],
     approvals: ['-'],
     applications: ['Mesin utama kapal tanker', 'Kapal kontainer', 'Kapal bulk carrier'],
+    applicationsEn: ['Tanker main engines', 'Container ships', 'Bulk carriers'],
     keyBenefits: ['Netralisasi asam efektif untuk bahan bakar HFO/VLSFO', 'Perlindungan liner dan ring piston', 'Kontrol deposit dan keausan silinder'],
+    keyBenefitsEn: ['Effective acid neutralization for HFO/VLSFO fuels', 'Liner and piston ring protection', 'Cylinder deposit and wear control'],
     partnerBrand: 'Gulf'
   },
   {
@@ -664,12 +766,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'marine',
     subcategoryId: 'auxiliary',
     summary: 'Pelumas untuk mesin bantu (auxiliary engine) dan peralatan mekanis kapal yang memerlukan pelumasan andal dalam lingkungan maritim.',
+    summaryEn: 'Lubricant for auxiliary engines and marine mechanical equipment requiring reliable lubrication in maritime environments.',
     viscosityGrades: ['SAE 30', 'SAE 40'],
     availablePacks: ['200L', 'Bulk'],
     specifications: ['API CF'],
+    specificationsEn: ['API CF'],
     approvals: ['-'],
     applications: ['Genset kapal', 'Mesin bantu (auxiliary engine)', 'Peralatan dek dan mekanis'],
+    applicationsEn: ['Marine generator sets', 'Auxiliary engines', 'Deck and mechanical equipment'],
     keyBenefits: ['Perlindungan korosi di lingkungan laut', 'Stabilitas viskositas pada operasi berkelanjutan', 'Demulsibilitas tinggi mencegah emulsi air laut'],
+    keyBenefitsEn: ['Corrosion protection in marine environments', 'Viscosity stability over continuous operation', 'High demulsibility prevents seawater emulsion'],
     partnerBrand: 'Gulf'
   },
   {
@@ -680,12 +786,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'marine',
     subcategoryId: 'marine-grease',
     summary: 'Pelumas gemuk tahan air laut untuk bantalan dan komponen dek kapal yang terpapar langsung dengan kondisi maritim yang keras.',
+    summaryEn: 'Seawater-resistant grease for marine bearings and deck components exposed directly to harsh maritime conditions.',
     viscosityGrades: ['NLGI 2'],
     availablePacks: ['18Kg', '180Kg'],
     specifications: ['DIN 51502'],
+    specificationsEn: ['DIN 51502'],
     approvals: ['-'],
     applications: ['Bantalan dek kapal', 'Winch dan crane kapal', 'Wire rope dan rantai jangkar'],
+    applicationsEn: ['Marine deck bearings', 'Ship winches and cranes', 'Wire ropes and anchor chains'],
     keyBenefits: ['Tahan pencucian air laut', 'Perlindungan korosi di lingkungan salin', 'Daya rekat tinggi pada komponen bergetar'],
+    keyBenefitsEn: ['Seawater washout resistance', 'Corrosion protection in saline environments', 'High adhesion on vibrating components'],
     partnerBrand: 'Gulf'
   },
   {
@@ -696,12 +806,16 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'marine',
     subcategoryId: 'eco-friendly',
     summary: 'Pelumas ramah lingkungan untuk aplikasi kelautan yang memerlukan kepatuhan terhadap regulasi lingkungan seperti VGP (Vessel General Permit).',
+    summaryEn: 'Eco-friendly lubricant for marine applications requiring environmental compliance such as VGP (Vessel General Permit).',
     viscosityGrades: ['ISO VG 32', 'ISO VG 46', 'ISO VG 68'],
     availablePacks: ['20L', '200L'],
     specifications: ['Environmentally Acceptable Lubricant (EAL)'],
+    specificationsEn: ['Environmentally Acceptable Lubricant (EAL)'],
     approvals: ['-'],
     applications: ['Sistem stern tube kapal', 'Sistem thrusters', 'Peralatan dek kapal di area lingkungan sensitif'],
+    applicationsEn: ['Ship stern tube systems', 'Thruster systems', 'Marine deck equipment in sensitive areas'],
     keyBenefits: ['Biodegradable dan non-toxic', 'Memenuhi regulasi lingkungan maritim', 'Performa pelumasan setara oli konvensional'],
+    keyBenefitsEn: ['Biodegradable and non-toxic', 'Meets maritime environmental regulations', 'Performance equal to conventional oils'],
     partnerBrand: 'Gulf'
   },
 
@@ -718,9 +832,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mining-excavator',
     summary: 'Excavator pertambangan raksasa untuk operasional skala ekstrem dengan produktivitas tiada tanding.',
+    summaryEn: 'Giant mining excavator for extreme-scale operations with unmatched productivity.',
     specifications: ['Bobot Operasi: 200t', 'Daya Mesin: Eksklusif', 'Kapasitas Bucket: Ekstra Besar'],
+    specificationsEn: ['Operating Weight: 200t', 'Engine Power: Exclusive', 'Bucket Capacity: Extra Large'],
     applications: ['Pertambangan Skala Besar', 'Ekskavasi Massal'],
+    applicationsEn: ['Large-scale Mining', 'Mass Excavation'],
     keyBenefits: ['Daya gali maksimum', 'Durabilitas struktur ekstrem', 'Efisiensi biaya per tonase'],
+    keyBenefitsEn: ['Maximum digging power', 'Extreme structural durability', 'Cost efficiency per tonnage'],
     partnerBrand: 'Shantui'
   },
   {
@@ -731,9 +849,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mining-excavator',
     summary: 'Unit pertambangan super berat dengan stabilitas luar biasa untuk medan galian yang sulit.',
+    summaryEn: 'Super heavy-duty mining unit with extraordinary stability for difficult excavation terrains.',
     specifications: ['Bobot Operasi: 150t', 'Daya Mesin: 700+ kW', 'Kapasitas Bucket: 4.5 m³'],
+    specificationsEn: ['Operating Weight: 150t', 'Engine Power: 700+ kW', 'Bucket Capacity: 4.5 m³'],
     applications: ['Open Pit Mining', 'Mega Project'],
+    applicationsEn: ['Open Pit Mining', 'Mega Projects'],
     keyBenefits: ['Stabilitas Tinggi', 'Power Superior', 'Teknologi Hidrolik Canggih'],
+    keyBenefitsEn: ['High Stability', 'Superior Power', 'Advanced Hydraulic Technology'],
     partnerBrand: 'Shantui'
   },
   {
@@ -744,9 +866,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mining-excavator',
     summary: 'Solusi ekskavasi mining performa tinggi dengan teknologi kontrol hidrolik tercanggih.',
+    summaryEn: 'High-performance mining excavation solution with state-of-the-art hydraulic control technology.',
     specifications: ['Bobot Operasi: 125t', 'Daya Mesin: 600 kW', 'Kapasitas Bucket: 3.8 m³'],
+    specificationsEn: ['Operating Weight: 125t', 'Engine Power: 600 kW', 'Bucket Capacity: 3.8 m³'],
     applications: ['Pertambangan Medium-Besar', 'Proyek Infrastruktur'],
+    applicationsEn: ['Medium-to-Large Mining', 'Infrastructure Projects'],
     keyBenefits: ['Kontrol Hidrolik Tercanggih', 'Efisiensi Energi Tinggi', 'Operator Comfort'],
+    keyBenefitsEn: ['Advanced Hydraulic Control', 'High Energy Efficiency', 'Operator Comfort'],
     partnerBrand: 'Shantui'
   },
   {
@@ -757,9 +883,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mining-excavator',
     summary: 'Excavator pertambangan berkapasitas 98 ton dengan stabilitas operasional superior.',
+    summaryEn: '98-ton mining excavator with superior operational stability.',
     specifications: ['Bobot Operasi: 98t', 'Daya Mesin: 500 kW', 'Kapasitas Bucket: 3.0 m³'],
+    specificationsEn: ['Operating Weight: 98t', 'Engine Power: 500 kW', 'Bucket Capacity: 3.0 m³'],
     applications: ['Pertambangan Skala Menengah', 'Konstruksi Besar'],
+    applicationsEn: ['Medium-scale Mining', 'Large Construction'],
     keyBenefits: ['Fleksibilitas Tinggi', 'Operasional Handal', 'Maintenance Mudah'],
+    keyBenefitsEn: ['High Flexibility', 'Reliable Operation', 'Easy Maintenance'],
     partnerBrand: 'Shantui'
   },
   {
@@ -770,9 +900,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mining-excavator',
     summary: 'Excavator pertambangan 80 ton dengan performa stabil untuk berbagai medan.',
+    summaryEn: '80-ton mining excavator with stable performance for various terrains.',
     specifications: ['Bobot Operasi: 80t', 'Daya Mesin: 420 kW', 'Kapasitas Bucket: 2.5 m³'],
+    specificationsEn: ['Operating Weight: 80t', 'Engine Power: 420 kW', 'Bucket Capacity: 2.5 m³'],
     applications: ['Pertambangan Medium', 'Konstruksi Jalan'],
+    applicationsEn: ['Medium Mining', 'Road Construction'],
     keyBenefits: ['Produktivitas Tinggi', 'Konsumsi Bahan Bakar Efisien', 'Durabilitas Terjamin'],
+    keyBenefitsEn: ['High Productivity', 'Efficient Fuel Consumption', 'Guaranteed Durability'],
     partnerBrand: 'Shantui'
   },
   {
@@ -783,9 +917,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mining-excavator',
     summary: 'Excavator 75 ton dengan teknologi terkini untuk operasi pertambangan efisien.',
+    summaryEn: '75-ton excavator with latest technology for efficient mining operations.',
     specifications: ['Bobot Operasi: 75t', 'Daya Mesin: 400 kW', 'Kapasitas Bucket: 2.3 m³'],
+    specificationsEn: ['Operating Weight: 75t', 'Engine Power: 400 kW', 'Bucket Capacity: 2.3 m³'],
     applications: ['Pertambangan Batu/Mineral', 'Ekskavasi Lahan'],
+    applicationsEn: ['Stone/Mineral Mining', 'Land Excavation'],
     keyBenefits: ['Hemat Bahan Bakar', 'Sistem Keamanan Canggih', 'Komponen Berkualitas'],
+    keyBenefitsEn: ['Fuel Efficient', 'Advanced Safety System', 'Quality Components'],
     partnerBrand: 'Shantui'
   },
 
@@ -798,9 +936,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Mini excavator kompak dengan performa tinggi untuk pekerjaan presisi di area terbatas.',
-    specifications: ['Operating Weight: 1,800 kg', 'Bucket Capacity: 0.04 m³', 'Engine Power: 11.8 kW'],
+    summaryEn: 'Compact mini excavator with high performance for precision work in confined areas.',
+    specifications: ['Bobot Operasi: 1,800 kg', 'Kapasitas Bucket: 0.04 m³', 'Daya Mesin: 11.8 kW'],
+    specificationsEn: ['Operating Weight: 1,800 kg', 'Bucket Capacity: 0.04 m³', 'Engine Power: 11.8 kW'],
     applications: ['Pekerjaan konstruksi dalam ruangan', 'Landscape dan taman', 'Proyek kecil dengan akses terbatas'],
+    applicationsEn: ['Indoor construction work', 'Landscaping and gardens', 'Small projects with limited access'],
     keyBenefits: ['Ukuran Kompak', 'Presisi Tinggi', 'Akses Terbatas Terjangkau'],
+    keyBenefitsEn: ['Compact Size', 'High Precision', 'Accessible to Limited Areas'],
     partnerBrand: 'Shantui'
   },
   {
@@ -811,9 +953,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Excavator mini bertenaga dengan kapasitas bucket lebih besar untuk efisiensi operasional.',
-    specifications: ['Operating Weight: 2,600 kg', 'Bucket Capacity: 0.06 m³', 'Engine Power: 18.2 kW'],
+    summaryEn: 'Powerful mini excavator with larger bucket capacity for operational efficiency.',
+    specifications: ['Bobot Operasi: 2,600 kg', 'Kapasitas Bucket: 0.06 m³', 'Daya Mesin: 18.2 kW'],
+    specificationsEn: ['Operating Weight: 2,600 kg', 'Bucket Capacity: 0.06 m³', 'Engine Power: 18.2 kW'],
     applications: ['Konstruksi umum', 'Penggalian dan demolisi ringan', 'Pekerjaan utilitas'],
+    applicationsEn: ['General construction', 'Light excavation and demolition', 'Utility work'],
     keyBenefits: ['Kapasitas Lebih Besar', 'Efisiensi Operasional', 'Versatilitas Tinggi'],
+    keyBenefitsEn: ['Larger Capacity', 'Operational Efficiency', 'High Versatility'],
     partnerBrand: 'Shantui'
   },
   {
@@ -824,9 +970,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Mini excavator unggul dengan daya gali yang kuat untuk berbagai kondisi proyek.',
-    specifications: ['Operating Weight: 3,860 kg', 'Bucket Capacity: 0.11 m³', 'Engine Power: 18.2 kW'],
+    summaryEn: 'Superior mini excavator with strong digging power for various project conditions.',
+    specifications: ['Bobot Operasi: 3,860 kg', 'Kapasitas Bucket: 0.11 m³', 'Daya Mesin: 18.2 kW'],
+    specificationsEn: ['Operating Weight: 3,860 kg', 'Bucket Capacity: 0.11 m³', 'Engine Power: 18.2 kW'],
     applications: ['Konstruksi infrastruktur ringan', 'Pertambanagn skala kecil', 'Pekerjaan persiapan lahan'],
+    applicationsEn: ['Light infrastructure construction', 'Small-scale mining', 'Land preparation work'],
     keyBenefits: ['Daya Gali Kuat', 'Serbaguna', 'Hemat Energi'],
+    keyBenefitsEn: ['Strong Digging Power', 'Versatile', 'Energy Saving'],
     partnerBrand: 'Shantui'
   },
   {
@@ -837,9 +987,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Excavator mini performa ekstrem dengan teknologi hidrolik canggih.',
-    specifications: ['Operating Weight: 5,960 kg', 'Bucket Capacity: 0.22 m³', 'Engine Power: 36 kW'],
+    summaryEn: 'Extreme performance mini excavator with advanced hydraulic technology.',
+    specifications: ['Bobot Operasi: 5,960 kg', 'Kapasitas Bucket: 0.22 m³', 'Daya Mesin: 36 kW'],
+    specificationsEn: ['Operating Weight: 5,960 kg', 'Bucket Capacity: 0.22 m³', 'Engine Power: 36 kW'],
     applications: ['Konstruksi menengah', 'Penggalian tanah dalam', 'Proyek pembangunan'],
+    applicationsEn: ['Medium construction', 'Deep earth excavation', 'Development projects'],
     keyBenefits: ['Performa Ekstrem', 'Teknologi Hidrolik Canggih', 'Keandalan Tinggi'],
+    keyBenefitsEn: ['Extreme Performance', 'Advanced Hydraulic Technology', 'High Reliability'],
     partnerBrand: 'Shantui'
   },
 
@@ -852,9 +1006,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Mini excavator super kecil untuk pekerjaan presisi di ruang terbatas dan operasi indoor.',
-    specifications: ['Operating Weight: 1,200 kg', 'Bucket Capacity: 0.04 m³', 'Engine Power: 9 kW'],
+    summaryEn: 'Ultra-small mini excavator for precision work in confined spaces and indoor operations.',
+    specifications: ['Bobot Operasi: 1,200 kg', 'Kapasitas Bucket: 0.04 m³', 'Daya Mesin: 9 kW'],
+    specificationsEn: ['Operating Weight: 1,200 kg', 'Bucket Capacity: 0.04 m³', 'Engine Power: 9 kW'],
     applications: ['Pekerjaan indoor', 'Landscape presisi', 'Ruang sangat terbatas'],
+    applicationsEn: ['Indoor work', 'Precision landscaping', 'Highly confined spaces'],
     keyBenefits: ['Ultra Kompak', 'Presisi Maksimal', 'Efisiensi Energi'],
+    keyBenefitsEn: ['Ultra Compact', 'Maximum Precision', 'Energy Efficiency'],
     partnerBrand: 'Shantui'
   },
 
@@ -866,9 +1024,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil dengan performa balanced untuk aplikasi konstruksi umum.',
-    specifications: ['Operating Weight: 1,850 kg', 'Bucket Capacity: 0.05 m³', 'Engine Power: 13 kW'],
+    summaryEn: 'Small excavator with balanced performance for general construction applications.',
+    specifications: ['Bobot Operasi: 1,850 kg', 'Kapasitas Bucket: 0.05 m³', 'Daya Mesin: 13 kW'],
+    specificationsEn: ['Operating Weight: 1,850 kg', 'Bucket Capacity: 0.05 m³', 'Engine Power: 13 kW'],
     applications: ['Konstruksi umum', 'Penggalian ringan', 'Proyek persiapan lahan'],
+    applicationsEn: ['General construction', 'Light excavation', 'Land preparation projects'],
     keyBenefits: ['Performa Seimbang', 'Daya Tarik Stabil', 'Fleksibilitas Operasi'],
+    keyBenefitsEn: ['Balanced Performance', 'Stable Traction', 'Operational Flexibility'],
     partnerBrand: 'Shantui'
   },
   {
@@ -879,9 +1041,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil listrik ramah lingkungan dengan emisi nol untuk pekerjaan indoor berkelanjutan.',
-    specifications: ['Operating Weight: 2,100 kg', 'Bucket Capacity: 0.06 m³', 'Power: 15 kW (Listrik)'],
+    summaryEn: 'Eco-friendly electric mini excavator with zero emissions for sustainable indoor work.',
+    specifications: ['Bobot Operasi: 2,100 kg', 'Kapasitas Bucket: 0.06 m³', 'Daya: 15 kW (Listrik)'],
+    specificationsEn: ['Operating Weight: 2,100 kg', 'Bucket Capacity: 0.06 m³', 'Power: 15 kW (Electric)'],
     applications: ['Konstruksi indoor', 'Area perkotaan', 'Proyek green-aware'],
+    applicationsEn: ['Indoor construction', 'Urban areas', 'Green-aware projects'],
     keyBenefits: ['Emisi Nol', 'Ramah Lingkungan', 'Operasi Senyap'],
+    keyBenefitsEn: ['Zero Emissions', 'Eco-friendly', 'Silent Operation'],
     partnerBrand: 'Shantui'
   },
   {
@@ -892,9 +1058,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil versatile dengan teknologi terkini untuk berbagai aplikasi konstruksi.',
-    specifications: ['Operating Weight: 2,000 kg', 'Bucket Capacity: 0.06 m³', 'Engine Power: 14.8 kW'],
+    summaryEn: 'Versatile small excavator with latest technology for various construction applications.',
+    specifications: ['Bobot Operasi: 2,000 kg', 'Kapasitas Bucket: 0.06 m³', 'Daya Mesin: 14.8 kW'],
+    specificationsEn: ['Operating Weight: 2,000 kg', 'Bucket Capacity: 0.06 m³', 'Engine Power: 14.8 kW'],
     applications: ['Konstruksi multi-fungsi', 'Penggalian dan penimbunan', 'Proyek infrastruktur ringan'],
+    applicationsEn: ['Multi-functional construction', 'Excavation and backfilling', 'Light infrastructure projects'],
     keyBenefits: ['Teknologi Terbaru', 'Versatilitas Tinggi', 'Efisiensi Premium'],
+    keyBenefitsEn: ['Latest Technology', 'High Versatility', 'Premium Efficiency'],
     partnerBrand: 'Shantui'
   },
 
@@ -906,9 +1076,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil kompak dengan daya andal untuk aplikasi konstruksi beragam.',
-    specifications: ['Operating Weight: 2,700 kg', 'Bucket Capacity: 0.07 m³', 'Engine Power: 19 kW'],
+    summaryEn: 'Compact small excavator with reliable power for diverse construction applications.',
+    specifications: ['Bobot Operasi: 2,700 kg', 'Kapasitas Bucket: 0.07 m³', 'Daya Mesin: 19 kW'],
+    specificationsEn: ['Operating Weight: 2,700 kg', 'Bucket Capacity: 0.07 m³', 'Engine Power: 19 kW'],
     applications: ['Konstruksi beragam', 'Penggalian lahan', 'Proyek persiapan'],
+    applicationsEn: ['Diverse construction', 'Land excavation', 'Preparation projects'],
     keyBenefits: ['Daya Andal', 'Kompak Efisien', 'Performa Stabil'],
+    keyBenefitsEn: ['Reliable Power', 'Compact Efficiency', 'Stable Performance'],
     partnerBrand: 'Shantui'
   },
   {
@@ -919,9 +1093,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil unggul dengan daya gali kuat untuk berbagai kondisi proyek.',
-    specifications: ['Operating Weight: 3,860 kg', 'Bucket Capacity: 0.11 m³', 'Engine Power: 18.2 kW'],
+    summaryEn: 'Superior small excavator with strong digging power for various project conditions.',
+    specifications: ['Bobot Operasi: 3,860 kg', 'Kapasitas Bucket: 0.11 m³', 'Daya Mesin: 18.2 kW'],
+    specificationsEn: ['Operating Weight: 3,860 kg', 'Bucket Capacity: 0.11 m³', 'Engine Power: 18.2 kW'],
     applications: ['Konstruksi infrastruktur', 'Pertambangan kecil', 'Persiapan lahan'],
+    applicationsEn: ['Infrastructure construction', 'Small-scale mining', 'Land preparation'],
     keyBenefits: ['Daya Gali Kuat', 'Serbaguna', 'Hemat Energi'],
+    keyBenefitsEn: ['Strong Digging Power', 'Versatile', 'Energy Saving'],
     partnerBrand: 'Shantui'
   },
   {
@@ -932,9 +1110,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mini-excavator',
     summary: 'Excavator kecil berperforma tinggi dengan teknologi hidrolik canggih untuk operasi produktif.',
-    specifications: ['Operating Weight: 5,800 kg', 'Bucket Capacity: 0.21 m³', 'Engine Power: 35 kW'],
+    summaryEn: 'High-performance small excavator with advanced hydraulic technology for productive operations.',
+    specifications: ['Bobot Operasi: 5,800 kg', 'Kapasitas Bucket: 0.21 m³', 'Daya Mesin: 35 kW'],
+    specificationsEn: ['Operating Weight: 5,800 kg', 'Bucket Capacity: 0.21 m³', 'Engine Power: 35 kW'],
     applications: ['Konstruksi menengah', 'Penggalian dalam', 'Proyek produktif'],
+    applicationsEn: ['Medium construction', 'Deep excavation', 'Productive projects'],
     keyBenefits: ['Performa Tinggi', 'Teknologi Canggih', 'Produktivitas Maksimal'],
+    keyBenefitsEn: ['High Performance', 'Advanced Technology', 'Maximum Productivity'],
     partnerBrand: 'Shantui'
   },
 
@@ -948,9 +1130,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'small-excavator',
     summary: 'Excavator medium tangguh untuk proyek konstruksi dan pertambangan moderat.',
-    specifications: ['Operating Weight: 7,650 kg', 'Bucket Capacity: 0.32 m³', 'Engine Power: 48 kW'],
+    summaryEn: 'Rugged medium excavator for construction and moderate mining projects.',
+    specifications: ['Bobot Operasi: 7,650 kg', 'Kapasitas Bucket: 0.32 m³', 'Daya Mesin: 48 kW'],
+    specificationsEn: ['Operating Weight: 7,650 kg', 'Bucket Capacity: 0.32 m³', 'Engine Power: 48 kW'],
     applications: ['Konstruksi komersial', 'Quarry dan penambangan', 'Infrastruktur'],
+    applicationsEn: ['Commercial construction', 'Quarry and mining', 'Infrastructure'],
     keyBenefits: ['Ketangguhan Tinggi', 'Efisiensi Biaya', 'Keandalan Operasional'],
+    keyBenefitsEn: ['High Ruggedness', 'Cost Efficiency', 'Operational Reliability'],
     partnerBrand: 'Shantui'
   },
   {
@@ -961,9 +1147,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-excavator',
     summary: 'Excavator performa tinggi dengan kapasitas penggalian superior untuk proyek berskala besar.',
-    specifications: ['Operating Weight: 13,500 kg', 'Bucket Capacity: 0.55 m³', 'Engine Power: 86 kW'],
+    summaryEn: 'High-performance excavator with superior digging capacity for large-scale projects.',
+    specifications: ['Bobot Operasi: 13,500 kg', 'Kapasitas Bucket: 0.55 m³', 'Daya Mesin: 86 kW'],
+    specificationsEn: ['Operating Weight: 13,500 kg', 'Bucket Capacity: 0.55 m³', 'Engine Power: 86 kW'],
     applications: ['Proyek infrastruktur', 'Pertambangan batubara dan mineral', 'Konstruksi bangunan besar'],
+    applicationsEn: ['Infrastructure projects', 'Coal and mineral mining', 'Large building construction'],
     keyBenefits: ['Kapasitas Penggalian Superior', 'Performa Tinggi', 'Durabilitas Luar Biasa'],
+    keyBenefitsEn: ['Superior Digging Capacity', 'High Performance', 'Extraordinary Durability'],
     partnerBrand: 'Shantui'
   },
   {
@@ -974,9 +1164,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-excavator',
     summary: 'Excavator medium besar dengan efisiensi bahan bakar optimal untuk operasi berkelanjutan.',
-    specifications: ['Operating Weight: 21,500 kg', 'Bucket Capacity: 1.0 m³', 'Engine Power: 128.5 kW'],
+    summaryEn: 'Large medium excavator with optimal fuel efficiency for continuous operations.',
+    specifications: ['Bobot Operasi: 21,500 kg', 'Kapasitas Bucket: 1.0 m³', 'Daya Mesin: 128.5 kW'],
+    specificationsEn: ['Operating Weight: 21,500 kg', 'Bucket Capacity: 1.0 m³', 'Engine Power: 128.5 kW'],
     applications: ['Pertambangan skala menengah', 'Proyek infrastruktur besar', 'Demolisi dan reklamasi'],
+    applicationsEn: ['Medium-scale mining', 'Large infrastructure projects', 'Demolition and reclamation'],
     keyBenefits: ['Efisiensi Bahan Bakar Optimal', 'Operasi Berkelanjutan', 'Produktivitas Tinggi'],
+    keyBenefitsEn: ['Optimal Fuel Efficiency', 'Continuous Operation', 'High Productivity'],
     partnerBrand: 'Shantui'
   },
   {
@@ -987,9 +1181,12 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-excavator',
     summary: 'Excavator dengan jangkauan panjang dan bucket berkapasitas besar untuk kedalaman maksimal.',
+    summaryEn: 'Excavator with long reach and large bucket capacity for maximum depth.',
     specifications: ['Operating Weight: 21,800 kg', 'Bucket Capacity: 1.1 m³', 'Engine Power: 128.5 kW'],
     applications: ['Penggalian dalam dan digging', 'Pertambangan underground', 'Proyek dengan kedalaman khusus'],
+    applicationsEn: ['Deep excavation and digging', 'Underground mining', 'Special depth projects'],
     keyBenefits: ['Jangkauan Panjang', 'Kedalaman Maksimal', 'Kapasitas Besar'],
+    keyBenefitsEn: ['Long Reach', 'Maximum Depth', 'Large Capacity'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1000,9 +1197,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-excavator',
     summary: 'Excavator medium dengan teknologi tercanggih dan stabilitas operasional superior',
-    specifications: ['Operating Weight: 24,500 kg', 'Bucket Capacity: 1.2 m³', 'Engine Power: 147 kW'],
+    summaryEn: 'Medium excavator with state-of-the-art technology and superior operational stability.',
+    specifications: ['Bobot Operasi: 24,500 kg', 'Kapasitas Bucket: 1.2 m³', 'Daya Mesin: 147 kW'],
+    specificationsEn: ['Operating Weight: 24,500 kg', 'Bucket Capacity: 1.2 m³', 'Engine Power: 147 kW'],
     applications: ['Pertambangan skala besar', 'Proyek sipil kompleks', 'Konstruksi infrastruktur'],
+    applicationsEn: ['Large-scale mining', 'Complex civil projects', 'Infrastructure construction'],
     keyBenefits: ['Teknologi Tercanggih', 'Stabilitas Superior', 'Power Maksimal'],
+    keyBenefitsEn: ['Advanced Technology', 'Superior Stability', 'Maximum Power'],
     partnerBrand: 'Shantui'
   },
 
@@ -1015,9 +1216,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'large-excavator',
     summary: 'Excavator besar dengan performa mining-grade untuk operasi pertambangan profesional.',
-    specifications: ['Operating Weight: 30,500 kg', 'Bucket Capacity: 1.5 m³', 'Engine Power: 180 kW'],
+    summaryEn: 'Large excavator with mining-grade performance for professional mining operations.',
+    specifications: ['Bobot Operasi: 30,500 kg', 'Kapasitas Bucket: 1.5 m³', 'Daya Mesin: 180 kW'],
+    specificationsEn: ['Operating Weight: 30,500 kg', 'Bucket Capacity: 1.5 m³', 'Engine Power: 180 kW'],
     applications: ['Pertambangan berskala besar', 'Penggalian infrastruktur masif', 'Proyek konstruksi strategis'],
+    applicationsEn: ['Large-scale mining', 'Massive infrastructure excavation', 'Strategic construction projects'],
     keyBenefits: ['Performa Mining-Grade', 'Kapabilitas Profesional', 'Daya Gali Luar Biasa'],
+    keyBenefitsEn: ['Mining-Grade Performance', 'Professional Capability', 'Extraordinary Digging Power'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1028,9 +1233,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'large-excavator',
     summary: 'Excavator jumbo dengan daya gali luar biasa untuk pertambangan dan konstruksi ekstrem.',
-    specifications: ['Operating Weight: 36,800 kg', 'Bucket Capacity: 1.8 m³', 'Engine Power: 212 kW'],
+    summaryEn: 'Jumbo excavator with extraordinary digging power for mining and extreme construction.',
+    specifications: ['Bobot Operasi: 36,800 kg', 'Kapasitas Bucket: 1.8 m³', 'Daya Mesin: 212 kW'],
+    specificationsEn: ['Operating Weight: 36,800 kg', 'Bucket Capacity: 1.8 m³', 'Engine Power: 212 kW'],
     applications: ['Pertambangan batubara utama', 'Proyek infrastruktur skala nasional', 'Konstruksi bendungan'],
+    applicationsEn: ['Primary coal mining', 'National scale infrastructure projects', 'Dam construction'],
     keyBenefits: ['Daya Gali Luar Biasa', 'Kapasitas Jumbo', 'Ketangguhan Ekstrem'],
+    keyBenefitsEn: ['Extraordinary Digging Power', 'Jumbo Capacity', 'Extreme Ruggedness'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1041,9 +1250,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'large-excavator',
     summary: 'Excavator mega dengan kapasitas bucket raksasa untuk operasi pertambangan maksimal.',
-    specifications: ['Operating Weight: 47,000 kg', 'Bucket Capacity: 2.2 m³', 'Engine Power: 250 kW'],
+    summaryEn: 'Mega excavator with giant bucket capacity for maximum mining operations.',
+    specifications: ['Bobot Operasi: 47,000 kg', 'Kapasitas Bucket: 2.2 m³', 'Daya Mesin: 250 kW'],
+    specificationsEn: ['Operating Weight: 47,000 kg', 'Bucket Capacity: 2.2 m³', 'Engine Power: 250 kW'],
     applications: ['Pertambangan open pit', 'Proyek sipil infrastruktur megah', 'Konstruksi bendungan besar'],
+    applicationsEn: ['Open-pit mining', 'Grand civil infrastructure projects', 'Large dam construction'],
     keyBenefits: ['Kapasitas Raksasa', 'Operasi Maksimal', 'Teknologi Terdepan'],
+    keyBenefitsEn: ['Giant Capacity', 'Maximum Operation', 'Leading Technology'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1054,9 +1267,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'large-excavator',
     summary: 'Excavator terbesar dengan teknologi terdepan untuk pertambangan kelas world-class.',
-    specifications: ['Operating Weight: 65,000 kg', 'Bucket Capacity: 3.5 m³', 'Engine Power: 350 kW'],
+    summaryEn: 'Largest excavator with leading technology for world-class mining.',
+    specifications: ['Bobot Operasi: 65,000 kg', 'Kapasitas Bucket: 3.5 m³', 'Daya Mesin: 350 kW'],
+    specificationsEn: ['Operating Weight: 65,000 kg', 'Bucket Capacity: 3.5 m³', 'Engine Power: 350 kW'],
     applications: ['Pertambangan skala internasional', 'Proyek infrastruktur megah', 'Konstruksi bangunan tertinggi'],
+    applicationsEn: ['International scale mining', 'Grand infrastructure projects', 'Highest building construction'],
     keyBenefits: ['Teknologi World-Class', 'Kapasitas Terbesar', 'Performa Internasional'],
+    keyBenefitsEn: ['World-Class Technology', 'Largest Capacity', 'International Performance'],
     partnerBrand: 'Shantui'
   },
 
@@ -1069,9 +1286,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'wheel-excavator',
     summary: 'Excavator beroda dengan mobilitas tinggi untuk operasi konstruksi cepat di berbagai lokasi.',
-    specifications: ['Operating Weight: 14,000 kg', 'Bucket Capacity: 0.6 m³', 'Engine Power: 92 kW'],
+    summaryEn: 'Wheeled excavator with high mobility for rapid construction operations at various locations.',
+    specifications: ['Bobot Operasi: 14,000 kg', 'Kapasitas Bucket: 0.6 m³', 'Daya Mesin: 92 kW'],
+    specificationsEn: ['Operating Weight: 14,000 kg', 'Bucket Capacity: 0.6 m³', 'Engine Power: 92 kW'],
     applications: ['Konstruksi jalan', 'Penggalian lahan', 'Proyek mobil berkecepatan tinggi'],
+    applicationsEn: ['Road construction', 'Land excavation', 'High-speed vehicle projects'],
     keyBenefits: ['Mobilitas Tinggi', 'Setup Cepat', 'Fleksibilitas Lokasi'],
+    keyBenefitsEn: ['High Mobility', 'Quick Setup', 'Location Flexibility'],
     partnerBrand: 'Shantui'
   },
 
@@ -1088,9 +1309,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'small-bulldozer',
     summary: 'Bulldozer kecil bertenaga dengan kapasitas blade optimal untuk pekerjaan presisi.',
-    specifications: ['Operating Weight: 13,700 kg', 'Engine Power: 105 kW @ 1900 rpm', 'Blade Capacity: 3 / 2.5 m³'],
+    summaryEn: 'Powerful small bulldozer with optimal blade capacity for precision work.',
+    specifications: ['Bobot Operasi: 13,700 kg', 'Daya Mesin: 105 kW @ 1900 rpm', 'Kapasitas Blade: 3 / 2.5 m³'],
+    specificationsEn: ['Operating Weight: 13,700 kg', 'Engine Power: 105 kW @ 1900 rpm', 'Blade Capacity: 3 / 2.5 m³'],
     applications: ['Pekerjaan konstruksi ringan', 'Persiapan lahan kecil', 'Penimbunan dan perataan'],
+    applicationsEn: ['Light construction work', 'Small land preparation', 'Fill and leveling'],
     keyBenefits: ['Efisiensi Biaya', 'Maneuver Presisi', 'Konsumsi Bahan Bakar Ekonomis'],
+    keyBenefitsEn: ['Cost Efficiency', 'Precision Maneuvering', 'Economic Fuel Consumption'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1101,9 +1326,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'small-bulldozer',
     summary: 'Bulldozer kompak dengan daya dorong tinggi untuk aplikasi konstruksi umum.',
-    specifications: ['Operating Weight: 16,400 kg', 'Engine Power: 131 kW @ 1850 rpm', 'Blade Capacity: 3.2 / 4.8 m³'],
+    summaryEn: 'Compact bulldozer with high thrust for general construction applications.',
+    specifications: ['Bobot Operasi: 16,400 kg', 'Daya Mesin: 131 kW @ 1850 rpm', 'Kapasitas Blade: 3.2 / 4.8 m³'],
+    specificationsEn: ['Operating Weight: 16,400 kg', 'Engine Power: 131 kW @ 1850 rpm', 'Blade Capacity: 3.2 / 4.8 m³'],
     applications: ['Konstruksi komersial', 'Penggalian dan penimbunan', 'Pekerjaan infrastruktur ringan'],
+    applicationsEn: ['Commercial construction', 'Excavation and backfilling', 'Light infrastructure work'],
     keyBenefits: ['Performa Andal', 'Kapasitas Blade Bervariasi', 'Teknologi Hemat Bahan Bakar'],
+    keyBenefitsEn: ['Reliable Performance', 'Variable Blade Capacity', 'Fuel-Saving Technology'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1114,9 +1343,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'small-bulldozer',
     summary: 'Mini bulldozer beroda berpita ultra kecil untuk akses terbatas dan pekerjaan presisi.',
-    specifications: ['Operating Weight: 9,580 kg', 'Engine Power: 70 kW @ 2200 rpm', 'Blade Capacity: 1.93 m³'],
+    summaryEn: 'Ultra-small tracked mini bulldozer for limited access and precision work.',
+    specifications: ['Bobot Operasi: 9,580 kg', 'Daya Mesin: 70 kW @ 2200 rpm', 'Kapasitas Blade: 1.93 m³'],
+    specificationsEn: ['Operating Weight: 9,580 kg', 'Engine Power: 70 kW @ 2200 rpm', 'Blade Capacity: 1.93 m³'],
     applications: ['Pekerjaan indoor dan ruang sempit', 'Landscape profesional', 'Proyek dengan akses terbatas'],
+    applicationsEn: ['Indoor and tight space work', 'Professional landscaping', 'Limited access projects'],
     keyBenefits: ['Ukuran Ultra Kecil', 'Presisi Tinggi', 'Fleksibilitas Operasional'],
+    keyBenefitsEn: ['Ultra Small Size', 'High Precision', 'Operational Flexibility'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1127,9 +1360,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'small-bulldozer',
     summary: 'Bulldozer low ground pressure untuk operasi di medan sensitif dan konstruksi ringan.',
-    specifications: ['Operating Weight: 14,800 kg', 'Engine Power: 118 kW @ 2200 rpm', 'Blade Capacity: 3.87 m³'],
+    summaryEn: 'Low ground pressure bulldozer for operation in sensitive terrains and light construction.',
+    specifications: ['Bobot Operasi: 14,800 kg', 'Daya Mesin: 118 kW @ 2200 rpm', 'Kapasitas Blade: 3.87 m³'],
+    specificationsEn: ['Operating Weight: 14,800 kg', 'Engine Power: 118 kW @ 2200 rpm', 'Blade Capacity: 3.87 m³'],
     applications: ['Penggalian lahan pertanian', 'Konstruksi di area sensitif', 'Pekerjaan dengan tekanan rendah'],
+    applicationsEn: ['Agricultural excavation', 'Construction in sensitive areas', 'Low-pressure projects'],
     keyBenefits: ['Tekanan Tanah Rendah', 'Kapasitas Blade Besar', 'Mobilitas Tinggi'],
+    keyBenefitsEn: ['Low Ground Pressure', 'Large Blade Capacity', 'High Mobility'],
     partnerBrand: 'Shantui'
   },
 
@@ -1142,9 +1379,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium dengan teknologi engine terbaru untuk efisiensi bahan bakar maksimal.',
-    specifications: ['Operating Weight: 16,800 kg', 'Engine Power: 140 kW @ 1900 rpm', 'Blade Capacity: 3.2 m³'],
+    summaryEn: 'Medium bulldozer with latest engine technology for maximum fuel efficiency.',
+    specifications: ['Bobot Operasi: 16,800 kg', 'Daya Mesin: 140 kW @ 1900 rpm', 'Kapasitas Blade: 3.2 m³'],
+    specificationsEn: ['Operating Weight: 16,800 kg', 'Engine Power: 140 kW @ 1900 rpm', 'Blade Capacity: 3.2 m³'],
     applications: ['Konstruksi infrastruktur', 'Proyek pembangunan', 'Pekerjaan penambangan medium'],
+    applicationsEn: ['Infrastructure construction', 'Development projects', 'Medium mining work'],
     keyBenefits: ['Engine Terbaru', 'Efisiensi Bahan Bakar', 'Performa Stabil'],
+    keyBenefitsEn: ['Latest Engine Technology', 'Fuel Efficiency', 'Stable Performance'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1155,9 +1396,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium berbeban penuh dengan ripper terintegrasi untuk pekerjaan demolitif.',
-    specifications: ['Operating Weight: 18,237 / 19,791 kg (dengan ripper)', 'Engine Power: 152 kW @ 1800 rpm', 'Blade Capacity: 4.0 m³'],
+    summaryEn: 'Full-load medium bulldozer with integrated ripper for demolition work.',
+    specifications: ['Bobot Operasi: 18,237 / 19,791 kg (dengan ripper)', 'Daya Mesin: 152 kW @ 1800 rpm', 'Kapasitas Blade: 4.0 m³'],
+    specificationsEn: ['Operating Weight: 18,237 / 19,791 kg (with ripper)', 'Engine Power: 152 kW @ 1800 rpm', 'Blade Capacity: 4.0 m³'],
     applications: ['Demolisi dan penggalian', 'Konstruksi jalan besar', 'Proyek infrastruktur strategis'],
+    applicationsEn: ['Demolition and excavation', 'Main road construction', 'Strategic infrastructure projects'],
     keyBenefits: ['Ripper Terintegrasi', 'Performa Demolisi', 'Daya Dorong Maksimal'],
+    keyBenefitsEn: ['Integrated Ripper', 'Demolition Performance', 'Maximum Thrust'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1168,9 +1413,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium hybrid dengan kapasitas blade fleksibel untuk berbagai aplikasi.',
-    specifications: ['Operating Weight: 17,730 kg', 'Engine Power: 152 kW @ 1800 rpm', 'Blade Capacity: 3.2 / 3.8 m³'],
+    summaryEn: 'Hybrid medium bulldozer with flexible blade capacity for various applications.',
+    specifications: ['Bobot Operasi: 17,730 kg', 'Daya Mesin: 152 kW @ 1800 rpm', 'Kapasitas Blade: 3.2 / 3.8 m³'],
+    specificationsEn: ['Operating Weight: 17,730 kg', 'Engine Power: 152 kW @ 1800 rpm', 'Blade Capacity: 3.2 / 3.8 m³'],
     applications: ['Konstruksi multi-fungsi', 'Penggalian dan penimbunan', 'Pekerjaan infrastruktur'],
+    applicationsEn: ['Multi-functional construction', 'Excavation and backfilling', 'Infrastructure work'],
     keyBenefits: ['Kapasitas Fleksibel', 'Performa Tinggi', 'Operasi Serbaguna'],
+    keyBenefitsEn: ['Flexible Capacity', 'High Performance', 'Versatile Operation'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1181,9 +1430,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium berperforma tinggi dengan daya dorong superior untuk proyek besar.',
-    specifications: ['Operating Weight: 23,450 kg', 'Engine Power: 175 kW @ 1800 rpm', 'Blade Capacity: 4.6 m³'],
+    summaryEn: 'High-performance medium bulldozer with superior thrust for large projects.',
+    specifications: ['Bobot Operasi: 23,450 kg', 'Daya Mesin: 175 kW @ 1800 rpm', 'Kapasitas Blade: 4.6 m³'],
+    specificationsEn: ['Operating Weight: 23,450 kg', 'Engine Power: 175 kW @ 1800 rpm', 'Blade Capacity: 4.6 m³'],
     applications: ['Proyek infrastruktur besar', 'Konstruksi jalan dan bendungan', 'Pekerjaan pertambangan medium'],
+    applicationsEn: ['Large infrastructure projects', 'Road and dam construction', 'Medium mining work'],
     keyBenefits: ['Daya Dorong Luar Biasa', 'Stabilitas Superior', 'Efisiensi Opesional'],
+    keyBenefitsEn: ['Exceptional Thrust', 'Superior Stability', 'Operational Efficiency'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1194,22 +1447,30 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium stretch dengan kapasitas blade jumbo untuk volume penggalian maksimal.',
-    specifications: ['Operating Weight: 25,700 kg', 'Engine Power: 175 kW @ 1800 rpm', 'Blade Capacity: 5.2 m³'],
+    summaryEn: 'Stretched medium bulldozer with jumbo blade capacity for maximum excavation volume.',
+    specifications: ['Bobot Operasi: 25,700 kg', 'Daya Mesin: 175 kW @ 1800 rpm', 'Kapasitas Blade: 5.2 m³'],
+    specificationsEn: ['Operating Weight: 25,700 kg', 'Engine Power: 175 kW @ 1800 rpm', 'Blade Capacity: 5.2 m³'],
     applications: ['Penggalian volume besar', 'Konstruksi bendungan', 'Proyek infrastruktur megah'],
+    applicationsEn: ['High-volume excavation', 'Dam construction', 'Grand infrastructure projects'],
     keyBenefits: ['Kapasitas Blade Jumbo', 'Volume Penggalian Maksimal', 'Stabilitas Tinggi'],
+    keyBenefitsEn: ['Jumbo Blade Capacity', 'Maximum Excavation Volume', 'High Stability'],
     partnerBrand: 'Shantui'
   },
   {
     id: 'shantui-sd22r',
-    name: 'Shantui SD22R',
+    name: 'Shantui SD22r',
     slug: 'shantui-sd22r',
     image: 'https://www.shantui-global.com/upload/images/2023/06/28/ee63c6b4fd984609854514b4d675bb46.png',
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium dengan blade rippers untuk kapasitas penggalian ultra besar.',
-    specifications: ['Operating Weight: 26,000 kg', 'Engine Power: 175 kW @ 1800 rpm', 'Blade Capacity: 11.8 m³'],
+    summaryEn: 'Medium bulldozer with ripper blade for ultra-large excavation capacity.',
+    specifications: ['Bobot Operasi: 26,000 kg', 'Daya Mesin: 175 kW @ 1800 rpm', 'Kapasitas Blade: 11.8 m³'],
+    specificationsEn: ['Operating Weight: 26,000 kg', 'Engine Power: 175 kW @ 1800 rpm', 'Blade Capacity: 11.8 m³'],
     applications: ['Penggalian batu keras', 'Konstruksi pemindahan tanah masif', 'Proyek pertambangan besar'],
+    applicationsEn: ['Hard rock excavation', 'Massive earthmoving construction', 'Large mining projects'],
     keyBenefits: ['Kapasitas Ultra Besar', 'Teknologi Ripper', 'Performa Maksimal'],
+    keyBenefitsEn: ['Ultra Large Capacity', 'Ripper Technology', 'Maximum Performance'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1220,9 +1481,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium berat dengan kapasitas multi-blade untuk proyek infrastruktur kompleks.',
-    specifications: ['Operating Weight: 23,450 kg', 'Engine Power: 206 kW @ 1900 rpm', 'Blade Capacity: 4.6 / 3.4 / 5.8 / 6.7 m³'],
+    summaryEn: 'Heavy medium bulldozer with multi-blade capacity for complex infrastructure projects.',
+    specifications: ['Bobot Operasi: 23,450 kg', 'Daya Mesin: 206 kW @ 1900 rpm', 'Kapasitas Blade: 4.6 / 3.4 / 5.8 / 6.7 m³'],
+    specificationsEn: ['Operating Weight: 23,450 kg', 'Engine Power: 206 kW @ 1900 rpm', 'Blade Capacity: 4.6 / 3.4 / 5.8 / 6.7 m³'],
     applications: ['Konstruksi infrastruktur kompleks', 'Proyek pertambangan besar', 'Pembangunan bendungan'],
+    applicationsEn: ['Complex infrastructure construction', 'Large mining projects', 'Dam construction'],
     keyBenefits: ['Kapasitas Multi-Blade', 'Fleksibilitas Tinggi', 'Performa Power Besar'],
+    keyBenefitsEn: ['Multi-Blade Capacity', 'High Flexibility', 'High Power Performance'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1233,9 +1498,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium berat dengan engine options untuk fleksibilitas operasional maksimal.',
-    specifications: ['Operating Weight: 24,200 kg', 'Engine Power: 195 kW @ 1900 (WP13) / 187 kW @ 1850 (NT855-C280)', 'Blade Capacity: 7 m³'],
+    summaryEn: 'Heavy medium bulldozer with multiple engine options for maximum operational flexibility.',
+    specifications: ['Bobot Operasi: 24,200 kg', 'Daya Mesin: 195 kW @ 1900 (WP13) / 187 kW @ 1850 (NT855-C280)', 'Kapasitas Blade: 7 m³'],
+    specificationsEn: ['Operating Weight: 24,200 kg', 'Engine Power: 195 kW @ 1900 (WP13) / 187 kW @ 1850 (NT855-C280)', 'Blade Capacity: 7 m³'],
     applications: ['Proyek infrastruktur besar', 'Konstruksi bendungan', 'Pertambangan skala besar'],
+    applicationsEn: ['Large infrastructure projects', 'Dam construction', 'Large-scale mining'],
     keyBenefits: ['Engine Options Fleksibel', 'Kapasitas Blade Besar', 'Reliabilitas Tinggi'],
+    keyBenefitsEn: ['Flexible Engine Options', 'Large Blade Capacity', 'High Reliability'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1246,9 +1515,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium berat dengan teknologi kontrol canggih untuk presisi operasional.',
-    specifications: ['Operating Weight: 24,200 kg', 'Engine Power: 206 kW @ 1900 rpm', 'Blade Capacity: 6.7 m³'],
+    summaryEn: 'Heavy medium bulldozer with advanced control technology for operational precision.',
+    specifications: ['Bobot Operasi: 24,200 kg', 'Daya Mesin: 206 kW @ 1900 rpm', 'Kapasitas Blade: 6.7 m³'],
+    specificationsEn: ['Operating Weight: 24,200 kg', 'Engine Power: 206 kW @ 1900 rpm', 'Blade Capacity: 6.7 m³'],
     applications: ['Konstruksi infrastruktur presisi', 'Proyek pembangunan besar', 'Pertambangan modern'],
+    applicationsEn: ['Precision infrastructure construction', 'Large development projects', 'Modern mining'],
     keyBenefits: ['Teknologi Kontrol Canggih', 'Presisi Operasional', 'Efisiensi Energi'],
+    keyBenefitsEn: ['Advanced Control Technology', 'Operational Precision', 'Energy Efficiency'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1259,9 +1532,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium dengan performa tinggi untuk aplikasi pertambangan dan konstruksi.',
-    specifications: ['Operating Weight: 22,200 kg', 'Engine Power: 186 kW @ 2050 rpm', 'Blade Capacity: 5.0 m³'],
+    summaryEn: 'High-performance medium bulldozer for mining and construction applications.',
+    specifications: ['Bobot Operasi: 22,200 kg', 'Daya Mesin: 186 kW @ 2050 rpm', 'Kapasitas Blade: 5.0 m³'],
+    specificationsEn: ['Operating Weight: 22,200 kg', 'Engine Power: 186 kW @ 2050 rpm', 'Blade Capacity: 5.0 m³'],
     applications: ['Pertambangan skala menengah', 'Konstruksi jalan besar', 'Proyek infrastruktur'],
+    applicationsEn: ['Medium-scale mining', 'Main road construction', 'Infrastructure projects'],
     keyBenefits: ['Performa Tinggi', 'Mobilitas Superior', 'Daya Tarik Kuat'],
+    keyBenefitsEn: ['High Performance', 'Superior Mobility', 'Strong Traction'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1272,9 +1549,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'medium-bulldozer',
     summary: 'Bulldozer medium berat berteknologi terbaru dengan kapasitas blade optimal.',
-    specifications: ['Operating Weight: 23,820 kg', 'Engine Power: 195 kW @ 1900 rpm', 'Blade Capacity: 6.5 m³'],
+    summaryEn: 'Heavy medium bulldozer with latest technology and optimal blade capacity.',
+    specifications: ['Bobot Operasi: 23,820 kg', 'Daya Mesin: 195 kW @ 1900 rpm', 'Kapasitas Blade: 6.5 m³'],
+    specificationsEn: ['Operating Weight: 23,820 kg', 'Engine Power: 195 kW @ 1900 rpm', 'Blade Capacity: 6.5 m³'],
     applications: ['Konstruksi jalan berkualitas', 'Proyek pertambangan besar', 'Pembangunan infrastruktur'],
+    applicationsEn: ['Quality road construction', 'Large mining projects', 'Infrastructure development'],
     keyBenefits: ['Teknologi Terbaru', 'Kapasitas Optimal', 'Keandalan Terjamin'],
+    keyBenefitsEn: ['Latest Technology', 'Optimal Capacity', 'Guaranteed Reliability'],
     partnerBrand: 'Shantui'
   },
 
@@ -1287,9 +1568,12 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'large-bulldozer',
     summary: 'Bulldozer besar dengan daya dorong super untuk proyek infrastruktur kelas dunia.',
+    summaryEn: 'Large bulldozer with super thrust for world-class infrastructure projects.',
     specifications: ['Operating Weight: 39,700 kg', 'Engine Power: 257 kW @ 2000 rpm', 'Blade Capacity: 7.2 / 4.8 / 9 m³'],
     applications: ['Pertambangan skala besar', 'Konstruksi bendungan megah', 'Proyek infrastruktur nasional'],
+    applicationsEn: ['Large-scale mining', 'Grand dam construction', 'National infrastructure projects'],
     keyBenefits: ['Daya Dorong Super', 'Kapasitas Multi-Blade', 'Teknologi Terdepan'],
+    keyBenefitsEn: ['Super Thrust', 'Multi-Blade Capacity', 'Leading Technology'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1300,9 +1584,12 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'large-bulldozer',
     summary: 'Bulldozer terbesar dengan blade rippers untuk penggalian batu keras ekstrem.',
+    summaryEn: 'Largest bulldozer with ripper blades for extreme hard rock excavation.',
     specifications: ['Operating Weight: 36,000 kg', 'Engine Power: 258 kW @ 2000 rpm', 'Blade Capacity: 10 m³'],
     applications: ['Penggalian batu keras ekstrem', 'Pertambangan skala mentah', 'Proyek infrastruktur megah'],
+    applicationsEn: ['Extreme hard rock excavation', 'Raw scale mining', 'Grand infrastructure projects'],
     keyBenefits: ['Kapasitas Blade Terbesar', 'Ripper Power Ekstrem', 'Performa World-Class'],
+    keyBenefitsEn: ['Largest Blade Capacity', 'Extreme Ripper Power', 'World-Class Performance'],
     partnerBrand: 'Shantui'
   },
 
@@ -1318,9 +1605,13 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'wheel-loader',
     summary: 'Wheel loader kompak dengan kapasitas bucket optimal untuk pekerjaan konstruksi ringan hingga menengah.',
-    specifications: ['Operating Weight: 16,400 kg', 'Bucket Capacity: 0.9 m³', 'Engine Power: 105 kW'],
+    summaryEn: 'Compact wheel loader with optimal bucket capacity for light to medium construction work.',
+    specifications: ['Bobot Operasi: 16,400 kg', 'Kapasitas Bucket: 0.9 m³', 'Daya Mesin: 105 kW'],
+    specificationsEn: ['Operating Weight: 16,400 kg', 'Bucket Capacity: 0.9 m³', 'Engine Power: 105 kW'],
     applications: ['Konstruksi umum', 'Penimbunan dan penggalian', 'Pekerjaan infrastruktur ringan'],
+    applicationsEn: ['General construction', 'Fill and excavation', 'Light infrastructure work'],
     keyBenefits: ['Maneuver Presisi', 'Efisiensi Bahan Bakar', 'Operasi Serbaguna'],
+    keyBenefitsEn: ['Precision Maneuvering', 'Fuel Efficiency', 'Versatile Operation'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1331,9 +1622,12 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'wheel-loader',
     summary: 'Wheel loader medium dengan daya dorong tinggi dan jangkauan bucket lebih dalam.',
+    summaryEn: 'Medium wheel loader with high thrust and deeper bucket reach.',
     specifications: ['Operating Weight: 18,200 kg', 'Bucket Capacity: 1.1 m³', 'Engine Power: 118 kW'],
     applications: ['Pertambangan skala menengah', 'Konstruksi jalan', 'Pelabuhan dan dermaga'],
+    applicationsEn: ['Medium-scale mining', 'Road construction', 'Ports and docks'],
     keyBenefits: ['Kapasitas Bucket Besar', 'Daya Dorong Tinggi', 'Stabilitas Superior'],
+    keyBenefitsEn: ['Large Bucket Capacity', 'High Thrust', 'Superior Stability'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1344,9 +1638,12 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'wheel-loader',
     summary: 'Wheel loader terpercaya dengan performa stabil untuk berbagai aplikasi pertambangan dan konstruksi.',
+    summaryEn: 'Reliable wheel loader with stable performance for various mining and construction applications.',
     specifications: ['Operating Weight: 22,000 kg', 'Bucket Capacity: 1.3 m³', 'Engine Power: 140 kW'],
     applications: ['Pertambangan batubara', 'Proyek konstruksi besar', 'Pemindahan material massal'],
+    applicationsEn: ['Coal mining', 'Large construction projects', 'Bulk material handling'],
     keyBenefits: ['Produktivitas Tinggi', 'Hemat Energi', 'Durabilitas Terjamin'],
+    keyBenefitsEn: ['High Productivity', 'Energy Saving', 'Guaranteed Durability'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1357,9 +1654,12 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'wheel-loader',
     summary: 'Wheel loader berperforma tinggi dengan teknologi terbaru untuk operasional efisien.',
+    summaryEn: 'High-performance wheel loader with latest technology for efficient operations.',
     specifications: ['Operating Weight: 23,500 kg', 'Bucket Capacity: 1.5 m³', 'Engine Power: 152 kW'],
     applications: ['Pertambangan skala besar', 'Konstruksi infrastruktur kompleks', 'Penggalian lahan masif'],
+    applicationsEn: ['Large-scale mining', 'Complex infrastructure construction', 'Massive land excavation'],
     keyBenefits: ['Teknologi Canggih', 'Efisiensi Operasional', 'Keandalan Maksimal'],
+    keyBenefitsEn: ['Advanced Technology', 'Operational Efficiency', 'Maximum Reliability'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1370,9 +1670,12 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'wheel-loader',
     summary: 'Wheel loader besar dengan kapasitas bucket jumbo untuk operasi pertambangan profesional.',
+    summaryEn: 'Large wheel loader with jumbo bucket capacity for professional mining operations.',
     specifications: ['Operating Weight: 26,000 kg', 'Bucket Capacity: 1.8 m³', 'Engine Power: 175 kW'],
     applications: ['Pertambangan skala internasional', 'Proyek infrastruktur megah', 'Pemindahan material ekstrem'],
+    applicationsEn: ['International scale mining', 'Grand infrastructure projects', 'Extreme material movement'],
     keyBenefits: ['Kapasitas Jumbo', 'Performa Ekstrem', 'Teknologi World-Class'],
+    keyBenefitsEn: ['Jumbo Capacity', 'Extreme Performance', 'World-Class Technology'],
     partnerBrand: 'Shantui'
   },
   
@@ -1385,6 +1688,7 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mining-truck',
     summary: 'Mining truck tangguh dengan kapasitas muat 62 ton untuk operasional pertambangan intensif yang efisien.',
+    summaryEn: 'Tough mining truck with 62-ton payload capacity for efficient intensive mining operations.',
     specifications: [
       'Machine Weight: 100,000 kg',
       'Load Capacity: 62,000 kg',
@@ -1394,7 +1698,9 @@ export const gulfProducts: ProductSpec[] = [
       'Emissions: Eu Stage IIIA'
     ],
     applications: ['Pertambangan Terbuka', 'Pengangkutan Material Berat', 'Quarry'],
+    applicationsEn: ['Open-pit Mining', 'Heavy Material Hauling', 'Quarry'],
     keyBenefits: ['Daya angkut optimal', 'Durabilitas tinggi di medan ekstrem', 'Efisiensi biaya operasional'],
+    keyBenefitsEn: ['Optimal Load Capacity', 'High Durability in Extreme Terrain', 'Operational Cost Efficiency'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1405,6 +1711,7 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mining-truck',
     summary: 'Mining truck performa tinggi dengan kapasitas muat 70 ton untuk produktivitas maksimal di area tambang.',
+    summaryEn: 'High-performance mining truck with 70-ton payload capacity for maximum productivity in mine areas.',
     specifications: [
       'Machine Weight: 105,000 kg',
       'Load Capacity: 70,000 kg',
@@ -1414,7 +1721,9 @@ export const gulfProducts: ProductSpec[] = [
       'Tire: 16.00-25'
     ],
     applications: ['Produksi Tambang Skala Besar', 'Hauling Jarak Menengah', 'Operasi 24/7'],
+    applicationsEn: ['Large-scale Mine Production', 'Medium-distance Hauling', '24/7 Operations'],
     keyBenefits: ['Kapasitas beban superior', 'Stabilitas tinggi saat bermuatan penuh', 'Inter-axle differential lock'],
+    keyBenefitsEn: ['Superior Load Capacity', 'High Stability at Full Load', 'Inter-axle Differential Lock'],
     partnerBrand: 'Shantui'
   },
   {
@@ -1425,6 +1734,7 @@ export const gulfProducts: ProductSpec[] = [
     categoryId: 'shantui',
     subcategoryId: 'mining-truck',
     summary: 'Mining truck bertenaga listrik (Electric Drive) dengan kapasitas muat raksasa 140 ton, ramah lingkungan dan efisien tinggi.',
+    summaryEn: 'Electric Drive mining truck with giant 140-ton payload capacity, eco-friendly and highly efficient.',
     specifications: [
       'Machine Weight: 112,000 kg',
       'Load Capacity: 140,000 kg',
@@ -1434,7 +1744,9 @@ export const gulfProducts: ProductSpec[] = [
       'Tire: 33.00R51'
     ],
     applications: ['Mega Mining Projects', 'Green Mining Operations', 'Deep Pit Hauling'],
+    applicationsEn: ['Mega Mining Projects', 'Green Mining Operations', 'Deep Pit Hauling'],
     keyBenefits: ['Zero emissions hauling', 'Independently powered rear axle', 'Sistem pengereman regeneratif'],
+    keyBenefitsEn: ['Zero emissions hauling', 'Independently powered rear axle', 'Regenerative braking system'],
     partnerBrand: 'Shantui'
   }
 

@@ -12,15 +12,15 @@ import GulfHeritage from '../components/GulfHeritage';
 import ProudPartnerships from '../components/ProudPartnerships';
 
 // ─── Stats bar data ───────────────────────────────────────────────────────────
-const STATS = [
-  { value: '15+', label: 'Tahun Beroperasi' },
-  { value: '100+', label: 'Varian Produk Gulf' },
-  { value: '4', label: 'Kategori Utama' },
-  { value: '24/7', label: 'Dukungan Teknis' },
-];
-
 export default function Home() {
   const { t } = useLanguage();
+
+  const STATS = [
+    { value: '15+', label: t('home.stats.years') },
+    { value: '100+', label: t('home.stats.products') },
+    { value: '4', label: t('home.stats.categories') },
+    { value: '24/7', label: t('home.stats.support') },
+  ];
 
   return (
     <div className="w-full overflow-x-hidden">
@@ -104,9 +104,8 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8, duration: 0.8 }}
                   className="text-lg text-gray-500 leading-relaxed max-w-xl mb-12 font-medium"
-                >
-                  PT BEN menghadirkan teknologi pelumasan <strong className="font-bold text-gray-800">Gulf Oil</strong> dan ekosistem alat berat <strong className="font-bold text-gray-800">Shantui</strong>. Dedikasi tanpa henti untuk menunjang performa industri Anda di seluruh negeri.
-                </motion.p>
+                  dangerouslySetInnerHTML={{ __html: t('home.heroDescDetail') }}
+                />
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -210,9 +209,8 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.1 }}
                 className="font-heading font-bold text-dark-brown text-[clamp(2.2rem,5vw,4rem)] leading-[1.15] tracking-tight mb-10"
-              >
-                Kualitas & <span className="text-primary">Kepercayaan</span> Sejak Awal
-              </motion.h2>
+                dangerouslySetInnerHTML={{ __html: t('home.aboutTitle') }}
+              />
 
               <div className="max-w-2xl space-y-8">
                 <motion.p
@@ -325,15 +323,15 @@ export default function Home() {
                   <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
                 <div className="flex items-center gap-6 mb-8">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Pelumas </span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">{t('home.pillarLube')}</span>
                   <div className="h-px w-10 bg-primary/40" />
                 </div>
                 <h3 className="font-heading font-medium text-primary text-3xl lg:text-4xl mb-8 flex items-center justify-between">
-                  Gulf Oil
+                  {t('home.pillarLubeTitle')}
                   <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform text-primary/40" />
                 </h3>
                 <p className="text-gray-600 leading-relaxed max-w-md text-base">
-                  Authorized Distributor pelumas Gulf kelas dunia. Menghadirkan efisiensi dan perlindungan mesin jangka panjang sejak 1901.
+                  {t('home.pillarLubeDesc')}
                 </p>
               </Link>
             </motion.div>
@@ -354,15 +352,15 @@ export default function Home() {
                   <div className="absolute inset-0 bg-dark-brown/10 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
                 <div className="flex items-center gap-6 mb-8">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-dark-brown">Alat Berat</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-dark-brown">{t('home.pillarEquip')}</span>
                   <div className="h-px w-10 bg-dark-brown/40" />
                 </div>
                 <h3 className="font-heading font-medium text-dark-brown text-3xl lg:text-4xl mb-8 flex items-center justify-between">
-                  Shantui Machinery
+                  {t('home.pillarEquipTitle')}
                   <ArrowRight size={24} className="group-hover:translate-x-4 transition-transform text-dark-brown/40" />
                 </h3>
                 <p className="text-gray-600 leading-relaxed max-w-md text-base">
-                  Unit alat berat berkualitas global untuk pertambangan dan konstruksi. Tangguh, efisien, dan didesain untuk medan operasional ekstrem.
+                  {t('home.pillarEquipDesc')}
                 </p>
               </Link>
             </motion.div>
@@ -408,10 +406,10 @@ export default function Home() {
             <div className="lg:col-span-7">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-dark-brown/10 border border-dark-brown/20">
                 {[
-                  { name: t('home.mining'), desc: 'Optimasi performa alat berat di medan ekstrim.' },
-                  { name: t('home.construction'), desc: 'Dukungan penuh untuk infrastruktur berkelanjutan.' },
-                  { name: t('home.transportation'), desc: 'Efisiensi armada dan logistik terdepan.' },
-                  { name: t('home.manufacturing'), desc: 'Presisi pelumasan untuk mesin industrial.' },
+                  { name: t('home.mining'), desc: t('home.industryMiningDesc') },
+                  { name: t('home.construction'), desc: t('home.industryConstructionDesc') },
+                  { name: t('home.transportation'), desc: t('home.industryTransportDesc') },
+                  { name: t('home.manufacturing'), desc: t('home.industryManufactureDesc') },
                 ].map((industry, index) => {
                   const colors = [
                     'hover:bg-secondary hover:from-secondary hover:to-secondary/80',

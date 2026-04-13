@@ -2,8 +2,12 @@ import { motion } from 'motion/react';
 import { gulfTrustData } from '../data/gulfTrust';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageSquare, PhoneCall, FileText } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function TrustSection() {
+  const { t, language } = useLanguage();
+  const isEn = language === 'en';
+
   return (
     <div className="w-full">
 
@@ -22,13 +26,13 @@ export default function TrustSection() {
             >
               <div className="flex items-center gap-4 mb-10">
                 <div className="h-px w-12 bg-primary" />
-                <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Identitas Global</span>
+                <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('home.trust.globalSubtitle')}</span>
               </div>
               <h2 className="font-heading font-black text-white text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-10">
-                {gulfTrustData.about.title}
+                {isEn ? gulfTrustData.about.titleEn : gulfTrustData.about.title}
               </h2>
               <p className="text-gray-300 text-lg leading-relaxed font-light max-w-lg">
-                {gulfTrustData.about.content}
+                {isEn ? gulfTrustData.about.contentEn : gulfTrustData.about.content}
               </p>
 
               {/* Gulf logo strip */}
@@ -67,15 +71,15 @@ export default function TrustSection() {
           {/* Header */}
           <div className="flex items-center gap-4 mb-6">
             <div className="h-px w-12 bg-primary" />
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Warisan Motorsport Global</span>
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('home.trust.motorsportSubtitle')}</span>
           </div>
           <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-16">
-            {gulfTrustData.motorsportSectionTitle}
+            {isEn ? gulfTrustData.motorsportSectionTitleEn : gulfTrustData.motorsportSectionTitle}
           </h2>
 
           {/* Motorsport items: full-width rows, not cards */}
           <div className="divide-y divide-gray-100 mb-20">
-            {gulfTrustData.motorsport.map((item, index) => (
+            {gulfTrustData.motorsport.map((item: any, index: number) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -88,20 +92,20 @@ export default function TrustSection() {
                 <div className={`relative h-72 lg:h-80 overflow-hidden bg-secondary ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <img
                     src={item.imageUrl}
-                    alt={item.title}
+                    alt={isEn ? item.titleEn : item.title}
                     className="w-full h-full object-cover opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 flex flex-col items-start justify-end p-10">
                     <div className="h-px w-8 bg-primary mb-3 group-hover:w-16 transition-all duration-300" />
-                    <div className="text-xs font-bold tracking-widest uppercase text-primary mb-2">{item.subtitle}</div>
-                    <h3 className="font-heading font-black text-white text-3xl tracking-tight leading-none">{item.title}</h3>
+                    <div className="text-xs font-bold tracking-widest uppercase text-primary mb-2">{isEn ? item.subtitleEn : item.subtitle}</div>
+                    <h3 className="font-heading font-black text-white text-3xl tracking-tight leading-none">{isEn ? item.titleEn : item.title}</h3>
                   </div>
                 </div>
 
                 {/* Text */}
                 <div className={`py-12 lg:py-0 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-1 lg:pr-16 lg:pl-0' : 'lg:pl-16'}`}>
                   <div className="space-y-4">
-                    {item.content.map((p, i) => (
+                    {(isEn ? item.contentEn : item.content).map((p: string, i: number) => (
                       <p key={i} className="text-gray-600 leading-relaxed text-lg">{p}</p>
                     ))}
                   </div>
@@ -115,16 +119,16 @@ export default function TrustSection() {
             <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-gray-200">
               {/* Headline */}
               <div className="p-10 col-span-1 flex flex-col justify-center">
-                <div className="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">Distributor Resmi</div>
+                <div className="text-xs font-bold tracking-[0.2em] uppercase text-primary mb-4">{t('home.trust.distributorBadge')}</div>
                 <h4 className="font-heading font-black text-secondary text-2xl tracking-tight leading-[1.1]">
-                  Dapatkan Pelumas Gulf Asli Melalui BEN
+                  {t('home.trust.ctaTitle')}
                 </h4>
               </div>
 
               {/* Description */}
               <div className="p-10 flex items-center col-span-1">
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  Sebagai distributor resmi, PT. Bersama Energi Nusapersada siap membantu memenuhi kebutuhan pelumasan industri Anda dengan jaminan kualitas Gulf.
+                  {t('home.trust.ctaDesc')}
                 </p>
               </div>
 
@@ -134,21 +138,21 @@ export default function TrustSection() {
                   to="/contact"
                   className="inline-flex items-center gap-3 bg-primary text-white px-6 py-3.5 font-bold tracking-wide hover:bg-primary-hover transition-colors group"
                 >
-                  <MessageSquare size={16} /> Konsultasi Gulf
+                  <MessageSquare size={16} /> {t('home.trust.ctaConsult')}
                   <ArrowRight size={14} className="ml-auto group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-3 border border-gray-300 text-secondary px-6 py-3.5 font-bold tracking-wide hover:border-secondary transition-colors group"
                 >
-                  <PhoneCall size={16} /> Hubungi Tim BEN
+                  <PhoneCall size={16} /> {t('home.trust.ctaContact')}
                   <ArrowRight size={14} className="ml-auto group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-3 border border-gray-300 text-secondary px-6 py-3.5 font-bold tracking-wide hover:border-secondary transition-colors group"
                 >
-                  <FileText size={16} /> Minta Penawaran
+                  <FileText size={16} /> {t('home.trust.ctaQuote')}
                   <ArrowRight size={14} className="ml-auto group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Mail, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 interface DistributorCTAProps {
   theme?: 'light' | 'dark' | 'primary';
 }
 
 export default function DistributorCTA({ theme = 'primary' }: DistributorCTAProps) {
+  const { t } = useLanguage();
+  
   const bgClass = theme === 'primary' 
     ? 'bg-primary text-white' 
     : theme === 'dark' 
@@ -32,10 +35,10 @@ export default function DistributorCTA({ theme = 'primary' }: DistributorCTAProp
           
           <div className="max-w-2xl">
             <h3 className={`text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold mb-6 tracking-tight leading-[1.15] ${titleClass}`}>
-              Jadikan BEN Sebagai Mitra Distribusi Utama Anda
+              {t('home.distributorCTA.title')}
             </h3>
             <p className={`text-lg md:text-xl font-medium leading-relaxed mb-8 max-w-xl ${textClass}`}>
-              Dapatkan suplai pelumas Gulf Oil asli dan dukungan teknis terdepan untuk memastikan alat berat dan operasional industri Anda berjalan dengan efisiensi puncak.
+              {t('home.distributorCTA.desc')}
             </p>
             
             <div className={`flex flex-wrap gap-4 ${textClass}`}>
@@ -51,7 +54,7 @@ export default function DistributorCTA({ theme = 'primary' }: DistributorCTAProp
               to="/contact" 
               className={`flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold transition-all text-center w-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.2)] hover:-translate-y-1 ${buttonClass}`}
             >
-              Konsultasi Produk
+              {t('home.distributorCTA.button')}
               <ArrowRight size={20} />
             </Link>
           </div>

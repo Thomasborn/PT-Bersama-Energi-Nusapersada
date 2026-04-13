@@ -186,7 +186,8 @@ export default function Partnership() {
         </div>
       </section>
 
-      {/* ── APPLICATION FORM CTA — Flat Structural ───────────────────────────── */}      <section className="bg-white py-32 border-b border-gray-100">
+      {/* ── APPLICATION FORM CTA — Flat Structural ───────────────────────────── */}
+      <section className="bg-white py-32 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -196,13 +197,13 @@ export default function Partnership() {
           >
             <div className="flex items-center gap-4 mb-10">
               <div className="h-px w-12 bg-primary" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Mitra Kami</span>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('partnership.ourPartnersSubtitle')}</span>
             </div>
             <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-12">
-              Perusahaan yang Bekerja Sama dengan BEN
+              {t('partnership.ourPartnersTitle')}
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed max-w-2xl mb-16">
-              PT Bersama Energi Nusapersada bermitra strategis dengan perusahaan-perusahaan terkemuka di industri energi dan alat berat untuk memberikan solusi terbaik kepada pelanggan.
+              {t('partnership.ourPartnersDesc')}
             </p>
           </motion.div>
 
@@ -215,9 +216,9 @@ export default function Partnership() {
               className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group hover:bg-gradient-to-br hover:from-primary hover:to-primary/90 transition-all duration-500 hover:shadow-lg"
             >
               <img src="/gulf.png" alt="Gulf Oil" className="h-16 object-contain mx-auto mb-6 group-hover:brightness-0 group-hover:invert" />
-              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">Gulf Oil</h4>
+              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">{t('partnership.gulfTitle')}</h4>
               <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
-                Distributor resmi pelumas Gulf berkelas dunia dengan standar internasional sejak 1901.
+                {t('partnership.gulfDescBrief')}
               </p>
             </motion.div>
 
@@ -229,9 +230,9 @@ export default function Partnership() {
               className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group hover:bg-gradient-to-br hover:from-primary hover:to-primary/90 transition-all duration-500 hover:shadow-lg"
             >
               <img src="/shantui-logo.jpeg" alt="Shantui" className="h-14 object-contain mx-auto mb-6 group-hover:brightness-0 group-hover:invert" />
-              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">Shantui Machinery</h4>
+              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">{t('partnership.shantuiTitle')}</h4>
               <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
-                Distributor resmi alat berat Shantui untuk pertambangan, konstruksi, dan infrastruktur.
+                {t('partnership.shantuiDescBrief')}
               </p>
             </motion.div>
 
@@ -243,9 +244,9 @@ export default function Partnership() {
               className="bg-gray-50 border border-gray-200 rounded-lg p-12 text-center group hover:bg-gradient-to-br hover:from-primary hover:to-primary/90 transition-all duration-500 hover:shadow-lg"
             >
               <img src="/ben_exact.png" alt="PT Bersama Energi Nusapersada" className="h-16 object-contain mx-auto mb-6 group-hover:brightness-0 group-hover:invert" />
-              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">PT BEN</h4>
+              <h4 className="font-heading font-bold text-secondary text-xl tracking-tight mb-3 group-hover:text-white transition-colors">{t('partnership.benTitle')}</h4>
               <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white/80 transition-colors">
-                PT Bersama Energi Nusapersada - Distributor Resmi dan Komitmen Lokal untuk Pertumbuhan Industri.
+                {t('partnership.benDescBrief')}
               </p>
             </motion.div>
           </div>
@@ -263,29 +264,18 @@ export default function Partnership() {
           >
             <div className="flex items-center gap-4 mb-10">
               <div className="h-px w-12 bg-primary" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Pelanggan Kami</span>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('partnership.sectorsSubtitle')}</span>
             </div>
             <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter mb-8">
-              Sektor Usaha yang Dilayani
+              {t('partnership.sectorsTitle')}
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
-              Perusahaan kami melayani berbagai sektor industri dengan menyediakan produk pelumas Gulf berkualitas tinggi dan solusi alat berat yang terpercaya.
+              {t('partnership.sectorsDesc')}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {[
-              'Perusahaan Transportasi',
-              'Perusahaan Logistik',
-              'Kontraktor',
-              'Pertambangan',
-              'Pabrik / Manufaktur',
-              'Perkebunan',
-              'Rental Alat Berat',
-              'Workshop / Bengkel',
-              'Fleet Trucking',
-              'Proyek Konstruksi'
-            ].map((sector, index) => (
+            {(t('partnership.sectors') as unknown as string[]).map((sector, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 15 }}
@@ -314,8 +304,8 @@ export default function Partnership() {
             className="mt-20 p-8 bg-white border border-gray-200 rounded-lg"
           >
             <p className="text-gray-700 text-center font-medium">
-              Dengan pengalaman lebih dari 15 tahun dan jaringan distribusi yang luas, BEN siap melayani kebutuhan pelumas dan alat berat untuk berbagai sektor industri di Indonesia. 
-              <Link to="/contact" className="text-primary hover:text-primary/80 font-bold ml-1">Hubungi kami untuk konsultasi produk yang tepat.</Link>
+              {t('partnership.experienceDesc')}
+              <Link to="/contact" className="text-primary hover:text-primary/80 font-bold ml-1">{t('partnership.contactConsultation')}</Link>
             </p>
           </motion.div>
         </div>

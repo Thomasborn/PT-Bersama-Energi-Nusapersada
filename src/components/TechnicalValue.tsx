@@ -1,35 +1,22 @@
 import { motion } from 'motion/react';
 import { Microscope, GraduationCap, PenTool, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const SERVICES = [
-  {
-    num: '01',
-    icon: <Microscope size={32} strokeWidth={1.5} />,
-    title: 'Oil Condition Monitoring',
-    desc: 'Analisa laboratorium pelumas berkala untuk memantau kesehatan mesin, mendeteksi kontaminasi dini, dan mencegah kerusakan fatal sebelum terjadi.',
-    bullets: ['Deteksi keausan logam', 'Analisa viskositas & kontaminasi'],
-    accent: 'text-secondary',
-  },
-  {
-    num: '02',
-    icon: <PenTool size={32} strokeWidth={1.5} />,
-    title: 'Rekomendasi Pelumasan',
-    desc: 'Audit pabrik komprehensif oleh engineer kami untuk mencocokkan spesifikasi OEM dengan pelumas Gulf yang paling efisien secara biaya.',
-    bullets: ['Penurunan biaya pemeliharaan', 'Rasionalisasi inventaris pelumas'],
-    accent: 'text-primary',
-  },
-  {
-    num: '03',
-    icon: <GraduationCap size={32} strokeWidth={1.5} />,
-    title: 'Edukasi Teknis (In-Plant)',
-    desc: 'Pelatihan langsung di lokasi untuk mekanik dan operator Anda tentang praktik penyimpanan, penanganan, dan penyaringan oli standar internasional.',
-    bullets: ['Sertifikasi pemeliharaan dasar', 'Peningkatan usia pakai komponen'],
-    accent: 'text-secondary',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export default function TechnicalValue() {
+  const { t } = useLanguage();
+
+  const ICONS = [
+    <Microscope size={32} strokeWidth={1.5} />,
+    <PenTool size={32} strokeWidth={1.5} />,
+    <GraduationCap size={32} strokeWidth={1.5} />,
+  ];
+
+  const ACCENTS = ['text-secondary', 'text-primary', 'text-secondary'];
+
+  const rawServices = t('home.technicalValue.services', { returnObjects: true });
+  const services = Array.isArray(rawServices) ? rawServices : [];
+
   return (
     <section className="bg-white border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -39,20 +26,20 @@ export default function TechnicalValue() {
           <div>
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-12 bg-primary" />
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">Value Proposition</span>
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-primary">{t('home.technicalValue.subtitle')}</span>
             </div>
             <h2 className="font-heading font-black text-secondary text-[clamp(2rem,4.5vw,3.8rem)] leading-[1] tracking-tighter">
-              Lebih Dari Sekadar<br />Transaksi Pelumas
+              {t('home.technicalValue.title')}
             </h2>
           </div>
           <p className="text-gray-500 text-lg leading-relaxed max-w-md lg:text-right">
-            PT BEN menghadirkan <span className="font-bold text-primary">Technical Support Premium</span> untuk memastikan operasi alat berat dan mesin industri Anda berjalan efisien tanpa waktu henti.
+            {t('home.technicalValue.desc')}
           </p>
         </div>
 
         {/* Services — flat horizontal rows */}
         <div className="divide-y divide-gray-100">
-          {SERVICES.map((s, i) => (
+          {services.map((s, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 16 }}
@@ -63,12 +50,12 @@ export default function TechnicalValue() {
             >
               {/* Number */}
               <div className="font-heading font-black text-5xl text-gray-100 group-hover:text-primary/20 transition-colors tracking-tighter leading-none select-none">
-                {s.num}
+                {String(i + 1).padStart(2, '0')}
               </div>
 
               {/* Title + Icon */}
               <div>
-                <div className={`${s.accent} mb-5`}>{s.icon}</div>
+                <div className={`${ACCENTS[i]} mb-5`}>{ICONS[i]}</div>
                 <h3 className="font-heading font-bold text-secondary text-2xl tracking-tight mb-3 group-hover:text-primary transition-colors">
                   {s.title}
                 </h3>
@@ -77,7 +64,7 @@ export default function TechnicalValue() {
 
               {/* Bullet points */}
               <div className="flex flex-col gap-3 justify-start pt-1 md:pt-10">
-                {s.bullets.map((b, j) => (
+                {s.bullets.map((b: string, j: number) => (
                   <div key={j} className="flex items-center gap-3">
                     <div className="h-px w-6 bg-primary flex-shrink-0" />
                     <span className="text-sm font-medium text-gray-600">{b}</span>
@@ -90,12 +77,12 @@ export default function TechnicalValue() {
 
         {/* Bottom CTA strip */}
         <div className="border-t border-gray-100 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <p className="text-gray-400 text-sm">Siap memulai audit pelumasan gratis bersama tim teknis BEN?</p>
+          <p className="text-gray-400 text-sm">{t('home.technicalValue.ctaText')}</p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-3 bg-secondary text-white px-7 py-3.5 font-bold tracking-wide hover:bg-primary transition-colors group flex-shrink-0"
           >
-            Konsultasi Gratis <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            {t('home.technicalValue.ctaButton')} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 

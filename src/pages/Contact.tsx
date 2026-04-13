@@ -275,22 +275,37 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── MINIMAL MAP BANNER ───────────────────────────────────────────────── */}
-      <section className="h-[50vh] w-full bg-secondary relative overflow-hidden flex items-center justify-center group">
-        {/* Very muted, abstracted map background approach */}
-        <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1596443686812-2f45229eebc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center mix-blend-luminosity transition-transform duration-1000 group-hover:scale-105"></div>
-        <div className="absolute inset-0 bg-secondary/80"></div>
-
-        <div className="relative z-10 flex flex-col items-center text-center px-6">
-          <div className="w-16 h-16 border border-white/20 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-500">
-            <MapPin size={24} className="text-white" strokeWidth={1.5} />
+      {/* ── GOOGLE MAPS SECTION ───────────────────────────────────────────────── */}
+      <section className="w-full relative bg-gray-50 border-b border-gray-200">
+        {/* Aesthetic Map embed without redundant text header */}
+        <div className="w-full h-[60vh] min-h-[450px] max-h-[700px] relative group overflow-hidden">
+          {/* subtle loading placeholder if needed but iframe handles it */}
+          <iframe
+            title="Lokasi PT. Bersama Energi Nusapersada"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1!2d106.6499!3d-6.2218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8b9e1d0f4e5%3A0x1bc!2sEpica+Flexible+Office+by+TwoSpaces!5e0!3m2!1sen!2sid!4v1699999999999!5m2!1sen!2sid&q=Epica+Tangerang+Great+Western,+Jl.+M.H.+Thamrin+Blk.+AA2+No.29,+Tangerang"
+            width="100%"
+            height="100%"
+            style={{ border: 0, display: 'block' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full h-full object-cover saturate-[0.8] contrast-[1.05] group-hover:saturate-100 transition-all duration-1000 ease-in-out"
+          />
+          {/* Inner Shadow for depth */}
+          <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.05)] ring-1 ring-inset ring-black/5"></div>
+          
+          {/* Floating Action Button */}
+          <div className="absolute bottom-8 right-8 z-10 flex flex-col items-end gap-3 pointer-events-none">
+            <a
+              href="https://maps.app.goo.gl/Xw9AvzRshCYqiBeV9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pointer-events-auto flex items-center gap-3 bg-secondary hover:bg-primary text-white px-7 py-4 font-bold uppercase tracking-widest text-xs transition-all duration-500 shadow-2xl hover:shadow-primary/30 hover:-translate-y-1"
+            >
+              <MapPin size={16} strokeWidth={2} className="animate-bounce" />
+              Buka di Google Maps
+            </a>
           </div>
-          <h3 className="font-heading font-black text-white text-3xl tracking-tight mb-3">
-            PT. Bersama Energi Nusapersada
-          </h3>
-          <p className="text-gray-400 font-medium tracking-wide">
-            Tangerang, Indonesia
-          </p>
         </div>
       </section>
 

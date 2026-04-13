@@ -1,74 +1,70 @@
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ExternalLink, ArrowRight, Trophy } from 'lucide-react';
-import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-
-const PARTNERSHIPS = [
-  {
-    id: 'williams',
-    name: 'Williams Racing',
-    subtitle: 'Atlassian Williams F1 Team',
-    description:
-      'Gulf dengan bangga melanjutkan kemitraannya dengan Atlassian Williams F1 Team untuk tahun 2026. Sejak awal kemitraan ini pada tahun 2023, kami berbagi visi bersama untuk mendekatkan para penggemar dengan olahraga yang mereka cintai.',
-    image: 'https://assets.gulfoilltd.com/indonesia/files/2026-03/desktop-banner-2500x685.webp?VersionId=fYo.iwNkZP_5KziExFik1zTH_8CC4JhK',
-    logo: '/gulf.png',
-    url: 'https://indonesia.gulfoilltd.com/partnerships/williams',
-    category: 'Formula 1',
-    color: '#005AFF',
-  },
-  {
-    id: 'trackhouse',
-    name: 'Trackhouse Racing',
-    subtitle: 'MotoGP Partnership',
-    description:
-      'Gulf dengan bangga bermitra dengan Trackhouse Racing dalam perjalanan mereka ke dunia MotoGP. Berlandaskan ambisi dan inovasi, Trackhouse sedang mendefinisikan ulang dunia balap modern dengan pendekatan yang berani dan kreatif.',
-    image: 'https://assets.gulfoilltd.com/indonesia/files/2025-03/trackhouse_homepage_-_834x880.jpg?VersionId=YADtGuXs7NyFWPaQRJv5ROcnwK7aCJQU',
-    logo: '/gulf.png',
-    url: 'https://indonesia.gulfoilltd.com/partnerships/motogp',
-    category: 'MotoGP',
-    color: '#E10600',
-  },
-  {
-    id: 'mclaren',
-    name: 'McLaren Automotive',
-    subtitle: 'Supercar Excellence',
-    description:
-      'Gulf dan McLaren sama-sama berambisi selalu memberikan yang terbaik. Pada Januari 2021, kami memasuki babak baru berkolaborasi dengan McLaren Automotive — pabrikan mobil super dari Inggris.',
-    image: 'https://images.unsplash.com/photo-1621135802920-133df287f89c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    logo: '/gulf.png',
-    url: 'https://indonesia.gulfoilltd.com/partnerships/mclaren-automotive',
-    category: 'Automotive',
-    color: '#FF8000',
-  },
-  {
-    id: 'rofgo',
-    name: 'ROFGO Collection',
-    subtitle: 'Heritage Racing',
-    description:
-      'Koleksi ROFGO yang dikurasi oleh Roald Goethe, dengan sederet mobil balap bersejarah termasuk koleksi bertema Gulf, menjadi favorit para penggila olahraga motorsport di seluruh dunia.',
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    logo: '/gulf.png',
-    url: 'https://indonesia.gulfoilltd.com/partnerships/gulf-rofgo',
-    category: 'Motorsport Heritage',
-    color: '#2D7D9A',
-  },
-  {
-    id: 'tagheuer',
-    name: 'TAG Heuer',
-    subtitle: 'Precision & Legacy',
-    description:
-      'Tak lekang waktu, presisi, dan terbaik. Kerja sama ini menyatukan Gulf dan TAG Heuer — dua brand legendaris yang produknya selalu dibanggakan oleh konsumen.',
-    image: 'https://images.unsplash.com/photo-1622434641406-a158123450f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    logo: '/gulf.png',
-    url: 'https://indonesia.gulfoilltd.com/partnerships/gulf-tag-heuer',
-    category: 'Lifestyle & Luxury',
-    color: '#1A1A1A',
-  },
-];
+import { ArrowRight, Trophy } from 'lucide-react';
 
 export default function ProudPartnerships() {
   const { t } = useLanguage();
   const [activeIdx, setActiveIdx] = useState(0);
+
+  const PARTNERSHIPS = [
+    {
+      id: 'williams',
+      name: 'Williams Racing',
+      subtitle: 'Atlassian Williams F1 Team',
+      description: t('home.partnerships.items.williams.description'),
+      image: 'https://assets.gulfoilltd.com/indonesia/files/2026-03/desktop-banner-2500x685.webp?VersionId=fYo.iwNkZP_5KziExFik1zTH_8CC4JhK',
+      logo: '/gulf.png',
+      url: 'https://indonesia.gulfoilltd.com/partnerships/williams',
+      category: 'Formula 1',
+      color: '#005AFF',
+    },
+    {
+      id: 'trackhouse',
+      name: 'Trackhouse Racing',
+      subtitle: 'MotoGP Partnership',
+      description: t('home.partnerships.items.trackhouse.description'),
+      image: 'https://assets.gulfoilltd.com/indonesia/files/2025-03/trackhouse_homepage_-_834x880.jpg?VersionId=YADtGuXs7NyFWPaQRJv5ROcnwK7aCJQU',
+      logo: '/gulf.png',
+      url: 'https://indonesia.gulfoilltd.com/partnerships/motogp',
+      category: 'MotoGP',
+      color: '#E10600',
+    },
+    {
+      id: 'mclaren',
+      name: 'McLaren Automotive',
+      subtitle: 'Supercar Excellence',
+      description: t('home.partnerships.items.mclaren.description'),
+      image: 'https://images.unsplash.com/photo-1621135802920-133df287f89c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      logo: '/gulf.png',
+      url: 'https://indonesia.gulfoilltd.com/partnerships/mclaren-automotive',
+      category: 'Automotive',
+      color: '#FF8000',
+    },
+    {
+      id: 'rofgo',
+      name: 'ROFGO Collection',
+      subtitle: 'Heritage Racing',
+      description: t('home.partnerships.items.rofgo.description'),
+      image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      logo: '/gulf.png',
+      url: 'https://indonesia.gulfoilltd.com/partnerships/gulf-rofgo',
+      category: 'Motorsport Heritage',
+      color: '#2D7D9A',
+    },
+    {
+      id: 'tagheuer',
+      name: 'TAG Heuer',
+      subtitle: 'Precision & Legacy',
+      description: t('home.partnerships.items.tagheuer.description'),
+      image: 'https://images.unsplash.com/photo-1622434641406-a158123450f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+      logo: '/gulf.png',
+      url: 'https://indonesia.gulfoilltd.com/partnerships/gulf-tag-heuer',
+      category: 'Lifestyle & Luxury',
+      color: '#1A1A1A',
+    },
+  ];
+
   const active = PARTNERSHIPS[activeIdx];
 
   return (

@@ -27,7 +27,7 @@ const getFallbackImage = (subcategoryId?: string): string => {
 };
 
 // ─── Flat product row / expandable ───────────────────────────────────────────
-const ProductRow = ({ product, index }: { product: any; index: number }) => {
+const ProductRow = ({ product, index, t, language }: { product: any; index: number; t: any; language: string }) => {
   const [open, setOpen] = useState(true);
   const [imageError, setImageError] = useState(false);
   const fallbackImage = getFallbackImage(product.subcategoryId);
@@ -79,7 +79,9 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
               </span>
             )}
           </div>
-          <p className="text-xs text-gray-400 leading-snug line-clamp-1 hidden md:block max-w-md">{product.summary}</p>
+          <p className="text-xs text-gray-400 leading-snug line-clamp-1 hidden md:block max-w-md">
+            {language === 'en' ? (product.summaryEn || product.summary) : product.summary}
+          </p>
         </div>
 
         {/* Viscosity grades */}
@@ -151,14 +153,16 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
                     />
                   </div>
                 ) : null}
-                <p className="text-gray-600 text-sm leading-relaxed mb-6">{product.summary}</p>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                  {language === 'en' ? (product.summaryEn || product.summary) : product.summary}
+                </p>
 
                 {/* Applications */}
                 {product.applications?.length > 0 && (
                   <div className="mb-4">
-                    <div className="text-xs font-black tracking-[0.15em] uppercase text-secondary mb-3">Aplikasi</div>
+                    <div className="text-xs font-black tracking-[0.15em] uppercase text-secondary mb-3">{t('products.labelApplications')}</div>
                     <div className="flex flex-wrap gap-2">
-                      {product.applications.map((a: string, i: number) => (
+                      {(language === 'en' ? (product.applicationsEn || product.applications) : product.applications)?.map((a: string, i: number) => (
                         <span key={i} className="text-xs border border-gray-200 px-3 py-1.5 text-gray-600 font-medium">{a}</span>
                       ))}
                     </div>
@@ -171,9 +175,9 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
                 {/* Specs */}
                 {product.specifications?.length > 0 && (
                   <div>
-                    <div className="text-xs font-black tracking-[0.15em] uppercase text-secondary mb-3">Spesifikasi</div>
+                    <div className="text-xs font-black tracking-[0.15em] uppercase text-secondary mb-3">{t('products.labelSpecifications')}</div>
                     <ul className="space-y-1.5">
-                      {product.specifications.map((s: string, i: number) => (
+                      {(language === 'en' ? (product.specificationsEn || product.specifications) : product.specifications)?.map((s: string, i: number) => (
                         <li key={i} className="flex items-center gap-2 text-sm text-gray-600">
                           <div className="h-px w-4 bg-primary flex-shrink-0" /> {s}
                         </li>
@@ -185,9 +189,9 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
                 {/* Key benefits */}
                 {product.keyBenefits?.length > 0 && (
                   <div>
-                    <div className="text-xs font-black tracking-[0.15em] uppercase text-secondary mb-3">Keunggulan</div>
+                    <div className="text-xs font-black tracking-[0.15em] uppercase text-secondary mb-3">{t('products.labelBenefits')}</div>
                     <ul className="space-y-1.5">
-                      {product.keyBenefits.map((b: string, i: number) => (
+                      {(language === 'en' ? (product.keyBenefitsEn || product.keyBenefits) : product.keyBenefits)?.map((b: string, i: number) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
                           <div className="h-px w-4 bg-primary flex-shrink-0 mt-2.5" /> {b}
                         </li>
@@ -204,7 +208,7 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 border border-secondary text-secondary px-4 py-2.5 font-bold text-xs tracking-widest uppercase hover:bg-secondary hover:text-white transition-colors"
                   >
-                    <DownloadCloud size={14} /> Unduh PDS
+                    <DownloadCloud size={14} /> {t('products.labelDownloadPds')}
                   </a>
                 )}
               </div>
@@ -217,7 +221,7 @@ const ProductRow = ({ product, index }: { product: any; index: number }) => {
 };
 
 // ─── Card-style product display (dev-branch layout) ──────────────────────────
-const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; index: number; selectedBrand: 'Gulf' | 'Shantui' | null }) => {
+const OfficialProductCard = ({ product, index, selectedBrand, t, language }: { product: any; index: number; selectedBrand: 'Gulf' | 'Shantui' | null; t: any; language: string }) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [imageError, setImageError] = useState(false);
   const fallbackImage = getFallbackImage(product.subcategoryId);
@@ -282,7 +286,7 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-10 h-10 bg-white text-[#ff6600] rounded-full shadow-md border border-gray-200 hover:bg-[#ff6600] hover:text-white hover:border-[#ff6600] transition-colors"
-                title="Unduh PDS (Product Data Sheet)"
+                title={t('products.labelDownloadPds')}
                 onClick={(e) => e.stopPropagation()}
               >
                 <DownloadCloud size={18} />
@@ -295,18 +299,20 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
       {/* Main Info Block */}
       <div className="p-6 md:p-8 bg-white relative z-20">
         <h3 className="text-2xl font-bold text-[#002b5b] mb-3 group-hover:text-[#ff6600] transition-colors">{product.name}</h3>
-        <p className="text-gray-600 text-sm leading-relaxed mb-6 font-medium line-clamp-3">{product.summary}</p>
+        <p className="text-gray-600 text-sm leading-relaxed mb-6 font-medium line-clamp-3">
+          {language === 'en' ? (product.summaryEn || product.summary) : product.summary}
+        </p>
 
         <div className="flex items-center justify-between border-t border-gray-100 pt-5">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="text-[#002b5b] font-bold text-sm uppercase tracking-wider flex items-center gap-2 hover:text-[#ff6600] transition-colors"
           >
-            {isExpanded ? 'Tutup Detail' : 'Lihat Spesifikasi'}
+            {isExpanded ? t('products.labelCloseDetail') : t('products.labelViewSpecs')}
             {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
           </button>
           <a href="/contact" className="bg-[#ff6600] text-white font-bold text-xs uppercase px-4 py-2 rounded-md hover:bg-orange-600 transition-colors shadow-sm">
-            Pesan
+            {t('products.labelOrder')}
           </a>
         </div>
       </div>
@@ -325,15 +331,15 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
               {product.partnerBrand === 'Gulf' && (
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8 bg-white p-5 rounded-lg shadow-sm border border-gray-100">
                   <div>
-                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Viskositas</span>
-                    <span className="text-sm font-bold text-[#002b5b]">{product.viscosityGrades?.join(', ') || 'Beragam'}</span>
+                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">{t('products.labelViscosity')}</span>
+                    <span className="text-sm font-bold text-[#002b5b]">{product.viscosityGrades?.join(', ') || 'Various'}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Standar</span>
+                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">{t('products.labelStandard')}</span>
                     <span className="text-sm font-bold text-[#002b5b]">{product.specifications?.[0] || 'Premium'}</span>
                   </div>
                   <div>
-                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">Kemasan</span>
+                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold block mb-1">{t('products.labelPacking')}</span>
                     <span className="text-sm font-bold text-[#002b5b]">{product.availablePacks?.join(', ') || 'Drum 200L'}</span>
                   </div>
                 </div>
@@ -359,7 +365,7 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
                       <CheckCircle2 size={16} className="text-[#ff6600]" /> OEM Approvals
                     </h6>
                     <ul className="space-y-2 pl-1">
-                      {product.approvals.map((app: string, i: number) => (
+                      {(language === 'en' ? (product.approvalsEn || product.approvals) : product.approvals)?.map((app: string, i: number) => (
                         <li key={i} className="text-sm text-gray-700 flex items-start gap-2">
                           <span className="text-[#ff6600] mt-0.5">•</span>
                           <span className="leading-snug">{app}</span>
@@ -372,10 +378,10 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
                 {product.keyBenefits && (
                   <div>
                     <h6 className="text-xs text-[#002b5b] uppercase tracking-widest font-bold mb-4 flex items-center gap-2 border-b border-gray-200 pb-2">
-                      <Zap size={16} className="text-[#ff6600]" /> Keunggulan Utama
+                      <Zap size={16} className="text-[#ff6600]" /> {t('products.labelKeyBenefits')}
                     </h6>
                     <ul className="space-y-2 pl-1">
-                      {product.keyBenefits.map((benefit: string, i: number) => (
+                      {(language === 'en' ? (product.keyBenefitsEn || product.keyBenefits) : product.keyBenefits)?.map((benefit: string, i: number) => (
                         <li key={i} className="text-sm text-gray-700 flex items-start gap-2">
                           <span className="text-[#ff6600] mt-0.5">•</span>
                           <span className="leading-snug">{benefit}</span>
@@ -388,10 +394,10 @@ const OfficialProductCard = ({ product, index, selectedBrand }: { product: any; 
                 {product.applications && (
                   <div className={product.partnerBrand === 'Gulf' ? '' : 'md:col-span-2'}>
                     <h6 className="text-xs text-[#002b5b] uppercase tracking-widest font-bold mb-4 flex items-center gap-2 border-b border-gray-200 pb-2">
-                      <Package2 size={16} className="text-[#ff6600]" /> Aplikasi Optimal
+                      <Package2 size={16} className="text-[#ff6600]" /> {t('products.labelOptimalApplications')}
                     </h6>
                     <div className="flex flex-wrap gap-2">
-                      {product.applications.map((app: string, i: number) => (
+                      {(language === 'en' ? (product.applicationsEn || product.applications) : product.applications)?.map((app: string, i: number) => (
                         <span key={i} className="bg-white border border-gray-200 text-[#002b5b] font-medium text-xs px-3 py-1.5 rounded-sm shadow-sm">
                           {app}
                         </span>
@@ -449,7 +455,7 @@ const OEMSection = ({ t }: { t: any }) => {
 
 // ─── Main Products Page ───────────────────────────────────────────────────────
 export default function Products() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [searchParams] = useSearchParams();
   const [selectedBrand, setSelectedBrand] = useState<'Gulf' | 'Shantui' | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('all');
@@ -646,7 +652,7 @@ export default function Products() {
                   <div className="flex items-center gap-4">
                     <div className="h-px w-16 bg-primary" />
                     <span className="text-xs font-bold tracking-[0.25em] uppercase text-primary">
-                      Katalog {selectedBrand}
+                      {t('products.labelCatalog')} {selectedBrand}
                     </span>
                   </div>
                   <button
@@ -719,7 +725,7 @@ export default function Products() {
                       : 'text-gray-400 font-medium border-transparent hover:text-secondary'
                       }`}
                   >
-                    {cat.name}
+                    {language === 'en' ? (cat.nameEn || cat.name) : cat.name}
                   </button>
                 ))}
               </div>
@@ -758,7 +764,7 @@ export default function Products() {
                           : 'bg-white text-gray-600 border-gray-200 hover:border-secondary/50 hover:bg-gray-50'
                           }`}
                       >
-                        {activeSubcat === sub.id && '✓ '}{sub.name}
+                        {activeSubcat === sub.id && '✓ '}{language === 'en' ? (sub.nameEn || sub.name) : sub.name}
                       </button>
                     ))}
                   </div>
@@ -781,7 +787,9 @@ export default function Products() {
                 <div className="mb-12 flex flex-col sm:flex-row sm:items-end justify-between gap-8">
                   <div>
                     <h4 className="text-4xl font-medium text-secondary tracking-tighter mb-2">
-                      {activeCategory === 'all' ? `Katalog ${selectedBrand}` : activeCategory_?.name}
+                      {activeCategory === 'all' 
+                        ? `${t('products.labelCatalog')} ${selectedBrand}` 
+                        : (language === 'en' ? (activeCategory_?.nameEn || activeCategory_?.name) : activeCategory_?.name)}
                     </h4>
                     {displayed.length} {t('products.foundCount')}
                   </div>
@@ -837,9 +845,9 @@ export default function Products() {
                         transition={{ duration: 0.4 }}
                       >
                         {viewMode === 'grid' ? (
-                          <OfficialProductCard product={product} index={index} selectedBrand={selectedBrand} />
+                          <OfficialProductCard product={product} index={index} selectedBrand={selectedBrand} t={t} language={language} />
                         ) : (
-                          <ProductRow product={product} index={index} />
+                          <ProductRow product={product} index={index} t={t} language={language} />
                         )}
                       </motion.div>
                     ))}
