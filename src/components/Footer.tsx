@@ -66,9 +66,14 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="text-primary flex-shrink-0 mt-1" size={20} />
-                <span className="text-gray-400 text-sm">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Epica+Tangerang+Great+Western+Jl.+M.H.+Thamrin+Blk.+AA2+No.29+Tangerang"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 text-sm hover:text-primary transition-colors"
+                >
                   {t('footer.hqAddress')}
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-primary flex-shrink-0" size={20} />

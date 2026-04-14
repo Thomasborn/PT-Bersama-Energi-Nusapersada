@@ -9,7 +9,7 @@ app.use(express.json());
 
 // ── CORS for Vite dev (port 3000) ──────────────────────────────────────────
 app.use((_req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   if (_req.method === 'OPTIONS') { res.sendStatus(200); return; }

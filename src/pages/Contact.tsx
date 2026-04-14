@@ -139,9 +139,14 @@ export default function Contact() {
                 <MapPin className="text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
                 <div>
                   <h4 className="font-heading font-bold text-secondary text-lg mb-2">{t('contact.address')}</h4>
-                  <p className="text-gray-500 leading-relaxed whitespace-pre-line text-sm">
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Epica+Tangerang+Great+Western+Jl.+M.H.+Thamrin+Blk.+AA2+No.29+Tangerang"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-primary leading-relaxed whitespace-pre-line text-sm transition-colors"
+                  >
                     {t('contact.addressDetails')}
-                  </p>
+                  </a>
                 </div>
               </div>
 
@@ -149,14 +154,19 @@ export default function Contact() {
                 <MapPin className="text-primary flex-shrink-0 mt-1 group-hover:scale-110 transition-transform" size={24} strokeWidth={1.5} />
                 <div>
                   <h4 className="font-heading font-bold text-secondary text-lg mb-2">{t('contact.warehouseTitle')}</h4>
-                  <p className="text-gray-500 leading-relaxed whitespace-pre-line text-sm">
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Desa+Seradang+Kecamatan+Haruai+RT+1+Kabupaten+Tabalong+Kalimantan+Selatan+71572"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-primary leading-relaxed whitespace-pre-line text-sm transition-colors block"
+                  >
                     Desa Seradang<br />
                     Kecamatan Haruai<br />
                     RT 1, Kabupaten Tabalong<br />
                     Kalimantan Selatan<br />
-                    Kode Pos 71572<br />
-                    <span className="text-gray-400 italic">{t('contact.warehouseAdjacent')}</span>
-                  </p>
+                    Kode Pos 71572
+                  </a>
+                  <p className="text-gray-400 italic text-xs mt-1">{t('contact.warehouseAdjacent')}</p>
                 </div>
               </div>
 
@@ -297,7 +307,7 @@ export default function Contact() {
           {/* Floating Action Button */}
           <div className="absolute bottom-8 right-8 z-10 flex flex-col items-end gap-3 pointer-events-none">
             <a
-              href="https://maps.app.goo.gl/Xw9AvzRshCYqiBeV9"
+              href="https://www.google.com/maps/search/?api=1&query=Epica+Tangerang+Great+Western+Jl.+M.H.+Thamrin+Blk.+AA2+No.29+Tangerang"
               target="_blank"
               rel="noopener noreferrer"
               className="pointer-events-auto flex items-center gap-3 bg-secondary hover:bg-primary text-white px-7 py-4 font-bold uppercase tracking-widest text-xs transition-all duration-500 shadow-2xl hover:shadow-primary/30 hover:-translate-y-1"
