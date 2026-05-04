@@ -70,7 +70,7 @@ const ProductRow = ({ product, index, t, language }: { product: any; index: numb
         {/* Name + subcategory — takes remaining space */}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-0.5">
-            <h3 className="font-heading font-bold text-[#002b5b] text-base md:text-lg tracking-tight leading-snug group-hover:text-[#ff6600] transition-colors whitespace-nowrap">
+            <h3 className="font-heading font-bold text-[#002b5b] text-base md:text-lg tracking-tight leading-snug group-hover:text-[#ff6600] transition-colors">
               {product.name}
             </h3>
             {product.subcategoryId && (
@@ -79,7 +79,7 @@ const ProductRow = ({ product, index, t, language }: { product: any; index: numb
               </span>
             )}
           </div>
-          <p className="text-xs text-gray-400 leading-snug line-clamp-1 hidden md:block max-w-md">
+          <p className="text-xs text-gray-400 leading-snug hidden md:block">
             {language === 'en' ? (product.summaryEn || product.summary) : product.summary}
           </p>
         </div>
@@ -299,7 +299,7 @@ const OfficialProductCard = ({ product, index, selectedBrand, t, language }: { p
       {/* Main Info Block */}
       <div className="p-6 md:p-8 bg-white relative z-20">
         <h3 className="text-2xl font-bold text-[#002b5b] mb-3 group-hover:text-[#ff6600] transition-colors">{product.name}</h3>
-        <p className="text-gray-600 text-sm leading-relaxed mb-6 font-medium line-clamp-3">
+        <p className="text-gray-600 text-sm leading-relaxed mb-6 font-medium">
           {language === 'en' ? (product.summaryEn || product.summary) : product.summary}
         </p>
 
